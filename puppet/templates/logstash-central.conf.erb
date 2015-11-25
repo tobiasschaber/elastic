@@ -1,0 +1,98 @@
+input {
+        lumberjack {
+                port => 15102
+                ssl_certificate => "/etc/ssl/certs/logforwarder.crt"
+                ssl_key => "/etc/ssl/logforwarder.key"
+        }
+}
+filter {
+	if [type] == "icinga" {
+
+		grok {
+			match => [ "message", "%{NAGIOSLOGLINE}" ]
+			add_field => { "targetindex" => "icinga-%{+YYYY.MM.dd}" }	
+		}
+
+                date {
+                        locale => "en"
+                        match => ["nagios_epoch", "UNIX"]
+                        target => "@timestamp"
+                }
+
+	} else if [type] == "syslog" {
+
+		grok {
+			match => [ "message", "%{SYSLOGLINE}" ]
+			add_field => { "targetindex" => "syslog-%{+YYYY.MM.dd}" }
+		}
+
+                date {
+                        match => ["timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss"]
+                        locale => "en"
+                }
+
+	} else if [type] == "httpd-access" {
+		
+		grok {
+			match => [ "message", "%{COMMONAPACHELOG}" ]
+			add_field => { "targetindex" => "httpdaccess-%{+YYYY.MM.dd}" }
+		}
+
+                date {
+			locale => "en"
+                        match => ["timestamp", "dd/MMM/YYYY:HH:mm:ss Z"]
+			target => "@timestamp"
+                }
+		
+		geoip {
+			source => "clientip"
+		}
+
+	} else if [type] == "httpd-error" {
+		
+		grok {
+			match => ["message", "%{SYSLOG5424SD:timestamp} %{SYSLOG5424SD:level} %{GREEDYDATA:errmsg} "]
+			add_field => { "targetindex" => "httpderror-%{+YYYY.MM.dd}" }
+		}
+
+                date {
+                        locale => "en"
+                        match => ["timestamp", "[EEE MMM  d HH:mm:ss YYYY]", "[EEE MMM dd HH:mm:ss YYYY]"]
+                        target => "@timestamp"
+                }
+
+	} else if [type] == "linux-secure" {
+
+                grok {
+                        match => [ "message", "%{SYSLOGLINE}" ]
+                        add_field => { "targetindex" => "secure-%{+YYYY.MM.dd}" }
+                }
+
+                date {
+                        match => ["timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss"]
+                        locale => "en"
+                }
+
+	} else {
+		grok {
+			match => [ "type", "%{GREEDYDATA}" ]
+			add_field => { "targetindex" => "logstash-%{+YYYY.MM.dd}" }
+		}
+	}
+}
+output {
+#        file {
+#                path => "/tmp/output"
+#                codec => rubydebug
+#        }
+
+        elasticsearch {
+        
+			<% @mastnodes = scope.function_hiera(['elkcluster::masternodes']) -%>
+        
+			hosts => [<% @mastnodes.each do |val| -%>"<%= val %>",<% end -%>],
+			index => "%{targetindex}-%{+YYYY.MM.dd}"
+
+	}
+}
+

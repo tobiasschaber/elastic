@@ -1,0 +1,8 @@
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: /tmp/elkinstalldir/hiera
+:hierarchy:
+  - "nodes/%{::fqdn}"
+  - common

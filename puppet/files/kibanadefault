@@ -1,0 +1,5 @@
+user="kibana"
+group="kibana"
+chroot="/"
+chdir="/"
+nice=""

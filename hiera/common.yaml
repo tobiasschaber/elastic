@@ -1,0 +1,26 @@
+---
+elkcluster::masternodes:
+  - 10.0.3.101
+  - 10.0.3.102
+logstash::nodes:
+  - 10.0.3.111
+elasticsearch::version: 2.0.0
+elasticsearch::restart_on_change: false
+elasticsearch::config:
+  cluster:
+    name: elkcluster
+  discovery:
+    zen.ping.multicast.enabled: false
+    zen.ping.unicast.hosts:
+     - 10.0.3.101
+     - 10.0.3.102
+  shield.authc.realms:
+    esusers_default:
+      type: esusers
+      order: 0
+      files.users: /etc/elasticsearch/es-01/shield/users
+      files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
+installelknode::adddefaultuser::defaultadminname: esadmin
+installelknode::adddefaultuser::defaultadminpass: esadmin
+installkibana::configkibana::kibanaelkuser: esadmin
+installkibana::configkibana::kibanaelkpass: esadmin
