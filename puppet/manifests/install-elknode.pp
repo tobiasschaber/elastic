@@ -9,10 +9,12 @@
 # author: Tobias Schaber (codecentric AG)
 #
 class installelknode(
-	$defaultadminname = "esadmina",
-	$defaultadminpass = "esadmina"
+							# TODO: brauchen wir das hier noch !?
+	$defaultadminname = "esadmin",
+	$defaultadminpass = "esadmin"
 ) {
 
+	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
 	# start the installation with version 2.0.0
 	class { 'elasticsearch' :
@@ -45,6 +47,17 @@ class installelknode(
 	# add the default admin user
 	class { 'installelknode::adddefaultuser' : 
 	}
+
+	->
+
+	# add jks
+	file { '/etc/elasticsearch/es-01/shield/es01.jks' :
+		source => "/tmp/elkinstalldir/ssl/${ownhost}.jks",
+		owner => "elasticsearch",
+		group => "elasticsearch",
+		mode => "0755",
+	}
+
 
 	
 } 

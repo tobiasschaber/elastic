@@ -14,12 +14,19 @@ elasticsearch::config:
     zen.ping.unicast.hosts:
      - 10.0.3.101
      - 10.0.3.102
-  shield.authc.realms:
-    esusers_default:
-      type: esusers
-      order: 0
-      files.users: /etc/elasticsearch/es-01/shield/users
-      files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
+  shield:
+    authc.realms:
+      esusers_default:
+        type: esusers
+        order: 0
+        files.users: /etc/elasticsearch/es-01/shield/users
+        files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
+    ssl.keystore.path: /etc/elasticsearch/es-01/shield/es01.jks
+    ssl.keystore.password: codecentric
+    ssl.keystore.key_password: codecentric
+    ssl.hostname_verification.resolve_name: false
+    transport.ssl: true
+    http.ssl: true
 installelknode::adddefaultuser::defaultadminname: esadmin
 installelknode::adddefaultuser::defaultadminpass: esadmin
 installkibana::configkibana::kibanaelkuser: esadmin
