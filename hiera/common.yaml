@@ -1,7 +1,6 @@
 ---
 elkcluster::masternodes:
   - 10.0.3.101
-  - 10.0.3.102
 logstash::nodes:
   - 10.0.3.111
 elasticsearch::version: 2.0.0

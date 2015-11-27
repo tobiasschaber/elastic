@@ -28,6 +28,19 @@ rm $ELKINSTALLDIR/ssl/*.crt
 
 cd $ELKINSTALLDIR/ssl
 
+cd ca
+
+# generate a self signed CA certificate
+openssl req -batch -new -x509 \
+	-extensions v3_ca -keyout private/cakey.pem \
+	-out certs/cacert.pem \
+	-days 1460 -config conf/caconfig.cnf \
+	-passin pass:codecentric \
+	-passout pass:codecentric
+
+
+
+cd ..
 
 for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 	node=$(basename "$nodeFile" | cut -f 1 -d '.')
@@ -51,18 +64,28 @@ for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 	keytool -certreq -alias "$node" -keystore "$node".jks \
 		-file "$node".csr \
 		-storepass codecentric \
+                -dname "CN=$node, OU=Karlsruhe, O=codecentric AG, L=Karlsruhe, S=BW, C=DE" \
 		-keyalg RSA -ext san=dns:"$node",ip:"$ipaddr"
 
+
+# dieser signier prozess scheint nicht zu laufen..
+openssl ca -in "$node".csr -notext -out "$node"-signed.crt -config ca/conf/caconfig.cnf -extensions v3_req -passin pass:codecentric -batch -verbose
+#-extensions server_ext
+
 	# das signing request signieren
-	openssl x509 -req -days 10000 \
-	-in "$node".csr -CA ca/certs/cacert.pem \
-	-CAkey ca/private/cakey.pem \
-	-set_serial 01 \
-	-out "$node"-signed.crt \
-	-passin pass:codecentric
+	#openssl x509 -req -days 10000 \
+	#-in "$node".csr -CA ca/certs/cacert.pem \
+	#-CAkey ca/private/cakey.pem \
+	#-set_serial 01 \
+	#-out "$node"-signed.crt \
+	#-passin pass:codecentric
+
+
+   # -> DAS ÜBERSCHREIBT DEN VORHERIGEN KEY. IST DAS EIN PROBLEM?
+   # -> ich habs mal in -signed umbenannt..scheint auch net zu helfen.
 
 	# das signierte zertifikat in den jks importieren
-	keytool -importcert -keystore "$node".jks -file "$node"-signed.crt -alias "$node" -storepass codecentric
+	keytool -importcert -keystore "$node".jks -file "$node"-signed.crt -alias "$node"-signed -storepass codecentric
 
 done 		
 
