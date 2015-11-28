@@ -20,10 +20,13 @@ elasticsearch::config:
         order: 0
         files.users: /etc/elasticsearch/es-01/shield/users
         files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
-    ssl.keystore.path: /etc/elasticsearch/es-01/shield/es01.jks
-    ssl.keystore.password: codecentric
-    ssl.keystore.key_password: codecentric
-    ssl.hostname_verification.resolve_name: false
+    ssl:
+      keystore.path: /etc/elasticsearch/es-01/shield/es01-keystore.jks
+      keystore.password: codecentric
+      keystore.key_password: codecentric
+      hostname_verification: false
+      truststore.path: /etc/elasticsearch/es-01/shield/es01-truststore.jks
+      truststore.password: codecentric
     transport.ssl: true
     http.ssl: true
 installelknode::adddefaultuser::defaultadminname: esadmin

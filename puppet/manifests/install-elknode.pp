@@ -50,9 +50,17 @@ class installelknode(
 
 	->
 
-	# add jks
-	file { '/etc/elasticsearch/es-01/shield/es01.jks' :
-		source => "/tmp/elkinstalldir/ssl/${ownhost}.jks",
+	# add jks keystore
+	file { '/etc/elasticsearch/es-01/shield/es01-keystore.jks' :
+		source => "/tmp/elkinstalldir/ssl/${ownhost}-keystore.jks",
+		owner => "elasticsearch",
+		group => "elasticsearch",
+		mode => "0755",
+	} ->
+
+	# add jks truststore
+	file { '/etc/elasticsearch/es-01/shield/es01-truststore.jks' :
+		source => "/tmp/elkinstalldir/ssl/truststore.jks",
 		owner => "elasticsearch",
 		group => "elasticsearch",
 		mode => "0755",
