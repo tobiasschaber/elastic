@@ -1,8 +1,9 @@
 ---
 elkcluster::masternodes:
   - 10.0.3.101
+  - 10.0.3.102
 logstash::nodes:
-  - 10.0.3.111
+  - 10.0.3.121
 elasticsearch::version: 2.0.0
 elasticsearch::restart_on_change: false
 elasticsearch::config:

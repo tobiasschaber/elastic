@@ -19,7 +19,7 @@ echo "PRESS ANY KEY TO CONTINUE"
 read
 
 # set the home of the installer directory
-export ELKINSTALLDIR="/home/tobias/viega/elastic";
+export ELKINSTALLDIR="/home/server/elastic";
 
 # ---------------------------------------------------------------------
 # clean up

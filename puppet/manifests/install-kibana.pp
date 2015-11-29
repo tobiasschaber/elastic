@@ -114,10 +114,13 @@ class installkibana {
 class installkibana::configkibana(
 
 	$sslsourcescert = '/tmp/elkinstalldir/puppet/files/ssl/elkcluster.crt',
-	$sslsourceskey = '/tmp/elkinstalldir/puppet/files/ssl/elkcluster.key',
-	$kibanaelkuser = 'esadmin',
-	$kibanaelkpass = 'esadmin'	
+	$sslcacert      = '/tmp/elkinstalldir/ssl/ca/temp/root-ca.crt',
+	$sslsourceskey  = '/tmp/elkinstalldir/puppet/files/ssl/elkcluster.key',
+	$kibanaelkuser  = 'esadmin',
+	$kibanaelkpass  = 'esadmin'	
 ) {
+
+	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
 	# the own ip adress of the host (defaults to eth0 ip)
 	$address = inline_template("<%= scope.lookupvar('::ipaddress_eth1') -%>")
@@ -130,6 +133,14 @@ class installkibana::configkibana(
 		mode => "0600",
 	} ->
 
+        # add jks keystore
+        file { '/opt/kibana4/ssl/root-ca.crt' :
+                source => $sslcacert,
+                owner => "elasticsearch",
+                group => "elasticsearch",
+                mode => "0755",
+        } ->
+
 	# create the kibana init script. copy it from the checked out git repository
 	file { '/opt/kibana4/ssl/elkcluster.crt' :
 		source => $sslsourcescert,
@@ -141,8 +152,8 @@ class installkibana::configkibana(
 	# kibana will connect to elasticsearch on its own localhost
 	file_line { 'Add es to config.yml':
 	  path => '/opt/kibana4/config/kibana.yml', 
-	  line => "elasticsearch_url: \"http://${address}:9200\"",
-	  match => 'elasticsearch_url:*',
+	  line => "elasticsearch.url: \"https://${ownhost}:9200\"",
+	  match => 'elasticsearch.url:*',
 	} ->
 
 	# adjust the kibana configuration by setting the ssl cert path
@@ -152,6 +163,15 @@ class installkibana::configkibana(
 	  line	 => "server.ssl.cert: /opt/kibana4/ssl/elkcluster.crt",
 	  match	=> '#?server.ssl.cert:*',
 	} ->
+
+
+        # adjust the kibana configuration by setting the ssl cert path
+        # to enable https
+        file_line { 'Add root ca for ssl to server':
+          path => '/opt/kibana4/config/kibana.yml',
+          line   => "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt",
+          match => '#?elasticsearch.ssl.ca:*',
+        } ->
 
 	# adjust the kibana configuration by setting the ssl key path
 	# to enable https
