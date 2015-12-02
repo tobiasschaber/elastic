@@ -13,6 +13,8 @@ class installkibana {
 	# define the path where the puppet files have been checked out from the git repository
 	# adjust this for your personal installation.
 	$kibanadefaultlocation 	= '/tmp/elkinstalldir/puppet/files/kibanadefault'
+
+	$kibanaurl = 'https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.tar.gz'
 		
 	# create the kibana users group
 	group { 'create-kibana-group':
@@ -29,8 +31,8 @@ class installkibana {
 
 	# download the kibana 4.2.0 installer via a wget and save it unter /tmp/...
 	wget::fetch { 'download_kibana4':
-		source      => 'http://download.elastic.co/kibana/kibana/kibana-4.2.0-linux-x64.tar.gz',
-		destination => "/tmp/kibana4-1-2.tar.gz",
+		source      => $kibanaurl,
+		destination => "/tmp/kibana.tar.gz",
 		timeout     => 0,
 		verbose     => false,
 		execuser    => "kibana",
@@ -45,7 +47,7 @@ class installkibana {
 	
 	# extract the kibana4 archive into the target installation directory
 	exec { "untar-kibana4":	
-		command => "tar -xvf /tmp/kibana4-1-2.tar.gz -C /opt/kibana4 --strip-components=1",
+		command => "tar -xvf /tmp/kibana.tar.gz -C /opt/kibana4 --strip-components=1",
 		path => "/bin",
 		user => "kibana",
   	} ->

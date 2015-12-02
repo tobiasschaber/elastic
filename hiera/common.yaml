@@ -4,8 +4,9 @@ elkcluster::masternodes:
   - 10.0.3.102
 logstash::nodes:
   - 10.0.3.121
-elasticsearch::version: 2.0.0
 elasticsearch::restart_on_change: false
+elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.1.0/elasticsearch-2.1.0.rpm
+elasticsearch::package_provider: package
 elasticsearch::config:
   cluster:
     name: elkcluster

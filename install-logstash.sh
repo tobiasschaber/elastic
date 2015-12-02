@@ -13,7 +13,6 @@ rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
 
 # install puppet and git
 yum install puppet -y
-yum install git -y
 
 # install the required puppet modules and dependencies
 sudo puppet module install puppetlabs-stdlib
