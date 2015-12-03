@@ -117,7 +117,7 @@ class installkibana::configkibana(
 	$sslsourcescert = '/tmp/elkinstalldir/ssl/kibana.crt',
 	$sslsourceskey  = '/tmp/elkinstalldir/ssl/kibana.key',
 
-	$sslcacert      = '/tmp/elkinstalldir/ssl/ca/temp/root-ca.crt',
+	$sslcacert      = '/tmp/elkinstalldir/ssl/root-ca.crt',
 	$kibanaelkuser  = 'esadmin',
 	$kibanaelkpass  = 'esadmin'	
 ) {
