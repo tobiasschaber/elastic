@@ -42,9 +42,11 @@ rm		$ELKINSTALLDIR/ssl/temp/*.*
 rm		$ELKINSTALLDIR/ssl/ca/root-ca/db/*.*
 rm		$ELKINSTALLDIR/ssl/ca/signing-ca/db/*.*
 
-mkdir		$ELKINSTALLDIR/ssl/ca/temp
-mkdir		$ELKINSTALLDIR/ssl/ca/root-ca/db
-mkdir		$ELKINSTALLDIR/ssl/ca/signing-ca/db
+mkdir -p	$ELKINSTALLDIR/ssl/ca/temp
+mkdir -p	$ELKINSTALLDIR/ssl/ca/root-ca/db
+mkdir -p	$ELKINSTALLDIR/ssl/ca/signing-ca/db
+mkdir -p	$ELKINSTALLDIR/ssl/ca/root-ca/private
+mkdir -p	$ELKINSTALLDIR/ssl/ca/signing-ca/private
 
 echo 01 > 	$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.crt.srl
 echo 01 > 	$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.crl.srl
