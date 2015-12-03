@@ -1,25 +1,38 @@
 #!/bin/bash
 
-echo "THIS SCRIPT WILL PREPARE THE SSL CERTIFICATES REQUIRED"
-echo "FOR THE ELASTICSEARCH INSTALLATION. IT WILL CREATE"
-echo "CERTIFICATES AND KEYSTORES FOR EVERY NODE LISTED IN THE"
-echo "/hiera/nodes DIRECTORY AND USE A GIVEN CA AUTHORITY (ssl/ca/...)."
-echo "TO SIGN THEM."
-echo ""
-echo "USE THIS SCRIPT ONLY FOR TEST PURPOSES, IF YOU DO NOT WANT"
-echo "TO SERVE YOUR OWN CERTIFICATES, BECAUSE THE CERTS CREATED"
-echo "HERE WILL NOT BE SECURE."
-echo ""
-echo "THE CREATED CERTS WILL BE STORED IN THE SSL DIRECTORY."
-echo "IF YOU WANT TO PROVIDE YOUR OWN CERTIFICATES, PLACE THEM"
-echo "IN THIS ssl DIRECTORY."
-echo ""
-echo "PRESS ANY KEY TO CONTINUE"
+echo -e "--------------------------------------------------------"
+echo -e "SSL CERTIFICATE GENERATION SCRIPT"
+echo -e "--------------------------------------------------------"
+echo -e "This script will create all SSL artifacts which are required"
+echo -e "for a working elasticsearch installation."
+echo -e " "
+echo -e "It will create ca Root CA and a Signing CA, and will then"
+echo -e "iterate over all nodes defined under \"hiera/nodes\" and"
+echo -e "create a keystore for every node and a common truststore".
+echo -e " "
+echo -e "All finally required artifacts will be created into the \"ssl\""
+echo -e "directory. The following artifacts well be created:"
+echo -e " "
+echo -e " - *node*-keystore.jks \t| one keystore for every node"
+echo -e " - truststore.jks\t| the truststore for every node"
+echo -e " - root-ca.crt  \t| the Root CA certificate"
+echo -e " - signing-ca.crt \t| the Signin certificate"
+echo -e " - kibana.crt 	\t| the ssl certificate for kibanas https"
+echo -e " - kibana.key 	\t| the private key for kibanas https"
+echo -e " - kibana.pub 	\t| the public key for kibanas https"
+echo -e " "
+echo -e "--------------------------------------------------------"
+echo -e "If you want to provide your own certificates instead of"
+echo -e "using the generated ones, start with executing this script"
+echo -e "and replace the generated files with your own ones, so you"
+echo -e "will know which files are required and how to name them."
+echo -e ""
+echo -e "PRESS ANY KEY TO CONTINUE"
 
 read
 
 # set the home of the installer directory
-export ELKINSTALLDIR="/home/server/elastic";
+export ELKINSTALLDIR="/home/tobias/viega/elastic";
 
 # ---------------------------------------------------------------------
 # clean up
@@ -59,7 +72,7 @@ openssl req -new \
 openssl ca -selfsign \
     -config ca/conf/root-ca.conf \
     -in ca/temp/root-ca.csr \
-    -out ca/temp/root-ca.crt \
+    -out root-ca.crt \
     -extensions root_ca_ext \
     -batch \
     -passin pass:codecentric
@@ -76,7 +89,7 @@ openssl req -new \
 openssl ca \
     -config ca/conf/root-ca.conf \
     -in ca/temp/signing-ca.csr \
-    -out ca/temp/signing-ca.crt \
+    -out signing-ca.crt \
     -extensions signing_ca_ext \
     -batch \
     -passin pass:codecentric
@@ -85,7 +98,7 @@ openssl ca \
 # create a truststore and add the root CA
 keytool  \
     -import  \
-    -file ca/temp/root-ca.crt  \
+    -file root-ca.crt  \
     -keystore truststore.jks   \
     -storepass codecentric  \
     -noprompt -alias root-ca
@@ -93,7 +106,7 @@ keytool  \
 # add the signing certificate to the truststore
 keytool  \
     -import \
-    -file ca/temp/signing-ca.crt  \
+    -file signing-ca.crt  \
     -keystore truststore.jks   \
     -storepass codecentric  \
     -noprompt -alias sig-ca
@@ -149,7 +162,7 @@ for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 	# import the root CA into the keystore
 	keytool \
 		-import \
-		-file ca/temp/root-ca.crt \
+		-file root-ca.crt \
 		-keystore $node-keystore.jks \
 		-storepass codecentric \
 		-noprompt \
@@ -158,7 +171,7 @@ for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 	# import the signing certificate into the keystore
 	keytool \
 		-import \
-		-file ca/temp/signing-ca.crt \
+		-file signing-ca.crt \
 		-keystore $node-keystore.jks \
 		-storepass codecentric \
 		-noprompt \
@@ -175,4 +188,26 @@ for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 
 done 		
 
+
+
+# ---------------------------------------------------------------------
+# create kibana https artifacts
+# ---------------------------------------------------------------------
+
+	# create a pem encoded ssl certificate and a private key
+	openssl req \
+		-config ca/conf/kibana.conf \
+		-nodes \
+		-new \
+		-x509 \
+		-sha256 \
+		-keyout kibana.key \
+		-out kibana.crt \
+		-batch
+	
+	# reduce permissions which is needed for ssh-keygen
+	chmod 600 kibana.key
+
+	# extract the public key out of the private key
+	ssh-keygen -f kibana.key -y -e -m pem > kibana.pub
 

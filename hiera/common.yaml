@@ -31,7 +31,7 @@ elasticsearch::config:
       truststore.password: codecentric
     transport.ssl: true
     http.ssl: true
-installelknode::adddefaultuser::defaultadminname: esadmin
-installelknode::adddefaultuser::defaultadminpass: esadmin
+installelknode::configureshield::defaultadminname: esadmin
+installelknode::configureshield::defaultadminpass: esadmin
 installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin

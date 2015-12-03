@@ -8,11 +8,7 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installelknode(
-							# TODO: brauchen wir das hier noch !?
-	$defaultadminname = "esadmin",
-	$defaultadminpass = "esadmin"
-) {
+class installelknode {
 
 	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
@@ -45,7 +41,7 @@ class installelknode(
 	->
 
 	# add the default admin user
-	class { 'installelknode::adddefaultuser' : 
+	class { 'installelknode::configureshield' : 
 	}
 
 	->
@@ -71,16 +67,16 @@ class installelknode(
 } 
 
 # addition class to add the default admin user to the es configuration
-class installelknode::adddefaultuser(
-	$defaultadminname = "esadmin",
-	$defaultadminpass = "esadmin"
+class installelknode::configureshield(
+	$defaultadmin_name = "esadmin",
+	$defaultadmin_pass = "esadmin"
 ) {
 	# create an admin user
 	exec { 'shield-create-esadmin':
 		user => "root",
 		cwd => "/usr/share/elasticsearch/bin/shield",
-		command	=> "/usr/share/elasticsearch/bin/shield/esusers useradd $defaultadminname -p $defaultadminpass -r admin",
-		unless  => "/usr/share/elasticsearch/bin/shield/esusers list | grep -c $defaultadminname",
+		command	=> "/usr/share/elasticsearch/bin/shield/esusers useradd $defaultadmin_name -p $defaultadmin_pass -r admin",
+		unless  => "/usr/share/elasticsearch/bin/shield/esusers list | grep -c $defaultadmin_name",
 		path 	=> ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
 	}
 	->

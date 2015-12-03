@@ -112,12 +112,12 @@ class installkibana {
   	}
 }
 
-
 class installkibana::configkibana(
 
-	$sslsourcescert = '/tmp/elkinstalldir/puppet/files/ssl/elkcluster.crt',
+	$sslsourcescert = '/tmp/elkinstalldir/ssl/kibana.crt',
+	$sslsourceskey  = '/tmp/elkinstalldir/ssl/kibana.key',
+
 	$sslcacert      = '/tmp/elkinstalldir/ssl/ca/temp/root-ca.crt',
-	$sslsourceskey  = '/tmp/elkinstalldir/puppet/files/ssl/elkcluster.key',
 	$kibanaelkuser  = 'esadmin',
 	$kibanaelkpass  = 'esadmin'	
 ) {
@@ -127,7 +127,7 @@ class installkibana::configkibana(
 	# the own ip adress of the host (defaults to eth0 ip)
 	$address = inline_template("<%= scope.lookupvar('::ipaddress_eth1') -%>")
 
-	# create the kibana init script. copy it from the checked out git repository
+	# copy the https ssl key into kibana
 	file { '/opt/kibana4/ssl/elkcluster.key' :
 		source => $sslsourceskey,
 		owner => "kibana",
@@ -135,7 +135,7 @@ class installkibana::configkibana(
 		mode => "0600",
 	} ->
 
-        # add jks keystore
+	# copy the ssl root-ca into kibana
         file { '/opt/kibana4/ssl/root-ca.crt' :
                 source => $sslcacert,
                 owner => "elasticsearch",
@@ -143,7 +143,7 @@ class installkibana::configkibana(
                 mode => "0755",
         } ->
 
-	# create the kibana init script. copy it from the checked out git repository
+	# copy the https ssl cert into kibana
 	file { '/opt/kibana4/ssl/elkcluster.crt' :
 		source => $sslsourcescert,
 		owner => "kibana",
@@ -166,15 +166,6 @@ class installkibana::configkibana(
 	  match	=> '#?server.ssl.cert:*',
 	} ->
 
-
-        # adjust the kibana configuration by setting the ssl cert path
-        # to enable https
-        file_line { 'Add root ca for ssl to server':
-          path => '/opt/kibana4/config/kibana.yml',
-          line   => "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt",
-          match => '#?elasticsearch.ssl.ca:*',
-        } ->
-
 	# adjust the kibana configuration by setting the ssl key path
 	# to enable https
 	file_line { 'Add https key to server':
@@ -182,6 +173,14 @@ class installkibana::configkibana(
 	  line => "server.ssl.key: /opt/kibana4/ssl/elkcluster.key",
 	  match	=> '#?server.ssl.key:*',
 	} ->
+
+	# adjust the kibana configuration by setting the ssl cert path
+        # to enable ssl between kibana and elk
+        file_line { 'Add root ca for ssl to server':
+          path => '/opt/kibana4/config/kibana.yml',
+          line   => "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt",
+          match => '#?elasticsearch.ssl.ca:*',
+        } ->
 
 	# add elasticsearch user to config
 	file_line { 'Add elk user to config':
