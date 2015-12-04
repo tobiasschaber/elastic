@@ -114,7 +114,7 @@ class installkibana {
 	# install the timelion plugin for kibana with a simple shell command
 	exec { "install-timelion-kibana-plugin":
 		path => ["/usr/local/bin", "/bin", "/usr/bin", "/usr/local/sbin"],
-		command => "/opt/kibana4/bin/kibana plugin --install elastic/timelion",
+		command => "/opt/kibana4/bin/kibana plugin --install kibana/timelion",
 		onlyif => "test ! -d /opt/kibana4/installedPlugins/timelion",
 		user => "root",
 		cwd => "/opt/kibana4/",
