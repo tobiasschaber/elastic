@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+# set the home of the installer directory
+export ELKINSTALLDIR="/home/tobias/work/elastic";
+
 echo -e "--------------------------------------------------------"
 echo -e "SSL CERTIFICATE GENERATION SCRIPT"
 echo -e "--------------------------------------------------------"
@@ -30,9 +34,6 @@ echo -e ""
 echo -e "PRESS ANY KEY TO CONTINUE"
 
 read
-
-# set the home of the installer directory
-export ELKINSTALLDIR="/home/tobias/viega/elastic";
 
 # ---------------------------------------------------------------------
 # clean up
