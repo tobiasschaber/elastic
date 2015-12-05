@@ -1,7 +1,7 @@
 ---
 elkcluster::masternodes:
-  - 10.0.3.101
-  - 10.0.3.102
+  - elkmaster1
+  - elkmaster2
 logstash::nodes:
   - 10.0.3.121
 elasticsearch::restart_on_change: false
