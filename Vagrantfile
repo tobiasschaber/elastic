@@ -2,6 +2,19 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
+   config.ssh.insert_key = false
+
+
+   # allow hostname resolution
+   config.vm.provision :hosts do |prov|
+	prov.add_host '10.0.3.101', ['elkmaster1']
+	prov.add_host '10.0.3.102', ['elkmaster2']
+	prov.add_host '10.0.3.111', ['elkdata1']
+        prov.add_host '10.0.3.112', ['elkdata2']
+        prov.add_host '10.0.3.113', ['elkdata3']
+        prov.add_host '10.0.3.121', ['logstash1']
+   end
+
    # elk data server 1
    config.vm.define "elkdata1" do |elkdata1|
 
@@ -80,20 +93,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    end
 
 
-#   # logstash server
-#   config.vm.define "logstash1" do |logstash1|
-#
-#	logstash1.vm.box = "bento/centos-6.7"
-#	logstash1.vm.hostname = "logstash1"
-#	logstash1.vm.network "public_network", ip: "10.0.3.121", :bridge => "lxcbr0"
-#	logstash1.vm.network "private_network", type: "dhcp"
-#	logstash1.vm.provision :shell, :path => "install-logstash.sh"
-#	logstash1.vm.provider "virtualbox" do |v|
-#                 v.memory = 3072
-#                 v.cpus = 2
-#         end
-#   end
+   # logstash server
+   config.vm.define "logstash1" do |logstash1|
 
+	logstash1.vm.box = "bento/centos-6.7"
+	logstash1.vm.hostname = "logstash1"
+	logstash1.vm.network "public_network", ip: "10.0.3.121", :bridge => "lxcbr0"
+	logstash1.vm.network "private_network", type: "dhcp"
+	logstash1.vm.provision :shell, :path => "install-logstash.sh"
+	logstash1.vm.provider "virtualbox" do |v|
+                 v.memory = 3072
+                 v.cpus = 2
+         end
+    end
 end
 
 

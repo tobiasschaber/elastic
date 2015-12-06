@@ -24,6 +24,16 @@ class installlogstash {
 		content => template("/tmp/elkinstalldir/puppet/templates/logstash-central.conf.erb"),
 		order => 10
 	}
+
+        # add jks truststore
+        file { '/etc/logstash/truststore.jks' :
+                source => "/tmp/elkinstalldir/ssl/truststore.jks",
+                owner => "logstash",
+                group => "logstash",
+                mode => "0755",
+        }
+
+
 } 
 
 # trigger puppet execution

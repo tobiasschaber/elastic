@@ -17,15 +17,17 @@ output {
         }
 
         elasticsearch {
-		<% @mastnodes = scope.function_hiera(['elkcluster::masternodes']) -%>
+        
+			<% @mastnodes = scope.function_hiera(['elkcluster::masternodes']) -%>
+        
+			hosts => [<% @mastnodes.each do |val| -%>"<%= val %>",<% end -%>],
+			index => "%{targetindex}-%{+YYYY.MM.dd}",
+			user => "esadmin",
+			password => "esadmin",
+			truststore => "/etc/logstash/truststore.jks", 
+			truststore_password => "codecentric",
+			ssl => "true"
 
-		hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
-		index => "default-%{+YYYY.MM.dd}"
-		user => "esadmin"
-		password => "esadmin"
-		truststore => "/etc/logstash/truststore.jks"
-		truststore_password => "codecentric"
-		ssl => "true"
 	}
 }
 
