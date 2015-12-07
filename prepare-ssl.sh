@@ -4,6 +4,32 @@
 # set the home of the installer directory
 export ELKINSTALLDIR="/home/tobias/work/elastic";
 
+# set the private password for the Root CA key
+rootca_keypass="codecentric"
+
+# set the private password for the Signing CA key
+signingca_keypass="codecentric"
+
+# set the password for the truststore jks
+truststore_storepass="codecentric"
+
+# set the private password for the Node key(s)
+node_keypass="codecentric"
+
+# set the password for the node keystore(s)
+node_keystore_storepass="codecentric"
+
+
+# check if the working directory exists and that the ssl subdirectory exists
+if [ ! -d "$ELKINSTALLDIR" ] || [ ! -d "$ELKINSTALLDIR/ssl" ]
+then
+	echo "ERROR: The work directory does not exist. "
+	echo "Resolution: Adjust \"ELKINSTALLDIR\" in this script. Set it to your \"elastic\" directory where the \"ssl\" directory is inside."
+	echo "Then re-run the prepare-ssl.sh script."
+	exit;
+fi
+
+
 echo -e "--------------------------------------------------------"
 echo -e "SSL CERTIFICATE GENERATION SCRIPT"
 echo -e "--------------------------------------------------------"
@@ -38,10 +64,10 @@ read
 # ---------------------------------------------------------------------
 # clean up
 # ---------------------------------------------------------------------
-rm 		$ELKINSTALLDIR/ssl/*.*
-rm		$ELKINSTALLDIR/ssl/temp/*.*
-rm		$ELKINSTALLDIR/ssl/ca/root-ca/db/*.*
-rm		$ELKINSTALLDIR/ssl/ca/signing-ca/db/*.*
+rm -f		$ELKINSTALLDIR/ssl/*.*
+rm -f		$ELKINSTALLDIR/ssl/temp/*.*
+rm -f		$ELKINSTALLDIR/ssl/ca/root-ca/db/*.*
+rm -f		$ELKINSTALLDIR/ssl/ca/signing-ca/db/*.*
 
 mkdir -p	$ELKINSTALLDIR/ssl/ca/temp
 mkdir -p	$ELKINSTALLDIR/ssl/ca/root-ca/db
@@ -66,60 +92,62 @@ touch		$ELKINSTALLDIR/ssl/ca/signing-ca/db/signing-ca.db.attr
 
 cd $ELKINSTALLDIR/ssl
 
-# generate a self signed CA certificate
 
+# generate a self signed CA certificate (create root-ca.key) 
+# and a signing request for it (root-ca.csr)
 openssl req -new \
     -config ca/conf/root-ca.conf \
     -out ca/temp/root-ca.csr \
     -keyout ca/root-ca/private/root-ca.key \
     -batch \
-    -passout pass:codecentric
-	
-# self-sign the certificate
+    -passout pass:$rootca_keypass
+
+# fulfill the signing request and create the signed certificate (create root-ca.crt)
 openssl ca -selfsign \
     -config ca/conf/root-ca.conf \
     -in ca/temp/root-ca.csr \
     -out root-ca.crt \
     -extensions root_ca_ext \
     -batch \
-    -passin pass:codecentric
+    -passin pass:$rootca_keypass
 
-# generate a signing certificate
+# generate a signing certificate (create signing-ca.key)
+# and a signing request for it (signing-ca.csr)
 openssl req -new \
     -config ca/conf/signing-ca.conf \
     -out ca/temp/signing-ca.csr \
     -keyout ca/signing-ca/private/signing-ca.key \
     -batch \
-    -passout pass:codecentric
+    -passout pass:$signingca_keypass
 	
-# sign the signing certificate with the Root CA
+# fulfill the signing request (sign it with the Root CA) and create the signed certificate (create signing-ca.crt)
 openssl ca \
     -config ca/conf/root-ca.conf \
     -in ca/temp/signing-ca.csr \
     -out signing-ca.crt \
     -extensions signing_ca_ext \
     -batch \
-    -passin pass:codecentric
-	
+    -passin pass:$rootca_keypass
 
-# create a truststore and add the root CA
+# create a jks truststore and add the root CA (create truststore.jks)
 keytool  \
     -import  \
-    -file root-ca.crt  \
-    -keystore truststore.jks   \
-    -storepass codecentric  \
+    -file root-ca.crt \
+    -keystore truststore.jks \
+    -storepass $truststore_storepass \
     -noprompt -alias root-ca
 
-# add the signing certificate to the truststore
+# add the signing certificate to the truststore (update truststore.jks)
 keytool  \
     -import \
     -file signing-ca.crt  \
     -keystore truststore.jks   \
-    -storepass codecentric  \
+    -storepass $truststore_storepass  \
     -noprompt -alias sig-ca
 
+
 # ---------------------------------------------------------------------
-# iterate over all nodes to be installed
+# iterate over all nodes to be installed and create their keys and jks
 # ---------------------------------------------------------------------
 
 for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
@@ -130,32 +158,31 @@ for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 	# extract the ip adress defined in the hiera yaml file for this host
 	ipaddr=$(less $ELKINSTALLDIR/hiera/nodes/"$node".yaml | grep 'network.publish_host' | cut -f 2 -d ':' | tr -d ' ')
 	
-	# create a keystore for the node
+	# create a keystore for the node with an initial key (create $node-keystore.jks)
 	keytool -genkey \
 		-alias $node \
 		-keystore $node-keystore.jks \
 	        -keyalg    RSA \
 	        -keysize   2048 \
 	        -validity  712 \
-		-keypass codecentric \
-		-storepass codecentric \
+		-keypass $node_keypass \
+		-storepass $node_keystore_storepass \
                 -dname "CN=$node, OU=Karlsruhe, O=codecentric AG, L=Karlsruhe, S=BW, C=DE" \
 		-validity 10000
 		# -ext san=dns:"$node",ip:"$ipaddr"
 
-	# create a certification request for the node
+	# create a signing request for the node (create $node.csr)
 	keytool -certreq \
 	        -alias      $node \
 	        -keystore   $node-keystore.jks \
 	        -file       ca/temp/$node.csr \
 	        -keyalg     rsa \
-	        -keypass codecentric \
-	        -storepass codecentric \
+	        -keypass $node_keypass \
+	        -storepass $node_keystore_storepass \
                 -dname "CN=$node, OU=Karlsruhe, O=codecentric AG, L=Karlsruhe, S=BW, C=DE" \
 		# -ext san=dns:"$node",ip:"$ipaddr"
 
-
-	# sign the certification request
+	# fulfill the signing request for the node key and create the signed certificate (signed with the Signing CA) (create $node-signed.crt)
 	openssl ca \
 		-in ca/temp/$node.csr \
 		-notext \
@@ -163,38 +190,37 @@ for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 		-config ca/conf/signing-ca.conf \
 		-extensions v3_req \
 		-batch \
-		-passin pass:codecentric \
+		-passin pass:$signingca_keypass \
 		-extensions server_ext
 
-	# import the root CA into the keystore
+	# import the Root CA into the keystore (update $node-keystore.jks)
 	keytool \
 		-import \
 		-file root-ca.crt \
 		-keystore $node-keystore.jks \
-		-storepass codecentric \
+		-storepass $node_keystore_storepass \
 		-noprompt \
 		-alias root-ca
 
-	# import the signing certificate into the keystore
+	# import the Signing CA certificate into the keystore (update $node-keystore.jks)
 	keytool \
 		-import \
 		-file signing-ca.crt \
 		-keystore $node-keystore.jks \
-		-storepass codecentric \
+		-storepass $node_keystore_storepass \
 		-noprompt \
 		-alias sig-ca
 
-	# import the certificate for the node into the keystore
+	# import the signed node certificate into the keystore (update $node-keystore.jks)
 	keytool \
 		-import \
 		-file ca/temp/$node-signed.crt \
 		-keystore $node-keystore.jks \
-		-storepass codecentric \
+		-storepass $node_keystore_storepass \
+		-keypass $node_keypass \
 		-noprompt \
 		-alias $node
-
 done 		
-
 
 
 # ---------------------------------------------------------------------
