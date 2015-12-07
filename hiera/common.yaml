@@ -7,6 +7,8 @@ logstash::nodes:
 elasticsearch::restart_on_change: false
 elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.1.0/elasticsearch-2.1.0.rpm
 elasticsearch::package_provider: package
+elasticsearch::java_install: true
+elasticsearch::java_package: java-1.8.0-openjdk.x86_64
 elasticsearch::config:
   cluster:
     name: elkcluster

@@ -18,7 +18,6 @@ class installelknode {
 		status => enabled,
 		elasticsearch_user => 'elasticsearch',
 		elasticsearch_group => 'elasticsearch',
-		java_install => true,
 	} 
 	->
 	
