@@ -7,6 +7,14 @@ export ELKINSTALLDIR="/vagrant";
 # where the installer location directory will be
 sudo ln -s $ELKINSTALLDIR /tmp/elkinstalldir
 
+# check ssl setup: test if truststore exists
+if [ ! -f $ELKINSTALLDIR/ssl/truststore.jks ] 
+then
+	echo "ERROR: The required file \"ssl/truststore.jks\" does not exist."
+	echo "Please run \"prepare-ssl.sh\" before booting any vagrant boxes or insert your own jks files!"
+	exit;
+fi
+
 # install the required repositories and packages via yum
 rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
 
