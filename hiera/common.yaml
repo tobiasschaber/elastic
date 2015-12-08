@@ -8,7 +8,7 @@ elasticsearch::restart_on_change: false
 elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.1.0/elasticsearch-2.1.0.rpm
 elasticsearch::package_provider: package
 elasticsearch::java_install: true
-elasticsearch::java_package: java-1.8.0-openjdk.x86_64
+elasticsearch::java_package: jdk1.8.0_65.x86_64
 elasticsearch::config:
   cluster:
     name: elkcluster
@@ -24,9 +24,6 @@ elasticsearch::config:
         files.users: /etc/elasticsearch/es-01/shield/users
         files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
     ssl:
-      ciphers:
-        - TLS_RSA_WITH_AES_128_CBC_SHA256
-        - TLS_RSA_WITH_AES_128_CBC_SHA
       keystore.path: /etc/elasticsearch/es-01/shield/es01-keystore.jks
       keystore.password: codecentric
       keystore.key_password: codecentric

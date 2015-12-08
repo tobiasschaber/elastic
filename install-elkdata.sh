@@ -29,6 +29,12 @@ rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
 # install puppet and git
 yum install puppet -y
 
+# download the oracle java 8 rpm
+sudo wget -q --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.rpm"
+
+# register the oracle java 8 rpm in yum
+sudo rpm -ivh jdk-8u65-linux-x64.rpm
+
 # install all puppet modules which are required for the following installation
 sudo puppet module install puppetlabs-stdlib
 sudo puppet module install puppetlabs-java
@@ -46,11 +52,5 @@ sudo wget https://raw.githubusercontent.com/elastic/puppet-elasticsearch/master/
 
 # install elasticsearch master node via puppet
 sudo puppet apply --debug /tmp/elkinstalldir/puppet/manifests/install-elknode.pp  --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml
-
-
-#####################################################################################################################################################
-# WORKAROUND: IT SEEMS THAT WITH CENTOS7 THE PKCS PROVIDER IS DISABLED AND SHOULD BE ENABLED
-#####################################################################################################################################################
-#sudo sed -i 's/#security.provider.10/security.provider.10/g' /usr/lib/jvm/jre-1.8.0/lib/security/java.security
 
 sudo systemctl restart elasticsearch-es-01
