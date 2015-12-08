@@ -24,7 +24,7 @@ then
 fi
 
 # add the rpm repository for puppet
-rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
 
 # install puppet and git
 yum install puppet -y
@@ -36,19 +36,33 @@ sudo puppet module install ceritsc-yum
 sudo puppet module install elasticsearch-elasticsearch
 sudo puppet module install maestrodev-wget
 
+
+#####################################################################################################################################################
+# WORKAROUND: the currently released elasticsearch puppet module service start script is not 2.X ready so we check out the not yet released one
+#####################################################################################################################################################
+sudo rm /etc/puppet/modules/elasticsearch/templates/etc/init.d/elasticsearch.systemd.erb
+sudo wget https://raw.githubusercontent.com/elastic/puppet-elasticsearch/master/templates/etc/init.d/elasticsearch.systemd.erb -P /etc/puppet/modules/elasticsearch/templates/etc/init.d
+# WORKAROUND ENDED ##################################################################################################################################
+
+
 # install elasticsearch master node via puppet
 sudo puppet apply --debug /tmp/elkinstalldir/puppet/manifests/install-elknode.pp  --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml
+
+#####################################################################################################################################################
+# WORKAROUND: IT SEEMS THAT WITH CENTOS7 THE PKCS PROVIDER IS DISABLED AND SHOULD BE ENABLED
+#####################################################################################################################################################
+#sudo sed -i 's/#security.provider.10/security.provider.10/g' /usr/lib/jvm/jre-1.8.0/lib/security/java.security
 
 # install kibana4 via puppet
 sudo puppet apply /tmp/elkinstalldir/puppet/manifests/install-kibana.pp --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml
 
 
-# TEMPORARY FIX!
-# FIXES ACCESS DENIED PROBLEM ON KIBANA BABELCACHE FILE WHICH IS OWNED BY ROOT
+#####################################################################################################################################################
+# WORKAROUND: FIXES ACCESS DENIED PROBLEM ON KIBANA BABELCACHE FILE WHICH IS OWNED BY ROOT
+#####################################################################################################################################################
 sudo chown kibana:kibana /opt/kibana4/optimize/.babelcache.json
 
-
 # restart ELK service
-sudo service elasticsearch-es-01 restart
+sudo systemctl restart elasticsearch-es-01
 
 

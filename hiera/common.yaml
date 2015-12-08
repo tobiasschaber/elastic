@@ -16,7 +16,6 @@ elasticsearch::config:
     zen.ping.multicast.enabled: false
     zen.ping.unicast.hosts:
      - 10.0.3.101
-     - 10.0.3.102
   shield:
     authc.realms:
       esusers_default:
@@ -25,6 +24,9 @@ elasticsearch::config:
         files.users: /etc/elasticsearch/es-01/shield/users
         files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
     ssl:
+      ciphers:
+        - TLS_RSA_WITH_AES_128_CBC_SHA256
+        - TLS_RSA_WITH_AES_128_CBC_SHA
       keystore.path: /etc/elasticsearch/es-01/shield/es01-keystore.jks
       keystore.password: codecentric
       keystore.key_password: codecentric

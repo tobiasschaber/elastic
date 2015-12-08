@@ -45,3 +45,9 @@ If you have any problems with nokogiri gem installation, try this before install
 
 sudo apt-get install zlib1g-dev
 
+
+### TODOS ###
+
+hiera config of shield.ssl.cipher should be left at the default value. I removed TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA from the list because on CentOS7 it seems that the JVM does not support that / makes a security provider configuration necessary.
+
+
