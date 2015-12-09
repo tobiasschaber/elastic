@@ -8,7 +8,7 @@ elasticsearch::restart_on_change: false
 elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.1.0/elasticsearch-2.1.0.rpm
 elasticsearch::package_provider: package
 elasticsearch::java_install: true
-elasticsearch::java_package: java-1.8.0-openjdk.x86_64
+elasticsearch::java_package: jdk1.8.0_65.x86_64
 elasticsearch::config:
   cluster:
     name: elkcluster
@@ -16,7 +16,6 @@ elasticsearch::config:
     zen.ping.multicast.enabled: false
     zen.ping.unicast.hosts:
      - 10.0.3.101
-     - 10.0.3.102
   shield:
     authc.realms:
       esusers_default:

@@ -16,7 +16,7 @@ then
 fi
 
 # install the required repositories and packages via yum
-rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
 
 
 # install puppet and git

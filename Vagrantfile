@@ -2,7 +2,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-   config.ssh.insert_key = false
+#   config.ssh.insert_key = false
 
 
    # allow hostname resolution
@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # elk data server 1
    config.vm.define "elkdata1" do |elkdata1|
 
-	elkdata1.vm.box = "bento/centos-6.7"
+	elkdata1.vm.box = "bento/centos-7.1"
 	elkdata1.vm.hostname = "elkdata1"
 	elkdata1.vm.network "public_network", ip: "10.0.3.111", :bridge => "lxcbr0"
 	elkdata1.vm.network "private_network", type: "dhcp"
@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # elk master server 1
    config.vm.define "elkmaster1" do |elkmaster1|
    
-	elkmaster1.vm.box = "bento/centos-6.7"
+	elkmaster1.vm.box = "bento/centos-7.1"
 	elkmaster1.vm.hostname = "elkmaster1"
 	elkmaster1.vm.network "public_network", ip: "10.0.3.101", :bridge => "lxcbr0"
 	elkmaster1.vm.network "private_network", type: "dhcp"
@@ -49,7 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # elk master server 2
   config.vm.define "elkmaster2" do |elkmaster2|
 
-	elkmaster2.vm.box = "bento/centos-6.7"
+	elkmaster2.vm.box = "bento/centos-7.1"
 	elkmaster2.vm.hostname = "elkmaster2"
 	elkmaster2.vm.network "public_network", ip: "10.0.3.102", :bridge => "lxcbr0"
 	elkmaster2.vm.network "private_network", type: "dhcp"
@@ -65,7 +65,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # elk data server 2
    config.vm.define "elkdata2" do |elkdata2|
 
-	elkdata2.vm.box = "bento/centos-6.7"
+	elkdata2.vm.box = "bento/centos-7.1"
 	elkdata2.vm.hostname = "elkdata2"
 	elkdata2.vm.network "public_network", ip: "10.0.3.112", :bridge => "lxcbr0"
 	elkdata2.vm.network "private_network", type: "dhcp"
@@ -80,7 +80,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # elk data server 3
    config.vm.define "elkdata3" do |elkdata3|
 
-        elkdata3.vm.box = "bento/centos-6.7"
+        elkdata3.vm.box = "bento/centos-7.1"
         elkdata3.vm.hostname = "elkdata3"
         elkdata3.vm.network "public_network", ip: "10.0.3.113", :bridge => "lxcbr0"
         elkdata3.vm.network "private_network", type: "dhcp"
@@ -96,7 +96,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # logstash server
    config.vm.define "logstash1" do |logstash1|
 
-	logstash1.vm.box = "bento/centos-6.7"
+	logstash1.vm.box = "bento/centos-7.1"
 	logstash1.vm.hostname = "logstash1"
 	logstash1.vm.network "public_network", ip: "10.0.3.121", :bridge => "lxcbr0"
 	logstash1.vm.network "private_network", type: "dhcp"
