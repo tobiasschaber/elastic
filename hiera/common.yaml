@@ -40,7 +40,7 @@ elasticsearch::config:
     http.ssl: true
 installelknode::configureshield::defaultadminname: esadmin
 installelknode::configureshield::defaultadminpass: esadmin
-installkibana:kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.tar.gz
+installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.tar.gz
 installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin
 installkibana::configkibana::kibana_user: kibana
