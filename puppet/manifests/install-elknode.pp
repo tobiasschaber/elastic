@@ -11,6 +11,9 @@
 class installelknode {
 
 	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
+        $elk_user = hiera('elasticsearch::elasticsearch_user', 'elasticsearch')
+        $elk_group = hiera('elasticsearch::elasticsearch_group', 'elasticsearch')
+
 
 	# start the installation of elasticsearch
 	class { 'elasticsearch' :
@@ -46,16 +49,16 @@ class installelknode {
 	# add jks keystore
 	file { '/etc/elasticsearch/es-01/shield/es01-keystore.jks' :
 		source => "/tmp/elkinstalldir/ssl/${ownhost}-keystore.jks",
-		owner => "elasticsearch",
-		group => "elasticsearch",
+		owner => $elk_user,
+		group => $elk_group,
 		mode => "0755",
 	} ->
 
 	# add jks truststore
 	file { '/etc/elasticsearch/es-01/shield/es01-truststore.jks' :
 		source => "/tmp/elkinstalldir/ssl/truststore.jks",
-		owner => "elasticsearch",
-		group => "elasticsearch",
+		owner => $elk_user,
+		group => $elk_group,
 		mode => "0755",
 	}
 
@@ -79,7 +82,7 @@ class installelknode::configureshield(
 	->
 	# workarround: copy esuser files into elasticsearch config directory to be found
 	exec { 'copy-esuser-files-into-elk-config-dir':
-		user => "root",
+		user => hiera('elasticsearch::elasticsearch_user', 'elasticsearch'),
 		command	=> "cp -r /etc/elasticsearch/shield /etc/elasticsearch/es-01",
 		path 	=> ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
 	}
