@@ -10,46 +10,45 @@ class installkibana {
 	# adjust this for your personal installation.
 	$kibanainitlocation 	= '/tmp/elkinstalldir/puppet/files/kibanainit'
 	
-	# define the path where the puppet files have been checked out from the git repository
-	# adjust this for your personal installation.
-	$kibanadefaultlocation 	= '/tmp/elkinstalldir/puppet/files/kibanadefault'
+        # get the url to the kibana installer archive
+	$kibanaurl =    hiera('installkibana::kibanaurl')
+        $kibana_user =  hiera('installkibana::configkibana::kibana_user', 'kibana')
+        $kibana_group = hiera('installkibana::configkibana::kibana_group', 'kibana')
 
-	$kibanaurl = 'https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.tar.gz'
-		
 	# create the kibana users group
 	group { 'create-kibana-group':
-		name => "kibana",
+		name => $kibana_group,
 		ensure => "present",
 	}
 
 	# create the kibana user
 	user { 'create-kibana-user':
-		name => "kibana",
-		groups => ["kibana"],
+		name => $kibana_user,
+		groups => [$kibana_group],
 		ensure => "present",
 	} ->
 
-	# download the kibana 4.2.0 installer via a wget and save it unter /tmp/...
+	# download the kibana installer via a wget and save it unter /tmp/...
 	wget::fetch { 'download_kibana4':
 		source      => $kibanaurl,
 		destination => "/tmp/kibana.tar.gz",
 		timeout     => 0,
 		verbose     => false,
-		execuser    => "kibana",
+		execuser    => $kibana_user,
 	} ->
 
 	# ensure that the kibana4 installation directory exists
 	file { "/opt/kibana4":
 		ensure => "directory",
-		owner => "kibana",
-		group => "kibana"
+		owner => $kibana_user,
+		group => $kibana_group,
 	} ->
 	
 	# extract the kibana4 archive into the target installation directory
 	exec { "untar-kibana4":	
 		command => "tar -xvf /tmp/kibana.tar.gz -C /opt/kibana4 --strip-components=1",
 		path => "/bin",
-		user => "kibana",
+		user => $kibana_user,
   	} ->
 
 	# ensure that a kibana configuration was created and exists now
@@ -60,15 +59,15 @@ class installkibana {
 	# ensure that the kibana ssl directory exists and has correct rights
 	file { '/opt/kibana4/ssl' :
 		ensure => "directory",
-		owner => "kibana",
-		group => "kibana",
+		owner => $kibana_user,
+		group => $kibana_group,
 		mode => "0600",
 	} ->
 
 
 	# create the kibana init script. copy it from the checked out git repository
 	file { '/etc/init.d/kibana' :
-		source => $kibanainitlocation,
+                source => $kibanainitlocation,
 		owner => "root",
 		group => "root",
 		mode => "0755",
@@ -76,7 +75,7 @@ class installkibana {
 
 	# create the kibana default script. copy it from the checked out git repository
 	file { '/etc/default/kibana' :
-		source => $kibanadefaultlocation,
+		content => template("/tmp/elkinstalldir/puppet/templates/kibanadefault.erb"),
 		owner => "root",
 		group => "root",
 		mode => "0755",
@@ -125,10 +124,9 @@ class installkibana::configkibana(
 
 	$sslsourcescert = '/tmp/elkinstalldir/ssl/kibana.crt',
 	$sslsourceskey  = '/tmp/elkinstalldir/ssl/kibana.key',
-
 	$sslcacert      = '/tmp/elkinstalldir/ssl/root-ca.crt',
 	$kibanaelkuser  = 'esadmin',
-	$kibanaelkpass  = 'esadmin'	
+	$kibanaelkpass  = 'esadmin'
 ) {
 
 	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
@@ -136,27 +134,30 @@ class installkibana::configkibana(
 	# the own ip adress of the host (defaults to eth0 ip)
 	$address = inline_template("<%= scope.lookupvar('::ipaddress_eth1') -%>")
 
+        $kibana_user = hiera('installkibana::configkibana::kibana_user', 'kibana')
+        $kibana_group = hiera('installkibana::configkibana::kibana_group', 'kibana')
+
 	# copy the https ssl key into kibana
 	file { '/opt/kibana4/ssl/elkcluster.key' :
 		source => $sslsourceskey,
-		owner => "kibana",
-		group => "kibana",
+		owner => $kibana_user,
+		group => $kibana_group,
 		mode => "0600",
 	} ->
 
 	# copy the ssl root-ca into kibana
         file { '/opt/kibana4/ssl/root-ca.crt' :
                 source => $sslcacert,
-                owner => "elasticsearch",
-                group => "elasticsearch",
+		owner => $kibana_user,
+		group => $kibana_group,
                 mode => "0755",
         } ->
 
 	# copy the https ssl cert into kibana
 	file { '/opt/kibana4/ssl/elkcluster.crt' :
 		source => $sslsourcescert,
-		owner => "kibana",
-		group => "kibana",
+		owner => $kibana_user,
+		group => $kibana_group,
 	} ->
 
 	# adjust the kibana configuration by setting the correct elasticsearch url.
@@ -201,7 +202,7 @@ class installkibana::configkibana(
 	# add elasticsearch pass to config
 	file_line { 'Add elk pass to config':
 	  path => '/opt/kibana4/config/kibana.yml', 
-	  line => "elasticsearch.password: $kibanaelkuser",
+	  line => "elasticsearch.password: $kibanaelkpass",
 	  match	=> '#?elasticsearch.password:*',
 	}
 }

@@ -21,11 +21,12 @@ output {
 
 		hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
 		index => "default-%{+YYYY.MM.dd}"
-		user => "esadmin"
-		password => "esadmin"
+		user => "<%= @logstash_elkuser %>"
+		password => "<%= @logstash_elkpass %>"
 		truststore => "/etc/logstash/truststore.jks"
-		truststore_password => "codecentric"
+		truststore_password => "<%= @truststore_pass %>"
 		ssl => "true"
+
 	}
 }
 
