@@ -34,6 +34,19 @@ elasticsearch::config:
       truststore.password: codecentric
     transport.ssl: true
     http.ssl: true
+elasticsearch::plugins:
+  elasticsearch/license/latest:
+    instances:
+      - es-01
+  marvel-agent:
+    instances:
+      - es-01
+  elasticsearch/watcher/latest:
+    instances:
+      - es-01
+  elasticsearch/shield/latest:
+    instances:
+      - es-01
 installelknode::configureshield::defaultadminname: esadmin
 installelknode::configureshield::defaultadminpass: esadmin
 installkibana::configkibana::kibanaelkuser: esadmin
