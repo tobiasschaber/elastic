@@ -12,12 +12,10 @@ class installelknode {
 
 	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
-	# start the installation with version 2.0.0
+	# start the installation of elasticsearch
 	class { 'elasticsearch' :
 		ensure => present,
 		status => enabled,
-		elasticsearch_user => 'elasticsearch',
-		elasticsearch_group => 'elasticsearch',
 	} 
 	->
 	

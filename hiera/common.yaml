@@ -9,6 +9,8 @@ elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/rele
 elasticsearch::package_provider: package
 elasticsearch::java_install: true
 elasticsearch::java_package: jdk1.8.0_65.x86_64
+elasticsearch::elasticsearch_user: elasticsearch
+elasticsearch::elasticsearch_group: elasticsearch
 elasticsearch::config:
   cluster:
     name: elkcluster
