@@ -34,10 +34,10 @@ You also have to re-run the "prepare-ssl.sh" script and reprovision all already 
 
 Most configuration is done in the hiere files in the "hiera" directory. Here are some of the most important properties which are not coming via external puppet modules:
 
-installkibana::configkibana::enablehttps: (true/false) enable https for kibana frontend
-elasticsearch::config:shield:transport.ssl: (true/false) enable ssl for encrypted communication between nodes
-elasticsearch::config:shield:http.ssl: (true/false) enable https for elk REST API
-installelknode::configureshield::defaultadminname: the admin user 
+- installkibana::configkibana::enablehttps: (true/false) enable https for kibana frontend
+- elasticsearch::config:shield:transport.ssl: (true/false) enable ssl for encrypted communication between nodes
+- elasticsearch::config:shield:http.ssl: (true/false) enable https for elk REST API
+- installelknode::configureshield::defaultadminname: the admin user 
 
 ### Installation of vagrant hosts plugin ###
 
