@@ -45,3 +45,4 @@ installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin
 installkibana::configkibana::kibana_user: kibana
 installkibana::configkibana::kibana_group: kibana
+installkibana::configkibana::enablehttps: true

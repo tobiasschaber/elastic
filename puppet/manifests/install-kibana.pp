@@ -15,6 +15,14 @@ class installkibana {
         $kibana_user =  hiera('installkibana::configkibana::kibana_user', 'kibana')
         $kibana_group = hiera('installkibana::configkibana::kibana_group', 'kibana')
 
+        $elk_config     = hiera('elasticsearch::config')
+        
+        # enable ssl between kibana and elasticsearch?
+        $enableelkssl   = $elk_config['shield']['http.ssl']
+
+        # enable https between kibana and client browser
+        $enablehttps    = hiera('installkibana::configkibana::enablehttps')
+
 	# create the kibana users group
 	group { 'create-kibana-group':
 		name => $kibana_group,
@@ -97,6 +105,8 @@ class installkibana {
 
 	# perform the configuration steps
 	class { 'installkibana::configkibana' : 
+                enablehttps    => $enablehttps,
+                enablessl      => $enableelkssl
 	}
 
 	->
@@ -126,8 +136,31 @@ class installkibana::configkibana(
 	$sslsourceskey  = '/tmp/elkinstalldir/ssl/kibana.key',
 	$sslcacert      = '/tmp/elkinstalldir/ssl/root-ca.crt',
 	$kibanaelkuser  = 'esadmin',
-	$kibanaelkpass  = 'esadmin'
+	$kibanaelkpass  = 'esadmin',
+        $enablehttps    = false,
+        $enablessl      = false,
 ) {
+
+        if($enablehttps == true) {
+                $ensurehttps = present
+                $server_sslcert_line    = "server.ssl.cert: /opt/kibana4/ssl/elkcluster.crt"
+                $server_sslkey_line     = "server.ssl.key: /opt/kibana4/ssl/elkcluster.key"
+        } else {
+                $ensurehttps = absent
+                $server_sslcert_line    = "#server.ssl.cert: "
+                $server_sslkey_line     = "#server.ssl.key: "
+        }
+
+        if($enablessl == true) {
+                $ensuressl = present
+                $urlprotocol = 'https'
+                $elk_sslca_line = "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt"
+        } else {
+                $ensuressl = absent
+                $urlprotocol = 'http'
+                $elk_sslca_line = "#elasticsearch.ssl.ca: "
+
+        }
 
 	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
@@ -143,6 +176,7 @@ class installkibana::configkibana(
 		owner => $kibana_user,
 		group => $kibana_group,
 		mode => "0600",
+                ensure => $ensurehttps,
 	} ->
 
 	# copy the ssl root-ca into kibana
@@ -151,6 +185,7 @@ class installkibana::configkibana(
 		owner => $kibana_user,
 		group => $kibana_group,
                 mode => "0755",
+                ensure => $ensuressl,
         } ->
 
 	# copy the https ssl cert into kibana
@@ -158,21 +193,27 @@ class installkibana::configkibana(
 		source => $sslsourcescert,
 		owner => $kibana_user,
 		group => $kibana_group,
+                ensure => $ensurehttps,
 	} ->
 
 	# adjust the kibana configuration by setting the correct elasticsearch url.
 	# kibana will connect to elasticsearch on its own localhost
 	file_line { 'Add es to config.yml':
 	  path => '/opt/kibana4/config/kibana.yml', 
-	  line => "elasticsearch.url: \"https://${ownhost}:9200\"",
+	  line => "elasticsearch.url: \"$urlprotocol://${ownhost}:9200\"",
 	  match => 'elasticsearch.url:*',
 	} ->
+
+
+
+
+
 
 	# adjust the kibana configuration by setting the ssl cert path
 	# to enable https
 	file_line { 'Add https crt to server':
 	  path => '/opt/kibana4/config/kibana.yml', 
-	  line	 => "server.ssl.cert: /opt/kibana4/ssl/elkcluster.crt",
+	  line	 => $server_sslcert_line,
 	  match	=> '#?server.ssl.cert:*',
 	} ->
 
@@ -180,7 +221,7 @@ class installkibana::configkibana(
 	# to enable https
 	file_line { 'Add https key to server':
 	  path => '/opt/kibana4/config/kibana.yml', 
-	  line => "server.ssl.key: /opt/kibana4/ssl/elkcluster.key",
+	  line => $server_sslkey_line,
 	  match	=> '#?server.ssl.key:*',
 	} ->
 
@@ -188,7 +229,7 @@ class installkibana::configkibana(
         # to enable ssl between kibana and elk
         file_line { 'Add root ca for ssl to server':
           path => '/opt/kibana4/config/kibana.yml',
-          line   => "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt",
+          line   => $elk_sslca_line,
           match => '#?elasticsearch.ssl.ca:*',
         } ->
 
@@ -206,7 +247,7 @@ class installkibana::configkibana(
 	  match	=> '#?elasticsearch.password:*',
 	}
 }
-
+        
 
 
 # trigger puppet execution
