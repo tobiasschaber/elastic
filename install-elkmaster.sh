@@ -3,8 +3,9 @@
 # set the home of the installer directory
 export ELKINSTALLDIR="/vagrant";
 
-# run the preparation script for elasticsearch node installation
+# run the preparation scripts for elasticsearch node installation
 chmod +x $ELKINSTALLDIR/installation/*.sh
+source $ELKINSTALLDIR/installation/prepare-java.sh
 source $ELKINSTALLDIR/installation/prepare-install-elknode.sh
 
 # install elasticsearch master node via puppet

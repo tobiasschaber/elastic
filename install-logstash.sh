@@ -7,6 +7,10 @@ export ELKINSTALLDIR="/vagrant";
 # where the installer location directory will be
 sudo ln -s $ELKINSTALLDIR /tmp/elkinstalldir
 
+# run the preparation script for logstash
+chmod +x $ELKINSTALLDIR/installation/*.sh
+source $ELKINSTALLDIR/installation/prepare-java.sh
+
 # check ssl setup: test if truststore exists
 if [ ! -f $ELKINSTALLDIR/ssl/truststore.jks ] 
 then
