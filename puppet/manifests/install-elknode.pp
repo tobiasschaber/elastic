@@ -8,11 +8,12 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installelknode {
+class installelknode(
 
-	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
-        $elk_user = hiera('elasticsearch::elasticsearch_user', 'elasticsearch')
-        $elk_group = hiera('elasticsearch::elasticsearch_group', 'elasticsearch')
+) {
+        $elk_config     = hiera('elasticsearch::config')
+        $enablessl      = $elk_config['shield']['transport.ssl']
+        $enablehttps    = $elk_config['shield']['http.ssl']
 
 
 	# start the installation of elasticsearch
@@ -41,10 +42,34 @@ class installelknode {
 	->
 
 	# add the default admin user
-	class { 'installelknode::configureshield' : 
+	class { 'installelknode::configureshield' :
 	}
 
 	->
+
+        class { 'installelknode::addkeystores' :
+                enablessl => $enablessl,
+                enablehttps => $enablehttps,
+        }
+}
+
+
+
+# install the required jks trust- and keystores
+class installelknode::addkeystores(
+        $enablessl = false,
+        $enablehttps = false,
+        $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>"),
+        $elk_user = hiera('elasticsearch::elasticsearch_user', 'elasticsearch'),
+        $elk_group = hiera('elasticsearch::elasticsearch_group', 'elasticsearch')
+) {
+
+        # check if truststore is needed
+        if($enablehttps == true or $enablessl == true) {
+                $ensurejks = present
+        } else {
+                $ensurejks = absent
+        }
 
 	# add jks keystore
 	file { '/etc/elasticsearch/es-01/shield/es01-keystore.jks' :
@@ -52,6 +77,7 @@ class installelknode {
 		owner => $elk_user,
 		group => $elk_group,
 		mode => "0755",
+                ensure => $ensurejks,
 	} ->
 
 	# add jks truststore
@@ -60,17 +86,17 @@ class installelknode {
 		owner => $elk_user,
 		group => $elk_group,
 		mode => "0755",
+                ensure => $ensurejks,
 	}
+}
 
-
-	
-} 
 
 # addition class to add the default admin user to the es configuration
 class installelknode::configureshield(
 	$defaultadmin_name = "esadmin",
 	$defaultadmin_pass = "esadmin"
 ) {
+
 	# create an admin user
 	exec { 'shield-create-esadmin':
 		user => "root",

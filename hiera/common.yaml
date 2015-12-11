@@ -7,6 +7,7 @@ logstash::nodes:
 logstash::logstash_user: logstash
 logstash::logstash_group: logstash
 logstash::java_install: true
+logstash::java_package: jdk1.8.0_65.x86_64
 logstash::repo_version: '2.0'
 elasticsearch::restart_on_change: false
 elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.1.0/elasticsearch-2.1.0.rpm
@@ -45,3 +46,4 @@ installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin
 installkibana::configkibana::kibana_user: kibana
 installkibana::configkibana::kibana_group: kibana
+installkibana::configkibana::enablehttps: true

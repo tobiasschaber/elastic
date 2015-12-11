@@ -23,10 +23,11 @@ output {
 		index => "default-%{+YYYY.MM.dd}"
 		user => "<%= @logstash_elkuser %>"
 		password => "<%= @logstash_elkpass %>"
-		truststore => "/etc/logstash/truststore.jks"
-		truststore_password => "<%= @truststore_pass %>"
+            <% if @enableelkssl == true %>
+                truststore => "/etc/logstash/truststore.jks"
+                truststore_password => "<%= @truststore_pass %>"
 		ssl => "true"
-
+            <% end %>
 	}
 }
 
