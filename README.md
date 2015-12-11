@@ -32,8 +32,12 @@ You also have to re-run the "prepare-ssl.sh" script and reprovision all already 
 
 ### Configuration ###
 
-Most configuration is done in the hiere files in the "hiera" directory.
+Most configuration is done in the hiere files in the "hiera" directory. Here are some of the most important properties which are not coming via external puppet modules:
 
+- installkibana::configkibana::enablehttps: (true/false) enable https for kibana frontend
+- elasticsearch::config:shield:transport.ssl: (true/false) enable ssl for encrypted communication between nodes
+- elasticsearch::config:shield:http.ssl: (true/false) enable https for elk REST API
+- installelknode::configureshield::defaultadminname: the admin user 
 
 ### Installation of vagrant hosts plugin ###
 
@@ -48,6 +52,5 @@ sudo apt-get install zlib1g-dev
 
 ### TODOS ###
 
-hiera config of shield.ssl.cipher should be left at the default value. I removed TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA from the list because on CentOS7 it seems that the JVM does not support that / makes a security provider configuration necessary.
 
 
