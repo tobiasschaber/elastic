@@ -49,7 +49,7 @@ installkibana::configkibana::kibana_group: kibana
 installkibana::configkibana::enablehttps: true
 installkibana::plugins:
   elasticsearch/marvel/latest:
-    shortname: marvel
+    source: package
   kibana/timelion:
-    shortname: timelion
+    source: package
 

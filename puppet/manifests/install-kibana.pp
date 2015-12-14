@@ -6,6 +6,7 @@
 #
 class installkibana {
 
+
 	# define the path where the puppet files have been checked out from the git repository
 	# adjust this for your personal installation.
 	$kibanainitlocation 	= '/tmp/elkinstalldir/puppet/files/kibanainit'
@@ -232,23 +233,22 @@ class installkibana::configkibana(
 }
         
 # define the installation routine which installs an kibana plugin
-define installkibana::installplugins($shortname) {
+# $source parameter is currently not read.
+define installkibana::installplugins($source) {
+
+        # calculate the "short form" of the plugin name,
+        # for example "marvel" in "elasticsearch/marvel/latest".
+        $shortArray = split($name, '/')
+        $shortname = $shortArray[1]
 
 	# itearte over all kibana plugins and install them
 	exec { $name:
 		path => ["/usr/local/bin", "/bin", "/usr/bin", "/usr/local/sbin"],
 		command => "/opt/kibana4/bin/kibana plugin --install $name",
-		onlyif => "test ! -d /opt/kibana4/installedPlugins/$shortname",
+                creates => "/opt/kibana4/installedPlugins/$shortname",
 		user => "root",
 		cwd => "/opt/kibana4/",
   	}
-
-  #      notify { $name:
- #               message => "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO name ${name} name ${shortname}",
-#        }
-
-
-
 }
 
 # trigger puppet execution
