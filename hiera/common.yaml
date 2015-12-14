@@ -47,3 +47,9 @@ installkibana::configkibana::kibanaelkpass: esadmin
 installkibana::configkibana::kibana_user: kibana
 installkibana::configkibana::kibana_group: kibana
 installkibana::configkibana::enablehttps: true
+installkibana::plugins:
+  elasticsearch/marvel/latest:
+    shortname: marvel
+  kibana/timelion:
+    shortname: timelion
+

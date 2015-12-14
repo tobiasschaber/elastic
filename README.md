@@ -39,6 +39,10 @@ Most configuration is done in the hiere files in the "hiera" directory. Here are
 - elasticsearch::config:shield:http.ssl: (true/false) enable https for elk REST API
 - installelknode::configureshield::defaultadminname: the admin user 
 
+### Installation of Kibana plugins
+
+Kibana plugins can be installed by passing them in via hiera. Have a look at the default hiera/common.yaml where you can find two examples, where the timelion and the marvel plugin are installed automatically.
+
 ### Installation of vagrant hosts plugin ###
 
 The installation of the vagrant hosts plugin will be done by:

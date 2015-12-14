@@ -23,6 +23,14 @@ class installkibana {
         # enable https between kibana and client browser
         $enablehttps    = hiera('installkibana::configkibana::enablehttps')
 
+        $pluginlist = hiera_hash('installkibana::plugins', $::installkibana::plugins)
+
+        # if the plugin list exists
+        if $pluginlist {
+                # pass the plugin list hash to the installer function
+                create_resources('installkibana::installplugins', $pluginlist)
+        }
+
 	# create the kibana users group
 	group { 'create-kibana-group':
 		name => $kibana_group,
@@ -108,26 +116,6 @@ class installkibana {
                 enablehttps    => $enablehttps,
                 enablessl      => $enableelkssl
 	}
-
-	->
-
-	# install the marvel plugin for kibana with a simple shell command
-	exec { "install-marvel-kibana-plugin":
-		path => ["/usr/local/bin", "/bin", "/usr/bin", "/usr/local/sbin"],
-		command => "/opt/kibana4/bin/kibana plugin --install elasticsearch/marvel/latest",
-		onlyif => "test ! -d /opt/kibana4/installedPlugins/marvel",
-		user => "root",
-		cwd => "/opt/kibana4/",
-  	} ->
-
-	# install the timelion plugin for kibana with a simple shell command
-	exec { "install-timelion-kibana-plugin":
-		path => ["/usr/local/bin", "/bin", "/usr/bin", "/usr/local/sbin"],
-		command => "/opt/kibana4/bin/kibana plugin --install kibana/timelion",
-		onlyif => "test ! -d /opt/kibana4/installedPlugins/timelion",
-		user => "root",
-		cwd => "/opt/kibana4/",
-  	}
 }
 
 class installkibana::configkibana(
@@ -204,11 +192,6 @@ class installkibana::configkibana(
 	  match => 'elasticsearch.url:*',
 	} ->
 
-
-
-
-
-
 	# adjust the kibana configuration by setting the ssl cert path
 	# to enable https
 	file_line { 'Add https crt to server':
@@ -248,7 +231,25 @@ class installkibana::configkibana(
 	}
 }
         
+# define the installation routine which installs an kibana plugin
+define installkibana::installplugins($shortname) {
 
+	# itearte over all kibana plugins and install them
+	exec { $name:
+		path => ["/usr/local/bin", "/bin", "/usr/bin", "/usr/local/sbin"],
+		command => "/opt/kibana4/bin/kibana plugin --install $name",
+		onlyif => "test ! -d /opt/kibana4/installedPlugins/$shortname",
+		user => "root",
+		cwd => "/opt/kibana4/",
+  	}
+
+  #      notify { $name:
+ #               message => "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO name ${name} name ${shortname}",
+#        }
+
+
+
+}
 
 # trigger puppet execution
 include installkibana
