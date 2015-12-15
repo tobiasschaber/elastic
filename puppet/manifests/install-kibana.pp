@@ -248,6 +248,7 @@ define installkibana::installplugins($source) {
                 creates => "/opt/kibana4/installedPlugins/$shortname",
 		user => "root",
 		cwd => "/opt/kibana4/",
+                require => Class['installkibana::configkibana']
   	}
 }
 
