@@ -1,7 +1,7 @@
 ---
-elkcluster::masternodes:
-  - elkmaster1
-  - elkmaster2
+elkcluster::clientnodes:
+  - elkclient1
+  - elkclient2
 logstash::nodes:
   - 10.0.3.121
 logstash::logstash_user: logstash
