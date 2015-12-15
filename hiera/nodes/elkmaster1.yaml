@@ -6,3 +6,4 @@ elasticsearch::instances:
       network.publish_host: 10.0.3.101
       node.data: false
       node.master: true
+      http.enabled: false
