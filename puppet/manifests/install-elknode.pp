@@ -21,23 +21,6 @@ class installelknode(
 		ensure => present,
 		status => enabled,
 	} 
-	->
-	
-	elasticsearch::plugin{'elasticsearch/license/latest':
-		instances  => 'es-01'
-	} 
-	->
-	elasticsearch::plugin{'marvel-agent':
-		instances  => 'es-01'
-	}
-	->
-	elasticsearch::plugin{'elasticsearch/watcher/latest':
-		instances  => 'es-01'
-	}
-	->
-	elasticsearch::plugin{'elasticsearch/shield/latest':
-		instances  => 'es-01'
-	}
 
 	->
 
