@@ -75,10 +75,11 @@ mkdir -p	$ELKINSTALLDIR/ssl/ca/signing-ca/db
 mkdir -p	$ELKINSTALLDIR/ssl/ca/root-ca/private
 mkdir -p	$ELKINSTALLDIR/ssl/ca/signing-ca/private
 
-echo 01 > 	$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.crt.srl
-echo 01 > 	$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.crl.srl
-echo 01 > 	$ELKINSTALLDIR/ssl/ca/signing-ca/db/signing-ca.crt.srl
-echo 01 > 	$ELKINSTALLDIR/ssl/ca/signing-ca/db/signing-ca.crl.srl
+# write random hex values to create unused serial numbers
+cat /dev/urandom | tr -cd 'a-f0-9' | head -c 16 > 	$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.crt.srl
+cat /dev/urandom | tr -cd 'a-f0-9' | head -c 16 > 	$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.crl.srl
+cat /dev/urandom | tr -cd 'a-f0-9' | head -c 16 > 	$ELKINSTALLDIR/ssl/ca/signing-ca/db/signing-ca.crt.srl
+cat /dev/urandom | tr -cd 'a-f0-9' | head -c 16 > 	$ELKINSTALLDIR/ssl/ca/signing-ca/db/signing-ca.crl.srl
 
 touch	 	$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.db
 touch		$ELKINSTALLDIR/ssl/ca/root-ca/db/root-ca.db.attr
@@ -154,6 +155,10 @@ for nodeFile in "$ELKINSTALLDIR"/hiera/nodes/*.yaml ; do
 
 	# extract the node name
 	node=$(basename "$nodeFile" | cut -f 1 -d '.')
+
+        echo "---------------------------------------------------------------------"
+        echo "Creating certs for node: $node"
+        echo "---------------------------------------------------------------------"
 
 	# extract the ip adress defined in the hiera yaml file for this host
 	ipaddr=$(less $ELKINSTALLDIR/hiera/nodes/"$node".yaml | grep 'network.publish_host' | cut -f 2 -d ':' | tr -d ' ')
