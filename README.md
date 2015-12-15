@@ -14,20 +14,30 @@ If you want to start up an elasticsearch cluster via vagrant, you need the follo
 ### How to quick start? ###
 
 * Execute the "prepare-ssl.sh" shell script which will create all required ssl certs for you
-* perform a "vagrant up" to startup all nodes
+* perform a "vagrant up elkdata1 elkmaster1 elkclient1" to start a "minimal" cluster
 
-Attention: "vagrant up" will start up quite a lot of vms. That may exceed your hardware limits! See the "Extended setup" chapter to avoid this.
+Attention: Using "vagrant up" will start up quite a lot of vms. That may exceed your hardware limits! See the "Extended setup" chapter to avoid this.
+
+Kibana is not automatically startet, so use "vagrant ssh elkclient1" to connect to the client node and run "sudo systemctl start kibana" to start kibana.
+
+External links: 
+- Kibana: https://localhost:15601
+- ELK REST API: https://localhost:19200
 
 ### Extended setup ###
 
 In the Vagrantfile, there are many vms defined. The default setup contains for example:
 - 3 data nodes
 - 2 master nodes
+- 2 client nodes
 - 1 logstash node
 
-You can uncomment some of the nodes. The minimal setup is to run only one data and one master node. Instead of running "vagrant up", you could run "vagrant up elkdata1 elkmaster" to only run the minimum setup.
+If you have a huge amount of hardware resources, you could run "vagrant up" to start *all* nodes. If not, try one of the following setups:
+- vagrant up elkdata1 elkmaster1 elkclient1 (For a minimum setup)
+- vagrant up elkdata1 elkmaster1 elkclient1 logstash1 (For a setup with logstash)
+- vagrant up elkdata1 elkdata2 elkmaster1 elkclient1 (For a setup with two data nodes)
 
-If you have enough hardware and want to add more nodes, you can just copy and adjust the node blocks in the Vagrantfile. If you add new nodes, you also have to create new hiera files under "hiera/nodes" where the filename must match the hostname of the new nodes. Simply copy from an existing file and adjust the filname and contents of the file! 
+If you add new nodes, you also have to create new hiera files under "hiera/nodes" where the filename must match the hostname of the new nodes. Simply copy from an existing file and adjust the filname and contents of the file! 
 You also have to re-run the "prepare-ssl.sh" script and reprovision all already running nodes.
 
 ### Configuration ###
