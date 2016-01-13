@@ -15,6 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         prov.add_host '10.0.3.121', ['logstash1']
         prov.add_host '10.0.3.131', ['elkclient1']
         prov.add_host '10.0.3.132', ['elkclient2']
+        prov.add_host '10.0.3.141', ['redis1master1']
+        prov.add_host '10.0.3.142', ['redis1slave1']
    end
 
    # elk data server 1
@@ -138,6 +140,36 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	logstash1.vm.provision :shell, :path => "installation/prepare-install.sh"
 	logstash1.vm.provision :shell, :path => "install-logstash.sh"
 	logstash1.vm.provider "virtualbox" do |v|
+                 v.memory = 3072
+                 v.cpus = 2
+         end
+    end
+
+   # redis 1 master node 1
+   config.vm.define "redis1master1" do |redis1master1|
+
+	redis1master1.vm.box = "bento/centos-7.1"
+	redis1master1.vm.hostname = "redis1master1"
+	redis1master1.vm.network "public_network", ip: "10.0.3.141", :bridge => "lxcbr0"
+	redis1master1.vm.network "private_network", type: "dhcp"
+	redis1master1.vm.provision :shell, :path => "installation/prepare-install.sh"
+	redis1master1.vm.provision :shell, :path => "install-redis.sh"
+	redis1master1.vm.provider "virtualbox" do |v|
+                 v.memory = 3072
+                 v.cpus = 2
+         end
+    end
+
+   # redis 1 slave node 1
+   config.vm.define "redis1slave1" do |redis1slave1|
+
+	redis1slave1.vm.box = "bento/centos-7.1"
+	redis1slave1.vm.hostname = "redis1slave1"
+	redis1slave1.vm.network "public_network", ip: "10.0.3.142", :bridge => "lxcbr0"
+	redis1slave1.vm.network "private_network", type: "dhcp"
+	redis1slave1.vm.provision :shell, :path => "installation/prepare-install.sh"
+	redis1slave1.vm.provision :shell, :path => "install-redis.sh"
+	redis1slave1.vm.provider "virtualbox" do |v|
                  v.memory = 3072
                  v.cpus = 2
          end

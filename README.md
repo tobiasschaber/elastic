@@ -16,11 +16,11 @@ If you want to start up an elasticsearch cluster via vagrant, you need the follo
 * Execute the "prepare-ssl.sh" shell script which will create all required ssl certs for you
 * perform a "vagrant up elkdata1 elkmaster1 elkclient1" to start a "minimal" cluster
 
-Attention: Using "vagrant up" will start up quite a lot of vms. That may exceed your hardware limits! See the "Extended setup" chapter to avoid this.
+Attention: Using "vagrant up" will start up quite a lot of vms. That may exceed your hardware limits! See the "extended setup" chapter to avoid this.
 
 Kibana is not automatically startet, so use "vagrant ssh elkclient1" to connect to the client node and run "sudo systemctl start kibana" to start kibana.
 
-External links: 
+External URLs: 
 - Kibana: https://localhost:15601
 - ELK REST API: https://localhost:19200
 
@@ -31,6 +31,8 @@ In the Vagrantfile, there are many vms defined. The default setup contains for e
 - 2 master nodes
 - 2 client nodes
 - 1 logstash node
+- 1 redis master
+- 1 redis slave
 
 If you have a huge amount of hardware resources, you could run "vagrant up" to start *all* nodes. If not, try one of the following setups:
 - vagrant up elkdata1 elkmaster1 elkclient1 (For a minimum setup)
@@ -64,7 +66,13 @@ If you have any problems with nokogiri gem installation, try this before install
 sudo apt-get install zlib1g-dev
 
 
-### TODOS ###
+### Using Redis
+
+There are two nodes (redis1master1 and redis1slave1) which start up as a simple, small redis cluster.
+Logstash is not automatically configured to use this redis nodes, so you have to adjust the configuration
+for your scenario.
+
+
 
 
 
