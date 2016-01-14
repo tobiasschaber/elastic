@@ -1,0 +1,2 @@
+---
+installlogstash::prepareconfigfile::logstash_role: indexer

@@ -10,6 +10,7 @@ class installlogstash {
         $truststore_pass  = $elk_config['shield']['ssl']['truststore.password']
         $logstash_elkuser = hiera('installelknode::configureshield::defaultadminname', 'logstash')
         $logstash_elkpass = hiera('installelknode::configureshield::defaultadminpass', 'logstash')
+        $redis_password   = hiera('redis::masterauth')
 
         # enable ssl between kibana and elasticsearch?
         $enableelkssl   = $elk_config['shield']['http.ssl']
@@ -21,13 +22,11 @@ class installlogstash {
 		status => "running",
 	}
 
-	# copy a config file based on a template
-	# attention! the path to this file depends on the git clone target directory and may be adjusted!
-	logstash::configfile { 'central' :
-		content => template("/tmp/elkinstalldir/puppet/templates/logstash-central.conf.erb"),
-		order => 10
-	} 
+        # create the logstash config file
+	class { 'installlogstash::prepareconfigfile' :
 
+        }
+        
         ->
 
 	# perform the configuration steps
@@ -37,6 +36,17 @@ class installlogstash {
                 logstash_group => hiera('logstash::logstash_group'),
 	}
 } 
+
+class installlogstash::prepareconfigfile(
+	$logstash_role = "indexer",
+) {
+	# copy a config file based on a template
+	# attention! the path to this file depends on the git clone target directory and may be adjusted!
+	logstash::configfile { 'central' :
+		content => template("/tmp/elkinstalldir/puppet/templates/logstash-central.conf.erb"),
+		order => 10
+	}
+}
 
 class installlogstash::configlogstash(
 
