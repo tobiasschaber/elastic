@@ -2,8 +2,11 @@
 elkcluster::clientnodes:
   - elkclient1
   - elkclient2
-logstash::nodes:
-  - 10.0.3.121
+redis::nodes:
+  - 10.0.3.141
+  - 10.0.3.142
+redis::masterauth: cctestpass
+redis::requirepass: cctestpass
 logstash::logstash_user: logstash
 logstash::logstash_group: logstash
 logstash::java_install: true

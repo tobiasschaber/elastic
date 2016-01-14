@@ -1,14 +1,31 @@
 input {
 
-	file {
-		path => "/tmp/input"
-	}
+        <% if @logstash_role == "indexer" %>
+                <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                <% @redisnodes.each do |redisnode| -%>
 
-#        lumberjack {
-#                port => 15102
-#                ssl_certificate => "/etc/ssl/certs/logforwarder.crt"
-#                ssl_key => "/etc/ssl/logforwarder.key"
-#        }
+                redis {
+                       host => "<%= redisnode %>"
+                       key => "logstash"
+                       data_type => "list"
+                       password => "<%= @redis_password %>"
+                       codec => json
+                }
+                <% end -%>
+
+        <% else %>
+
+        	file {
+        		path => "/tmp/input"
+        	}
+
+#               lumberjack {
+#                        port => 15102
+#                        ssl_certificate => "/etc/ssl/certs/logforwarder.crt"
+#                        ssl_key => "/etc/ssl/logforwarder.key"
+#               }
+        <% end %>
+
 }
 output {
         file {
@@ -16,18 +33,35 @@ output {
                 codec => rubydebug
         }
 
-        elasticsearch {
-		<% @mastnodes = scope.function_hiera(['elkcluster::clientnodes']) -%>
+        <% if @logstash_role == "indexer" or @logstash_role == "default" %>
 
-		hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
-		index => "default-%{+YYYY.MM.dd}"
-		user => "<%= @logstash_elkuser %>"
-		password => "<%= @logstash_elkpass %>"
-            <% if @enableelkssl == true %>
-                truststore => "/etc/logstash/truststore.jks"
-                truststore_password => "<%= @truststore_pass %>"
-		ssl => "true"
-            <% end %>
-	}
+                elasticsearch {
+		        <% @mastnodes = scope.function_hiera(['elkcluster::clientnodes']) -%>
+
+		        hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
+		        index => "default-%{+YYYY.MM.dd}"
+		        user => "<%= @logstash_elkuser %>"
+		        password => "<%= @logstash_elkpass %>"
+                    <% if @enableelkssl == true %>
+                        truststore => "/etc/logstash/truststore.jks"
+                        truststore_password => "<%= @truststore_pass %>"
+		        ssl => "true"
+                    <% end %>
+        	}
+
+        <% else %>
+
+                redis {
+                        <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                        host => [<%= @redisnodes.map{ |rnode| "\"#{rnode}\""}.join(',') %>]
+                        data_type => "list"
+                        key => "logstash"
+                        codec => json
+                        password => "<%= @redis_password %>"
+                        shuffle_hosts => true
+                        
+                }
+
+        <% end %>
 }
 

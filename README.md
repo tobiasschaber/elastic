@@ -35,12 +35,15 @@ In the Vagrantfile, there are many vms defined. The default setup contains for e
 - 1 redis slave
 
 If you have a huge amount of hardware resources, you could run "vagrant up" to start *all* nodes. If not, try one of the following setups:
-- vagrant up elkdata1 elkmaster1 elkclient1 (For a minimum setup)
-- vagrant up elkdata1 elkmaster1 elkclient1 logstash1 (For a setup with logstash)
+- vagrant up elkdata1 elkmaster1 elkclient1 (For a minimum ELK cluster setup)
 - vagrant up elkdata1 elkdata2 elkmaster1 elkclient1 (For a setup with two data nodes)
+- execute vagrant up elkdata1 elkmaster1 elkclient1 logstash1
+- vagrant up elkdata1 elkmaster1 elkclient1 redis1 logstashshipper1 logstashindexer1 (For a full logstash/redis/elk pipeline)
 
-If you add new nodes, you also have to create new hiera files under "hiera/nodes" where the filename must match the hostname of the new nodes. Simply copy from an existing file and adjust the filname and contents of the file! 
-You also have to re-run the "prepare-ssl.sh" script and reprovision all already running nodes.
+Please note: If you start up less nodes than mentioned in your redis configuration (e.g. if you do not start up all nodes which are listed in the common.yaml -> redis::nodes),
+you might get some errors because some hosts are not reachable.
+
+If you add new nodes on your own, you also have to create new hiera files under "hiera/nodes" where the filename must match the hostname of the new nodes. Simply copy from an existing file and adjust the filname and contents of the file! You also have to re-run the "prepare-ssl.sh" script and reprovision all already running nodes!
 
 ### Configuration ###
 
@@ -51,7 +54,7 @@ Most configuration is done in the hiere files in the "hiera" directory. Here are
 - elasticsearch::config:shield:http.ssl: (true/false) enable https for elk REST API
 - installelknode::configureshield::defaultadminname: the admin user 
 
-### Installation of Kibana plugins
+### Installation of Kibana plugins ###
 
 Kibana plugins can be installed by passing them in via hiera. Have a look at the default hiera/common.yaml where you can find two examples, where the timelion and the marvel plugin are installed automatically.
 
@@ -66,11 +69,13 @@ If you have any problems with nokogiri gem installation, try this before install
 sudo apt-get install zlib1g-dev
 
 
-### Using Redis
+### Redis and Logstash scenarios ###
 
-There are two nodes (redis1master1 and redis1slave1) which start up as a simple, small redis cluster.
-Logstash is not automatically configured to use this redis nodes, so you have to adjust the configuration
-for your scenario.
+There are two redis nodes (redis1 and redis2) which start up as independent nodes. They do NOT build
+a cluster or are configured with a failover mechanism.
+
+If you want to use redis, you can set up two logstash instances: one shipper and one indexer. Depending on their
+configuration they will use redis as input and elasticsearch as output (indexer) or file input and redis output (shipper).
 
 
 

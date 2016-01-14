@@ -1,4 +1,0 @@
----
-redis::bind: 10.0.3.142
-redis::slaveof: 10.0.3.141 6379
-redis::masterauth: cctestpass
