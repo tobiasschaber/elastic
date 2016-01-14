@@ -38,8 +38,14 @@ class installlogstash {
 } 
 
 class installlogstash::prepareconfigfile(
-	$logstash_role = "indexer",
+	$logstash_role = "default",
 ) {
+
+        # check role parameter
+        if ! ($logstash_role in [ 'indexer', 'default', 'shipper' ]) {
+                fail("\"${logstash_role}\" is not valid for logstash_role. valid are: indexer, shipper or default.")
+        }
+
 	# copy a config file based on a template
 	# attention! the path to this file depends on the git clone target directory and may be adjusted!
 	logstash::configfile { 'central' :
