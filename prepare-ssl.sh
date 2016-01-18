@@ -249,3 +249,24 @@ done
 	# extract the public key out of the private key
 	ssh-keygen -f kibana.key -y -e -m pem > kibana.pub
 
+
+# ---------------------------------------------------------------------
+# create stunnel artifacts
+# ---------------------------------------------------------------------
+
+	# create a pem encoded ssl certificate and a private key
+	openssl req \
+		-config ca/conf/stunnel.conf \
+		-nodes \
+		-new \
+		-x509 \
+		-sha256 \
+		-keyout stunnel.key \
+		-out stunnel.crt \
+		-batch
+	
+	# reduce permissions which is needed for ssh-keygen
+        cat stunnel.key stunnel.crt >> stunnel_full.pem
+
+
+

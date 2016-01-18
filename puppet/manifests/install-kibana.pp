@@ -152,10 +152,6 @@ class installkibana::configkibana(
         }
 
 	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
-
-	# the own ip adress of the host (defaults to eth0 ip)
-	$address = inline_template("<%= scope.lookupvar('::ipaddress_eth1') -%>")
-
         $kibana_user = hiera('installkibana::configkibana::kibana_user', 'kibana')
         $kibana_group = hiera('installkibana::configkibana::kibana_group', 'kibana')
 
