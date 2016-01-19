@@ -34,11 +34,6 @@ class installredis(
                     source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
                 }
 
-                # install stunnel
-                class { 'stunnel' :
-
-                }
-
                 $redisdefaults = {
                         client => false,
                         cert    => '/etc/stunnel/stunnel_full.pem',
