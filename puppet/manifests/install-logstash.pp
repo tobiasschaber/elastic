@@ -40,11 +40,6 @@ class installlogstash(
 
                 # redis with ssl?
                 if($redis_ssl == true) {
-                        # install stunnel
-                        class { 'stunnel' :
-
-                        }
-
                         class { 'installlogstash::configstunnel':
                                 role => $logstash_role,
                         }
@@ -116,6 +111,7 @@ class installlogstash::configstunnel(
             source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
         }
 
+        ->
 
         case $role {
                 'shipper': {
