@@ -13,7 +13,7 @@ logstash::java_install: true
 logstash::java_package: jdk1.8.0_65.x86_64
 logstash::repo_version: '2.0'
 elasticsearch::restart_on_change: false
-elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.1.0/elasticsearch-2.1.0.rpm
+elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.2.0/elasticsearch-2.2.0.rpm
 elasticsearch::package_provider: package
 elasticsearch::java_install: true
 elasticsearch::java_package: jdk1.8.0_65.x86_64
@@ -57,7 +57,7 @@ elasticsearch::plugins:
       - es-01
 installelknode::configureshield::defaultadminname: esadmin
 installelknode::configureshield::defaultadminpass: esadmin
-installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.3.0-linux-x64.tar.gz
+installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.4.0-linux-x64.tar.gz
 installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin
 installkibana::configkibana::kibana_user: kibana
