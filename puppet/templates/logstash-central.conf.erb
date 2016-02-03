@@ -1,18 +1,22 @@
+<% @redis_ssl = scope.function_hiera(['installlogstash::use_redis']) -%>
 input {
-
-        <% if @logstash_role == "indexer" %>
-                <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+        <% if @role == "indexer" %>
+                <% if @redis_ssl == true %>
+                        <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
+                        <% @redisnodes = @bindings.map{ |rnode| "#{rnode[1]['accept']}"} %>
+                <% else %>
+                        <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                <% end %>
                 <% @redisnodes.each do |redisnode| -%>
-
-                redis {
-                       host => "<%= redisnode %>"
-                       key => "logstash"
-                       data_type => "list"
-                       password => "<%= @redis_password %>"
-                       codec => json
-                }
+                        redis {
+                                host => "<%= redisnode.split(':')[0] %>"
+                                <% if @redis_ssl == true %>port => <%= redisnode.split(':')[1] %><% end %>
+                                key => "logstash"
+                                data_type => "list"
+                                password => "<%= @redis_password %>"
+                                codec => json
+                        }
                 <% end -%>
-
         <% else %>
 
         	file {
@@ -33,7 +37,7 @@ output {
                 codec => rubydebug
         }
 
-        <% if @logstash_role == "indexer" or @logstash_role == "default" %>
+        <% if @role == "indexer" or @role == "default" %>
 
                 elasticsearch {
 		        <% @mastnodes = scope.function_hiera(['elkcluster::clientnodes']) -%>
@@ -52,14 +56,20 @@ output {
         <% else %>
 
                 redis {
-                        <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
-                        host => [<%= @redisnodes.map{ |rnode| "\"#{rnode}\""}.join(',') %>]
+                        <% if @redis_ssl == true %>
+                                <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
+                               host => [<%= @bindings.map{ |rnode| "\"#{rnode[1]['accept']}\""}.join(',') %>]
+                        <% else %>
+                                <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                                host => [<%= @redisnodes.map{ |rnode| "\"#{rnode}\""}.join(',') %>]
+                        <% end %>
+
                         data_type => "list"
                         key => "logstash"
                         codec => json
                         password => "<%= @redis_password %>"
                         shuffle_hosts => true
-                        
+                    
                 }
 
         <% end %>

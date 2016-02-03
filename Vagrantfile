@@ -15,6 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         prov.add_host '10.0.3.121', ['logstash1']
         prov.add_host '10.0.3.122', ['logstashindexer1']
         prov.add_host '10.0.3.123', ['logstashshipper1']
+        prov.add_host '10.0.3.124', ['logstashindexer2']
+        prov.add_host '10.0.3.125', ['logstashshipper2']
         prov.add_host '10.0.3.131', ['elkclient1']
         prov.add_host '10.0.3.132', ['elkclient2']
         prov.add_host '10.0.3.141', ['redis1']
@@ -164,6 +166,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          end
     end
 
+   # logstash indexing server
+   config.vm.define "logstashindexer2" do |logstashindexer2|
+
+	logstashindexer2.vm.box = "bento/centos-7.1"
+	logstashindexer2.vm.hostname = "logstashindexer2"
+	logstashindexer2.vm.network "public_network", ip: "10.0.3.124", :bridge => "lxcbr0"
+	logstashindexer2.vm.network "private_network", type: "dhcp"
+	logstashindexer2.vm.provision :shell, :path => "installation/prepare-install.sh"
+	logstashindexer2.vm.provision :shell, :path => "install-logstash.sh"
+	logstashindexer2.vm.provider "virtualbox" do |v|
+                 v.memory = 768
+                 v.cpus = 2
+         end
+    end
+
 
    # logstash shipper server
    config.vm.define "logstashshipper1" do |logstashshipper1|
@@ -175,6 +192,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	logstashshipper1.vm.provision :shell, :path => "installation/prepare-install.sh"
 	logstashshipper1.vm.provision :shell, :path => "install-logstash.sh"
 	logstashshipper1.vm.provider "virtualbox" do |v|
+                 v.memory = 768
+                 v.cpus = 2
+         end
+    end
+
+   # logstash shipper server
+   config.vm.define "logstashshipper2" do |logstashshipper2|
+
+	logstashshipper2.vm.box = "bento/centos-7.1"
+	logstashshipper2.vm.hostname = "logstashshipper2"
+	logstashshipper2.vm.network "public_network", ip: "10.0.3.125", :bridge => "lxcbr0"
+	logstashshipper2.vm.network "private_network", type: "dhcp"
+	logstashshipper2.vm.provision :shell, :path => "installation/prepare-install.sh"
+	logstashshipper2.vm.provision :shell, :path => "install-logstash.sh"
+	logstashshipper2.vm.provider "virtualbox" do |v|
                  v.memory = 768
                  v.cpus = 2
          end

@@ -4,13 +4,52 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installlogstash {
+class installlogstash(
+
+        # true if redis should be used
+        $use_redis = false,
+
+        # true if redis should use stunnel as ssl tunnel provider
+        $redis_ssl = false,
+
+        # the role ("default", "shipper" or "indexer") for the logstash instance
+        $logstash_role = "default",
+) {
+
+        # check role parameter
+        if ! ($logstash_role in [ 'indexer', 'default', 'shipper' ]) {
+                fail("\"${logstash_role}\" is not valid for logstash_role. valid are: indexer, shipper or default.")
+        }
+
+        # roles "indexer" and "shipper" require redis!
+        if ($logstash_role in [ 'indexer', 'shipper' ] and $use_redis == false) {
+                fail("If use_redis is set to false, you can only use default as logstash_role.")
+        }
 
         $elk_config       = hiera('elasticsearch::config')
         $truststore_pass  = $elk_config['shield']['ssl']['truststore.password']
         $logstash_elkuser = hiera('installelknode::configureshield::defaultadminname', 'logstash')
         $logstash_elkpass = hiera('installelknode::configureshield::defaultadminpass', 'logstash')
-        $redis_password   = hiera('redis::masterauth')
+        $redis_nodes      = hiera('redis::nodes')
+
+        # start case calculation for redis and stunnel
+
+        # want to use redis?
+        if($use_redis == true) {
+                $redis_password = hiera('redis::masterauth', 'testccpass')
+
+                # redis with ssl?
+                if($redis_ssl == true) {
+                        class { 'installlogstash::configstunnel':
+                                role => $logstash_role,
+                        }
+
+                } else {
+
+                }
+        }
+
+
 
         # enable ssl between kibana and elasticsearch?
         $enableelkssl   = $elk_config['shield']['http.ssl']
@@ -24,6 +63,7 @@ class installlogstash {
 
         # create the logstash config file
 	class { 'installlogstash::prepareconfigfile' :
+                role => $logstash_role,
 
         }
         
@@ -37,14 +77,69 @@ class installlogstash {
 	}
 } 
 
-class installlogstash::prepareconfigfile(
-	$logstash_role = "default",
+
+
+
+
+class installlogstash::configstunnel(
+
+        # the logstash role (shipper, indexer)
+        $role = undef,
+
+        # the external local IP
+        $bindings = undef,
 ) {
 
-        # check role parameter
-        if ! ($logstash_role in [ 'indexer', 'default', 'shipper' ]) {
-                fail("\"${logstash_role}\" is not valid for logstash_role. valid are: indexer, shipper or default.")
+	# create the stunnel users group
+	group { 'create-stunnel-group':
+		name => 'stunnel',
+		ensure => 'present',
+	} ->
+
+	# create the stunnel user
+	user { 'create-stunnel-user':
+		name => 'stunnel',
+		groups => ['stunnel'],
+		ensure => 'present',
+	} ->
+
+        file { '/etc/stunnel/stunnel_full.pem':
+            ensure => 'file',
+            owner  => 'root',
+            group  => 'root',
+            mode   => 700,
+            source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
         }
+
+        ->
+
+        case $role {
+                'shipper': {
+
+                        $shipperdefaults = {
+                                cert    => '/etc/stunnel/stunnel_full.pem',
+                                client => true,
+                        }
+                        create_resources("stunnel::tun", $bindings, $shipperdefaults)
+                }
+
+                'indexer': {
+
+                        $indexerdefaults = {
+                                client => true,
+                                cert    => '/etc/stunnel/stunnel_full.pem',
+                        }
+                        create_resources("stunnel::tun", $bindings, $indexerdefaults)
+                }
+        }
+}
+
+
+
+
+class installlogstash::prepareconfigfile(
+	$role = 'default',
+) {
 
 	# copy a config file based on a template
 	# attention! the path to this file depends on the git clone target directory and may be adjusted!

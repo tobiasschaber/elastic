@@ -17,6 +17,8 @@ echo "SSL SETUP CHECK: CHECK FINISHED. NO PROBLEMS DETECTED"
 
 # install the required puppet modules and dependencies
 sudo puppet module install elasticsearch-logstash
+sudo puppet module install arusso-stunnel
 
 # install logstash via puppet
+# parser=future is required to make use of each{} function
 sudo puppet apply --debug /tmp/elkinstalldir/puppet/manifests/install-logstash.pp --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml
