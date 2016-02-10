@@ -14,7 +14,7 @@ class installelknode(
         $elk_config     = hiera('elasticsearch::config')
         $enablessl      = $elk_config['shield']['transport.ssl']
         $enablehttps    = $elk_config['shield']['http.ssl']
-
+        $inst_collectd  = hiera('installelknode::collectd::install')
 
 	# start the installation of elasticsearch
 	class { 'elasticsearch' :
@@ -34,9 +34,55 @@ class installelknode(
                 enablessl => $enablessl,
                 enablehttps => $enablehttps,
         }
+
+
+        # install collectd if configured
+        if($inst_collectd == true) {
+
+                $collectd_port = hiera('installelknode::collectd::port')
+                $collectd_servers = hiera_hash('installelknode::collectd::servers')
+
+                # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
+                $collectd_version = hiera('installelknode::collectd::version', '5.5.0')
+                
+
+                # enterprise packages are required for installation
+                package { 'epel-release':
+                        ensure => installed,
+
+                } 
+                ->
+                # install collect.d
+                class { '::collectd':
+                        package_ensure  => installed,
+                        purge           => true,
+                        recurse         => true,
+                        purge_config    => true,
+                        minimum_version => $collectd_version,
+                }
+
+                # add the collect.d memory plugin
+                class { 'collectd::plugin::memory':
+                }
+
+                # add the collect.d cpu plugin
+                class { 'collectd::plugin::cpu':
+                        reportbystate => true,
+                        reportbycpu => true,
+                        valuespercentage => true,
+
+                }
+
+                # add the collect.d network plugin and configure it to send to logstash
+                class { 'collectd::plugin::network':
+                        timetolive    => '70',
+                        maxpacketsize => '42',
+                        forward       => true,
+                        reportstats   => true,
+                        servers       => $collectd_servers,
+                }
+        }
 }
-
-
 
 # install the required jks trust- and keystores
 class installelknode::addkeystores(
@@ -95,7 +141,6 @@ class installelknode::configureshield(
 		command	=> "cp -r /etc/elasticsearch/shield /etc/elasticsearch/es-01",
 		path 	=> ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
 	}
-
 }
 
 # trigger puppet execution
