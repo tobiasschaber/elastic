@@ -57,6 +57,11 @@ elasticsearch::plugins:
       - es-01
 installelknode::configureshield::defaultadminname: esadmin
 installelknode::configureshield::defaultadminpass: esadmin
+installelknode::installcollectd: true
+installelknode::collectd::port: 25826
+installelknode::collectd::servers:
+  logstash1:
+    port: 25826
 installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.4.0-linux-x64.tar.gz
 installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin
