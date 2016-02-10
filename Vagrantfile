@@ -23,6 +23,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         prov.add_host '10.0.3.142', ['redis2']
    end
 
+   # use cachier plugin if existing
+   config.vm.box = "bento/centos-7.1"
+   if Vagrant.has_plugin?("vagrant-cachier")
+   	config.cache.scope = :box
+   end
+
+
    # elk data server 1
    config.vm.define "elkdata1" do |elkdata1|
 
