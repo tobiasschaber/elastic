@@ -140,6 +140,18 @@ class installlogstash::configstunnel(
 class installlogstash::prepareconfigfile(
 	$role = 'default',
 ) {
+        $inst_collectd  = hiera('installelknode::installcollectd')
+
+        # if collect.d should be installed, search hiera for the correct hostname and port
+        # and adjust the target index (which will then be "collectd-*" instead of "default-*"
+        if($inst_collectd == true) {
+                $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
+                $collectd_config     = hiera('installelknode::collectd::servers')
+                $collectd_port       = $collectd_config[$ownhost]['port']
+                $targetindex = 'collectd-%{+YYYY.MM.dd}'
+        } else {
+                $targetindex = 'default-%{+YYYY.MM.dd}'
+        }
 
 	# copy a config file based on a template
 	# attention! the path to this file depends on the git clone target directory and may be adjusted!

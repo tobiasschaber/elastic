@@ -1,12 +1,18 @@
 <% @redis_ssl = scope.function_hiera(['installlogstash::use_redis']) -%>
 input {
+
+        <%# if the role is "indexer", add a redis input %>
         <% if @role == "indexer" %>
+                <%# for redis over ssl, use the stunnel bindings %>
                 <% if @redis_ssl == true %>
                         <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
                         <% @redisnodes = @bindings.map{ |rnode| "#{rnode[1]['accept']}"} %>
+                <%# otherwise, use the redis bindings %>
                 <% else %>
                         <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
                 <% end %>
+
+                <%# for each redis node, add a redis input %>
                 <% @redisnodes.each do |redisnode| -%>
                         redis {
                                 host => "<%= redisnode.split(':')[0] %>"
@@ -17,11 +23,25 @@ input {
                                 codec => json
                         }
                 <% end -%>
+        <%# if role is not "indexer", it is "default" or "shipper", which means the "default" setup %>
         <% else %>
+                <%# if collectd is used, add it as an input (via udp input) %>
+                <% if @inst_collectd == true %>
+
+                udp {
+                        port => <%= @collectd_port %>
+                        buffer_size => 1452
+                        codec => collectd{}
+                }
+
+                <%# if collectd is not used, just use a very simple file input example %>
+                <% else %>
 
         	file {
         		path => "/tmp/input"
         	}
+
+                <% end %>
 
 #               lumberjack {
 #                        port => 15102
@@ -43,7 +63,7 @@ output {
 		        <% @mastnodes = scope.function_hiera(['elkcluster::clientnodes']) -%>
 
 		        hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
-		        index => "default-%{+YYYY.MM.dd}"
+		        index => "<%= @targetindex %>"
 		        user => "<%= @logstash_elkuser %>"
 		        password => "<%= @logstash_elkpass %>"
                     <% if @enableelkssl == true %>
