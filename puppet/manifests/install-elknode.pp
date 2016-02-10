@@ -41,6 +41,8 @@ class installelknode(
 
                 $collectd_port = hiera('installelknode::collectd::port')
                 $collectd_servers = hiera_hash('installelknode::collectd::servers')
+
+                # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
                 $collectd_version = hiera('installelknode::collectd::version', '5.5.0')
                 
 
@@ -62,9 +64,6 @@ class installelknode(
                 # add the collect.d memory plugin
                 class { 'collectd::plugin::memory':
                 }
-
-                # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
-                $collectd_version = $collectd_version
 
                 # add the collect.d cpu plugin
                 class { 'collectd::plugin::cpu':
