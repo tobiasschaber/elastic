@@ -14,7 +14,7 @@ class installelknode(
         $elk_config     = hiera('elasticsearch::config')
         $enablessl      = $elk_config['shield']['transport.ssl']
         $enablehttps    = $elk_config['shield']['http.ssl']
-        $inst_collectd  = hiera('installelknode::installcollectd')
+        $inst_collectd  = hiera('installelknode::collectd::install')
 
 	# start the installation of elasticsearch
 	class { 'elasticsearch' :
@@ -41,6 +41,7 @@ class installelknode(
 
                 $collectd_port = hiera('installelknode::collectd::port')
                 $collectd_servers = hiera_hash('installelknode::collectd::servers')
+                $collectd_version = hiera('installelknode::collectd::version', '5.5.0')
                 
 
                 # enterprise packages are required for installation
@@ -55,7 +56,7 @@ class installelknode(
                         purge           => true,
                         recurse         => true,
                         purge_config    => true,
-                        minimum_version => '5.5.0',
+                        minimum_version => $collectd_version,
                 }
 
                 # add the collect.d memory plugin
@@ -63,7 +64,7 @@ class installelknode(
                 }
 
                 # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
-                $collectd_version = '5.5.0'
+                $collectd_version = $collectd_version
 
                 # add the collect.d cpu plugin
                 class { 'collectd::plugin::cpu':
