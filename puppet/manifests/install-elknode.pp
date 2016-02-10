@@ -51,21 +51,26 @@ class installelknode(
                 ->
                 # install collect.d
                 class { '::collectd':
+                        package_ensure  => installed,
                         purge           => true,
                         recurse         => true,
                         purge_config    => true,
-                        minimum_version => '5.4',
+                        minimum_version => '5.5.0',
                 }
 
                 # add the collect.d memory plugin
                 class { 'collectd::plugin::memory':
                 }
 
+                # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
+                $collectd_version = '5.5.0'
+
                 # add the collect.d cpu plugin
                 class { 'collectd::plugin::cpu':
                         reportbystate => true,
                         reportbycpu => true,
                         valuespercentage => true,
+
                 }
 
                 # add the collect.d network plugin and configure it to send to logstash
