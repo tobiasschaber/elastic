@@ -155,7 +155,7 @@ class installlogstash::prepareconfigfile(
 
 	# copy a config file based on a template
 	# attention! the path to this file depends on the git clone target directory and may be adjusted!
-	logstash::configfile co{ 'central' :
+	logstash::configfile { 'central' :
 		content => template("/tmp/elkinstalldir/puppet/templates/logstash-central.conf.erb"),
 		order => 10
 	}
