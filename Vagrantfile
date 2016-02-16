@@ -21,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         prov.add_host '10.0.3.132', ['elkclient2']
         prov.add_host '10.0.3.141', ['redis1']
         prov.add_host '10.0.3.142', ['redis2']
+	prov.add_host '10.0.3.151', ['graylog1']
    end
 
    # use cachier plugin if existing
@@ -117,6 +118,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	elkclient1.vm.provision :shell, :path => "installation/prepare-install.sh"
 	elkclient1.vm.provision :shell, :path => "install-elknode.sh"
 	elkclient1.vm.provision :shell, :path => "install-kibana.sh"
+        elkclient1.vm.provision :shell, :path => "install-graylog.sh"
 	elkclient1.vm.provider "virtualbox" do |v|
                  v.memory = 768
                  v.cpus = 2
@@ -250,6 +252,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
 end
+
+
+
+
+
+
+
+
+
 
 
 
