@@ -26,6 +26,7 @@ class installelknode(
 
 	# add the default admin user
 	class { 'installelknode::configureshield' :
+
 	}
 
 	->
@@ -123,24 +124,28 @@ class installelknode::addkeystores(
 # addition class to add the default admin user to the es configuration
 class installelknode::configureshield(
 	$defaultadmin_name = "esadmin",
-	$defaultadmin_pass = "esadmin"
+	$defaultadmin_pass = "esadmin",
+        $enable_elk_auth = undef,
 ) {
 
-	# create an admin user
-	exec { 'shield-create-esadmin':
-		user => "root",
-		cwd => "/usr/share/elasticsearch/bin/shield",
-		command	=> "/usr/share/elasticsearch/bin/shield/esusers useradd $defaultadmin_name -p $defaultadmin_pass -r admin",
-		unless  => "/usr/share/elasticsearch/bin/shield/esusers list | grep -c $defaultadmin_name",
-		path 	=> ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
-	}
-	->
-	# workarround: copy esuser files into elasticsearch config directory to be found
-	exec { 'copy-esuser-files-into-elk-config-dir':
-		user => hiera('elasticsearch::elasticsearch_user', 'elasticsearch'),
-		command	=> "cp -r /etc/elasticsearch/shield /etc/elasticsearch/es-01",
-		path 	=> ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
-	}
+        if($enable_auth == true) {
+
+	        # create an admin user
+	        exec { 'shield-create-esadmin':
+		        user => "root",
+		        cwd => "/usr/share/elasticsearch/bin/shield",
+		        command	=> "/usr/share/elasticsearch/bin/shield/esusers useradd $defaultadmin_name -p $defaultadmin_pass -r admin",
+		        unless  => "/usr/share/elasticsearch/bin/shield/esusers list | grep -c $defaultadmin_name",
+		        path 	=> ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
+	        }
+	        ->
+	        # workarround: copy esuser files into elasticsearch config directory to be found
+	        exec { 'copy-esuser-files-into-elk-config-dir':
+		        user => hiera('elasticsearch::elasticsearch_user', 'elasticsearch'),
+		        command	=> "cp -r /etc/elasticsearch/shield /etc/elasticsearch/es-01",
+		        path 	=> ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
+	        }
+        }
 }
 
 # trigger puppet execution
