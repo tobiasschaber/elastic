@@ -151,10 +151,10 @@ class installkibana::configkibana(
 
         }
 
-	$ownhost        = inline_template("<%= scope.lookupvar('::hostname') -%>")
-        $kibana_user    = hiera('installkibana::configkibana::kibana_user', 'kibana')
-        $kibana_group   = hiera('installkibana::configkibana::kibana_group', 'kibana')
-        $enable_elk_auth    = hiera('installelknode::configureshield::enable_auth', false)
+	$ownhost          = inline_template("<%= scope.lookupvar('::hostname') -%>")
+        $kibana_user      = hiera('installkibana::configkibana::kibana_user', 'kibana')
+        $kibana_group     = hiera('installkibana::configkibana::kibana_group', 'kibana')
+        $enable_elk_auth  = hiera('installelknode::configureshield::enable_elk_auth', false)
 
 	# copy the https ssl key into kibana
 	file { '/opt/kibana4/ssl/elkcluster.key' :

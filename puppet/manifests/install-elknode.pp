@@ -125,10 +125,10 @@ class installelknode::addkeystores(
 class installelknode::configureshield(
 	$defaultadmin_name = "esadmin",
 	$defaultadmin_pass = "esadmin",
-        $enable_elk_auth = undef,
+        $enable_elk_auth = false,
 ) {
 
-        if($enable_auth == true) {
+        if($enable_elk_auth == true) {
 
 	        # create an admin user
 	        exec { 'shield-create-esadmin':
