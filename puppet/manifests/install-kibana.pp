@@ -151,9 +151,10 @@ class installkibana::configkibana(
 
         }
 
-	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
-        $kibana_user = hiera('installkibana::configkibana::kibana_user', 'kibana')
-        $kibana_group = hiera('installkibana::configkibana::kibana_group', 'kibana')
+	$ownhost          = inline_template("<%= scope.lookupvar('::hostname') -%>")
+        $kibana_user      = hiera('installkibana::configkibana::kibana_user', 'kibana')
+        $kibana_group     = hiera('installkibana::configkibana::kibana_group', 'kibana')
+        $enable_elk_auth  = hiera('installelknode::configureshield::enable_elk_auth', false)
 
 	# copy the https ssl key into kibana
 	file { '/opt/kibana4/ssl/elkcluster.key' :
@@ -211,21 +212,23 @@ class installkibana::configkibana(
           path => '/opt/kibana4/config/kibana.yml',
           line   => $elk_sslca_line,
           match => '#?elasticsearch.ssl.ca:*',
-        } ->
+        }
 
-	# add elasticsearch user to config
-	file_line { 'Add elk user to config':
-	  path => '/opt/kibana4/config/kibana.yml', 
-	  line => "elasticsearch.username: $kibanaelkuser",
-	  match	=> '#?elasticsearch.username:*',
-	} ->
+        if($enable_elk_auth == true) {
+	        # add elasticsearch user to config
+	        file_line { 'Add elk user to config':
+	          path => '/opt/kibana4/config/kibana.yml', 
+	          line => "elasticsearch.username: $kibanaelkuser",
+	          match	=> '#?elasticsearch.username:*',
+	        } ->
 
-	# add elasticsearch pass to config
-	file_line { 'Add elk pass to config':
-	  path => '/opt/kibana4/config/kibana.yml', 
-	  line => "elasticsearch.password: $kibanaelkpass",
-	  match	=> '#?elasticsearch.password:*',
-	}
+	        # add elasticsearch pass to config
+	        file_line { 'Add elk pass to config':
+	          path => '/opt/kibana4/config/kibana.yml', 
+	          line => "elasticsearch.password: $kibanaelkpass",
+	          match	=> '#?elasticsearch.password:*',
+	        }
+        }
 }
         
 # define the installation routine which installs an kibana plugin
