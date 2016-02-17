@@ -101,6 +101,12 @@ class installelknode::addkeystores(
                 $ensurejks = absent
         }
 
+	file { '/etc/elasticsearch/es-01/shield' :
+		owner => $elk_user,
+		group => $elk_group,
+                ensure => 'directory',
+	} ->
+
 	# add jks keystore
 	file { '/etc/elasticsearch/es-01/shield/es01-keystore.jks' :
 		source => "/tmp/elkinstalldir/ssl/${ownhost}-keystore.jks",
