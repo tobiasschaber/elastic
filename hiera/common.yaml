@@ -55,6 +55,7 @@ elasticsearch::plugins:
   elasticsearch/shield/latest:
     instances:
       - es-01
+installelknode::configureshield::enable_elk_auth: true
 installelknode::configureshield::defaultadminname: esadmin
 installelknode::configureshield::defaultadminpass: esadmin
 installelknode::collectd::install: true
