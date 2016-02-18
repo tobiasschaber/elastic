@@ -120,7 +120,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	elkclient1.vm.provision :shell, :path => "install-kibana.sh"
         elkclient1.vm.provision :shell, :path => "install-graylog.sh"
 	elkclient1.vm.provider "virtualbox" do |v|
-                 v.memory = 768
+                 v.memory = 3072
                  v.cpus = 2
          end
     end

@@ -13,7 +13,7 @@ logstash::java_install: true
 logstash::java_package: jdk1.8.0_65.x86_64
 logstash::repo_version: '2.0'
 elasticsearch::restart_on_change: false
-elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.2.0/elasticsearch-2.2.0.rpm
+elasticsearch::package_url: https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.noarch.rpm
 elasticsearch::package_provider: package
 elasticsearch::java_install: true
 elasticsearch::java_package: jdk1.8.0_65.x86_64
@@ -40,22 +40,22 @@ elasticsearch::config:
       hostname_verification: false
       truststore.path: /etc/elasticsearch/es-01/shield/es01-truststore.jks
       truststore.password: codecentric
-    transport.ssl: true
-    http.ssl: true
+    transport.ssl: false
+    http.ssl: false
 elasticsearch::plugins:
-  elasticsearch/license/latest:
-    instances:
-      - es-01
-  marvel-agent:
-    instances:
-      - es-01
-  elasticsearch/watcher/latest:
-    instances:
-      - es-01
-  elasticsearch/shield/latest:
-    instances:
-      - es-01
-installelknode::configureshield::enable_elk_auth: true
+#  elasticsearch/license/latest:
+#    instances:
+#      - es-01
+#  marvel-agent:
+#    instances:
+#      - es-01
+#  elasticsearch/watcher/latest:
+#    instances:
+#      - es-01
+#  elasticsearch/shield/latest:
+#    instances:
+#      - es-01
+installelknode::configureshield::enable_elk_auth: false
 installelknode::configureshield::defaultadminname: esadmin
 installelknode::configureshield::defaultadminpass: esadmin
 installelknode::collectd::install: true
@@ -64,15 +64,15 @@ installelknode::collectd::version: 5.5.0
 installelknode::collectd::servers:
   logstash1:
     port: 25826
-installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.4.0-linux-x64.tar.gz
+installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.1.5-linux-x64.tar.gz
 installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin
 installkibana::configkibana::kibana_user: kibana
 installkibana::configkibana::kibana_group: kibana
 installkibana::configkibana::enablehttps: true
-installkibana::plugins:
-  elasticsearch/marvel/latest:
-    source: package
-  kibana/timelion:
-    source: package
+#installkibana::plugins:
+#  elasticsearch/marvel/latest:
+#    source: package
+#  kibana/timelion:
+#    source: package
 
