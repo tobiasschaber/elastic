@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# graylog requires elasticsearch < 2.* and no authentication.
+# thats why shield plugin will not be installed an all ssl is disabled.
+
+
 # install the required puppet modules and dependencies
 
 sudo puppet module install puppetlabs/apt
