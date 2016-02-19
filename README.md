@@ -1,7 +1,17 @@
 # README #
 
-With this project you can automatically setup a complete elasticsearch environment with just a few clicks.
-You can either work with vagrant or just use the delivered shell installer scripts and execute them on your nodes.
+This branch is a test installation for a graylog setup.
+
+Start with:
+
+- vagrant up elkdata1 elkmaster1 elkclient1
+
+to have a working graylog setup.
+
+Graylog Web Frontend: http://10.0.3.131:9000
+User: admin
+Passwort: admin
+
 
 ### Requirements ###
 
