@@ -1,7 +1,7 @@
 # README #
 
 This project enables you to set up your own elasticsearch cluster with many different configuration options based on vagrant boxes.
-If you have your vagrant cluster running, you can use the delivered shell installer scripts and execute them on your real nodes, that
+If you have your vagrant cluster running on vagrant, you can use the delivered shell installer scripts and execute them on your real nodes, that
 means it is possible to move your configuration from your vagrant boxes to your real environment.
 
 
@@ -37,7 +37,7 @@ This will start a fully connected and working cluster with three nodes (master, 
 - no plugins
 - no redis
 
-it will run collectd on all ELK nodes, so that you automatically will have some data to play with (requires logstash1 node!)
+it will run collectd on all ELK nodes and store them in the index "collectd-*", so that you automatically will have some data to play with (requires logstash1 node!)
 
 
 ### General info after startup ###
@@ -52,7 +52,8 @@ External URLs:
 
 ## Hiera configuration ##
 
-There are two places where you can configure the cluster via hiera:
+Hiera is used to configure the complete cluster. You can for example activate SSL between the nodes, HTTPs for kibana, 
+activate Redis and add Plugins for elasticsearch or kibana. There are two places where you can configure the cluster via hiera:
 - /hiera/common.yaml (global configuration)
 - /hiera/nodes/<node>.yaml (node specific configuration)
 
@@ -154,12 +155,12 @@ If you want to configure an ELK logstash node with redis between, use this confi
     #    accept: 127.0.0.1:13372
     #    connect: 10.0.3.142:6379
 
-Setting ´installlogstash::logstash_role: indexer´ will bring up a logstash indexer node, receiving traffic from 
+Setting `installlogstash::logstash_role: indexer` will bring up a logstash indexer node, receiving traffic from 
 redis and sending it to elasticsearch.
-If you set ´installlogstash::redis_ssl: true´, you have to provide the ´installlogstash::configstunnel::bindings:´ section
+If you set `installlogstash::redis_ssl: true`, you have to provide the `installlogstash::configstunnel::bindings:` section
 which is commented in the example above.
 
-Please ensure that the complete ´redis::´ section is enabled in the common.yaml. See the common section for details.
+Please ensure that the complete `redis::` section is enabled in the common.yaml. See the common section for details.
 Please note: The sample data from collectd will also be available with this setup, but the data will be placed in the
 "default-*" index instead of the "collectd-*" index.
 
@@ -176,8 +177,8 @@ use this node configuration:
         accept: 10.0.3.141:6379
         connect: 127.0.0.1:6379
 
-Set ´server:accept´ to the public IP of your node.
-Additionally you can enable ssl with the ´redis_ssl´ flag.
+Set `server:accept` to the public IP of your node.
+Additionally you can enable ssl with the `redis_ssl` flag.
 
 
 
@@ -197,19 +198,19 @@ it to the redis node. Use this node configuration for the shippers:
     #    accept: 127.0.0.1:13372
     #    connect: 10.0.3.142:6379
 
-Setting ´installlogstash::logstash_role: shipper´ will bring up a logstash shipper node sending
-its traffic to the redis nodes (these are configured in common.yaml, in ´redis::nodes´).
-If you set ´installlogstash::redis_ssl: true´, you have to provide the ´installlogstash::configstunnel::bindings:´ section
+Setting `installlogstash::logstash_role: shipper` will bring up a logstash shipper node sending
+its traffic to the redis nodes (these are configured in common.yaml, in `redis::nodes`).
+If you set `installlogstash::redis_ssl: true`, you have to provide the `installlogstash::configstunnel::bindings:` section
 which is commented in the example above.
 
-Before starting up the node, you have to modify the ´common.yaml´ and add your shipper node to this following list
+Before starting up the node, you have to modify the `common.yaml` and add your shipper node to this following list
 (replace <<nodename>> with "logstashshipper1" for example):
 
     installelknode::collectd::servers:
       <<nodename>>:
         port: 25826
 
-Also ensure that the complete ´redis::´ section is enabled in the common.yaml. See the common section for details.
+Also ensure that the complete `redis::` section is enabled in the common.yaml. See the common section for details.
 
 
 
