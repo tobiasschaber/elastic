@@ -1,7 +1,9 @@
 # README #
 
-With this project you can automatically setup a complete elasticsearch environment with just a few clicks.
-You can either work with vagrant or just use the delivered shell installer scripts and execute them on your nodes.
+This project enables you to set up your own elasticsearch cluster with many different configuration options based on vagrant boxes.
+If you have your vagrant cluster running, you can use the delivered shell installer scripts and execute them on your real nodes, that
+means it is possible to move your configuration from your vagrant boxes to your real environment.
+
 
 ## Prequisites ##
 
@@ -21,7 +23,7 @@ If you want to start up an elasticsearch cluster via vagrant, you need the follo
 
 ### Start the cluster ###
 
-the quickest way to start an ELK cluster is to run the default setup
+the quickest way to start an ELK cluster is to run the default setup:
 
 * execute the `./prepare-ssl.sh` shell script (which will create all required ssl certs for you)
 * execute `vagrant up elkdata1 elkmaster1 elkclient1` to start a minimum cluster
