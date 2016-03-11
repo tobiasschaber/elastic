@@ -1,5 +1,5 @@
 ---
-installredis::redis_ssl: true
+installredis::redis_ssl: false
 installredis::bindings:
   server:
     accept: 10.0.3.141:6379
