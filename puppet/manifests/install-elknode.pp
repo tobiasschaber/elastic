@@ -15,6 +15,8 @@ class installelknode(
         $enablessl      = $elk_config['shield']['transport.ssl']
         $enablehttps    = $elk_config['shield']['http.ssl']
         $inst_collectd  = hiera('installelknode::collectd::install')
+        $elk_user       = hiera('elasticsearch::elasticsearch_user', 'elasticsearch')
+        $elk_group      = hiera('elasticsearch::elasticsearch_group', 'elasticsearch')
 
 	# start the installation of elasticsearch
 	class { 'elasticsearch' :
@@ -23,6 +25,13 @@ class installelknode(
 	} 
 
 	->
+
+	# ensure that the shared snapshot directory exists
+        file { "/tmp/elkinstalldir/tmp/snapshot":
+		ensure => "directory",
+		owner => $elk_user,
+		group => $elk_group,
+	} ->
 
 	# add the default admin user
 	class { 'installelknode::configureshield' :

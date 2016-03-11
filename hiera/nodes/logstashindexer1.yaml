@@ -1,7 +1,7 @@
 ---
 installlogstash::logstash_role: indexer
 installlogstash::use_redis: true
-installlogstash::redis_ssl: true
+installlogstash::redis_ssl: false
 installlogstash::configstunnel::bindings:
   redis1:
     accept: 127.0.0.1:13371
