@@ -11,10 +11,20 @@
 class installelknode(
 
 ) {
+        # read the complete elk configuration array
         $elk_config     = hiera('elasticsearch::config')
-        $enablessl      = $elk_config['shield']['transport.ssl']
-        $enablehttps    = $elk_config['shield']['http.ssl']
-        $inst_collectd  = hiera('installelknode::collectd::install')
+
+        # if there is a "shield" part in the configuration
+        if($elk_config['shield']) {
+                $enablessl      = $elk_config['shield']['transport.ssl']
+                $enablehttps    = $elk_config['shield']['http.ssl']
+        } else {
+                # if there is no shield part, disable ssl and https
+                $enablessl      = false
+                $enablehttps    = false
+        }
+
+        $inst_collectd  = hiera('installelknode::collectd::install', undef)
 
 	# start the installation of elasticsearch
 	class { 'elasticsearch' :
