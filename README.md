@@ -213,6 +213,36 @@ Before starting up the node, you have to modify the `common.yaml` and add your s
 Also ensure that the complete `redis::` section is enabled in the common.yaml. See the common section for details.
 
 
+## Other stuff ##
+
+### Elasticsearch snapshots ###
+
+You can use the elasticsearch snapshot mechanism to store some ELK artifacts (like kibana dashboards etc)
+and load them on the next run without manually creating them. You have to perform the following steps to activate it:
+
+
+* Install NFS (on ubuntu, this is done via `sudo apt-get install nfs-kernel-server`)
+* Uncomment the snapshot shared NFS folder line in the Vagrantfile
+* Ensure that `path.repo` is set in hiera/common.yaml. (defaults to: `/tmp/elkinstalldir/snapshots`)
+* Start the cluster
+* Perform this REST call:
+
+    PUT http://10.0.3.131:9200/_snapshot/elk_backup
+
+    {
+          "type": "fs",
+          "settings": {
+              "location": "/tmp/elkinstalldir/snapshots/"
+          }
+    }
+
+This will write the snapshot to the /snapshot location.
+
+* Save the snapshot
+* You can restore it by calling this REST call:
+
+    GET http://10.0.3.131:9200/_snapshot/elk_backup
+
 
 
 

@@ -42,6 +42,8 @@ elasticsearch::config:
 #      truststore.password: codecentric
 #    transport.ssl: true
 #    http.ssl: true
+  path.repo: 
+    /tmp/elkinstalldir/snapshots
 elasticsearch::plugins:
   elasticsearch/license/latest:
     instances:

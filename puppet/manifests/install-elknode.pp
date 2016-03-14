@@ -26,6 +26,7 @@ class installelknode(
 
         $inst_collectd  = hiera('installelknode::collectd::install', undef)
 
+
 	# start the installation of elasticsearch
 	class { 'elasticsearch' :
 		ensure => present,
