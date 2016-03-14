@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
    # snapshot shared NFS folder
-   config.vm.synced_folder ".", "/vagrant", type: "nfs"
+#   config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
 
 #   config.vm.synced_folder ".", "/snapshot", type: "nfs"
