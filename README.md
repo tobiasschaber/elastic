@@ -236,7 +236,7 @@ and load them on the next run without manually creating them. You have to perfor
           }
     }
 
-* Save a snapshot by performing this REST call:
+* Save a snapshot by performing this REST call (in this example the kibana index will be backed up):
 
     PUT http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1?wait_for_completion=true
 
@@ -247,9 +247,9 @@ and load them on the next run without manually creating them. You have to perfor
 * You should now find the snapshot files in the "snapshots" directory
 * You can restore it by calling this REST call:
 
-    POST http://10.0.3.131:9200/.kibana/_close
-    POST http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1/_restore
-    POST http://10.0.3.131:9200/.kibana/_open
+  * POST http://10.0.3.131:9200/.kibana/_close (which will close the active index)
+  * POST http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1/_restore (which will restore the index)
+  * POST http://10.0.3.131:9200/.kibana/_open (which will re-open the index)
 
 
 
