@@ -215,9 +215,9 @@ Also ensure that the complete `redis::` section is enabled in the common.yaml. S
 
 ## Other stuff ##
 
-### Elasticsearch snapshots ###
+### Kibana snapshots ###
 
-You can use the elasticsearch snapshot mechanism to store some ELK artifacts (like kibana dashboards etc)
+You can use the elasticsearch snapshot mechanism to store some ELK artifacts, for example dashboards and visualizations 
 and load them on the next run without manually creating them. You have to perform the following steps to activate it:
 
 
@@ -225,7 +225,7 @@ and load them on the next run without manually creating them. You have to perfor
 * Uncomment the snapshot shared NFS folder line in the Vagrantfile
 * Ensure that `path.repo` is set in hiera/common.yaml. (defaults to: `/tmp/elkinstalldir/snapshots`)
 * Start the cluster
-* Perform this REST call:
+* Perform this REST call to create the snapshot repository:
 
     PUT http://10.0.3.131:9200/_snapshot/elk_backup
 
@@ -236,13 +236,20 @@ and load them on the next run without manually creating them. You have to perfor
           }
     }
 
-This will write the snapshot to the /snapshot location.
+* Save a snapshot by performing this REST call:
 
-* Save the snapshot
+    PUT http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1?wait_for_completion=true
+
+    {
+      "indices": ".kibana"
+    }
+
+* You should now find the snapshot files in the "snapshots" directory
 * You can restore it by calling this REST call:
 
-    GET http://10.0.3.131:9200/_snapshot/elk_backup
-
+    POST http://10.0.3.131:9200/.kibana/_close
+    POST http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1/_restore
+    POST http://10.0.3.131:9200/.kibana/_open
 
 
 
