@@ -1,6 +1,5 @@
 ---
 installlogstash::logstash_role: shipper
-installlogstash::use_redis: true
 installlogstash::redis_ssl: true
 installlogstash::configstunnel::bindings:
   redis1:

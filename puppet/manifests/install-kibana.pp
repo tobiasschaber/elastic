@@ -18,8 +18,17 @@ class installkibana {
 
         $elk_config     = hiera('elasticsearch::config')
         
+
         # enable ssl between kibana and elasticsearch?
-        $enableelkssl   = $elk_config['shield']['http.ssl']
+        if($elk_config['shield']) {
+                $enableelkssl   = $elk_config['shield']['http.ssl']
+        } else {
+                $enableelkssl = false
+        }
+
+
+
+        
 
         # enable https between kibana and client browser
         $enablehttps    = hiera('installkibana::configkibana::enablehttps')
