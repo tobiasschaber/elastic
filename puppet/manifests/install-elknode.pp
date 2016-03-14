@@ -35,13 +35,6 @@ class installelknode(
 
 	->
 
-	# ensure that the shared snapshot directory exists
-        file { "/tmp/elkinstalldir/tmp/snapshot":
-		ensure => "directory",
-		owner => $elk_user,
-		group => $elk_group,
-	} ->
-
 	# add the default admin user
 	class { 'installelknode::configureshield' :
 

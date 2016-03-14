@@ -42,6 +42,8 @@ elasticsearch::config:
 #      truststore.password: codecentric
 #    transport.ssl: true
 #    http.ssl: true
+  path.repo: 
+    /tmp/elkinstalldir/snapshots
 elasticsearch::plugins:
   elasticsearch/license/latest:
     instances:
@@ -62,7 +64,7 @@ installelknode::collectd::install: true
 installelknode::collectd::port: 25826
 installelknode::collectd::version: 5.5.0
 installelknode::collectd::servers:
-  logstashindexer1:
+  logstash1:
     port: 25826
 installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.4.0-linux-x64.tar.gz
 installkibana::configkibana::kibanaelkuser: esadmin
