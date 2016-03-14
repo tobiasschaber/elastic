@@ -25,7 +25,7 @@ input {
         <%# if role is not "indexer", it is "default" or "shipper", which means the "default" setup %>
         <% else %>
                 <%# if collectd is used, add it as an input (via udp input) %>
-                <% if @inst_collectd == true %>
+                <% if @inst_cld == true %>
 
                 udp {
                         port => <%= @collectd_port %>
