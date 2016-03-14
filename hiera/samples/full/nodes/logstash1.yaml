@@ -1,0 +1,4 @@
+---
+installlogstash::logstash_role: default
+installlogstash::use_redis: false
+installlogstash::redis_ssl: false
