@@ -4,9 +4,9 @@ elkcluster::clientnodes:
   - elkclient2
 redis::nodes:
   - 10.0.3.141
-#  - 10.0.3.142
-#redis::masterauth: cctestpass
-#redis::requirepass: cctestpass
+  - 10.0.3.142
+redis::masterauth: cctestpass
+redis::requirepass: cctestpass
 logstash::logstash_user: logstash
 logstash::logstash_group: logstash
 logstash::java_install: true
@@ -26,22 +26,22 @@ elasticsearch::config:
     zen.ping.multicast.enabled: false
     zen.ping.unicast.hosts:
      - 10.0.3.101
-#  shield:
-#    authc.realms:
-#      esusers_default:
-#        type: esusers
-#        order: 0
-#        files.users: /etc/elasticsearch/es-01/shield/users
-#        files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
-#    ssl:
-#      keystore.path: /etc/elasticsearch/es-01/shield/es01-keystore.jks
-#      keystore.password: codecentric
-#      keystore.key_password: codecentric
-#      hostname_verification: false
-#      truststore.path: /etc/elasticsearch/es-01/shield/es01-truststore.jks
-#      truststore.password: codecentric
-#    transport.ssl: true
-#    http.ssl: true
+  shield:
+    authc.realms:
+      esusers_default:
+        type: esusers
+        order: 0
+        files.users: /etc/elasticsearch/es-01/shield/users
+        files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
+    ssl:
+      keystore.path: /etc/elasticsearch/es-01/shield/es01-keystore.jks
+      keystore.password: codecentric
+      keystore.key_password: codecentric
+      hostname_verification: false
+      truststore.path: /etc/elasticsearch/es-01/shield/es01-truststore.jks
+      truststore.password: codecentric
+    transport.ssl: true
+    http.ssl: true
 elasticsearch::plugins:
   elasticsearch/license/latest:
     instances:
@@ -49,27 +49,27 @@ elasticsearch::plugins:
   marvel-agent:
     instances:
       - es-01
-#  elasticsearch/watcher/latest:
-#    instances:
-#      - es-01
-#  elasticsearch/shield/latest:
-#    instances:
-#      - es-01
-installelknode::configureshield::enable_elk_auth: false
-#installelknode::configureshield::defaultadminname: esadmin
-#installelknode::configureshield::defaultadminpass: esadmin
+  elasticsearch/watcher/latest:
+    instances:
+      - es-01
+  elasticsearch/shield/latest:
+    instances:
+      - es-01
+installelknode::configureshield::enable_elk_auth: true
+installelknode::configureshield::defaultadminname: esadmin
+installelknode::configureshield::defaultadminpass: esadmin
 installelknode::collectd::install: true
 installelknode::collectd::port: 25826
 installelknode::collectd::version: 5.5.0
 installelknode::collectd::servers:
-  logstashindexer1:
+  logstash1:
     port: 25826
 installkibana::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.4.0-linux-x64.tar.gz
 installkibana::configkibana::kibanaelkuser: esadmin
 installkibana::configkibana::kibanaelkpass: esadmin
 installkibana::configkibana::kibana_user: kibana
 installkibana::configkibana::kibana_group: kibana
-installkibana::configkibana::enablehttps: false
+installkibana::configkibana::enablehttps: true
 installkibana::plugins:
   elasticsearch/marvel/latest:
     source: package

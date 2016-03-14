@@ -6,9 +6,6 @@
 #
 class installlogstash(
 
-        # true if redis should be used
-        $use_redis = false,
-
         # true if redis should use stunnel as ssl tunnel provider
         $redis_ssl = false,
 
@@ -22,21 +19,32 @@ class installlogstash(
         }
 
         # roles "indexer" and "shipper" require redis!
-        if ($logstash_role in [ 'indexer', 'shipper' ] and $use_redis == false) {
-                fail("If use_redis is set to false, you can only use default as logstash_role.")
+        if ($logstash_role in [ 'indexer', 'shipper' ]) {
+                $use_redis = true
+        } else {
+                $use_redis = false
         }
 
         $elk_config       = hiera('elasticsearch::config')
-        $truststore_pass  = $elk_config['shield']['ssl']['truststore.password']
-        $logstash_elkuser = hiera('installelknode::configureshield::defaultadminname', 'logstash')
-        $logstash_elkpass = hiera('installelknode::configureshield::defaultadminpass', 'logstash')
-        $redis_nodes      = hiera('redis::nodes')
+        $logstash_elkuser = hiera('installelknode::configureshield::defaultadminname', undef)
+        $logstash_elkpass = hiera('installelknode::configureshield::defaultadminpass', undef)
+        $redis_nodes      = hiera('redis::nodes', undef)
+
+        if($elk_config['shield']) {
+                $truststore_pass  = $elk_config['shield']['ssl']['truststore.password']
+
+                # enable ssl between kibana and elasticsearch?
+                $enableelkssl   = $elk_config['shield']['http.ssl']
+
+        } else {
+                $enableelkssl   = false
+        }
 
         # start case calculation for redis and stunnel
 
         # want to use redis?
         if($use_redis == true) {
-                $redis_password = hiera('redis::masterauth', 'testccpass')
+                $redis_password = hiera('redis::masterauth', undef)
 
                 # redis with ssl?
                 if($redis_ssl == true) {
@@ -51,9 +59,6 @@ class installlogstash(
 
 
 
-        # enable ssl between kibana and elasticsearch?
-        $enableelkssl   = $elk_config['shield']['http.ssl']
-
 	# install logstash via the puppet module
 	class { 'logstash':
 		manage_repo => true,
@@ -64,6 +69,7 @@ class installlogstash(
         # create the logstash config file
 	class { 'installlogstash::prepareconfigfile' :
                 role => $logstash_role,
+                redis_ssl => $redis_ssl,
 
         }
         
@@ -139,8 +145,16 @@ class installlogstash::configstunnel(
 
 class installlogstash::prepareconfigfile(
 	$role = 'default',
+        $redis_ssl = false,
 ) {
-        $inst_collectd  = hiera('installelknode::collectd::install')
+
+        $inst_cld = hiera('installelknode::collectd::install')
+
+        if ($role in [ 'shipper' ] and $inst_cld == true) {
+                $inst_collectd  = true
+        } else {
+                $inst_collectd = false
+        }
 
         # if collect.d should be installed, search hiera for the correct hostname and port
         # and adjust the target index (which will then be "collectd-*" instead of "default-*"

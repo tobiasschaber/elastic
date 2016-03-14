@@ -39,12 +39,21 @@ class installredis(
                         cert    => '/etc/stunnel/stunnel_full.pem',
                 }
                 create_resources("stunnel::tun", $bindings, $redisdefaults)
-        }
 
+                # with stunnel, listen on 127.0.0.1
+                $redisbind = $bindings['server']['connect']
+
+        } else {
+                # without stunnel, listen on public IP
+                $redisbind = $bindings['server']['accept']
+        }
+                $redisbindip = inline_template("<%= redisbind.split(':')[0] -%>")
+                
 
 	# start the installation of redis
 	class { 'redis' :
                 manage_repo => true,
+                bind        => $redisbindip
 	}
 }
 
