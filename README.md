@@ -247,9 +247,10 @@ and load them on the next run without manually creating them. You have to perfor
 * You should now find the snapshot files in the "snapshots" directory
 * You can restore it by calling this REST call:
 
-  * POST http://10.0.3.131:9200/.kibana/_close (which will close the active index)
-  * POST http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1/_restore (which will restore the index)
-  * POST http://10.0.3.131:9200/.kibana/_open (which will re-open the index)
+  * create the snapshot repository if not already existing (empty body) (see above)
+  * POST http://10.0.3.131:9200/.kibana/_close (empty body) (which will close the active index)
+  * POST http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1/_restore (empty body) (which will restore the index)
+  * POST http://10.0.3.131:9200/.kibana/_open (empty body) (which will re-open the index)
 
 
 
