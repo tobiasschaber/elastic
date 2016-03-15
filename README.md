@@ -225,6 +225,10 @@ and load them on the next run without manually creating them. You have to perfor
 * Uncomment the snapshot shared NFS folder line in the Vagrantfile
 * Ensure that `path.repo` is set in hiera/common.yaml. (defaults to: `/tmp/elkinstalldir/snapshots`)
 * Start the cluster
+
+Now you can either use the elasticsearch REST API directly or use the scripts in the "tools" directory.
+#### The REST way ####
+
 * Perform this REST call to create the snapshot repository:
 
     PUT http://10.0.3.131:9200/_snapshot/elk_backup
@@ -251,6 +255,17 @@ and load them on the next run without manually creating them. You have to perfor
   * POST http://10.0.3.131:9200/.kibana/_close (empty body) (which will close the active index)
   * POST http://10.0.3.131:9200/_snapshot/elk_backup/snapshot_1/_restore (empty body) (which will restore the index)
   * POST http://10.0.3.131:9200/.kibana/_open (empty body) (which will re-open the index)
+
+#### The scripted way ####
+
+If you want to snapshot only your kibana data, use the scripts in the "tools" directory:
+
+`./snapshotKibana.sh <snapshotname>`
+
+This will create a snapshot of your kibana data and write it into the "snapshots" directory.
+To reinject your kibana data, execute this script:
+
+`./restoreSnapshotKibana.sh <snapshotname>`
 
 
 
