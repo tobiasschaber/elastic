@@ -16,6 +16,8 @@ If you want to start up an elasticsearch cluster via vagrant, you need the follo
 * ssl cert creation:
     * java keytool
     * openssl
+* if you want to use snapshots:
+    * nfs-kernel-server
 
 
 
