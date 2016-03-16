@@ -51,11 +51,15 @@ class installelknode(
         # install collectd if configured
         if($inst_collectd == true) {
 
-                $collectd_port = hiera('installelknode::collectd::port')
-                $collectd_servers = hiera_hash('installelknode::collectd::servers')
+                $collectd_port          = hiera('installelknode::collectd::port')
+                $collectd_servers       = hiera_hash('installelknode::collectd::servers')
 
                 # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
-                $collectd_version = hiera('installelknode::collectd::version', '5.5.0')
+                $collectd_version       = hiera('installelknode::collectd::version', '5.5.0')
+
+                $collectd_plugin_conf   = hiera_hash('installelknode::collectd::plugins')
+
+                $collectd_plugin_ignore = $collectd_plugin_conf['interface']['ignore']
                 
 
                 # enterprise packages are required for installation
@@ -83,6 +87,12 @@ class installelknode(
                         reportbycpu => true,
                         valuespercentage => true,
 
+                }
+
+                # add the collect.d network interface plugin
+                class { 'collectd::plugin::interface':
+                        interfaces => $collectd_plugin_ignore,
+                        ignoreselected => true,                        
                 }
 
                 # add the collect.d network plugin and configure it to send to logstash
