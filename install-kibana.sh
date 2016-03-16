@@ -10,5 +10,6 @@ sudo puppet apply --debug /tmp/elkinstalldir/puppet/manifests/install-kibana.pp 
 #####################################################################################################################################################
 # WORKAROUND: FIXES ACCESS DENIED PROBLEM ON KIBANA BABELCACHE FILE WHICH IS OWNED BY ROOT
 #####################################################################################################################################################
-sudo chown kibana:kibana /opt/kibana4/optimize/.babelcache.json
+# seems no longer be needed
+#sudo chown kibana:kibana /opt/kibana4/optimize/.babelcache.json
 

@@ -27,3 +27,4 @@ curl -XPOST -s "http://10.0.3.131:9200/.kibana/_close"
 curl -XPOST -s "http://10.0.3.131:9200/_snapshot/elk_backup/$1/_restore"
 curl -XPOST -s "http://10.0.3.131:9200/.kibana/_open"
 
+echo "IF YOU HAVE ACCESS_DENIED_EXCEPTION, UNCOMMENT THE SHARED FOLDER LINE IN YOUR VAGRANTFILE!"
