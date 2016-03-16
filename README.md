@@ -23,9 +23,19 @@ If you want to start up an elasticsearch cluster via vagrant, you need the follo
 
 ## How to quick start? ##
 
-### Start the cluster ###
 
-the quickest way to start an ELK cluster is to run the default setup:
+### Interactive starter ###
+
+The quickest way to start an ELK cluster is to run the interactive starter script:
+
+`./start-interactive.sh`
+
+The interactive starter will ask you for your installation details, and if you always choose the 
+default (just click [enter] for all questions), you will get a working, nice elasticsearch cluster.
+
+### Manually start the cluster ###
+
+If you do not want to use the interactive starter, just perform the following steps to start the cluster:
 
 * execute the `./prepare-ssl.sh` shell script (which will create all required ssl certs for you)
 * execute `vagrant up elkdata1 elkmaster1 elkclient1` to start a minimum cluster
