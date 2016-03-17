@@ -8,14 +8,11 @@ export ELKINSTALLDIR="/vagrant";
 # where the installer location directory will be
 sudo ln -s $ELKINSTALLDIR /tmp/elkinstalldir
 
-# run the preparation scripts for java
+# run the preparation script for java
 source $ELKINSTALLDIR/installation/prepare-java.sh
 
-# add the rpm repository for puppet
-rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
-
-# install puppet and git
-yum install puppet -y
+# run the preparation script for puppet
+source $ELKINSTALLDIR/installation/prepare-puppet.sh
 
 # install all puppet modules which are required for the following installation
 sudo puppet module install puppetlabs-stdlib
