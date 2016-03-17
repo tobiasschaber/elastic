@@ -45,6 +45,41 @@ function ask_for_machine_count() {
 }
 
 
+# ------------------------------------------------------------------------ CHECK IF VAGRANT PLUGIN IS INSTALLED --- #
+# signature:
+# $1: required plugin
+function check_vagrant_plugin(){
+
+        # check if the plugin is in the plugin list
+        vagrant plugin list | grep $1 > /dev/null
+        
+        if [ $? != 0 ]
+                then
+                        echo "you have to install the vagrant plugin \"$1\" before starting the cluster."
+                        exit
+
+        fi
+
+}
+
+
+# ------------------------------------------------------------------------ CHECK IF ALL REQUIRED SOFTWWARE IS AVAILABLE --- #
+# signature:
+# $1: required command
+# $2: package info (which package do I need to install?)
+function check_required_software() {
+
+        # check if the command is available on path
+        which $1 > /dev/null
+
+        if [ $? != 0 ]
+                then
+                        echo "you have to install $1 before starting the cluster (e.g. $2 )!"
+                        exit
+        fi
+}
+
+
 # ------------------------------------------------------------------------ ASK IF USE LOGSTASH --- #
 # signature:
 # - (no params)
@@ -222,8 +257,14 @@ echo ""
 
 # variable building the vagrant machine liste to start
 vagrant_machine_list=""
-
-
+echo "Checking required software..."
+check_required_software vagrant vagrant
+check_required_software java openjdk-7-jdk
+check_required_software keytool openjdk-7-jdk
+check_required_software openssl openssl
+check_required_software virtualbox virtualbox
+check_vagrant_plugin vagrant-hosts
+echo "Done. All required software installed."
 # ------------------------------------------------------------------------ CHECK STANDARD NODES --- #
 ask_for_machine_count "master" "elkmaster" 2
 ask_for_machine_count "data" "elkdata" 3
@@ -279,6 +320,14 @@ fi
 
 
 
+
+echo "---------------------------------------------------------"
+echo "Finished! The ELK cluster should now be online!"
+
+if [ $start_kibana == "yes" ]
+        then
+                echo "Kibana should now be available under: http://10.0.3.131:5601"
+fi
 
 
 
