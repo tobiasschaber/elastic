@@ -19,3 +19,5 @@ sudo puppet module install puppetlabs-stdlib
 sudo puppet module install puppetlabs-java
 sudo puppet module install ceritsc-yum
 sudo puppet module install maestrodev-wget
+
+echo "finished preparation"
