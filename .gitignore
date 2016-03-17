@@ -2,3 +2,5 @@ tmp/**
 ssl/**
 .vagrant/**
 installation/tmp/**
+.idea*
+*.iml
