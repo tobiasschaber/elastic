@@ -31,7 +31,7 @@ class installelknode(
 	class { 'elasticsearch' :
 		ensure => present,
 		status => enabled,
-	} 
+	}
 
 	->
 
@@ -60,14 +60,15 @@ class installelknode(
                 $collectd_plugin_conf   = hiera_hash('installelknode::collectd::plugins')
 
                 $collectd_plugin_ignore = $collectd_plugin_conf['interface']['ignore']
-                
 
-                # enterprise packages are required for installation
-                package { 'epel-release':
-                        ensure => installed,
+                # with RedHat/CentOS, the "enterprise packages" are required.
+                if($operatingsystem in ['RedHat', 'CentOS']) {
+                  # enterprise packages are required for installation
+                  package { 'epel-release':
+                    ensure => installed,
+                  }
+                }
 
-                } 
-                ->
                 # install collect.d
                 class { '::collectd':
                         package_ensure  => installed,
@@ -122,19 +123,21 @@ class installelknode::addkeystores(
                 $ensurejks = absent
         }
 
-	file { '/etc/elasticsearch/es-01/shield' :
-		owner => $elk_user,
-		group => $elk_group,
-                ensure => 'directory',
-	} ->
+  if($ensurejks == "present") {
+	  file { '/etc/elasticsearch/es-01/shield' :
+  		    owner => $elk_user,
+    	    group => $elk_group,
+          ensure => 'directory',
+	  }
+  }
 
 	# add jks keystore
 	file { '/etc/elasticsearch/es-01/shield/es01-keystore.jks' :
-		source => "/tmp/elkinstalldir/ssl/${ownhost}-keystore.jks",
-		owner => $elk_user,
-		group => $elk_group,
-		mode => "0755",
-                ensure => $ensurejks,
+    source => "/tmp/elkinstalldir/ssl/${ownhost}-keystore.jks",
+    owner => $elk_user,
+    group => $elk_group,
+    mode => "0755",
+    ensure => $ensurejks,
 	} ->
 
 	# add jks truststore
@@ -143,7 +146,7 @@ class installelknode::addkeystores(
 		owner => $elk_user,
 		group => $elk_group,
 		mode => "0755",
-                ensure => $ensurejks,
+    ensure => $ensurejks,
 	}
 }
 
