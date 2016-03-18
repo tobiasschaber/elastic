@@ -8,9 +8,7 @@
 # for debian systems, there is a file under /etc/debian_version
 if [ -f /etc/debian_version ]
     then
-    wget http://apt.puppetlabs.com/puppetlabs-release-trusty.deb
-    sudo dpkg -i puppetlabs-release-trusty.deb
-    #sudo apt-get install puppet
+    sudo apt-get install puppet
 fi
 
 
