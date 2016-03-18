@@ -15,6 +15,7 @@ source $ELKINSTALLDIR/installation/prepare-java.sh
 source $ELKINSTALLDIR/installation/prepare-puppet.sh
 
 # install all puppet modules which are required for the following installation
+sudo puppet module install puppetlabs-apt
 sudo puppet module install puppetlabs-stdlib
 sudo puppet module install puppetlabs-java
 sudo puppet module install ceritsc-yum
