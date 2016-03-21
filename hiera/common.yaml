@@ -12,18 +12,6 @@ logstash::logstash_group: logstash
 logstash::java_install: true
 logstash::repo_version: '2.0'
 elasticsearch::restart_on_change: false
-
-# UBUNTU:
-#elasticsearch::java_package: openjdk-7-jre-headless
-#elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.2.0/elasticsearch-2.2.0.deb
-#logstash::java_package: openjdk-7-jre-headless
-
-
-# RHEL/CENTOS:
-elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.2.0/elasticsearch-2.2.0.rpm
-elasticsearch::java_package: jdk1.8.0_65.x86_64
-logstash::java_package: jdk1.8.0_65.x86_64
-# GENERAL
 elasticsearch::manage_repo: true
 elasticsearch:ensure: present
 elasticsearch::repo_version: '2.x'
