@@ -10,7 +10,7 @@ redis::nodes:
 logstash::logstash_user: logstash
 logstash::logstash_group: logstash
 logstash::java_install: true
-logstash::repo_version: '2.0'
+logstash::repo_version: '2.2'
 elasticsearch::restart_on_change: false
 elasticsearch::manage_repo: true
 elasticsearch:ensure: present
