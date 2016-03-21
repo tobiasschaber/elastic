@@ -170,7 +170,7 @@ function ask_to_setup_kibana(){
         fi
 
         # check if the shared file system in vagrant is not commented out
-        if grep -q "#   config.vm.synced_folder" Vagrantfile;
+        if grep -q -e "\s*#\s*config.vm.synced_folder" Vagrantfile;
                 then
                         echo "Error: the shared folder is commented out in your vagrantfile."
                         echo "remove the \"#\" in the line: #   config.vm.synced_folder to proceed."
