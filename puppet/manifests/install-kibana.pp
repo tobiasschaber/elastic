@@ -107,14 +107,6 @@ class installkibana {
 		mode => "0755",
 	} ->
 
-
-	# set kibana to autostart = true
-	exec { 'kibana-service-autostart' :
-		command => "chkconfig kibana on",
-		path => ["/sbin"],
-		user => "root",
-	} ->
-
 	# make sure that the kibana service is stopped because it should be started at the end
 	service { 'start-kibana' :
 		name => "kibana",
@@ -125,6 +117,13 @@ class installkibana {
 	class { 'installkibana::configkibana' : 
                 enablehttps    => $enablehttps,
                 enablessl      => $enableelkssl
+	}
+
+	if($operatingsystem in ['RedHat', 'CentOS']) {
+		# enterprise packages are required for installation
+		package { 'epel-release':
+			ensure => installed,
+		}
 	}
 }
 

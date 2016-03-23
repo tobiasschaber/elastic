@@ -23,7 +23,7 @@ echo "SSL SETUP CHECK: CHECK FINISHED. NO PROBLEMS DETECTED"
 
 
 # install the required puppet modules and dependencies
-sudo puppet module install elasticsearch-elasticsearch --version 0.10.0
+sudo puppet module install elasticsearch-elasticsearch --version 0.10.3
 sudo puppet module install puppet/collectd
 
 # install elasticsearch node via puppet

@@ -10,13 +10,13 @@ redis::nodes:
 logstash::logstash_user: logstash
 logstash::logstash_group: logstash
 logstash::java_install: true
-logstash::java_package: jdk1.8.0_65.x86_64
-logstash::repo_version: '2.0'
+logstash::repo_version: '2.2'
 elasticsearch::restart_on_change: false
-elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.2.0/elasticsearch-2.2.0.rpm
+elasticsearch::manage_repo: true
+elasticsearch:ensure: present
+elasticsearch::repo_version: '2.x'
 elasticsearch::package_provider: package
 elasticsearch::java_install: true
-elasticsearch::java_package: jdk1.8.0_65.x86_64
 elasticsearch::elasticsearch_user: elasticsearch
 elasticsearch::elasticsearch_group: elasticsearch
 elasticsearch::config:
@@ -60,7 +60,7 @@ elasticsearch::plugins:
 installelknode::configureshield::enable_elk_auth: false
 #installelknode::configureshield::defaultadminname: esadmin
 #installelknode::configureshield::defaultadminpass: esadmin
-installelknode::collectd::install: true
+installelknode::collectd::install: false
 installelknode::collectd::port: 25826
 installelknode::collectd::version: 5.5.0
 installelknode::collectd::servers:

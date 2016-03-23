@@ -170,7 +170,7 @@ function ask_to_setup_kibana(){
         fi
 
         # check if the shared file system in vagrant is not commented out
-        if grep -q "#   config.vm.synced_folder" Vagrantfile;
+        if grep -q -e "\s*#\s*config.vm.synced_folder" Vagrantfile;
                 then
                         echo "Error: the shared folder is commented out in your vagrantfile."
                         echo "remove the \"#\" in the line: #   config.vm.synced_folder to proceed."
@@ -189,7 +189,9 @@ function startup_kibana_on_all_nodes(){
         while [ $i -le $client_node_count ]
                 do
                         # start kibana which is not started automatically
+                        # try to start with systemctl and then with service command
                         vagrant ssh elkclient$i -c "sudo systemctl start kibana"
+                        vagrant ssh elkclient$i -c "sudo service kibana start"
                         let i=$i+1
         done
 
@@ -297,7 +299,7 @@ if [ $use_logstash == "yes" ]
                 fi
 fi
 
-# ------------------------------------------------------------------------ DATA COLECTION FINISHED. START CLUSTER NOW --- #
+# ------------------------------------------------------------------------ DATA COLLECTION FINISHED. START CLUSTER NOW --- #
 
 echo "---------------------------------------------------------"
 echo "Collecting data finished. Summary:"
@@ -310,25 +312,21 @@ echo "Finished collecting. Press [enter] to start the cluster..."
 
 read
 
-vagrant up $vagrant_machine_list
+#vagrant up $vagrant_machine_list
 
 
 if [ $start_kibana == "yes" ]
-        then
-                startup_kibana_on_all_nodes
+    then
+
+    startup_kibana_on_all_nodes
+
+    if grep -q -e "\s*installkibana::configkibana::enablehttps:\strue" hiera/common.yaml;
+    then
+        echo "Kibana should now be available under: https://10.0.3.131:5601"
+    else
+        echo "Kibana should now be available under: http://10.0.3.131:5601"
+    fi
 fi
-
-
-
 
 echo "---------------------------------------------------------"
 echo "Finished! The ELK cluster should now be online!"
-
-if [ $start_kibana == "yes" ]
-        then
-                echo "Kibana should now be available under: http://10.0.3.131:5601"
-fi
-
-
-
-

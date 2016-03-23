@@ -152,7 +152,7 @@ class installlogstash::prepareconfigfile(
 
         # if collect.d should be installed, search hiera for the correct hostname and port
         # and adjust the target index (which will then be "collectd-*" instead of "default-*"
-        if($inst_cld == true) {
+        if($inst_cld == true and $role in ['default', 'shipper']) {
                 $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
                 $collectd_config     = hiera('installelknode::collectd::servers')
                 $collectd_port       = $collectd_config[$ownhost]['port']
