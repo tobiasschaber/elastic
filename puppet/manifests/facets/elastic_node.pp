@@ -8,7 +8,7 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installelknode(
+class elastic_cluster::facets::elastic_node(
 
 ) {
         # read the complete elk configuration array
@@ -24,7 +24,7 @@ class installelknode(
                 $enablehttps    = false
         }
 
-        $inst_collectd  = hiera('installelknode::collectd::install', undef)
+        $inst_collectd  = hiera('elastic_cluster::facets::elknodecollectd::install', undef)
 
 
 	# start the installation of elasticsearch
@@ -36,13 +36,13 @@ class installelknode(
 	->
 
 	# add the default admin user
-	class { 'installelknode::configureshield' :
+	class { 'elastic_cluster::facets::elastic_node::configureshield' :
 
 	}
 
 	->
 
-        class { 'installelknode::addkeystores' :
+        class { 'elastic_cluster::facets::elastic_node::addkeystores' :
                 enablessl => $enablessl,
                 enablehttps => $enablehttps,
         }
@@ -51,13 +51,13 @@ class installelknode(
         # install collectd if configured
         if($inst_collectd == true) {
 
-                $collectd_port          = hiera('installelknode::collectd::port')
-                $collectd_servers       = hiera_hash('installelknode::collectd::servers')
+                $collectd_port          = hiera('elastic_cluster::facets::elknodecollectd::port')
+                $collectd_servers       = hiera_hash('elastic_cluster::facets::elknodecollectd::servers')
 
                 # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
-                $collectd_version       = hiera('installelknode::collectd::version', '5.5.0')
+                $collectd_version       = hiera('elastic_cluster::facets::elknodecollectd::version', '5.5.0')
 
-                $collectd_plugin_conf   = hiera_hash('installelknode::collectd::plugins')
+                $collectd_plugin_conf   = hiera_hash('elastic_cluster::facets::elknodecollectd::plugins')
 
                 $collectd_plugin_ignore = $collectd_plugin_conf['interface']['ignore']
 
@@ -93,7 +93,7 @@ class installelknode(
                 # add the collect.d network interface plugin
                 class { 'collectd::plugin::interface':
                         interfaces => $collectd_plugin_ignore,
-                        ignoreselected => true,                        
+                        ignoreselected => true,
                 }
 
                 # add the collect.d network plugin and configure it to send to logstash
@@ -108,7 +108,7 @@ class installelknode(
 }
 
 # install the required jks trust- and keystores
-class installelknode::addkeystores(
+class elastic_cluster::facets::elastic_node::addkeystores(
         $enablessl = false,
         $enablehttps = false,
         $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>"),
@@ -152,7 +152,7 @@ class installelknode::addkeystores(
 
 
 # addition class to add the default admin user to the es configuration
-class installelknode::configureshield(
+class elastic_cluster::facets::elastic_node::configureshield(
 	$defaultadmin_name = "esadmin",
 	$defaultadmin_pass = "esadmin",
         $enable_elk_auth = false,
@@ -178,6 +178,4 @@ class installelknode::configureshield(
         }
 }
 
-# trigger puppet execution
-include installelknode
 

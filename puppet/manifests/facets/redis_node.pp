@@ -5,7 +5,7 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installredis(
+class elastic_cluster::facets::redis_node(
 
         $redis_ssl = false,
         $bindings = undef,
@@ -56,9 +56,4 @@ class installredis(
                 bind        => $redisbindip
 	}
 }
-
-
-
-# trigger puppet execution
-include installredis
 

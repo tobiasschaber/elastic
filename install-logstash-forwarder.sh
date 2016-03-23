@@ -39,4 +39,4 @@ sudo cp /tmp/elastic/puppet/files/logforwarderca.crt /etc/pki/tls/certs/logforwa
 sudo cp /tmp/elastic/puppet/files/logforwarder.crt /etc/pki/tls/certs/logforwarder.crt
 
 # run the installation script via puppet
-sudo puppet apply --debug sudo puppet apply --debug /vagrant/puppet/manifests/install-logstash-forwarder.pp
+sudo puppet apply --debug --modulepath=/etc/puppet/modules --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml -e "include elastic_cluster"

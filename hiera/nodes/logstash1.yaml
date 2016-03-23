@@ -1,2 +1,3 @@
 ---
+elastic_cluster::mode: logstash
 installlogstash::logstash_role: default

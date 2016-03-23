@@ -4,7 +4,7 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installlogstash(
+class elastic_cluster::facets::logstash_node(
 
         # true if redis should use stunnel as ssl tunnel provider
         $redis_ssl = false,
@@ -48,7 +48,7 @@ class installlogstash(
 
                 # redis with ssl?
                 if($redis_ssl == true) {
-                        class { 'installlogstash::configstunnel':
+                        class { 'elastic_cluster::facets::logstash_node::configstunnel':
                                 role => $logstash_role,
                         }
 
@@ -67,7 +67,7 @@ class installlogstash(
 	}
 
         # create the logstash config file
-	class { 'installlogstash::prepareconfigfile' :
+	class { 'elastic_cluster::facets::logstash_node::prepareconfigfile' :
                 role => $logstash_role,
                 redis_ssl => $redis_ssl,
 
@@ -76,7 +76,7 @@ class installlogstash(
         ->
 
 	# perform the configuration steps
-	class { 'installlogstash::configlogstash' :
+	class { 'elastic_cluster::facets::logstash_node::configlogstash' :
                 enablessl => $enableelkssl,
                 logstash_user => hiera('logstash::logstash_user'),
                 logstash_group => hiera('logstash::logstash_group'),
@@ -87,7 +87,7 @@ class installlogstash(
 
 
 
-class installlogstash::configstunnel(
+class elastic_cluster::facets::logstash_node::configstunnel(
 
         # the logstash role (shipper, indexer)
         $role = undef,
@@ -143,7 +143,7 @@ class installlogstash::configstunnel(
 
 
 
-class installlogstash::prepareconfigfile(
+class elastic_cluster::facets::logstash_node::prepareconfigfile(
 	$role = 'default',
         $redis_ssl = false,
 ) {
@@ -169,7 +169,7 @@ class installlogstash::prepareconfigfile(
 	}
 }
 
-class installlogstash::configlogstash(
+class elastic_cluster::facets::logstash_node::configlogstash(
 
         $enablessl = true,
         $logstash_user = 'logstash',
@@ -191,8 +191,3 @@ class installlogstash::configlogstash(
                 ensure => $ensuressl,
         }
 }
-
-# trigger puppet execution
-include installlogstash
-
-

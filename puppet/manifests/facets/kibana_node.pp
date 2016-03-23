@@ -4,7 +4,7 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installkibana {
+class elastic_cluster::facets::kibana_node{
 
 
 	# define the path where the puppet files have been checked out from the git repository
@@ -38,7 +38,7 @@ class installkibana {
         # if the plugin list exists
         if $pluginlist {
                 # pass the plugin list hash to the installer function
-                create_resources('installkibana::installplugins', $pluginlist)
+                create_resources('elastic_cluster::facets::kibana_node::installplugins', $pluginlist)
         }
 
 	# create the kibana users group
@@ -114,7 +114,7 @@ class installkibana {
 	} ->
 
 	# perform the configuration steps
-	class { 'installkibana::configkibana' : 
+	class { 'elastic_cluster::facets::kibana_node::configkibana' :
                 enablehttps    => $enablehttps,
                 enablessl      => $enableelkssl
 	}
@@ -127,7 +127,7 @@ class installkibana {
 	}
 }
 
-class installkibana::configkibana(
+class elastic_cluster::facets::kibana_node::configkibana(
 
 	$sslsourcescert = '/tmp/elkinstalldir/ssl/kibana.crt',
 	$sslsourceskey  = '/tmp/elkinstalldir/ssl/kibana.key',
@@ -241,7 +241,7 @@ class installkibana::configkibana(
         
 # define the installation routine which installs an kibana plugin
 # $source parameter is currently not read.
-define installkibana::installplugins($source) {
+define elastic_cluster::facets::kibana_node::installplugins($source) {
 
         # calculate the "short form" of the plugin name,
         # for example "marvel" in "elasticsearch/marvel/latest".
@@ -255,11 +255,8 @@ define installkibana::installplugins($source) {
                 creates => "/opt/kibana4/installedPlugins/$shortname",
 		user => "root",
 		cwd => "/opt/kibana4/",
-                require => Class['installkibana::configkibana']
+                require => Class['elastic_cluster::facets::kibana_node::configkibana']
   	}
 }
-
-# trigger puppet execution
-include installkibana
 
 

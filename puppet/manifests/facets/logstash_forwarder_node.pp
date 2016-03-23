@@ -9,7 +9,7 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installlogstashforwarder {
+class elastic_cluster::facets::logstash_forwarder_node {
 
 	# install the logstash forwarder.
 	# tell him the logstash server url to use
@@ -64,6 +64,3 @@ class installlogstashforwarder {
 		fields => { 'type' => 'linux-secure'},
 	}
 }
-
-# trigger puppet execution
-include installlogstashforwarder

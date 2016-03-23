@@ -1,4 +1,5 @@
 ---
+elastic_cluster::mode: elknode
 elasticsearch::instances:
   es-01:
     config:

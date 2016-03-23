@@ -1,4 +1,6 @@
 ---
+elastic_cluster::mode: elknode
+elastic_cluster::install_kibana: true
 elasticsearch::instances:
   es-01:
     config:

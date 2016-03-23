@@ -118,7 +118,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkclient1.vm.network "forwarded_port", guest: 9200, host: 19200
         elkclient1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkclient1.vm.provision :shell, :path => "install-elknode.sh"
-        elkclient1.vm.provision :shell, :path => "install-kibana.sh"
         elkclient1.vm.provider "virtualbox" do |v|
             v.memory = 768
             v.cpus = 2
@@ -135,7 +134,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkclient2.vm.network "forwarded_port", guest: 9200, host: 29200
         elkclient2.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkclient2.vm.provision :shell, :path => "install-elknode.sh"
-        elkclient2.vm.provision :shell, :path => "install-kibana.sh"
         elkclient2.vm.provider "virtualbox" do |v|
              v.memory = 768
              v.cpus = 2

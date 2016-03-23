@@ -21,4 +21,7 @@ sudo puppet module install puppetlabs-java
 sudo puppet module install ceritsc-yum
 sudo puppet module install maestrodev-wget
 
+sudo rm -r /etc/puppet/modules/elastic_cluster
+sudo cp -r $ELKINSTALLDIR/puppet /etc/puppet/modules/elastic_cluster
+
 echo "finished preparation"

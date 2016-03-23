@@ -1,4 +1,5 @@
 ---
+elastic_cluster::mode: logstash
 installlogstash::logstash_role: indexer
 installlogstash::redis_ssl: false
 #installlogstash::configstunnel::bindings:
