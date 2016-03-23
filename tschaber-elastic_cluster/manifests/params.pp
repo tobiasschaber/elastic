@@ -13,5 +13,11 @@ class elastic_cluster::params {
     # should kibana be installed on this node?
     $install_kibana  = false
 
+    # list of all client nodes
+    $clientnodes = undef
+
+    # list of all redis nodes
+    $redisnodes = undef
+
 
 }

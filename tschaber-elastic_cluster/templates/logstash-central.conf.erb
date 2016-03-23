@@ -8,7 +8,7 @@ input {
                         <% @redisnodes = @bindings.map{ |rnode| "#{rnode[1]['accept']}"} %>
                 <%# otherwise, use the redis bindings %>
                 <% else %>
-                        <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                        <% @redisnodes = scope.function_hiera(['elastic_cluster::redisnodes']) -%>
                 <% end %>
 
                 <%# for each redis node, add a redis input %>
@@ -59,7 +59,7 @@ output {
         <% if @role == "indexer" or @role == "default" %>
 
                 elasticsearch {
-		        <% @mastnodes = scope.function_hiera(['elkcluster::clientnodes']) -%>
+		        <% @mastnodes = scope.function_hiera(['elastic_cluster::clientnodes']) -%>
 
 		        hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
 		        index => "<%= @targetindex %>"
@@ -79,7 +79,7 @@ output {
                                 <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
                                host => [<%= @bindings.map{ |rnode| "\"#{rnode[1]['accept']}\""}.join(',') %>]
                         <% else %>
-                                <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                                <% @redisnodes = scope.function_hiera(['elastic_cluster::redisnodes']) -%>
                                 host => [<%= @redisnodes.map{ |rnode| "\"#{rnode}\""}.join(',') %>]
                         <% end %>
 

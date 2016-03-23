@@ -28,7 +28,7 @@ class elastic_cluster::facets::logstash_node(
         $elk_config       = hiera('elasticsearch::config')
         $logstash_elkuser = hiera('installelknode::configureshield::defaultadminname', undef)
         $logstash_elkpass = hiera('installelknode::configureshield::defaultadminpass', undef)
-        $redis_nodes      = hiera('redis::nodes', undef)
+        $redis_nodes      = hiera('elastic_cluster::redisnodes', undef)
 
         if($elk_config['shield']) {
                 $truststore_pass  = $elk_config['shield']['ssl']['truststore.password']

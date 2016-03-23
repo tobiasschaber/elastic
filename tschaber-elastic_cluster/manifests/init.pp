@@ -17,6 +17,8 @@
 class elastic_cluster(
     $mode           = $elastic_cluster::params::mode,
     $install_kibana = $elastic_cluster::params::install_kibana,
+    $clientnodes    = $elastic_cluster::params::clientnodes,
+    $redisnodes     = $elastic_cluster::params::redisnodes,
 
 ) inherits elastic_cluster::params {
 

@@ -1,8 +1,8 @@
 ---
-elkcluster::clientnodes:
+elastic_cluster::clientnodes:
   - elkclient1
   - elkclient2
-redis::nodes:
+elastic_cluster::redisnodes:
   - 10.0.3.141
 #  - 10.0.3.142
 #redis::masterauth: cctestpass
