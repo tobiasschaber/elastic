@@ -14,12 +14,6 @@ then
 fi
 ## SSL CHECK END --------------------------------------------------------------------------------
 
-
-# install the required puppet modules and dependencies
-sudo puppet module install arioch-redis
-sudo puppet module install arusso-stunnel
-
-
 # install redis via puppet
 sudo puppet apply --debug --modulepath=/etc/puppet/modules --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml -e "include elastic_cluster"
 

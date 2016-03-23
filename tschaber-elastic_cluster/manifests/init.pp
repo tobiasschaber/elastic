@@ -3,6 +3,17 @@
 # This class can be used to install a complete elasticsearch cluster with different
 # options. You can use this class to install elasticsearch, logstash, kibana, redis and more.
 #
+# === Parameters
+#
+# [*mode*]
+#   the mode to use for this node (e.g. elknode, logstash, redis, logstashforwarder)
+#
+#
+
+# === Authors
+#
+# Tobias Schaber <tobias.schaber@codecentric.de>
+#
 class elastic_cluster(
     $mode           = $elastic_cluster::params::mode,
     $install_kibana = $elastic_cluster::params::install_kibana,

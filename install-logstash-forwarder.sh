@@ -8,10 +8,6 @@ rpm -ivh /tmp/puppetlabs-release-el-6.noarch.rpm
 yum install puppet -y
 yum install git -y
 
-# install the required puppet modules and dependencies
-puppet module install puppetlabs-stdlib
-puppet module install elasticsearch-logstashforwarder
-
 # logstash-forwarder must be installed by hand because
 # the puppet installer will fail, because it will try to
 # execute this command with a user which has http_proxy 

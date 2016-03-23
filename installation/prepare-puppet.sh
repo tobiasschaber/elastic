@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# This script will perform the installation of the required puppet
-# modules.
+# This script will perform the installation of puppet
 
 
 
@@ -24,3 +23,6 @@ if [ -f /etc/redhat-release ]
         # install puppet and git
         yum install puppet -y
 fi
+
+# install the elastic-cluster puppet module
+puppet module install tschaber-elastic_cluster
