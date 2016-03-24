@@ -19,5 +19,11 @@ class elastic_cluster::params {
     # list of all redis nodes
     $redisnodes = undef
 
+    # should redis use ssl?
+    $redis_ssl = false
+
+    # the stunnel configuration
+    $stunnel_config = undef
+
 
 }

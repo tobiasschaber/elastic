@@ -4,7 +4,7 @@ input {
         <% if @role == "indexer" %>
                 <%# for redis over ssl, use the stunnel bindings %>
                 <% if @redis_ssl == true %>
-                        <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
+                        <% @bindings = scope.function_hiera(['elastic_cluster::stunnel_config'])['bindings'] -%>
                         <% @redisnodes = @bindings.map{ |rnode| "#{rnode[1]['accept']}"} %>
                 <%# otherwise, use the redis bindings %>
                 <% else %>
@@ -76,7 +76,7 @@ output {
 
                 redis {
                         <% if @redis_ssl == true %>
-                                <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
+                                <% @bindings = scope.function_hiera(['elastic_cluster::stunnel_config']['bindings']) -%>
                                host => [<%= @bindings.map{ |rnode| "\"#{rnode[1]['accept']}\""}.join(',') %>]
                         <% else %>
                                 <% @redisnodes = scope.function_hiera(['elastic_cluster::redisnodes']) -%>

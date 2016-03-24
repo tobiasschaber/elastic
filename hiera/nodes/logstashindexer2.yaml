@@ -1,11 +1,3 @@
 ---
 elastic_cluster::mode: logstash
-installlogstash::logstash_role: indexer
-installlogstash::redis_ssl: true
-installlogstash::configstunnel::bindings:
-  redis1:
-    accept: 127.0.0.1:13371
-    connect: 10.0.3.141:6379
-  redis2:
-    accept: 127.0.0.1:13372
-    connect: 10.0.3.142:6379
+elastic_cluster::facets::logstash_node::logstash_role: indexer

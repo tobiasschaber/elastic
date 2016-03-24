@@ -6,11 +6,14 @@
 #
 class elastic_cluster::facets::logstash_node(
 
-        # true if redis should use stunnel as ssl tunnel provider
-        $redis_ssl = false,
+    # true if redis should use stunnel as ssl tunnel provider
+    $redis_ssl = false,
 
-        # the role ("default", "shipper" or "indexer") for the logstash instance
-        $logstash_role = "default",
+    # the role ("default", "shipper" or "indexer") for the logstash instance
+    $logstash_role = "default",
+
+    # the stunnel configuration
+    $stunnel_config = undef,
 ) {
 
         # check role parameter
@@ -44,18 +47,20 @@ class elastic_cluster::facets::logstash_node(
 
         # want to use redis?
         if($use_redis == true) {
-                $redis_password = hiera('redis::masterauth', undef)
+            $redis_password = hiera('redis::masterauth', undef)
+            $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
-                # redis with ssl?
-                if($redis_ssl == true) {
-                        class { 'elastic_cluster::facets::logstash_node::configstunnel':
-                                role => $logstash_role,
-                        }
+            # redis with ssl?
+            if($redis_ssl == true) {
+                    class { 'elastic_cluster::facets::logstash_node::configstunnel':
+                        role => $logstash_role,
+                        bindings => $stunnel_config['bindings'],
+                    }
 
-                } else {
+            } else {
 
-                }
         }
+    }
 
 
 
@@ -164,7 +169,7 @@ class elastic_cluster::facets::logstash_node::prepareconfigfile(
 	# copy a config file based on a template
 	# attention! the path to this file depends on the git clone target directory and may be adjusted!
 	logstash::configfile { 'central' :
-		content => template("/tmp/elkinstalldir/puppet/templates/logstash-central.conf.erb"),
+		content => template("elastic_cluster/logstash-central.conf.erb"),
 		order => 10
 	}
 }

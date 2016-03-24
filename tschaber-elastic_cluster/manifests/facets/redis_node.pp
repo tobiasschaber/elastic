@@ -7,48 +7,57 @@
 #
 class elastic_cluster::facets::redis_node(
 
-        $redis_ssl = false,
-        $bindings = undef,
+    # true if redis should use stunnel as ssl tunnel provider
+    $redis_ssl = false,
+
+    # the stunnel configuration
+    $stunnel_config = undef,
 
 ) {
-        if($redis_ssl == true) {
+    $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
+    $bindings = $stunnel_config['bindings']
 
-	        # create the stunnel users group
-	        group { 'create-stunnel-group':
-		        name => 'stunnel',
-		        ensure => 'present',
-	        } ->
+    if($redis_ssl == true) {
 
-	        # create the stunnel user
-	        user { 'create-stunnel-user':
-		        name => 'stunnel',
-		        groups => ['stunnel'],
-		        ensure => 'present',
-	        } ->
+        # create the stunnel users group
+        group { 'create-stunnel-group':
+            name => 'stunnel',
+            ensure => 'present',
+        } ->
 
-                file { '/etc/stunnel/stunnel_full.pem':
-                    ensure => 'file',
-                    owner  => 'root',
-                    group  => 'root',
-                    mode   => 700,
-                    source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
-                }
+        # create the stunnel user
+        user { 'create-stunnel-user':
+            name => 'stunnel',
+            groups => ['stunnel'],
+            ensure => 'present',
+        } ->
 
-                $redisdefaults = {
-                        client => false,
-                        cert    => '/etc/stunnel/stunnel_full.pem',
-                }
-                create_resources("stunnel::tun", $bindings, $redisdefaults)
+        file { '/etc/stunnel/stunnel_full.pem':
+            ensure => 'file',
+            owner  => 'root',
+            group  => 'root',
+            mode   => 700,
+            source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
+            before => Class['stunnel'],
+        } ->
 
-                # with stunnel, listen on 127.0.0.1
-                $redisbind = $bindings['server']['connect']
-
-        } else {
-                # without stunnel, listen on public IP
-                $redisbind = $bindings['server']['accept']
+        stunnel::tun { 'redis-server':
+            accept =>   $bindings[$ownhost]['accept'],
+            connect =>  $bindings[$ownhost]['connect'],
+            client =>   false,
+            cert    =>  '/etc/stunnel/stunnel_full.pem',
         }
-                $redisbindip = inline_template("<%= redisbind.split(':')[0] -%>")
-                
+
+        # with stunnel, listen on 127.0.0.1
+        $redisbind = $bindings[$ownhost]['accept']
+
+    } else {
+        # without stunnel, listen on public IP
+        $redisbind = $bindings[$ownhost]['connect']
+    }
+
+    $redisbindip = inline_template("<%= redisbind.split(':')[0] -%>")
+
 
 	# start the installation of redis
 	class { 'redis' :

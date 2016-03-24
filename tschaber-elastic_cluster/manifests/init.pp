@@ -19,9 +19,10 @@ class elastic_cluster(
     $install_kibana = $elastic_cluster::params::install_kibana,
     $clientnodes    = $elastic_cluster::params::clientnodes,
     $redisnodes     = $elastic_cluster::params::redisnodes,
+    $redis_ssl      = $elastic_cluster::params::redis_ssl,
+    $stunnel_config = $elastic_cluster::params::stunnel_config,
 
 ) inherits elastic_cluster::params {
-
 
     #### validate params
 
@@ -34,7 +35,10 @@ class elastic_cluster(
 
     case $mode {
         'logstash': {
-            class { 'elastic_cluster::facets::logstash_node': }
+            class { 'elastic_cluster::facets::logstash_node':
+                redis_ssl => $redis_ssl,
+                stunnel_config => $stunnel_config,
+            }
         }
 
         'elknode': {
@@ -42,7 +46,10 @@ class elastic_cluster(
         }
 
         'redis': {
-            class { 'elastic_cluster::facets::redis_node': }
+            class { 'elastic_cluster::facets::redis_node':
+                redis_ssl => $redis_ssl,
+                stunnel_config => $stunnel_config,
+            }
         }
 
         'logstashforwarder': {

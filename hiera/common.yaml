@@ -7,6 +7,15 @@ elastic_cluster::redisnodes:
 #  - 10.0.3.142
 #redis::masterauth: cctestpass
 #redis::requirepass: cctestpass
+elastic_cluster::redis_ssl: true
+elastic_cluster::stunnel_config:
+    bindings:
+      redis1:
+        accept: 127.0.0.1:13371
+        connect: 10.0.3.141:6379
+#  redis2:
+#    accept: 127.0.0.1:13372
+#    connect: 10.0.3.142:6379
 logstash::logstash_user: logstash
 logstash::logstash_group: logstash
 logstash::java_install: true
@@ -64,7 +73,7 @@ installelknode::collectd::install: false
 installelknode::collectd::port: 25826
 installelknode::collectd::version: 5.5.0
 installelknode::collectd::servers:
-  logstash1:
+  logstashindexer1:
     port: 25826
 installelknode::collectd::plugins:
   interface:

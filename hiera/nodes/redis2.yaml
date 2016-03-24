@@ -1,6 +1,5 @@
 ---
 elastic_cluster::mode: redis
-elastic_cluster::facets::redis_node::redis_ssl: false
 elastic_cluster::facets::redis_node::bindings:
   server:
     accept: 10.0.3.142:6379
