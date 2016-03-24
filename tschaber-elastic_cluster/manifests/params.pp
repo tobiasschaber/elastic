@@ -34,10 +34,9 @@ class elastic_cluster::params {
 
     $elk_authentication = {
         enable_authentication => false,
-        username => 'esadmin',
-        password => 'esadmin',
+        username              => 'esadmin',
+        password              => 'esadmin',
     }
-
 
 
 }

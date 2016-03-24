@@ -38,21 +38,23 @@ class elastic_cluster(
     case $mode {
         'logstash': {
             class { 'elastic_cluster::facets::logstash_node':
-                redis_ssl => $redis_ssl,
-                stunnel_config => $stunnel_config,
+                redis_ssl       => $redis_ssl,
+                stunnel_config  => $stunnel_config,
                 collectd_config => $collectd_config,
             }
         }
 
         'elknode': {
             class { 'elastic_cluster::facets::elastic_node':
-                collectd_config => $collectd_config,
+                collectd_config    => $collectd_config,
+                elk_authentication => $elk_authentication,
+
             }
         }
 
         'redis': {
             class { 'elastic_cluster::facets::redis_node':
-                redis_ssl => $redis_ssl,
+                redis_ssl      => $redis_ssl,
                 stunnel_config => $stunnel_config,
             }
         }

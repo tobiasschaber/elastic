@@ -21,30 +21,30 @@ class elastic_cluster::facets::redis_node(
 
         # create the stunnel users group
         group { 'create-stunnel-group':
-            name => 'stunnel',
+            name   => 'stunnel',
             ensure => 'present',
         } ->
 
-        # create the stunnel user
+            # create the stunnel user
         user { 'create-stunnel-user':
-            name => 'stunnel',
+            name   => 'stunnel',
             groups => ['stunnel'],
             ensure => 'present',
         } ->
 
         file { '/etc/stunnel/stunnel_full.pem':
-            ensure => 'file',
-            owner  => 'root',
-            group  => 'root',
-            mode   => 700,
+            ensure  => 'file',
+            owner   => 'root',
+            group   => 'root',
+            mode    => 700,
             source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
-            before => Class['stunnel'],
+            before  => Class['stunnel'],
         } ->
 
         stunnel::tun { 'redis-server':
-            accept =>   $bindings[$ownhost]['accept'],
+            accept  =>  $bindings[$ownhost]['accept'],
             connect =>  $bindings[$ownhost]['connect'],
-            client =>   false,
+            client  =>  false,
             cert    =>  '/etc/stunnel/stunnel_full.pem',
         }
 
@@ -59,10 +59,10 @@ class elastic_cluster::facets::redis_node(
     $redisbindip = inline_template("<%= redisbind.split(':')[0] -%>")
 
 
-	# start the installation of redis
-	class { 'redis' :
-                manage_repo => true,
-                bind        => $redisbindip
-	}
+    # start the installation of redis
+    class { 'redis' :
+        manage_repo => true,
+        bind        => $redisbindip
+    }
 }
 

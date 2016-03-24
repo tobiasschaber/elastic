@@ -23,7 +23,7 @@ elastic_cluster::collectd_config:
     collectd_port: 25826
     collectd_version: 5.5.0
     collectd_servers:
-      logstashindexer1:
+      logstash1:
         port: 25826
     collectd_plugins:
       interface:
