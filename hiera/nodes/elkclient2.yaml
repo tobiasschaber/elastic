@@ -8,4 +8,10 @@ elasticsearch::instances:
       network.publish_host: 10.0.3.132
       node.data: false
       node.master: false
-
+elastic_cluster::facets::kibana_node::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.4.2-linux-x64.tar.gz
+elastic_cluster::facets::kibana_node::enablehttps: false
+elastic_cluster::facets::kibana_node::plugins:
+  elasticsearch/marvel/latest:
+    source: package
+  kibana/timelion:
+    source: package

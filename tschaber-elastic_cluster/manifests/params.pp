@@ -25,5 +25,19 @@ class elastic_cluster::params {
     # the stunnel configuration
     $stunnel_config = undef
 
+    # should collectd be installed on all elk nodes?
+    $install_collectd = false
+
+    $collectd_config = {
+        collectd_install => false,
+    }
+
+    $elk_authentication = {
+        enable_authentication => false,
+        username => 'esadmin',
+        password => 'esadmin',
+    }
+
+
 
 }

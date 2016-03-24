@@ -312,7 +312,7 @@ echo "Finished collecting. Press [enter] to start the cluster..."
 
 read
 
-#vagrant up $vagrant_machine_list
+vagrant up $vagrant_machine_list
 
 
 if [ $start_kibana == "yes" ]

@@ -21,13 +21,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # configure the operating system for all nodes
-    config.vm.box = "bento/centos-6.7"
+    #config.vm.box = "bento/centos-6.7"
     #config.vm.box = "bento/centos-7.1"
-    #config.vm.box = "ubuntu/trusty64"
+    config.vm.box = "ubuntu/trusty64"
 
 
     # snapshot shared NFS folder
-#   config.vm.synced_folder ".", "/vagrant", type: "nfs"
+   config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
     # use cachier plugin if existing
     if Vagrant.has_plugin?("vagrant-cachier")
@@ -119,7 +119,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkclient1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkclient1.vm.provision :shell, :path => "install-elknode.sh"
         elkclient1.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 1024
             v.cpus = 2
         end
     end

@@ -15,12 +15,14 @@
 # Tobias Schaber <tobias.schaber@codecentric.de>
 #
 class elastic_cluster(
-    $mode           = $elastic_cluster::params::mode,
-    $install_kibana = $elastic_cluster::params::install_kibana,
-    $clientnodes    = $elastic_cluster::params::clientnodes,
-    $redisnodes     = $elastic_cluster::params::redisnodes,
-    $redis_ssl      = $elastic_cluster::params::redis_ssl,
-    $stunnel_config = $elastic_cluster::params::stunnel_config,
+    $mode                       = $elastic_cluster::params::mode,
+    $install_kibana             = $elastic_cluster::params::install_kibana,
+    $clientnodes                = $elastic_cluster::params::clientnodes,
+    $redisnodes                 = $elastic_cluster::params::redisnodes,
+    $redis_ssl                  = $elastic_cluster::params::redis_ssl,
+    $stunnel_config             = $elastic_cluster::params::stunnel_config,
+    $collectd_config            = $elastic_cluster::params::collectd_config,
+    $elk_authentication         = $elastic_cluster::params::elk_authentication,
 
 ) inherits elastic_cluster::params {
 
@@ -38,11 +40,14 @@ class elastic_cluster(
             class { 'elastic_cluster::facets::logstash_node':
                 redis_ssl => $redis_ssl,
                 stunnel_config => $stunnel_config,
+                collectd_config => $collectd_config,
             }
         }
 
         'elknode': {
-            class { 'elastic_cluster::facets::elastic_node': }
+            class { 'elastic_cluster::facets::elastic_node':
+                collectd_config => $collectd_config,
+            }
         }
 
         'redis': {
@@ -59,7 +64,9 @@ class elastic_cluster(
 
     # install kibana on this node?
     if($install_kibana == true) {
-        class { 'elastic_cluster::facets::kibana_node': }
+        class { 'elastic_cluster::facets::kibana_node':
+            elk_authentication => $elk_authentication,
+        }
     }
 
 

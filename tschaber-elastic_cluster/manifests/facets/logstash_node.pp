@@ -14,6 +14,9 @@ class elastic_cluster::facets::logstash_node(
 
     # the stunnel configuration
     $stunnel_config = undef,
+
+    # the collectd configuration
+    $collectd_config = undef,
 ) {
 
         # check role parameter
@@ -73,18 +76,14 @@ class elastic_cluster::facets::logstash_node(
 
         # create the logstash config file
 	class { 'elastic_cluster::facets::logstash_node::prepareconfigfile' :
-                role => $logstash_role,
-                redis_ssl => $redis_ssl,
-
-        }
-        
-        ->
+        role => $logstash_role,
+        redis_ssl => $redis_ssl,
+        collectd_config => $collectd_config,
+    } ->
 
 	# perform the configuration steps
 	class { 'elastic_cluster::facets::logstash_node::configlogstash' :
                 enablessl => $enableelkssl,
-                logstash_user => hiera('logstash::logstash_user'),
-                logstash_group => hiera('logstash::logstash_group'),
 	}
 } 
 
@@ -150,17 +149,17 @@ class elastic_cluster::facets::logstash_node::configstunnel(
 
 class elastic_cluster::facets::logstash_node::prepareconfigfile(
 	$role = 'default',
-        $redis_ssl = false,
+    $redis_ssl = false,
+    $collectd_config = undef,
 ) {
 
-        $inst_cld = hiera('installelknode::collectd::install', false)
+        $inst_cld = $collectd_config['collectd_install']
 
         # if collect.d should be installed, search hiera for the correct hostname and port
         # and adjust the target index (which will then be "collectd-*" instead of "default-*"
         if($inst_cld == true and $role in ['default', 'shipper']) {
                 $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
-                $collectd_config     = hiera('installelknode::collectd::servers')
-                $collectd_port       = $collectd_config[$ownhost]['port']
+                $collectd_port       = $collectd_config['collectd_servers'][$ownhost]['port']
                 $targetindex = 'collectd-%{+YYYY.MM.dd}'
         } else {
                 $targetindex = 'default-%{+YYYY.MM.dd}'

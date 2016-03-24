@@ -10,7 +10,11 @@
 #
 class elastic_cluster::facets::elastic_node(
 
+    $collectd_config = undef,
+
+
 ) {
+    $install_collectd = $collectd_config['collectd_install']
         # read the complete elk configuration array
         $elk_config     = hiera('elasticsearch::config')
 
@@ -23,9 +27,6 @@ class elastic_cluster::facets::elastic_node(
                 $enablessl      = false
                 $enablehttps    = false
         }
-
-        $inst_collectd  = hiera('elastic_cluster::facets::elknodecollectd::install', undef)
-
 
 	# start the installation of elasticsearch
 	class { 'elasticsearch' :
@@ -42,69 +43,63 @@ class elastic_cluster::facets::elastic_node(
 
 	->
 
-        class { 'elastic_cluster::facets::elastic_node::addkeystores' :
-                enablessl => $enablessl,
-                enablehttps => $enablehttps,
+    class { 'elastic_cluster::facets::elastic_node::addkeystores' :
+            enablessl => $enablessl,
+            enablehttps => $enablehttps,
+    }
+
+
+    # install collectd if configured
+    if($install_collectd == true) {
+
+        $collectd_servers       = $collectd_config['collectd_servers']
+        $collectd_plugin_conf   = $collectd_config['collectd_plugins']
+        $collectd_plugin_ignore = $collectd_plugin_conf['interface']['ignore']
+        $collectd_version       = $collectd_config['collectd_version']
+        # with RedHat/CentOS, the "enterprise packages" are required.
+        if($operatingsystem in ['RedHat', 'CentOS']) {
+          # enterprise packages are required for installation
+          package { 'epel-release':
+            ensure => installed,
+          }
         }
 
-
-        # install collectd if configured
-        if($inst_collectd == true) {
-
-                $collectd_port          = hiera('elastic_cluster::facets::elknodecollectd::port')
-                $collectd_servers       = hiera_hash('elastic_cluster::facets::elknodecollectd::servers')
-
-                # this is a workaround for a known bug in the collect.d puppet plugin module (https://github.com/voxpupuli/puppet-collectd/issues/162)
-                $collectd_version       = hiera('elastic_cluster::facets::elknodecollectd::version', '5.5.0')
-
-                $collectd_plugin_conf   = hiera_hash('elastic_cluster::facets::elknodecollectd::plugins')
-
-                $collectd_plugin_ignore = $collectd_plugin_conf['interface']['ignore']
-
-                # with RedHat/CentOS, the "enterprise packages" are required.
-                if($operatingsystem in ['RedHat', 'CentOS']) {
-                  # enterprise packages are required for installation
-                  package { 'epel-release':
-                    ensure => installed,
-                  }
-                }
-
-                # install collect.d
-                class { '::collectd':
-                        package_ensure  => installed,
-                        purge           => true,
-                        recurse         => true,
-                        purge_config    => true,
-                        minimum_version => $collectd_version,
-                }
-
-                # add the collect.d memory plugin
-                class { 'collectd::plugin::memory':
-                }
-
-                # add the collect.d cpu plugin
-                class { 'collectd::plugin::cpu':
-                        reportbystate => true,
-                        reportbycpu => true,
-                        valuespercentage => true,
-
-                }
-
-                # add the collect.d network interface plugin
-                class { 'collectd::plugin::interface':
-                        interfaces => $collectd_plugin_ignore,
-                        ignoreselected => true,
-                }
-
-                # add the collect.d network plugin and configure it to send to logstash
-                class { 'collectd::plugin::network':
-                        timetolive    => '70',
-                        maxpacketsize => '42',
-                        forward       => true,
-                        reportstats   => true,
-                        servers       => $collectd_servers,
-                }
+        # install collect.d
+        class { '::collectd':
+                package_ensure  => installed,
+                purge           => true,
+                recurse         => true,
+                purge_config    => true,
+                minimum_version => $collectd_version,
         }
+
+        # add the collect.d memory plugin
+        class { 'collectd::plugin::memory':
+        }
+
+        # add the collect.d cpu plugin
+        class { 'collectd::plugin::cpu':
+                reportbystate => true,
+                reportbycpu => true,
+                valuespercentage => true,
+
+        }
+
+        # add the collect.d network interface plugin
+        class { 'collectd::plugin::interface':
+                interfaces => $collectd_plugin_ignore,
+                ignoreselected => true,
+        }
+
+        # add the collect.d network plugin and configure it to send to logstash
+        class { 'collectd::plugin::network':
+                timetolive    => '70',
+                maxpacketsize => '42',
+                forward       => true,
+                reportstats   => true,
+                servers       => $collectd_servers,
+        }
+    }
 }
 
 # install the required jks trust- and keystores

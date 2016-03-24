@@ -4,42 +4,43 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class elastic_cluster::facets::kibana_node{
+class elastic_cluster::facets::kibana_node(
+
+	# get the url to the kibana installer archive
+	$kibanaurl 		= undef,
+
+	# the kibana system user
+	$kibana_user 	=  'kibana',
+
+	# the kibana system user group
+	$kibana_group 	= 'kibana',
+
+	# enable https between kibana and client browser
+	$enablehttps 	= false,
+
+	# the plugin list
+	$plugins 	= undef,
+
+	# ELK authentication configuration
+	$elk_authentication = undef,
+){
+
+	# read the ELK configuration from hiera
+	$elk_config     = hiera('elasticsearch::config')
 
 
-	# define the path where the puppet files have been checked out from the git repository
-	# adjust this for your personal installation.
-	$kibanainitlocation 	= '/tmp/elkinstalldir/puppet/files/kibanainit'
-	
-        # get the url to the kibana installer archive
-	$kibanaurl =    hiera('installkibana::kibanaurl')
-        $kibana_user =  hiera('installkibana::configkibana::kibana_user', 'kibana')
-        $kibana_group = hiera('installkibana::configkibana::kibana_group', 'kibana')
+	# enable ssl between kibana and elasticsearch?
+	if($elk_config['shield']) {
+			$enableelkssl   = $elk_config['shield']['http.ssl']
+	} else {
+		$enableelkssl = false
+	}
 
-        $elk_config     = hiera('elasticsearch::config')
-        
-
-        # enable ssl between kibana and elasticsearch?
-        if($elk_config['shield']) {
-                $enableelkssl   = $elk_config['shield']['http.ssl']
-        } else {
-                $enableelkssl = false
-        }
-
-
-
-        
-
-        # enable https between kibana and client browser
-        $enablehttps    = hiera('installkibana::configkibana::enablehttps')
-
-        $pluginlist = hiera_hash('installkibana::plugins', $::installkibana::plugins)
-
-        # if the plugin list exists
-        if $pluginlist {
-                # pass the plugin list hash to the installer function
-                create_resources('elastic_cluster::facets::kibana_node::installplugins', $pluginlist)
-        }
+	# if the plugin list exists
+	if $plugins {
+			# pass the plugin list hash to the installer function
+			create_resources('elastic_cluster::facets::kibana_node::installplugins', $plugins)
+	}
 
 	# create the kibana users group
 	group { 'create-kibana-group':
@@ -93,7 +94,7 @@ class elastic_cluster::facets::kibana_node{
 
 	# create the kibana init script. copy it from the checked out git repository
 	file { '/etc/init.d/kibana' :
-                source => $kibanainitlocation,
+		source => 'puppet:///modules/elastic_cluster/kibanainit',
 		owner => "root",
 		group => "root",
 		mode => "0755",
@@ -101,7 +102,7 @@ class elastic_cluster::facets::kibana_node{
 
 	# create the kibana default script. copy it from the checked out git repository
 	file { '/etc/default/kibana' :
-		content => template("/tmp/elkinstalldir/puppet/templates/kibanadefault.erb"),
+		content => template("elastic_cluster/kibanadefault.erb"),
 		owner => "root",
 		group => "root",
 		mode => "0755",
@@ -115,8 +116,13 @@ class elastic_cluster::facets::kibana_node{
 
 	# perform the configuration steps
 	class { 'elastic_cluster::facets::kibana_node::configkibana' :
-                enablehttps    => $enablehttps,
-                enablessl      => $enableelkssl
+		enablehttps    	=> $enablehttps,
+		enablessl      	=> $enableelkssl,
+		elk_enable_auth => $elk_authentication['enable_authentication'],
+		kibanaelkuser 	=> $elk_authentication['username'],
+		kibanaelkpass 	=> $elk_authentication['password'],
+
+
 	}
 
 	if($operatingsystem in ['RedHat', 'CentOS']) {
@@ -129,40 +135,39 @@ class elastic_cluster::facets::kibana_node{
 
 class elastic_cluster::facets::kibana_node::configkibana(
 
-	$sslsourcescert = '/tmp/elkinstalldir/ssl/kibana.crt',
-	$sslsourceskey  = '/tmp/elkinstalldir/ssl/kibana.key',
-	$sslcacert      = '/tmp/elkinstalldir/ssl/root-ca.crt',
-	$kibanaelkuser  = 'esadmin',
-	$kibanaelkpass  = 'esadmin',
-        $enablehttps    = false,
-        $enablessl      = false,
+	$sslsourcescert 	= '/tmp/elkinstalldir/ssl/kibana.crt',
+	$sslsourceskey  	= '/tmp/elkinstalldir/ssl/kibana.key',
+	$sslcacert      	= '/tmp/elkinstalldir/ssl/root-ca.crt',
+	$kibanaelkuser  	= 'esadmin',
+	$kibanaelkpass  	= 'esadmin',
+	$enablehttps    	= false,
+	$enablessl      	= false,
+	$elk_enable_auth	= false,
+	$kibana_user		= 'kibana',
+	$kibana_group		= 'kibana',
 ) {
 
-        if($enablehttps == true) {
-                $ensurehttps = present
-                $server_sslcert_line    = "server.ssl.cert: /opt/kibana4/ssl/elkcluster.crt"
-                $server_sslkey_line     = "server.ssl.key: /opt/kibana4/ssl/elkcluster.key"
-        } else {
-                $ensurehttps = absent
-                $server_sslcert_line    = "#server.ssl.cert: "
-                $server_sslkey_line     = "#server.ssl.key: "
-        }
+	if($enablehttps == true) {
+		$ensurehttps = present
+		$server_sslcert_line    = "server.ssl.cert: /opt/kibana4/ssl/elkcluster.crt"
+		$server_sslkey_line     = "server.ssl.key: /opt/kibana4/ssl/elkcluster.key"
+	} else {
+		$ensurehttps = absent
+		$server_sslcert_line    = "#server.ssl.cert: "
+		$server_sslkey_line     = "#server.ssl.key: "
+	}
 
-        if($enablessl == true) {
-                $ensuressl = present
-                $urlprotocol = 'https'
-                $elk_sslca_line = "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt"
-        } else {
-                $ensuressl = absent
-                $urlprotocol = 'http'
-                $elk_sslca_line = "#elasticsearch.ssl.ca: "
+	if($enablessl == true) {
+		$ensuressl = present
+		$urlprotocol = 'https'
+		$elk_sslca_line = "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt"
+	} else {
+		$ensuressl = absent
+		$urlprotocol = 'http'
+		$elk_sslca_line = "#elasticsearch.ssl.ca: "
+	}
 
-        }
-
-	$ownhost          = inline_template("<%= scope.lookupvar('::hostname') -%>")
-        $kibana_user      = hiera('installkibana::configkibana::kibana_user', 'kibana')
-        $kibana_group     = hiera('installkibana::configkibana::kibana_group', 'kibana')
-        $enable_elk_auth  = hiera('installelknode::configureshield::enable_elk_auth', false)
+	$ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
 	# copy the https ssl key into kibana
 	file { '/opt/kibana4/ssl/elkcluster.key' :
@@ -222,7 +227,7 @@ class elastic_cluster::facets::kibana_node::configkibana(
           match => '#?elasticsearch.ssl.ca:*',
         }
 
-        if($enable_elk_auth == true) {
+        if($elk_enable_auth == true) {
 	        # add elasticsearch user to config
 	        file_line { 'Add elk user to config':
 	          path => '/opt/kibana4/config/kibana.yml', 
