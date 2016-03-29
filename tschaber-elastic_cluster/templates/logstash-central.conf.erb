@@ -63,8 +63,10 @@ output {
 
 		        hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
 		        index => "<%= @targetindex %>"
-                        <% if @logstash_elkuser != '' %>user => "<%= @logstash_elkuser %>"<% end %>
-                        <% if @logstash_elkpass != '' %>password => "<%= @logstash_elkpass %>"<% end %>
+                    <% if @enable_elk_auth == true %>
+                        user => "<%= @elk_username %>"
+                        password => "<%= @elk_password %>"
+                    <% end %>
                     <% if @enableelkssl == true %>
                         truststore => "/etc/logstash/truststore.jks"
                         truststore_password => "<%= @truststore_pass %>"

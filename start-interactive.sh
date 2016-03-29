@@ -90,7 +90,7 @@ function ask_for_logstash_setup() {
 
 
         # check if user pushed [enter] for default value
-        if [ -z "$use_logstash" ] 
+        if [ -z "$use_logstash" ]
                 then
                         use_logstash="yes"
         fi
@@ -225,20 +225,51 @@ function ask_for_kibana_snapshot_name(){
 # - (no params)
 function restore_kibana_snapshot(){
 
+    echo "restoring kibana from snapshot $snapshot_name..."
+
+    # check if SSL is enabled
+    if grep -q -e "\s*http.ssl:\s*true" hiera/common.yaml;
+    then
+        elk_base_url="https://10.0.3.131:9200"
+    else
+        elk_base_url="http://10.0.3.131:9200"
+    fi
+
+    # check if authentication is enabled
+    if grep -q -e "\s*enable_authentication:\s*true" hiera/common.yaml;
+    then
+        echo "authentication is enabled"
+        elk_username=$(less hiera/common.yaml | grep -e "\ſ*[^\._]username" | cut -d : -f2 | tr -d ' ')
+        elk_password=$(less hiera/common.yaml | grep -e "\ſ*[^\._]password" | cut -d : -f2 | tr -d ' ')
 
         # create the snapshot repository in elk
-        curl -XPUT -s "http://10.0.3.131:9200/_snapshot/elk_backup" -d '{
+        curl -XPUT -k -u $elk_username:$elk_password -s "$elk_base_url/_snapshot/elk_backup" -d '{
               "type": "fs",
               "settings": {
                   "location": "/tmp/elkinstalldir/snapshots/"
               }
           }'
 
+        # close the kibana index, restore it from snapshot, and reopen it
+        curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/.kibana/_close"
+        curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
+        curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/.kibana/_open"
+
+    else
+        # create the snapshot repository in elk
+        curl -XPUT -k -s "$elk_base_url/_snapshot/elk_backup" -d '{
+              "type": "fs",
+              "settings": {
+                  "location": "/tmp/elkinstalldir/snapshots/"
+              }
+          }'
 
         # close the kibana index, restore it from snapshot, and reopen it
-        curl -XPOST -s "http://10.0.3.131:9200/.kibana/_close"
-        curl -XPOST -s "http://10.0.3.131:9200/_snapshot/elk_backup/$snapshot_name/_restore"
-        curl -XPOST -s "http://10.0.3.131:9200/.kibana/_open"
+        curl -XPOST -k -s "$elk_base_url/.kibana/_close"
+        curl -XPOST -k -s "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
+        curl -XPOST -k -s "$elk_base_url/.kibana/_open"
+
+    fi
 
 
 }
@@ -275,28 +306,28 @@ client_node_count=$?
 ask_to_start_kibana
 
 if [ $start_kibana == "yes" ]
-        then
-                ask_to_setup_kibana
+then
+    ask_to_setup_kibana
 fi
 
 if [ $setup_kibana == "yes" ]
-        then
-                ask_for_kibana_snapshot_name
+then
+    ask_for_kibana_snapshot_name
 fi
 
 # ------------------------------------------------------------------------ CHECK LOGSTASH NODES --- #
 ask_for_logstash_setup
 
 if [ $use_logstash == "yes" ]
-        then
-                if [ $use_redis == "no" ]
-                        then
-                                ask_for_machine_count "logstash" "logstash" 1
-                        else
-                                ask_for_machine_count "logstash shipper" "logstashshipper" 2
-                                ask_for_machine_count "logstash indexer" "logstashindexer" 2
-                                ask_for_machine_count "redis" "redis" 2
-                fi
+then
+    if [ $use_redis == "no" ]
+    then
+        ask_for_machine_count "logstash" "logstash" 1
+    else
+        ask_for_machine_count "logstash shipper" "logstashshipper" 2
+        ask_for_machine_count "logstash indexer" "logstashindexer" 2
+        ask_for_machine_count "redis" "redis" 2
+    fi
 fi
 
 # ------------------------------------------------------------------------ DATA COLLECTION FINISHED. START CLUSTER NOW --- #
@@ -314,9 +345,13 @@ read
 
 vagrant up $vagrant_machine_list
 
+if [ $setup_kibana == "yes" ]
+then
+    restore_kibana_snapshot
+fi
 
 if [ $start_kibana == "yes" ]
-    then
+then
 
     startup_kibana_on_all_nodes
 

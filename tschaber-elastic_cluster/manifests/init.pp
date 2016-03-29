@@ -41,6 +41,7 @@ class elastic_cluster(
                 redis_ssl       => $redis_ssl,
                 stunnel_config  => $stunnel_config,
                 collectd_config => $collectd_config,
+                elk_authentication => $elk_authentication,
             }
         }
 

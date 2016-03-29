@@ -17,6 +17,9 @@ class elastic_cluster::facets::logstash_node(
 
     # the collectd configuration
     $collectd_config = undef,
+
+    # we need the elk cluster authentication information
+    $elk_authentication = undef,
 ) {
 
         # check role parameter
@@ -79,6 +82,8 @@ class elastic_cluster::facets::logstash_node(
         role => $logstash_role,
         redis_ssl => $redis_ssl,
         collectd_config => $collectd_config,
+        elk_authentication => $elk_authentication,
+
     } ->
 
 	# perform the configuration steps
@@ -151,19 +156,24 @@ class elastic_cluster::facets::logstash_node::prepareconfigfile(
 	$role = 'default',
     $redis_ssl = false,
     $collectd_config = undef,
+    $elk_authentication = undef,
 ) {
 
-        $inst_cld = $collectd_config['collectd_install']
+    $enable_elk_auth = $elk_authentication['enable_authentication']
+    $elk_username = $elk_authentication['username']
+    $elk_password = $elk_authentication['password']
 
-        # if collect.d should be installed, search hiera for the correct hostname and port
-        # and adjust the target index (which will then be "collectd-*" instead of "default-*"
-        if($inst_cld == true and $role in ['default', 'shipper']) {
-                $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
-                $collectd_port       = $collectd_config['collectd_servers'][$ownhost]['port']
-                $targetindex = 'collectd-%{+YYYY.MM.dd}'
-        } else {
-                $targetindex = 'default-%{+YYYY.MM.dd}'
-        }
+    $inst_cld = $collectd_config['collectd_install']
+
+    # if collect.d should be installed, search hiera for the correct hostname and port
+    # and adjust the target index (which will then be "collectd-*" instead of "default-*"
+    if($inst_cld == true and $role in ['default', 'shipper']) {
+        $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
+        $collectd_port       = $collectd_config['collectd_servers'][$ownhost]['port']
+        $targetindex = 'collectd-%{+YYYY.MM.dd}'
+    } else {
+        $targetindex = 'default-%{+YYYY.MM.dd}'
+    }
 
 	# copy a config file based on a template
 	# attention! the path to this file depends on the git clone target directory and may be adjusted!

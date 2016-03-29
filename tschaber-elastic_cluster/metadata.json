@@ -1,6 +1,6 @@
 {
   "name": "tschaber-elastic_cluster",
-  "version": "0.2.35",
+  "version": "0.2.43",
   "author": "Tobias Schaber",
   "summary": "installer to install a complete elasticsearch cluster on vagrant or bare metal",
   "license": "Apache 2.0",
