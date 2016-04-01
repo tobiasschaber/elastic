@@ -1,3 +1,12 @@
 ---
 elastic_cluster::collectd_config:
     collectd_version: 4.10.9-1.el6
+    collectd_install: true
+    collectd_port: 25826
+    collectd_servers:
+      logstash1:
+        port: 25826
+    collectd_plugins:
+      interface:
+        ignore:
+          - enp0s9

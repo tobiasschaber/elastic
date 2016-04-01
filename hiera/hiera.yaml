@@ -4,8 +4,8 @@
 :yaml:
   :datadir: /tmp/elkinstalldir/hiera
 :hierarchy:
+  - "os-specific/%{::osfamily}-%{::operatingsystemmajrelease}"
+  - "os-specific/%{::osfamily}"
   - "nodes/%{::fqdn}"
   - "nodes/%{::hostname}"
-  - "os-specific/%{::osfamily}"
-  - "os-specific/%{::osfamily}-%{::operatingsystemmajrelease}"
   - common
