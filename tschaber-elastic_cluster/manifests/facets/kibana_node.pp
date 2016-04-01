@@ -61,6 +61,7 @@ class elastic_cluster::facets::kibana_node(
         timeout     => 0,
         verbose     => false,
         execuser    => $kibana_user,
+        cache_dir   => '/var/cache',
     } ->
 
         # ensure that the kibana4 installation directory exists
