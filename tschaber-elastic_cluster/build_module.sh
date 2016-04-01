@@ -21,6 +21,8 @@ sed -i "s/$search_string/$replace_String/g" metadata.json
 
 puppet module build
 
-
-
-
+echo "uploading..."
+# will upload the module to puppet forge
+# this requires the auth cookie, which was exported with the firefox "export cookies" plugin (https://addons.mozilla.org/en-US/firefox/addon/export-cookies/)
+# and stored under /home/tobias/work/cookies.txt
+curl --cookie /home/tobias/work/cookies.txt --form authenticity_token=fd5bbe2409cc5242b2bfeabfd66ec202 --form "utf-8=&#x2713;" --form tarball=@pkg/tschaber-elastic_cluster-$version_new.tar.gz https://forge.puppetlabs.com/upload
