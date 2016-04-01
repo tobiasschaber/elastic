@@ -62,17 +62,28 @@ class elastic_cluster::facets::elastic_node(
             # enterprise packages are required for installation
             package { 'epel-release':
                 ensure => installed,
+            } ->
+            # install collect.d
+            class { '::collectd':
+                package_ensure  => installed,
+                purge           => true,
+                recurse         => true,
+                purge_config    => true,
+                minimum_version => $collectd_version,
+            }
+        } else {
+
+            # install collect.d
+            class { '::collectd':
+                package_ensure  => installed,
+                purge           => true,
+                recurse         => true,
+                purge_config    => true,
+                minimum_version => $collectd_version,
             }
         }
 
-        # install collect.d
-        class { '::collectd':
-            package_ensure  => installed,
-            purge           => true,
-            recurse         => true,
-            purge_config    => true,
-            minimum_version => $collectd_version,
-        }
+
 
         # add the collect.d memory plugin
         class { 'collectd::plugin::memory':
