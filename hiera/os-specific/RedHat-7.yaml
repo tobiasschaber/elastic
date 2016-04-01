@@ -1,0 +1,3 @@
+---
+elastic_cluster::collectd_config:
+    collectd_version: 5.5.1-2.el7
