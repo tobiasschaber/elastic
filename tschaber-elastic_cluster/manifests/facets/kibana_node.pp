@@ -122,12 +122,12 @@ class elastic_cluster::facets::kibana_node(
         kibanaelkpass      => $elk_authentication['password'],
     }
 
-    if($operatingsystem in ['RedHat', 'CentOS']) {
-        # enterprise packages are required for installation
-        package { 'epel-release':
-            ensure => installed,
-        }
-    }
+#    if($operatingsystem in ['RedHat', 'CentOS']) {
+#        # enterprise packages are required for installation
+#        package { 'epel-release':
+#            ensure => installed,
+#        }
+    #}
 }
 
 class elastic_cluster::facets::kibana_node::configkibana(
