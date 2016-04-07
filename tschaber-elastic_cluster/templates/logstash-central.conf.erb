@@ -1,98 +1,36 @@
 input {
 
-        <%# if the role is "indexer", add a redis input %>
-        <% if @role == "indexer" %>
-                <%# for redis over ssl, use the stunnel bindings %>
-                <% if @redis_ssl == true %>
-                        <% @bindings = scope.function_hiera(['elastic_cluster::stunnel_config'])['bindings'] -%>
-                        <% @redisnodes = @bindings.map{ |rnode| "#{rnode[1]['accept']}"} %>
-                <%# otherwise, use the redis bindings %>
-                <% else %>
-                        <% @redisnodes = scope.function_hiera(['elastic_cluster::redisnodes']) -%>
-                <% end %>
+    udp {
+        port => <%= @collectd_port %>
+        buffer_size => 1452
+        codec => collectd{}
+        type => "collectd"
+    }
 
-                <%# for each redis node, add a redis input %>
-                <% @redisnodes.each do |redisnode| -%>
-                        redis {
-                                host => "<%= redisnode.split(':')[0] %>"
-                                <% if @redis_ssl == true %>port => <%= redisnode.split(':')[1] %><% end %>
-                                key => "logstash"
-                                data_type => "list"
-                                <% if @redis_password != '' %>password => "<%= @redis_password %>"<% end %>
-                                codec => json
-                        }
-                <% end -%>
-        <%# if role is not "indexer", it is "default" or "shipper", which means the "default" setup %>
-        <% else %>
-                <%# if collectd is used, add it as an input (via udp input) %>
-                <% if @inst_cld == true %>
-
-                udp {
-                        port => <%= @collectd_port %>
-                        buffer_size => 1452
-                        codec => collectd{}
-                }
-
-                <%# if collectd is not used, just use a very simple file input example %>
-                <% else %>
-
-        	file {
-        		path => "/tmp/input"
-        	}
-
-                <% end %>
-
-#               lumberjack {
-#                        port => 15102
-#                        ssl_certificate => "/etc/ssl/certs/logforwarder.crt"
-#                        ssl_key => "/etc/ssl/logforwarder.key"
-#               }
-        <% end %>
-
+    file {
+        path => "/etc/demo/logging.log"
+        type => "log4j"
+    }
 }
-output {
-        file {
-                path => "/tmp/output"
-                codec => rubydebug
+
+filter {
+    if [type] == "collectd" {
+
+    } else if [type] == "log4j" {
+        grok {
+          match => [ "message", "%{TIMESTAMP_ISO8601} %{LOGLEVEL} %{GREEDYDATA}" ]
         }
 
-        <% if @role == "indexer" or @role == "default" %>
+    }
+}
 
-                elasticsearch {
-		        <% @mastnodes = scope.function_hiera(['elastic_cluster::clientnodes']) -%>
 
-		        hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
-		        index => "<%= @targetindex %>"
-                    <% if @enable_elk_auth == true %>
-                        user => "<%= @elk_username %>"
-                        password => "<%= @elk_password %>"
-                    <% end %>
-                    <% if @enableelkssl == true %>
-                        truststore => "/etc/logstash/truststore.jks"
-                        truststore_password => "<%= @truststore_pass %>"
-		        ssl => "true"
-                    <% end %>
-        	}
+output {
 
-        <% else %>
-
-                redis {
-                        <% if @redis_ssl == true %>
-                                <% @bindings = scope.function_hiera(['elastic_cluster::stunnel_config']['bindings']) -%>
-                               host => [<%= @bindings.map{ |rnode| "\"#{rnode[1]['accept']}\""}.join(',') %>]
-                        <% else %>
-                                <% @redisnodes = scope.function_hiera(['elastic_cluster::redisnodes']) -%>
-                                host => [<%= @redisnodes.map{ |rnode| "\"#{rnode}\""}.join(',') %>]
-                        <% end %>
-
-                        data_type => "list"
-                        key => "logstash"
-                        codec => json
-                        <% if @redis_password != '' %>password => "<%= @redis_password %>"<% end %>
-                        shuffle_hosts => true
-                    
-                }
-
-        <% end %>
+    elasticsearch {
+        <% @mastnodes = scope.function_hiera(['elastic_cluster::clientnodes']) -%>
+        hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
+        index => "%{target}-%{+YYYY.MM.dd}"
+    }
 }
 
