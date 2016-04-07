@@ -5,25 +5,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # allow hostname resolution
     config.vm.provision :hosts do |prov|
         prov.add_host '10.0.3.101', ['elkmaster1']
-        prov.add_host '10.0.3.102', ['elkmaster2']
         prov.add_host '10.0.3.111', ['elkdata1']
-        prov.add_host '10.0.3.112', ['elkdata2']
-        prov.add_host '10.0.3.113', ['elkdata3']
         prov.add_host '10.0.3.121', ['logstash1']
-        prov.add_host '10.0.3.122', ['logstashindexer1']
-        prov.add_host '10.0.3.123', ['logstashshipper1']
-        prov.add_host '10.0.3.124', ['logstashindexer2']
-        prov.add_host '10.0.3.125', ['logstashshipper2']
         prov.add_host '10.0.3.131', ['elkclient1']
-        prov.add_host '10.0.3.132', ['elkclient2']
-        prov.add_host '10.0.3.141', ['redis1']
-        prov.add_host '10.0.3.142', ['redis2']
     end
 
     # configure the operating system for all nodes
     #config.vm.box = "bento/centos-6.7"
-    #config.vm.box = "bento/centos-7.1"
-    config.vm.box = "ubuntu/trusty64"
+    config.vm.box = "bento/centos-7.1"
+    #config.vm.box = "ubuntu/trusty64"
 
 
     # snapshot shared NFS folder
@@ -60,50 +50,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkmaster1.vm.network "private_network", type: "dhcp"
         elkmaster1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkmaster1.vm.provision :shell, :path => "install-elknode.sh"
+        elkmaster1.vm.provision :shell, :path => "start-kibana.sh"
         elkmaster1.vm.provider "virtualbox" do |v|
-             v.memory = 768
-             v.cpus = 2
-        end
-    end
-
-    # elk master server 2
-    config.vm.define "elkmaster2", autostart: false do |elkmaster2|
-
-        elkmaster2.vm.hostname = "elkmaster2"
-        elkmaster2.vm.network "public_network", ip: "10.0.3.102", :bridge => "lxcbr0"
-        elkmaster2.vm.network "private_network", type: "dhcp"
-        elkmaster2.vm.provision :shell, :path => "installation/prepare-install.sh"
-        elkmaster2.vm.provision :shell, :path => "install-elknode.sh"
-        elkmaster2.vm.provider "virtualbox" do |v|
-             v.memory = 768
-             v.cpus = 2
-        end
-    end
-
-    # elk data server 2
-    config.vm.define "elkdata2", autostart: false do |elkdata2|
-
-        elkdata2.vm.hostname = "elkdata2"
-        elkdata2.vm.network "public_network", ip: "10.0.3.112", :bridge => "lxcbr0"
-        elkdata2.vm.network "private_network", type: "dhcp"
-        elkdata2.vm.provision :shell, :path => "installation/prepare-install.sh"
-        elkdata2.vm.provision :shell, :path => "install-elknode.sh"
-        elkdata2.vm.provider "virtualbox" do |v|
-             v.memory = 768
-             v.cpus = 2
-        end
-    end
-
-    # elk data server 3
-    config.vm.define "elkdata3", autostart: false do |elkdata3|
-
-        elkdata3.vm.hostname = "elkdata3"
-        elkdata3.vm.network "public_network", ip: "10.0.3.113", :bridge => "lxcbr0"
-        elkdata3.vm.network "private_network", type: "dhcp"
-	    elkdata3.vm.provision :shell, :path => "installation/prepare-install.sh"
-	    elkdata3.vm.provision :shell, :path => "install-elknode.sh"
-        elkdata3.vm.provider "virtualbox" do |v|
-             v.memory = 768
+             v.memory = 1200
              v.cpus = 2
         end
     end
@@ -124,21 +73,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
     end
 
-    # elk client 2
-    config.vm.define "elkclient2", autostart: false do |elkclient2|
 
-        elkclient2.vm.hostname = "elkclient2"
-        elkclient2.vm.network "public_network", ip: "10.0.3.132", :bridge => "lxcbr0"
-        elkclient2.vm.network "private_network", type: "dhcp"
-        elkclient2.vm.network "forwarded_port", guest: 5601, host: 25601
-        elkclient2.vm.network "forwarded_port", guest: 9200, host: 29200
-        elkclient2.vm.provision :shell, :path => "installation/prepare-install.sh"
-        elkclient2.vm.provision :shell, :path => "install-elknode.sh"
-        elkclient2.vm.provider "virtualbox" do |v|
-             v.memory = 768
-             v.cpus = 2
-        end
-    end
 
        # logstash shipper server
        config.vm.define "logstash1" do |logstash1|
@@ -148,97 +83,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         logstash1.vm.network "private_network", type: "dhcp"
         logstash1.vm.provision :shell, :path => "installation/prepare-install.sh"
         logstash1.vm.provision :shell, :path => "install-logstash.sh"
+        logstash1.vm.provision :shell, :path => "install-apps.sh"
         logstash1.vm.provider "virtualbox" do |v|
             v.memory = 768
             v.cpus = 2
         end
     end
-
-
-
-       # logstash indexing server
-       config.vm.define "logstashindexer1", autostart: false do |logstashindexer1|
-
-        logstashindexer1.vm.hostname = "logstashindexer1"
-        logstashindexer1.vm.network "public_network", ip: "10.0.3.122", :bridge => "lxcbr0"
-        logstashindexer1.vm.network "private_network", type: "dhcp"
-        logstashindexer1.vm.provision :shell, :path => "installation/prepare-install.sh"
-        logstashindexer1.vm.provision :shell, :path => "install-logstash.sh"
-        logstashindexer1.vm.provider "virtualbox" do |v|
-            v.memory = 768
-            v.cpus = 2
-        end
-    end
-
-       # logstash indexing server
-       config.vm.define "logstashindexer2", autostart: false do |logstashindexer2|
-
-        logstashindexer2.vm.hostname = "logstashindexer2"
-        logstashindexer2.vm.network "public_network", ip: "10.0.3.124", :bridge => "lxcbr0"
-        logstashindexer2.vm.network "private_network", type: "dhcp"
-        logstashindexer2.vm.provision :shell, :path => "installation/prepare-install.sh"
-        logstashindexer2.vm.provision :shell, :path => "install-logstash.sh"
-        logstashindexer2.vm.provider "virtualbox" do |v|
-            v.memory = 768
-            v.cpus = 2
-        end
-    end
-
-
-       # logstash shipper server
-       config.vm.define "logstashshipper1", autostart: false do |logstashshipper1|
-
-        logstashshipper1.vm.hostname = "logstashshipper1"
-        logstashshipper1.vm.network "public_network", ip: "10.0.3.123", :bridge => "lxcbr0"
-        logstashshipper1.vm.network "private_network", type: "dhcp"
-        logstashshipper1.vm.provision :shell, :path => "installation/prepare-install.sh"
-        logstashshipper1.vm.provision :shell, :path => "install-logstash.sh"
-        logstashshipper1.vm.provider "virtualbox" do |v|
-            v.memory = 768
-            v.cpus = 2
-        end
-    end
-
-    # logstash shipper server
-    config.vm.define "logstashshipper2", autostart: false do |logstashshipper2|
-
-        logstashshipper2.vm.hostname = "logstashshipper2"
-        logstashshipper2.vm.network "public_network", ip: "10.0.3.125", :bridge => "lxcbr0"
-        logstashshipper2.vm.network "private_network", type: "dhcp"
-        logstashshipper2.vm.provision :shell, :path => "installation/prepare-install.sh"
-        logstashshipper2.vm.provision :shell, :path => "install-logstash.sh"
-        logstashshipper2.vm.provider "virtualbox" do |v|
-            v.memory = 768
-            v.cpus = 2
-        end
-    end
-
-    # redis 1
-    config.vm.define "redis1", autostart: false do |redis1|
-
-        redis1.vm.hostname = "redis1"
-        redis1.vm.network "public_network", ip: "10.0.3.141", :bridge => "lxcbr0"
-        redis1.vm.network "private_network", type: "dhcp"
-        redis1.vm.provision :shell, :path => "installation/prepare-install.sh"
-        redis1.vm.provision :shell, :path => "install-redis.sh"
-        redis1.vm.provider "virtualbox" do |v|
-            v.memory = 768
-            v.cpus = 2
-        end
-    end
-
-    # redis 2
-    config.vm.define "redis2", autostart: false do |redis2|
-
-        redis2.vm.hostname = "redis2"
-        redis2.vm.network "public_network", ip: "10.0.3.142", :bridge => "lxcbr0"
-        redis2.vm.network "private_network", type: "dhcp"
-        redis2.vm.provision :shell, :path => "installation/prepare-install.sh"
-        redis2.vm.provision :shell, :path => "install-redis.sh"
-        redis2.vm.provider "virtualbox" do |v|
-            v.memory = 768
-            v.cpus = 2
-        end
-    end
-
 end
