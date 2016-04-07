@@ -1,0 +1,1789 @@
+2016-04-07 09:15:28,650 ERROR Start [main] Writing data into cache
+2016-04-07 09:15:28,811 ERROR Start [main] Reading new events from database
+2016-04-07 09:15:29,357 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:15:31,755 ERROR Start [main] Reading new events from database
+2016-04-07 09:15:33,578 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:15:38,971 ERROR Start [main] new client registered
+2016-04-07 09:15:42,001 ERROR Start [main] deployed new plugin
+2016-04-07 09:15:50,454 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:15:50,956 ERROR Start [main] new client registered
+2016-04-07 09:15:56,515 ERROR Start [main] Reading new events from database
+2016-04-07 09:15:58,043 ERROR Start [main] deployed new plugin
+2016-04-07 09:15:58,589 ERROR Start [main] Writing data into cache
+2016-04-07 09:15:59,448 ERROR Start [main] Reading new events from database
+2016-04-07 09:16:01,811 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:02,600 ERROR Start [main] Reading new events from database
+2016-04-07 09:16:20,612 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:21,347 ERROR Start [main] Closed client connection
+2016-04-07 09:16:21,800 ERROR Start [main] Closed client connection
+2016-04-07 09:16:22,022 ERROR Start [main] Reading data from cache
+2016-04-07 09:16:22,268 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:22,565 ERROR Start [main] new client registered
+2016-04-07 09:16:22,851 ERROR Start [main] Closed client connection
+2016-04-07 09:16:22,925 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:23,319 ERROR Start [main] Writing data into cache
+2016-04-07 09:16:23,918 ERROR Start [main] Pushing new events to database
+2016-04-07 09:16:25,207 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:16:25,985 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:16:26,259 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:26,539 ERROR Start [main] Writing data into cache
+2016-04-07 09:16:27,560 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:16:27,846 ERROR Start [main] Reading data from cache
+2016-04-07 09:16:28,098 ERROR Start [main] Writing data into cache
+2016-04-07 09:16:28,393 ERROR Start [main] User logged in into the application
+2016-04-07 09:16:28,806 ERROR Start [main] Reading data from cache
+2016-04-07 09:16:29,202 ERROR Start [main] Reading new events from database
+2016-04-07 09:16:29,713 ERROR Start [main] Pushing new events to database
+2016-04-07 09:16:29,915 ERROR Start [main] Closed client connection
+2016-04-07 09:16:30,524 ERROR Start [main] new client registered
+2016-04-07 09:16:31,348 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:31,632 ERROR Start [main] new client registered
+2016-04-07 09:16:32,924 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:16:33,366 ERROR Start [main] deployed new plugin
+2016-04-07 09:16:33,799 ERROR Start [main] Reading new events from database
+2016-04-07 09:16:34,360 ERROR Start [main] Pushing new events to database
+2016-04-07 09:16:34,651 ERROR Start [main] Pushing new events to database
+2016-04-07 09:16:34,823 ERROR Start [main] new client registered
+2016-04-07 09:16:35,051 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:35,103 ERROR Start [main] Writing data into cache
+2016-04-07 09:16:35,513 ERROR Start [main] Reading new events from database
+2016-04-07 09:16:35,867 ERROR Start [main] Pushing new events to database
+2016-04-07 09:16:36,264 ERROR Start [main] Reading new events from database
+2016-04-07 09:16:36,305 ERROR Start [main] deployed new plugin
+2016-04-07 09:16:38,423 ERROR Start [main] User logged in into the application
+2016-04-07 09:16:39,253 ERROR Start [main] Reading data from cache
+2016-04-07 09:16:39,293 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:16:39,775 ERROR Start [main] Pushing new events to database
+2016-04-07 09:16:40,992 ERROR Start [main] Closed client connection
+2016-04-07 09:16:41,523 ERROR Start [main] Reading data from cache
+2016-04-07 09:16:42,380 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:16:42,451 ERROR Start [main] Reading new events from database
+2016-04-07 09:16:42,715 ERROR Start [main] new client registered
+2016-04-07 09:17:01,808 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:02,355 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:03,094 ERROR Start [main] new client registered
+2016-04-07 09:17:04,700 ERROR Start [main] new client registered
+2016-04-07 09:17:04,948 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:05,006 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:06,025 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:06,565 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:07,009 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:08,736 ERROR Start [main] new client registered
+2016-04-07 09:17:08,936 ERROR Start [main] Closed client connection
+2016-04-07 09:17:09,363 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:10,576 ERROR Start [main] Closed client connection
+2016-04-07 09:17:11,824 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:13,486 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:13,965 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:14,892 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:15,141 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:15,327 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:16,724 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:16,937 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:17,203 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:18,008 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:25,084 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:25,536 DEBUG Start [main] new client registered
+2016-04-07 09:17:25,608 ERROR Start [main] Closed client connection
+2016-04-07 09:17:25,880 ERROR Start [main] Closed client connection
+2016-04-07 09:17:26,028 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:26,091 INFO Start [main] deployed new plugin
+2016-04-07 09:17:26,185 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:26,221 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:26,329 INFO Start [main] Closed client connection
+2016-04-07 09:17:26,524 DEBUG Start [main] Closed client connection
+2016-04-07 09:17:26,529 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:26,619 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:26,757 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:27,039 INFO Start [main] Reading new events from database
+2016-04-07 09:17:27,143 DEBUG Start [main] Closed client connection
+2016-04-07 09:17:27,272 DEBUG Start [main] Closed client connection
+2016-04-07 09:17:27,314 ERROR Start [main] new client registered
+2016-04-07 09:17:27,380 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:27,565 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:27,602 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:28,139 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:28,261 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:28,707 INFO Start [main] deployed new plugin
+2016-04-07 09:17:28,776 DEBUG Start [main] new client registered
+2016-04-07 09:17:28,911 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:29,157 DEBUG Start [main] new client registered
+2016-04-07 09:17:29,353 INFO Start [main] new client registered
+2016-04-07 09:17:29,545 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:29,821 INFO Start [main] Waiting for new client connections
+2016-04-07 09:17:29,951 INFO Start [main] Reading data from cache
+2016-04-07 09:17:29,995 DEBUG Start [main] Waiting for new client connections
+2016-04-07 09:17:30,047 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:30,108 INFO Start [main] new client registered
+2016-04-07 09:17:30,371 DEBUG Start [main] new client registered
+2016-04-07 09:17:30,499 INFO Start [main] Writing data into cache
+2016-04-07 09:17:30,754 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:30,875 INFO Start [main] Waiting for new client connections
+2016-04-07 09:17:31,106 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:31,199 ERROR Start [main] Closed client connection
+2016-04-07 09:17:31,359 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:31,396 DEBUG Start [main] Writing data into cache
+2016-04-07 09:17:31,550 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:31,766 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:31,826 INFO Start [main] Reading new events from database
+2016-04-07 09:17:31,835 ERROR Start [main] Closed client connection
+2016-04-07 09:17:31,863 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:31,949 DEBUG Start [main] Waiting for new client connections
+2016-04-07 09:17:32,261 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:32,358 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:32,522 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:32,767 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:32,799 DEBUG Start [main] new client registered
+2016-04-07 09:17:32,867 INFO Start [main] Reading data from cache
+2016-04-07 09:17:33,046 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:33,284 INFO Start [main] Pushing new events to database
+2016-04-07 09:17:33,432 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:33,945 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:34,149 ERROR Start [main] Closed client connection
+2016-04-07 09:17:34,241 DEBUG Start [main] Writing data into cache
+2016-04-07 09:17:34,578 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:34,698 INFO Start [main] Pushing new events to database
+2016-04-07 09:17:34,887 INFO Start [main] Writing data into cache
+2016-04-07 09:17:35,106 INFO Start [main] new client registered
+2016-04-07 09:17:35,331 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:35,497 DEBUG Start [main] Writing data into cache
+2016-04-07 09:17:35,689 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:35,839 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:36,147 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:36,149 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:36,267 INFO Start [main] deployed new plugin
+2016-04-07 09:17:36,273 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:36,339 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:36,593 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:36,888 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:36,899 INFO Start [main] Reading data from cache
+2016-04-07 09:17:37,240 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:37,500 ERROR Start [main] User logged in into the application
+2016-04-07 09:17:37,748 DEBUG Start [main] Reading new events from database
+2016-04-07 09:17:38,179 DEBUG Start [main] Reading data from cache
+2016-04-07 09:17:38,336 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:38,446 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:38,682 DEBUG Start [main] Reading new events from database
+2016-04-07 09:17:38,965 INFO Start [main] Writing data into cache
+2016-04-07 09:17:39,164 DEBUG Start [main] Reading data from cache
+2016-04-07 09:17:39,186 ERROR Start [main] new client registered
+2016-04-07 09:17:39,214 INFO Start [main] Pushing new events to database
+2016-04-07 09:17:39,311 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:39,327 DEBUG Start [main] Writing data into cache
+2016-04-07 09:17:39,327 INFO Start [main] Pushing new events to database
+2016-04-07 09:17:39,365 INFO Start [main] Closed client connection
+2016-04-07 09:17:39,679 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:39,903 ERROR Start [main] User logged in into the application
+2016-04-07 09:17:39,921 ERROR Start [main] new client registered
+2016-04-07 09:17:40,024 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:40,437 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:40,725 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:41,184 INFO Start [main] Closed client connection
+2016-04-07 09:17:42,093 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:42,429 INFO Start [main] Reading new events from database
+2016-04-07 09:17:42,694 INFO Start [main] Pushing new events to database
+2016-04-07 09:17:43,079 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:43,269 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:43,558 ERROR Start [main] User logged in into the application
+2016-04-07 09:17:43,845 DEBUG Start [main] Reading new events from database
+2016-04-07 09:17:44,071 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:44,377 INFO Start [main] User logged in into the application
+2016-04-07 09:17:44,475 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:44,944 INFO Start [main] Reading new events from database
+2016-04-07 09:17:45,122 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:45,240 INFO Start [main] Waiting for new client connections
+2016-04-07 09:17:45,309 ERROR Start [main] new client registered
+2016-04-07 09:17:45,464 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:45,712 DEBUG Start [main] new client registered
+2016-04-07 09:17:45,956 INFO Start [main] Reading data from cache
+2016-04-07 09:17:46,203 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:46,358 ERROR Start [main] Pushing new events to database
+2016-04-07 09:17:46,455 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:46,690 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:46,906 INFO Start [main] Reading data from cache
+2016-04-07 09:17:47,135 ERROR Start [main] Closed client connection
+2016-04-07 09:17:47,321 DEBUG Start [main] Reading data from cache
+2016-04-07 09:17:47,356 ERROR Start [main] new client registered
+2016-04-07 09:17:47,480 DEBUG Start [main] new client registered
+2016-04-07 09:17:47,796 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:47,948 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:47,964 DEBUG Start [main] Closed client connection
+2016-04-07 09:17:48,247 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:48,572 DEBUG Start [main] Waiting for new client connections
+2016-04-07 09:17:48,579 INFO Start [main] Pushing new events to database
+2016-04-07 09:17:48,756 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:48,778 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:49,092 INFO Start [main] Waiting for new client connections
+2016-04-07 09:17:49,252 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:49,461 ERROR Start [main] Closed client connection
+2016-04-07 09:17:49,695 DEBUG Start [main] Reading new events from database
+2016-04-07 09:17:49,793 ERROR Start [main] Closed client connection
+2016-04-07 09:17:50,007 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:50,285 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:50,483 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:50,782 INFO Start [main] User logged in into the application
+2016-04-07 09:17:50,875 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:51,044 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:51,137 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:51,268 DEBUG Start [main] Reading new events from database
+2016-04-07 09:17:51,317 DEBUG Start [main] new client registered
+2016-04-07 09:17:51,549 DEBUG Start [main] new client registered
+2016-04-07 09:17:51,623 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:51,898 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:51,956 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:52,107 DEBUG Start [main] deployed new plugin
+2016-04-07 09:17:52,131 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:52,261 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:52,410 DEBUG Start [main] Reading new events from database
+2016-04-07 09:17:52,677 ERROR Start [main] User logged in into the application
+2016-04-07 09:17:52,950 DEBUG Start [main] Waiting for new client connections
+2016-04-07 09:17:52,964 ERROR Start [main] Closed client connection
+2016-04-07 09:17:53,234 INFO Start [main] Waiting for new client connections
+2016-04-07 09:17:53,400 INFO Start [main] Reading new events from database
+2016-04-07 09:17:53,697 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:53,712 INFO Start [main] new client registered
+2016-04-07 09:17:53,968 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:54,260 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:54,364 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:54,445 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:54,702 INFO Start [main] Closed client connection
+2016-04-07 09:17:54,894 INFO Start [main] Closed client connection
+2016-04-07 09:17:54,941 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:55,215 INFO Start [main] User logged in into the application
+2016-04-07 09:17:55,497 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:55,621 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:55,713 ERROR Start [main] deployed new plugin
+2016-04-07 09:17:55,849 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:17:56,015 ERROR Start [main] Reading new events from database
+2016-04-07 09:17:56,042 INFO Start [main] new client registered
+2016-04-07 09:17:56,330 ERROR Start [main] Closed client connection
+2016-04-07 09:17:56,593 ERROR Start [main] Reading data from cache
+2016-04-07 09:17:56,618 ERROR Start [main] Waiting for new client connections
+2016-04-07 09:17:56,658 DEBUG Start [main] Reading data from cache
+2016-04-07 09:17:56,822 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:57,076 ERROR Start [main] Writing data into cache
+2016-04-07 09:17:57,279 DEBUG Start [main] Closed client connection
+2016-04-07 09:17:57,337 DEBUG Start [main] Closed client connection
+2016-04-07 09:17:58,018 INFO Start [main] Waiting for new client connections
+2016-04-07 09:17:58,083 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:58,335 INFO Start [main] Waiting for new client connections
+2016-04-07 09:17:58,427 DEBUG Start [main] Pushing new events to database
+2016-04-07 09:17:58,580 DEBUG Start [main] Reading data from cache
+2016-04-07 09:17:58,718 DEBUG Start [main] Waiting for new client connections
+2016-04-07 09:17:58,987 DEBUG Start [main] User logged in into the application
+2016-04-07 09:17:59,092 INFO Start [main] Reading data from cache
+2016-04-07 09:17:59,225 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:17:59,611 DEBUG Start [main] Reading data from cache
+2016-04-07 09:17:59,909 INFO Start [main] Closed client connection
+2016-04-07 09:18:00,061 INFO Start [main] Reading data from cache
+2016-04-07 09:18:00,270 DEBUG Start [main] Writing data into cache
+2016-04-07 09:18:00,358 ERROR Start [main] User logged in into the application
+2016-04-07 09:18:00,553 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 09:18:00,898 DEBUG Start [main] Closed client connection
+2016-04-07 09:18:01,157 ERROR Start [main] deployed new plugin
+2016-04-07 09:18:01,658 DEBUG Start [main] Closed client connection
+2016-04-07 09:18:01,715 ERROR Start [main] Pushing new events to database
+2016-04-07 09:18:01,971 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 09:18:02,073 DEBUG Start [main] Writing data into cache
+2016-04-07 09:18:02,137 DEBUG Start [main] Reading new events from database
+2016-04-07 09:18:02,144 INFO Start [main] new client registered
+2016-04-07 09:18:02,412 INFO Start [main] Writing data into cache
+2016-04-07 09:18:02,707 ERROR Start [main] deployed new plugin
+2016-04-07 09:18:02,764 DEBUG Start [main] User logged in into the application
+2016-04-07 09:18:02,953 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 09:18:03,210 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:06,387 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:06,388 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:06,388 INFO Start [main] Reading new events from database
+2016-04-07 10:00:06,389 INFO Start [main] Reading new events from database
+2016-04-07 10:00:06,389 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:06,389 INFO Start [main] Reading new events from database
+2016-04-07 10:00:06,389 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:06,389 INFO Start [main] Reading new events from database
+2016-04-07 10:00:06,389 INFO Start [main] Reading new events from database
+2016-04-07 10:00:06,752 INFO Start [main] Closed client connection
+2016-04-07 10:00:06,753 ERROR Start [main] Closed client connection
+2016-04-07 10:00:06,753 ERROR Start [main] Closed client connection
+2016-04-07 10:00:06,753 INFO Start [main] Closed client connection
+2016-04-07 10:00:07,070 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:07,070 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:07,070 INFO Start [main] Reading new events from database
+2016-04-07 10:00:07,071 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:07,071 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:07,071 INFO Start [main] Reading new events from database
+2016-04-07 10:00:07,071 INFO Start [main] Reading new events from database
+2016-04-07 10:00:07,280 INFO Start [main] new client registered
+2016-04-07 10:00:07,280 INFO Start [main] new client registered
+2016-04-07 10:00:07,280 ERROR Start [main] new client registered
+2016-04-07 10:00:07,280 ERROR Start [main] new client registered
+2016-04-07 10:00:07,281 ERROR Start [main] new client registered
+2016-04-07 10:00:07,281 DEBUG Start [main] new client registered
+2016-04-07 10:00:07,581 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:07,581 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:07,581 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:07,581 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:07,713 INFO Start [main] Pushing new events to database
+2016-04-07 10:00:07,713 INFO Start [main] Pushing new events to database
+2016-04-07 10:00:07,713 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:07,713 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:07,713 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:07,713 INFO Start [main] Pushing new events to database
+2016-04-07 10:00:07,713 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:07,713 INFO Start [main] Pushing new events to database
+2016-04-07 10:00:07,849 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:07,849 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:07,849 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:07,849 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:07,849 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:07,849 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:08,125 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:08,126 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:08,126 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:08,126 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:08,170 ERROR Start [main] new client registered
+2016-04-07 10:00:08,170 ERROR Start [main] new client registered
+2016-04-07 10:00:08,170 DEBUG Start [main] new client registered
+2016-04-07 10:00:08,170 INFO Start [main] new client registered
+2016-04-07 10:00:08,170 DEBUG Start [main] new client registered
+2016-04-07 10:00:08,170 ERROR Start [main] new client registered
+2016-04-07 10:00:08,170 DEBUG Start [main] new client registered
+2016-04-07 10:00:08,170 ERROR Start [main] new client registered
+2016-04-07 10:00:08,170 ERROR Start [main] new client registered
+2016-04-07 10:00:08,170 DEBUG Start [main] new client registered
+2016-04-07 10:00:08,171 DEBUG Start [main] new client registered
+2016-04-07 10:00:08,263 ERROR Start [main] User logged in into the application
+2016-04-07 10:00:08,443 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,443 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,443 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,444 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:08,684 ERROR Start [main] new client registered
+2016-04-07 10:00:08,684 DEBUG Start [main] new client registered
+2016-04-07 10:00:08,685 DEBUG Start [main] new client registered
+2016-04-07 10:00:08,685 INFO Start [main] new client registered
+2016-04-07 10:00:08,685 ERROR Start [main] new client registered
+2016-04-07 10:00:09,172 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:09,173 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:09,173 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:09,173 INFO Start [main] Reading new events from database
+2016-04-07 10:00:09,173 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:09,173 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:09,174 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:09,174 INFO Start [main] Reading new events from database
+2016-04-07 10:00:09,174 INFO Start [main] Reading new events from database
+2016-04-07 10:00:09,174 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:09,174 INFO Start [main] Reading new events from database
+2016-04-07 10:00:09,174 INFO Start [main] Reading new events from database
+2016-04-07 10:00:09,364 INFO Start [main] Waiting for new client connections
+2016-04-07 10:00:09,364 INFO Start [main] Waiting for new client connections
+2016-04-07 10:00:09,364 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:00:09,364 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:00:09,364 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:00:09,364 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:00:09,364 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:00:09,364 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:00:09,365 INFO Start [main] Waiting for new client connections
+2016-04-07 10:00:09,365 INFO Start [main] Waiting for new client connections
+2016-04-07 10:00:09,365 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:00:09,365 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:00:09,440 INFO Start [main] Reading data from cache
+2016-04-07 10:00:09,440 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:09,440 INFO Start [main] Reading data from cache
+2016-04-07 10:00:09,440 INFO Start [main] Reading data from cache
+2016-04-07 10:00:09,441 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:09,441 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:09,441 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:09,441 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:09,441 INFO Start [main] Reading data from cache
+2016-04-07 10:00:09,441 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:09,441 INFO Start [main] Reading data from cache
+2016-04-07 10:00:09,543 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:09,544 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:09,544 INFO Start [main] Reading new events from database
+2016-04-07 10:00:09,545 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:09,545 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:09,545 INFO Start [main] Reading new events from database
+2016-04-07 10:00:09,545 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:09,545 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:09,868 INFO Start [main] Writing data into cache
+2016-04-07 10:00:09,868 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:09,868 INFO Start [main] Writing data into cache
+2016-04-07 10:00:09,869 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:09,869 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:09,869 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:09,869 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:10,196 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:10,196 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:10,487 DEBUG Start [main] new client registered
+2016-04-07 10:00:10,565 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:10,565 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:10,565 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:10,844 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,844 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,845 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,845 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,845 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,846 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,846 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,846 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,846 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:10,847 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:11,335 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:11,336 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:11,336 INFO Start [main] Pushing new events to database
+2016-04-07 10:00:11,483 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,483 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,484 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,484 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,484 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,484 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,484 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,484 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,485 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,485 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:11,827 INFO Start [main] Reading data from cache
+2016-04-07 10:00:11,827 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:12,247 INFO Start [main] Reading new events from database
+2016-04-07 10:00:12,248 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:12,249 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:12,249 INFO Start [main] Reading new events from database
+2016-04-07 10:00:12,250 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:12,250 INFO Start [main] Reading new events from database
+2016-04-07 10:00:12,251 INFO Start [main] Reading new events from database
+2016-04-07 10:00:12,251 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:12,251 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:12,251 INFO Start [main] Reading new events from database
+2016-04-07 10:00:12,252 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:12,252 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:12,252 INFO Start [main] Reading new events from database
+2016-04-07 10:00:12,426 INFO Start [main] Waiting for new client connections
+2016-04-07 10:00:12,426 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:00:12,850 INFO Start [main] new client registered
+2016-04-07 10:00:12,850 ERROR Start [main] new client registered
+2016-04-07 10:00:12,850 ERROR Start [main] new client registered
+2016-04-07 10:00:12,850 INFO Start [main] new client registered
+2016-04-07 10:00:12,850 ERROR Start [main] new client registered
+2016-04-07 10:00:12,850 ERROR Start [main] new client registered
+2016-04-07 10:00:12,850 ERROR Start [main] new client registered
+2016-04-07 10:00:12,850 ERROR Start [main] new client registered
+2016-04-07 10:00:12,851 INFO Start [main] new client registered
+2016-04-07 10:00:12,851 INFO Start [main] new client registered
+2016-04-07 10:00:12,851 INFO Start [main] new client registered
+2016-04-07 10:00:12,851 INFO Start [main] new client registered
+2016-04-07 10:00:12,851 DEBUG Start [main] new client registered
+2016-04-07 10:00:13,050 ERROR Start [main] Closed client connection
+2016-04-07 10:00:13,051 DEBUG Start [main] Closed client connection
+2016-04-07 10:00:13,051 DEBUG Start [main] Closed client connection
+2016-04-07 10:00:13,051 ERROR Start [main] Closed client connection
+2016-04-07 10:00:13,051 DEBUG Start [main] Closed client connection
+2016-04-07 10:00:13,052 INFO Start [main] Closed client connection
+2016-04-07 10:00:13,052 ERROR Start [main] Closed client connection
+2016-04-07 10:00:13,052 DEBUG Start [main] Closed client connection
+2016-04-07 10:00:13,052 INFO Start [main] Closed client connection
+2016-04-07 10:00:13,052 DEBUG Start [main] Closed client connection
+2016-04-07 10:00:13,053 ERROR Start [main] Closed client connection
+2016-04-07 10:00:13,053 ERROR Start [main] Closed client connection
+2016-04-07 10:00:13,053 INFO Start [main] Closed client connection
+2016-04-07 10:00:13,053 INFO Start [main] Closed client connection
+2016-04-07 10:00:13,053 ERROR Start [main] Closed client connection
+2016-04-07 10:00:13,375 INFO Start [main] Writing data into cache
+2016-04-07 10:00:13,376 INFO Start [main] Writing data into cache
+2016-04-07 10:00:13,376 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:13,376 INFO Start [main] Writing data into cache
+2016-04-07 10:00:13,376 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:13,376 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:13,376 INFO Start [main] Writing data into cache
+2016-04-07 10:00:13,377 INFO Start [main] Writing data into cache
+2016-04-07 10:00:13,377 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:13,377 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:13,377 INFO Start [main] Writing data into cache
+2016-04-07 10:00:13,659 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:00:14,051 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:14,091 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:14,091 INFO Start [main] Reading data from cache
+2016-04-07 10:00:14,091 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:14,091 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:14,092 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:14,092 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:14,092 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:14,092 INFO Start [main] Reading data from cache
+2016-04-07 10:00:14,092 INFO Start [main] Reading data from cache
+2016-04-07 10:00:14,092 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:14,092 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:14,542 INFO Start [main] User logged in into the application
+2016-04-07 10:00:14,542 ERROR Start [main] User logged in into the application
+2016-04-07 10:00:14,542 DEBUG Start [main] User logged in into the application
+2016-04-07 10:00:14,542 DEBUG Start [main] User logged in into the application
+2016-04-07 10:00:14,542 DEBUG Start [main] User logged in into the application
+2016-04-07 10:00:14,542 INFO Start [main] User logged in into the application
+2016-04-07 10:00:14,542 INFO Start [main] User logged in into the application
+2016-04-07 10:00:14,542 INFO Start [main] User logged in into the application
+2016-04-07 10:00:14,542 INFO Start [main] User logged in into the application
+2016-04-07 10:00:14,542 ERROR Start [main] User logged in into the application
+2016-04-07 10:00:14,543 DEBUG Start [main] User logged in into the application
+2016-04-07 10:00:14,543 INFO Start [main] User logged in into the application
+2016-04-07 10:00:14,543 DEBUG Start [main] User logged in into the application
+2016-04-07 10:00:14,543 ERROR Start [main] User logged in into the application
+2016-04-07 10:00:14,692 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:00:14,872 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:14,872 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:14,872 INFO Start [main] Writing data into cache
+2016-04-07 10:00:14,994 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:14,995 INFO Start [main] Writing data into cache
+2016-04-07 10:00:14,995 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:14,995 INFO Start [main] Writing data into cache
+2016-04-07 10:00:14,995 INFO Start [main] Writing data into cache
+2016-04-07 10:00:14,995 INFO Start [main] Writing data into cache
+2016-04-07 10:00:14,995 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:15,456 ERROR Start [main] deployed new plugin
+2016-04-07 10:00:15,456 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:15,457 INFO Start [main] deployed new plugin
+2016-04-07 10:00:15,457 INFO Start [main] deployed new plugin
+2016-04-07 10:00:15,457 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:15,457 ERROR Start [main] deployed new plugin
+2016-04-07 10:00:15,457 INFO Start [main] deployed new plugin
+2016-04-07 10:00:15,457 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:15,457 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:15,457 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:15,703 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,703 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,703 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,703 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,703 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,704 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,704 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,704 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:15,704 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,018 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,018 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,018 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,019 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,019 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,019 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,019 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:16,285 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:16,306 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:16,306 INFO Start [main] Pushing new events to database
+2016-04-07 10:00:16,306 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:16,306 INFO Start [main] Pushing new events to database
+2016-04-07 10:00:16,306 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:16,306 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:16,307 ERROR Start [main] Pushing new events to database
+2016-04-07 10:00:16,307 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:00:16,536 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:16,536 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:16,536 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:16,536 INFO Start [main] Reading data from cache
+2016-04-07 10:00:16,536 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:16,536 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:16,537 INFO Start [main] Reading data from cache
+2016-04-07 10:00:16,537 INFO Start [main] Reading data from cache
+2016-04-07 10:00:16,537 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:16,537 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:16,537 INFO Start [main] Reading data from cache
+2016-04-07 10:00:16,537 INFO Start [main] Reading data from cache
+2016-04-07 10:00:16,537 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:16,970 INFO Start [main] deployed new plugin
+2016-04-07 10:00:16,970 ERROR Start [main] deployed new plugin
+2016-04-07 10:00:16,971 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:16,971 INFO Start [main] deployed new plugin
+2016-04-07 10:00:16,971 INFO Start [main] deployed new plugin
+2016-04-07 10:00:16,971 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:16,971 INFO Start [main] deployed new plugin
+2016-04-07 10:00:17,059 ERROR Start [main] Closed client connection
+2016-04-07 10:00:17,059 INFO Start [main] Closed client connection
+2016-04-07 10:00:17,059 INFO Start [main] Closed client connection
+2016-04-07 10:00:17,060 ERROR Start [main] Closed client connection
+2016-04-07 10:00:17,060 INFO Start [main] Closed client connection
+2016-04-07 10:00:17,060 ERROR Start [main] Closed client connection
+2016-04-07 10:00:17,060 ERROR Start [main] Closed client connection
+2016-04-07 10:00:17,060 INFO Start [main] Closed client connection
+2016-04-07 10:00:17,060 ERROR Start [main] Closed client connection
+2016-04-07 10:00:17,060 INFO Start [main] Closed client connection
+2016-04-07 10:00:17,060 ERROR Start [main] Closed client connection
+2016-04-07 10:00:17,476 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:17,476 INFO Start [main] Reading data from cache
+2016-04-07 10:00:17,777 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:17,777 INFO Start [main] Reading new events from database
+2016-04-07 10:00:17,778 INFO Start [main] Reading new events from database
+2016-04-07 10:00:17,778 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:17,778 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:17,778 INFO Start [main] Reading new events from database
+2016-04-07 10:00:17,778 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:17,938 INFO Start [main] Writing data into cache
+2016-04-07 10:00:17,939 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:17,939 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:17,939 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:17,939 DEBUG Start [main] Writing data into cache
+2016-04-07 10:00:17,939 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:17,939 ERROR Start [main] Writing data into cache
+2016-04-07 10:00:17,939 INFO Start [main] Writing data into cache
+2016-04-07 10:00:18,634 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:18,634 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:18,634 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:18,634 ERROR Start [main] Reading data from cache
+2016-04-07 10:00:18,634 INFO Start [main] Reading data from cache
+2016-04-07 10:00:18,732 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,732 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,732 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,732 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,732 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,732 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,732 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,732 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,733 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:00:18,884 ERROR Start [main] new client registered
+2016-04-07 10:00:18,884 DEBUG Start [main] new client registered
+2016-04-07 10:00:18,884 ERROR Start [main] new client registered
+2016-04-07 10:00:18,884 INFO Start [main] new client registered
+2016-04-07 10:00:18,885 ERROR Start [main] new client registered
+2016-04-07 10:00:19,058 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:19,058 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:19,058 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:19,058 INFO Start [main] Reading new events from database
+2016-04-07 10:00:19,058 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:19,059 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:19,059 INFO Start [main] Reading new events from database
+2016-04-07 10:00:19,059 ERROR Start [main] Reading new events from database
+2016-04-07 10:00:19,059 INFO Start [main] Reading new events from database
+2016-04-07 10:00:19,059 DEBUG Start [main] Reading new events from database
+2016-04-07 10:00:19,535 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:19,536 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:19,536 ERROR Start [main] deployed new plugin
+2016-04-07 10:00:19,537 INFO Start [main] deployed new plugin
+2016-04-07 10:00:19,537 INFO Start [main] deployed new plugin
+2016-04-07 10:00:19,537 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:19,538 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:19,538 ERROR Start [main] deployed new plugin
+2016-04-07 10:00:19,539 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:19,539 ERROR Start [main] deployed new plugin
+2016-04-07 10:00:19,539 ERROR Start [main] deployed new plugin
+2016-04-07 10:00:19,540 DEBUG Start [main] deployed new plugin
+2016-04-07 10:00:20,009 DEBUG Start [main] Reading data from cache
+2016-04-07 10:00:20,010 INFO Start [main] Reading data from cache
+2016-04-07 10:01:05,446 INFO Start [main] new client registered
+2016-04-07 10:01:05,447 INFO Start [main] new client registered
+2016-04-07 10:01:05,448 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:05,448 INFO Start [main] deployed new plugin
+2016-04-07 10:01:05,448 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:05,637 INFO Start [main] Reading new events from database
+2016-04-07 10:01:05,637 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:05,638 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:05,638 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:06,055 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:06,056 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:06,057 INFO Start [main] User logged in into the application
+2016-04-07 10:01:06,057 INFO Start [main] Writing data into cache
+2016-04-07 10:01:06,057 ERROR Start [main] Closed client connection
+2016-04-07 10:01:06,182 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:06,182 ERROR Start [main] Closed client connection
+2016-04-07 10:01:06,183 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:06,183 DEBUG Start [main] new client registered
+2016-04-07 10:01:06,596 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:06,597 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:06,597 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:06,598 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:06,598 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:06,598 DEBUG Start [main] new client registered
+2016-04-07 10:01:06,598 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:06,599 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:06,599 INFO Start [main] new client registered
+2016-04-07 10:01:06,599 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:06,600 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:06,600 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:06,706 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:06,706 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:07,183 INFO Start [main] Reading new events from database
+2016-04-07 10:01:07,184 INFO Start [main] deployed new plugin
+2016-04-07 10:01:07,185 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:07,185 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:07,185 INFO Start [main] Closed client connection
+2016-04-07 10:01:07,186 ERROR Start [main] new client registered
+2016-04-07 10:01:07,186 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:07,431 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:07,432 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:07,432 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:07,433 ERROR Start [main] Closed client connection
+2016-04-07 10:01:07,433 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:07,434 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:07,434 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:07,434 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:07,434 INFO Start [main] Reading data from cache
+2016-04-07 10:01:07,902 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:07,903 ERROR Start [main] new client registered
+2016-04-07 10:01:07,903 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:07,903 INFO Start [main] deployed new plugin
+2016-04-07 10:01:07,903 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:07,904 INFO Start [main] Writing data into cache
+2016-04-07 10:01:07,904 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:07,904 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:07,919 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:07,919 DEBUG Start [main] new client registered
+2016-04-07 10:01:07,919 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:07,919 DEBUG Start [main] new client registered
+2016-04-07 10:01:07,919 ERROR Start [main] new client registered
+2016-04-07 10:01:07,919 ERROR Start [main] Closed client connection
+2016-04-07 10:01:07,920 INFO Start [main] Reading data from cache
+2016-04-07 10:01:07,920 INFO Start [main] Reading data from cache
+2016-04-07 10:01:08,323 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:08,324 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:08,324 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:08,324 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:08,709 ERROR Start [main] Closed client connection
+2016-04-07 10:01:08,710 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:08,711 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:08,712 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:08,712 INFO Start [main] new client registered
+2016-04-07 10:01:08,712 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:08,713 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:08,713 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:08,713 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:08,713 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:08,747 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:08,747 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:08,748 ERROR Start [main] Closed client connection
+2016-04-07 10:01:08,748 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:08,749 INFO Start [main] Writing data into cache
+2016-04-07 10:01:08,749 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:08,749 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:08,750 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:08,785 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:08,786 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:08,786 ERROR Start [main] new client registered
+2016-04-07 10:01:08,847 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:08,848 INFO Start [main] Reading new events from database
+2016-04-07 10:01:08,848 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:08,849 INFO Start [main] new client registered
+2016-04-07 10:01:08,849 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:08,849 ERROR Start [main] new client registered
+2016-04-07 10:01:08,850 INFO Start [main] Closed client connection
+2016-04-07 10:01:08,850 INFO Start [main] Writing data into cache
+2016-04-07 10:01:08,850 INFO Start [main] Reading new events from database
+2016-04-07 10:01:08,850 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:08,851 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:08,851 ERROR Start [main] new client registered
+2016-04-07 10:01:08,851 INFO Start [main] deployed new plugin
+2016-04-07 10:01:09,121 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:09,121 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:09,122 INFO Start [main] Reading new events from database
+2016-04-07 10:01:09,122 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:09,322 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:09,322 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:09,323 INFO Start [main] new client registered
+2016-04-07 10:01:09,323 INFO Start [main] deployed new plugin
+2016-04-07 10:01:09,323 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:09,324 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:09,662 INFO Start [main] deployed new plugin
+2016-04-07 10:01:09,662 INFO Start [main] User logged in into the application
+2016-04-07 10:01:09,663 DEBUG Start [main] new client registered
+2016-04-07 10:01:09,663 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:09,663 INFO Start [main] User logged in into the application
+2016-04-07 10:01:09,663 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:09,663 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:09,664 INFO Start [main] deployed new plugin
+2016-04-07 10:01:09,664 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:09,985 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:10,142 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:10,142 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:10,143 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:10,143 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:10,348 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:10,348 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:10,348 DEBUG Start [main] new client registered
+2016-04-07 10:01:10,349 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:10,349 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:10,349 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:10,350 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:10,350 INFO Start [main] Reading new events from database
+2016-04-07 10:01:10,558 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:10,560 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:10,560 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:10,561 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:10,561 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:10,561 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:10,562 INFO Start [main] new client registered
+2016-04-07 10:01:10,562 INFO Start [main] User logged in into the application
+2016-04-07 10:01:10,562 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:10,563 DEBUG Start [main] new client registered
+2016-04-07 10:01:10,563 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:10,563 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:10,563 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:10,892 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:11,196 DEBUG Start [main] new client registered
+2016-04-07 10:01:11,196 ERROR Start [main] Closed client connection
+2016-04-07 10:01:11,197 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:11,197 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:11,197 ERROR Start [main] new client registered
+2016-04-07 10:01:11,643 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:11,644 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:11,644 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:12,096 INFO Start [main] deployed new plugin
+2016-04-07 10:01:12,258 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:12,258 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:12,259 INFO Start [main] User logged in into the application
+2016-04-07 10:01:12,259 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:12,260 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:12,260 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:12,260 INFO Start [main] User logged in into the application
+2016-04-07 10:01:12,261 INFO Start [main] new client registered
+2016-04-07 10:01:12,261 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:12,261 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:12,451 ERROR Start [main] new client registered
+2016-04-07 10:01:12,538 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:12,539 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:12,539 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:12,539 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:12,539 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:12,540 INFO Start [main] deployed new plugin
+2016-04-07 10:01:12,540 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:12,540 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:12,540 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:12,541 DEBUG Start [main] new client registered
+2016-04-07 10:01:12,541 INFO Start [main] Reading data from cache
+2016-04-07 10:01:12,541 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:12,541 INFO Start [main] new client registered
+2016-04-07 10:01:12,541 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:12,619 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:12,619 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:12,620 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:12,692 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:12,693 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:12,693 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:12,693 INFO Start [main] Reading new events from database
+2016-04-07 10:01:12,694 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:12,694 ERROR Start [main] new client registered
+2016-04-07 10:01:12,694 DEBUG Start [main] new client registered
+2016-04-07 10:01:12,694 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:12,921 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:12,921 DEBUG Start [main] new client registered
+2016-04-07 10:01:12,921 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:12,921 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:12,921 INFO Start [main] Reading data from cache
+2016-04-07 10:01:12,921 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:12,921 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:12,922 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:12,922 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:12,922 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:12,922 DEBUG Start [main] new client registered
+2016-04-07 10:01:12,922 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:13,123 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:13,476 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:13,477 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:13,478 ERROR Start [main] new client registered
+2016-04-07 10:01:13,478 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:13,478 INFO Start [main] Closed client connection
+2016-04-07 10:01:13,479 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:13,479 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:13,479 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:13,480 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:13,962 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:13,963 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:13,963 INFO Start [main] Reading new events from database
+2016-04-07 10:01:13,964 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:13,964 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:13,964 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:13,965 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:13,965 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:13,965 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:13,965 INFO Start [main] deployed new plugin
+2016-04-07 10:01:14,239 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:14,240 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:14,240 INFO Start [main] Reading new events from database
+2016-04-07 10:01:14,241 INFO Start [main] deployed new plugin
+2016-04-07 10:01:14,241 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:14,241 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:14,242 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:14,242 INFO Start [main] deployed new plugin
+2016-04-07 10:01:14,674 DEBUG Start [main] new client registered
+2016-04-07 10:01:15,093 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:15,094 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:15,094 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:15,094 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:15,094 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:15,095 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:15,095 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:15,095 ERROR Start [main] new client registered
+2016-04-07 10:01:15,096 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:15,220 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:15,221 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:15,221 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:15,222 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:15,222 ERROR Start [main] new client registered
+2016-04-07 10:01:15,222 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:15,222 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:15,235 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:15,235 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:15,236 INFO Start [main] Closed client connection
+2016-04-07 10:01:15,833 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:15,833 INFO Start [main] Writing data into cache
+2016-04-07 10:01:15,833 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:15,834 INFO Start [main] Writing data into cache
+2016-04-07 10:01:16,321 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:16,321 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:16,322 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:16,562 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:16,563 INFO Start [main] Writing data into cache
+2016-04-07 10:01:16,563 INFO Start [main] Reading data from cache
+2016-04-07 10:01:16,563 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:16,563 INFO Start [main] Reading data from cache
+2016-04-07 10:01:16,563 INFO Start [main] Closed client connection
+2016-04-07 10:01:16,563 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:16,563 ERROR Start [main] new client registered
+2016-04-07 10:01:16,748 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:16,749 INFO Start [main] Closed client connection
+2016-04-07 10:01:16,976 INFO Start [main] deployed new plugin
+2016-04-07 10:01:16,977 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:16,977 INFO Start [main] User logged in into the application
+2016-04-07 10:01:16,978 ERROR Start [main] Closed client connection
+2016-04-07 10:01:16,978 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:16,978 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:16,978 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:16,979 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:16,979 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:16,979 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:16,980 INFO Start [main] Reading new events from database
+2016-04-07 10:01:16,980 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:16,980 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:16,981 INFO Start [main] deployed new plugin
+2016-04-07 10:01:17,406 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:17,407 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:17,408 INFO Start [main] Writing data into cache
+2016-04-07 10:01:17,408 INFO Start [main] Reading data from cache
+2016-04-07 10:01:17,409 INFO Start [main] Closed client connection
+2016-04-07 10:01:17,409 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:17,409 ERROR Start [main] Closed client connection
+2016-04-07 10:01:17,410 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:17,410 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:17,679 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:17,680 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:17,680 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:17,681 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:17,681 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:17,681 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:17,682 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:17,853 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:17,853 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:17,854 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:17,854 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:17,854 INFO Start [main] Reading data from cache
+2016-04-07 10:01:17,855 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:17,855 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:17,855 ERROR Start [main] Closed client connection
+2016-04-07 10:01:17,858 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:17,858 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:17,858 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:17,859 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:17,859 INFO Start [main] Closed client connection
+2016-04-07 10:01:17,859 INFO Start [main] Closed client connection
+2016-04-07 10:01:17,860 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:17,860 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:17,860 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:17,861 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:17,861 INFO Start [main] deployed new plugin
+2016-04-07 10:01:17,861 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:17,862 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:17,862 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:18,054 DEBUG Start [main] new client registered
+2016-04-07 10:01:18,055 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:18,055 INFO Start [main] Closed client connection
+2016-04-07 10:01:18,055 ERROR Start [main] new client registered
+2016-04-07 10:01:18,056 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:18,056 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:18,056 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:18,057 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:18,057 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:18,429 DEBUG Start [main] new client registered
+2016-04-07 10:01:18,430 INFO Start [main] Reading data from cache
+2016-04-07 10:01:18,430 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:18,430 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:18,430 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:18,430 INFO Start [main] deployed new plugin
+2016-04-07 10:01:18,430 DEBUG Start [main] new client registered
+2016-04-07 10:01:18,430 DEBUG Start [main] new client registered
+2016-04-07 10:01:18,462 INFO Start [main] Closed client connection
+2016-04-07 10:01:18,462 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:18,463 INFO Start [main] Closed client connection
+2016-04-07 10:01:18,463 ERROR Start [main] new client registered
+2016-04-07 10:01:18,463 ERROR Start [main] Closed client connection
+2016-04-07 10:01:18,464 INFO Start [main] User logged in into the application
+2016-04-07 10:01:18,464 INFO Start [main] new client registered
+2016-04-07 10:01:18,465 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:18,465 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:18,465 INFO Start [main] Reading new events from database
+2016-04-07 10:01:18,466 ERROR Start [main] Closed client connection
+2016-04-07 10:01:18,466 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:18,466 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:18,940 DEBUG Start [main] new client registered
+2016-04-07 10:01:18,940 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:18,941 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:18,941 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:18,941 ERROR Start [main] new client registered
+2016-04-07 10:01:18,942 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:18,942 ERROR Start [main] Closed client connection
+2016-04-07 10:01:18,942 INFO Start [main] Closed client connection
+2016-04-07 10:01:18,943 ERROR Start [main] new client registered
+2016-04-07 10:01:18,943 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:18,943 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:18,944 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:18,944 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:18,944 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:19,386 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:19,386 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:19,386 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:19,387 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:19,387 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:19,387 INFO Start [main] new client registered
+2016-04-07 10:01:19,387 INFO Start [main] new client registered
+2016-04-07 10:01:19,388 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:19,388 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:19,388 INFO Start [main] Reading new events from database
+2016-04-07 10:01:19,389 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:19,517 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:19,517 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:19,780 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:19,780 INFO Start [main] User logged in into the application
+2016-04-07 10:01:19,780 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:19,781 INFO Start [main] Closed client connection
+2016-04-07 10:01:19,781 INFO Start [main] Writing data into cache
+2016-04-07 10:01:19,782 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:19,782 ERROR Start [main] Closed client connection
+2016-04-07 10:01:19,782 INFO Start [main] Reading data from cache
+2016-04-07 10:01:19,782 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:19,783 INFO Start [main] Closed client connection
+2016-04-07 10:01:20,043 INFO Start [main] Reading data from cache
+2016-04-07 10:01:20,044 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:20,045 ERROR Start [main] Closed client connection
+2016-04-07 10:01:20,045 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:20,045 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:20,046 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:20,046 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:20,046 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:20,047 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:20,047 INFO Start [main] deployed new plugin
+2016-04-07 10:01:20,047 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:20,191 INFO Start [main] Writing data into cache
+2016-04-07 10:01:20,631 ERROR Start [main] Closed client connection
+2016-04-07 10:01:20,631 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:20,760 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:20,760 INFO Start [main] Writing data into cache
+2016-04-07 10:01:20,761 INFO Start [main] User logged in into the application
+2016-04-07 10:01:20,761 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:20,761 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:20,761 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:20,762 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:20,762 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:20,762 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:20,763 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:20,959 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:20,959 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:20,960 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:21,077 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:21,077 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:21,078 DEBUG Start [main] new client registered
+2016-04-07 10:01:21,078 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:21,078 ERROR Start [main] Closed client connection
+2016-04-07 10:01:21,139 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:21,139 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:21,140 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:21,140 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:21,140 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:21,141 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:21,141 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:21,141 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:21,142 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:21,142 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:21,142 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:21,448 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:21,448 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:21,448 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:21,449 INFO Start [main] Closed client connection
+2016-04-07 10:01:21,449 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:21,449 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:21,450 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:21,450 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:21,450 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:21,451 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:21,604 INFO Start [main] Closed client connection
+2016-04-07 10:01:21,605 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:21,797 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:21,798 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:22,289 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:22,290 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:22,290 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:22,291 INFO Start [main] deployed new plugin
+2016-04-07 10:01:22,291 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:22,291 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:22,781 INFO Start [main] Reading data from cache
+2016-04-07 10:01:22,781 ERROR Start [main] new client registered
+2016-04-07 10:01:22,782 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:22,782 ERROR Start [main] Closed client connection
+2016-04-07 10:01:22,782 INFO Start [main] Reading data from cache
+2016-04-07 10:01:22,783 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:22,783 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:22,783 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:22,783 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:22,784 INFO Start [main] Closed client connection
+2016-04-07 10:01:23,031 INFO Start [main] deployed new plugin
+2016-04-07 10:01:23,031 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:23,031 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:23,031 INFO Start [main] Closed client connection
+2016-04-07 10:01:23,032 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:23,032 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:23,032 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:23,032 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:23,352 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:23,353 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:23,396 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:23,397 INFO Start [main] Closed client connection
+2016-04-07 10:01:23,397 INFO Start [main] Reading new events from database
+2016-04-07 10:01:23,397 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:23,398 DEBUG Start [main] new client registered
+2016-04-07 10:01:23,398 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:23,398 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:23,398 INFO Start [main] Closed client connection
+2016-04-07 10:01:23,399 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:23,854 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:23,855 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:23,855 INFO Start [main] deployed new plugin
+2016-04-07 10:01:23,855 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:24,066 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:24,067 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:24,067 INFO Start [main] deployed new plugin
+2016-04-07 10:01:24,068 ERROR Start [main] Closed client connection
+2016-04-07 10:01:24,159 INFO Start [main] Writing data into cache
+2016-04-07 10:01:24,421 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:24,422 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:24,422 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:24,422 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:24,423 INFO Start [main] deployed new plugin
+2016-04-07 10:01:24,423 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:24,423 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:24,424 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:24,589 INFO Start [main] Closed client connection
+2016-04-07 10:01:24,589 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:24,590 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:24,590 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:24,590 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:24,590 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:24,590 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:24,590 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:24,590 INFO Start [main] new client registered
+2016-04-07 10:01:24,611 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:24,611 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:24,611 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:24,611 INFO Start [main] Reading data from cache
+2016-04-07 10:01:24,612 INFO Start [main] Reading new events from database
+2016-04-07 10:01:24,612 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:24,612 ERROR Start [main] Closed client connection
+2016-04-07 10:01:24,612 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:24,613 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:24,613 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:24,613 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:24,614 INFO Start [main] Writing data into cache
+2016-04-07 10:01:24,614 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:24,614 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:24,614 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:24,647 DEBUG Start [main] new client registered
+2016-04-07 10:01:24,648 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:24,648 INFO Start [main] deployed new plugin
+2016-04-07 10:01:24,648 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:24,649 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:24,819 INFO Start [main] Reading data from cache
+2016-04-07 10:01:24,820 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:24,820 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:24,820 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:24,821 INFO Start [main] new client registered
+2016-04-07 10:01:24,821 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:24,821 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:24,822 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:24,822 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:24,822 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:24,823 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:24,823 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:24,823 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:24,824 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:25,438 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:25,439 ERROR Start [main] new client registered
+2016-04-07 10:01:25,439 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:25,439 INFO Start [main] new client registered
+2016-04-07 10:01:25,733 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:25,733 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:25,733 INFO Start [main] new client registered
+2016-04-07 10:01:25,733 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:25,733 ERROR Start [main] Closed client connection
+2016-04-07 10:01:25,733 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:25,733 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:25,734 INFO Start [main] Writing data into cache
+2016-04-07 10:01:25,734 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:26,004 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:26,005 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:26,005 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:26,005 INFO Start [main] Closed client connection
+2016-04-07 10:01:26,006 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:26,160 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:26,160 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:26,160 INFO Start [main] Reading new events from database
+2016-04-07 10:01:26,161 INFO Start [main] Reading data from cache
+2016-04-07 10:01:26,161 INFO Start [main] new client registered
+2016-04-07 10:01:26,478 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:26,478 DEBUG Start [main] new client registered
+2016-04-07 10:01:26,478 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:26,479 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:26,479 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:26,479 INFO Start [main] Writing data into cache
+2016-04-07 10:01:26,479 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:26,479 INFO Start [main] User logged in into the application
+2016-04-07 10:01:26,479 INFO Start [main] Reading data from cache
+2016-04-07 10:01:26,479 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:26,479 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:26,479 INFO Start [main] Reading new events from database
+2016-04-07 10:01:26,479 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:26,854 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:26,855 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:26,855 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:26,855 INFO Start [main] Reading data from cache
+2016-04-07 10:01:26,855 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:26,855 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:27,186 INFO Start [main] new client registered
+2016-04-07 10:01:27,186 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:27,186 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:27,186 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:27,186 DEBUG Start [main] new client registered
+2016-04-07 10:01:27,186 ERROR Start [main] Closed client connection
+2016-04-07 10:01:27,186 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:27,186 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:27,186 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:27,186 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:27,187 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:27,187 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:27,187 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:27,513 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:27,513 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:27,513 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:27,513 INFO Start [main] Reading new events from database
+2016-04-07 10:01:27,513 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:27,514 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:27,868 INFO Start [main] Writing data into cache
+2016-04-07 10:01:27,868 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:27,868 INFO Start [main] new client registered
+2016-04-07 10:01:27,868 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:27,868 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:28,186 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:28,186 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:28,186 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:28,186 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:28,186 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:28,186 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:28,186 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:28,675 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:28,675 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:28,676 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:28,676 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:29,163 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:29,163 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:29,164 INFO Start [main] new client registered
+2016-04-07 10:01:29,164 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:29,556 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:29,557 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:29,557 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:29,557 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:29,558 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:29,558 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:29,558 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:29,558 INFO Start [main] Writing data into cache
+2016-04-07 10:01:29,559 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:29,559 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:29,722 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:29,722 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:29,723 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:29,723 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:29,723 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:29,723 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:29,724 ERROR Start [main] new client registered
+2016-04-07 10:01:29,900 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:29,901 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:29,901 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:30,074 INFO Start [main] Reading data from cache
+2016-04-07 10:01:30,074 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:30,074 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:30,075 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:30,075 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:30,075 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:30,075 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:30,076 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:30,076 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:30,076 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:30,076 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:30,076 ERROR Start [main] Closed client connection
+2016-04-07 10:01:30,077 INFO Start [main] Writing data into cache
+2016-04-07 10:01:30,097 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:30,098 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:30,098 ERROR Start [main] Closed client connection
+2016-04-07 10:01:30,098 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:30,098 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:30,099 INFO Start [main] Closed client connection
+2016-04-07 10:01:30,099 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:30,099 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:30,099 INFO Start [main] Closed client connection
+2016-04-07 10:01:30,100 INFO Start [main] Reading data from cache
+2016-04-07 10:01:30,100 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:30,100 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:30,101 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:30,255 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:30,256 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:30,256 ERROR Start [main] Closed client connection
+2016-04-07 10:01:30,256 INFO Start [main] Writing data into cache
+2016-04-07 10:01:30,257 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:30,257 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:30,257 INFO Start [main] deployed new plugin
+2016-04-07 10:01:30,258 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:30,258 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:30,258 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:30,259 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:30,259 INFO Start [main] Closed client connection
+2016-04-07 10:01:30,259 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:30,434 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:30,434 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:30,434 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:30,435 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:30,483 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:30,484 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:30,484 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:30,484 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:30,485 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:30,485 ERROR Start [main] Closed client connection
+2016-04-07 10:01:30,485 INFO Start [main] User logged in into the application
+2016-04-07 10:01:30,485 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:30,486 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:30,748 INFO Start [main] deployed new plugin
+2016-04-07 10:01:30,749 INFO Start [main] User logged in into the application
+2016-04-07 10:01:30,749 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:30,749 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:30,749 ERROR Start [main] new client registered
+2016-04-07 10:01:30,749 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:30,750 ERROR Start [main] Closed client connection
+2016-04-07 10:01:30,750 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:30,750 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:30,751 ERROR Start [main] Closed client connection
+2016-04-07 10:01:30,936 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:30,936 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:30,943 INFO Start [main] new client registered
+2016-04-07 10:01:30,943 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:30,944 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:30,944 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:31,138 INFO Start [main] new client registered
+2016-04-07 10:01:31,139 ERROR Start [main] new client registered
+2016-04-07 10:01:31,139 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:31,139 INFO Start [main] Reading new events from database
+2016-04-07 10:01:31,533 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:31,534 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:31,534 ERROR Start [main] Closed client connection
+2016-04-07 10:01:31,534 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:31,535 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:31,535 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:31,535 INFO Start [main] Writing data into cache
+2016-04-07 10:01:31,536 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:31,536 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:31,536 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:31,537 INFO Start [main] Reading data from cache
+2016-04-07 10:01:31,537 INFO Start [main] new client registered
+2016-04-07 10:01:31,901 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:31,901 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:31,902 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:31,903 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:31,903 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:32,129 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:32,130 INFO Start [main] Writing data into cache
+2016-04-07 10:01:32,130 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:32,131 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:32,131 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:32,131 INFO Start [main] Closed client connection
+2016-04-07 10:01:32,131 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:32,132 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:32,132 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:32,132 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:32,132 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:32,133 INFO Start [main] new client registered
+2016-04-07 10:01:32,133 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:32,133 INFO Start [main] deployed new plugin
+2016-04-07 10:01:32,579 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:32,580 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:32,580 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:32,580 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:32,581 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:32,581 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:32,581 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:32,582 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:32,582 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:32,582 ERROR Start [main] new client registered
+2016-04-07 10:01:32,582 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:32,583 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:32,583 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:32,636 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:32,637 INFO Start [main] Reading data from cache
+2016-04-07 10:01:32,637 INFO Start [main] new client registered
+2016-04-07 10:01:32,637 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:32,637 INFO Start [main] Writing data into cache
+2016-04-07 10:01:32,637 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:32,674 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:32,675 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:32,675 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:32,675 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:32,676 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:32,676 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:32,676 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:32,676 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:32,971 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:32,971 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:33,005 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:33,005 INFO Start [main] Reading data from cache
+2016-04-07 10:01:33,005 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:33,006 INFO Start [main] deployed new plugin
+2016-04-07 10:01:33,006 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:33,006 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:33,007 INFO Start [main] Writing data into cache
+2016-04-07 10:01:33,277 ERROR Start [main] new client registered
+2016-04-07 10:01:33,278 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:33,278 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:33,278 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:33,278 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:33,279 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:33,279 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:33,279 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:33,280 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:33,280 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:33,280 INFO Start [main] Closed client connection
+2016-04-07 10:01:33,491 INFO Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:33,492 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:33,492 INFO Start [main] Reading data from cache
+2016-04-07 10:01:33,492 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:33,493 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:33,493 INFO Start [main] new client registered
+2016-04-07 10:01:33,493 INFO Start [main] new client registered
+2016-04-07 10:01:33,856 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:33,857 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:33,857 INFO Start [main] Writing data into cache
+2016-04-07 10:01:33,857 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:33,858 ERROR Start [main] new client registered
+2016-04-07 10:01:33,858 ERROR Start [main] new client registered
+2016-04-07 10:01:33,858 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:33,858 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:33,859 INFO Start [main] new client registered
+2016-04-07 10:01:33,859 ERROR Start [main] new client registered
+2016-04-07 10:01:33,860 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:33,928 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:33,929 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:33,929 INFO Start [main] Writing data into cache
+2016-04-07 10:01:33,929 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:33,930 ERROR Start [main] new client registered
+2016-04-07 10:01:34,092 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:34,452 INFO Start [main] User logged in into the application
+2016-04-07 10:01:34,452 INFO Start [main] Reading data from cache
+2016-04-07 10:01:34,453 DEBUG Start [main] new client registered
+2016-04-07 10:01:34,453 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:34,453 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:34,454 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:34,454 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:34,454 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:34,454 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:34,458 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:34,458 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:34,459 INFO Start [main] deployed new plugin
+2016-04-07 10:01:34,459 INFO Start [main] Reading new events from database
+2016-04-07 10:01:34,537 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:34,538 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:34,538 INFO Start [main] Closed client connection
+2016-04-07 10:01:34,539 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:34,539 ERROR Start [main] new client registered
+2016-04-07 10:01:34,539 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:34,539 INFO Start [main] Closed client connection
+2016-04-07 10:01:34,539 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:34,960 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:34,960 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:34,960 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:34,960 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:34,960 INFO Start [main] Closed client connection
+2016-04-07 10:01:34,960 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:34,960 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:34,961 ERROR Start [main] new client registered
+2016-04-07 10:01:34,961 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:34,961 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:34,961 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:35,458 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:35,459 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:35,813 INFO Start [main] new client registered
+2016-04-07 10:01:35,814 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:35,814 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:35,815 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:35,815 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:35,815 DEBUG Start [main] new client registered
+2016-04-07 10:01:36,208 INFO Start [main] Reading data from cache
+2016-04-07 10:01:36,209 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:36,209 INFO Start [main] Reading new events from database
+2016-04-07 10:01:36,209 INFO Start [main] Reading new events from database
+2016-04-07 10:01:36,209 INFO Start [main] Closed client connection
+2016-04-07 10:01:36,210 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:36,210 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:36,210 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:36,453 INFO Start [main] Closed client connection
+2016-04-07 10:01:36,453 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:36,453 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:36,453 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:36,760 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:36,760 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:36,829 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:36,829 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:36,829 ERROR Start [main] Closed client connection
+2016-04-07 10:01:36,829 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:36,829 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:36,829 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:36,829 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:36,829 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:36,829 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:36,830 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:36,830 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:36,830 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:36,830 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:36,830 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:37,165 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:37,165 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:37,166 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:37,166 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:37,166 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:37,166 INFO Start [main] Reading data from cache
+2016-04-07 10:01:37,166 INFO Start [main] new client registered
+2016-04-07 10:01:37,166 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:37,166 INFO Start [main] Reading new events from database
+2016-04-07 10:01:37,167 DEBUG Start [main] new client registered
+2016-04-07 10:01:37,167 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:37,647 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:37,648 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:37,648 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:37,649 INFO Start [main] Reading new events from database
+2016-04-07 10:01:37,649 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:37,649 INFO Start [main] deployed new plugin
+2016-04-07 10:01:37,650 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:37,650 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:37,650 INFO Start [main] Reading new events from database
+2016-04-07 10:01:37,650 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:37,651 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:37,651 INFO Start [main] Closed client connection
+2016-04-07 10:01:37,966 INFO Start [main] Writing data into cache
+2016-04-07 10:01:37,967 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:37,967 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:37,967 INFO Start [main] Reading new events from database
+2016-04-07 10:01:37,967 INFO Start [main] Reading new events from database
+2016-04-07 10:01:37,967 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:37,967 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:37,967 DEBUG Start [main] new client registered
+2016-04-07 10:01:37,967 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:37,967 INFO Start [main] new client registered
+2016-04-07 10:01:37,967 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:38,323 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:38,323 INFO Start [main] Reading data from cache
+2016-04-07 10:01:38,324 ERROR Start [main] new client registered
+2016-04-07 10:01:38,324 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:38,324 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:38,324 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:38,325 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:38,325 INFO Start [main] Reading data from cache
+2016-04-07 10:01:38,325 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:38,325 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:38,326 DEBUG Start [main] new client registered
+2016-04-07 10:01:38,326 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:38,326 INFO Start [main] Reading new events from database
+2016-04-07 10:01:38,326 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:38,582 INFO Start [main] Reading new events from database
+2016-04-07 10:01:38,582 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:38,582 INFO Start [main] new client registered
+2016-04-07 10:01:38,582 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:38,582 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:38,582 INFO Start [main] Reading data from cache
+2016-04-07 10:01:38,980 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:38,980 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:38,980 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:38,981 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:38,981 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:38,981 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:38,981 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:38,981 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:38,981 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:38,982 INFO Start [main] Writing data into cache
+2016-04-07 10:01:38,982 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:38,982 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:39,478 INFO Start [main] Reading data from cache
+2016-04-07 10:01:39,479 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:39,479 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:39,480 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:39,480 INFO Start [main] Closed client connection
+2016-04-07 10:01:39,527 INFO Start [main] Closed client connection
+2016-04-07 10:01:39,528 INFO Start [main] Closed client connection
+2016-04-07 10:01:39,528 INFO Start [main] Closed client connection
+2016-04-07 10:01:39,528 INFO Start [main] Writing data into cache
+2016-04-07 10:01:39,529 INFO Start [main] Reading data from cache
+2016-04-07 10:01:39,529 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:39,529 INFO Start [main] deployed new plugin
+2016-04-07 10:01:39,529 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:39,529 INFO Start [main] Reading new events from database
+2016-04-07 10:01:39,925 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:39,925 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:39,925 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:39,926 INFO Start [main] Closed client connection
+2016-04-07 10:01:39,926 INFO Start [main] Reading new events from database
+2016-04-07 10:01:39,926 DEBUG Start [main] new client registered
+2016-04-07 10:01:39,926 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:39,927 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:39,927 INFO Start [main] new client registered
+2016-04-07 10:01:39,927 INFO Start [main] Writing data into cache
+2016-04-07 10:01:39,927 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:39,928 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:39,928 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:39,928 INFO Start [main] Reading new events from database
+2016-04-07 10:01:40,251 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:40,251 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:40,251 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:40,251 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:40,251 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:40,251 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:40,251 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:40,251 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:40,251 INFO Start [main] deployed new plugin
+2016-04-07 10:01:40,251 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:40,252 ERROR Start [main] Closed client connection
+2016-04-07 10:01:40,252 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:40,252 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:40,252 INFO Start [main] Reading new events from database
+2016-04-07 10:01:40,252 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:40,252 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:40,692 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:40,693 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:40,693 INFO Start [main] Reading new events from database
+2016-04-07 10:01:40,693 DEBUG Start [main] new client registered
+2016-04-07 10:01:40,694 INFO Start [main] Reading data from cache
+2016-04-07 10:01:40,694 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:40,694 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:40,695 INFO Start [main] new client registered
+2016-04-07 10:01:41,005 DEBUG Start [main] new client registered
+2016-04-07 10:01:41,005 INFO Start [main] new client registered
+2016-04-07 10:01:41,250 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:41,251 ERROR Start [main] Closed client connection
+2016-04-07 10:01:41,447 INFO Start [main] deployed new plugin
+2016-04-07 10:01:41,447 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:41,447 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:41,448 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:41,448 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:41,448 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:41,448 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:41,448 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:41,448 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:41,448 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:41,533 INFO Start [main] new client registered
+2016-04-07 10:01:41,533 INFO Start [main] Reading new events from database
+2016-04-07 10:01:41,534 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:41,534 ERROR Start [main] Closed client connection
+2016-04-07 10:01:41,534 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:41,534 DEBUG Start [main] new client registered
+2016-04-07 10:01:41,534 INFO Start [main] new client registered
+2016-04-07 10:01:41,534 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:41,534 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:41,534 INFO Start [main] deployed new plugin
+2016-04-07 10:01:41,534 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:41,534 ERROR Start [main] Pushing new events to database
+2016-04-07 10:01:41,534 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:41,534 INFO Start [main] Closed client connection
+2016-04-07 10:01:41,827 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:41,827 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:41,828 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:41,828 INFO Start [main] Closed client connection
+2016-04-07 10:01:41,828 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:41,829 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:41,829 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:41,829 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:41,829 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:41,830 DEBUG Start [main] Waiting for new client connections
+2016-04-07 10:01:41,843 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:41,843 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:42,322 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:42,322 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:42,322 ERROR Start [main] Writing data into cache
+2016-04-07 10:01:42,322 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:42,322 DEBUG Start [main] new client registered
+2016-04-07 10:01:42,322 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:42,322 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:42,323 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:42,323 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:42,323 INFO Start [main] User logged in into the application
+2016-04-07 10:01:42,323 INFO Start [main] new client registered
+2016-04-07 10:01:42,323 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:42,323 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-07 10:01:42,323 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:42,587 INFO Start [main] User logged in into the application
+2016-04-07 10:01:42,588 ERROR Start [main] Closed client connection
+2016-04-07 10:01:42,588 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:42,588 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:42,588 INFO Start [main] Reading data from cache
+2016-04-07 10:01:42,588 DEBUG Start [main] Pushing new events to database
+2016-04-07 10:01:42,825 INFO Start [main] Reading data from cache
+2016-04-07 10:01:42,826 DEBUG Start [main] Writing data into cache
+2016-04-07 10:01:42,826 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:42,826 INFO Start [main] User logged in into the application
+2016-04-07 10:01:42,826 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:42,826 INFO Start [main] new client registered
+2016-04-07 10:01:42,826 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:42,826 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:42,827 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:42,827 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:42,827 ERROR Start [main] deployed new plugin
+2016-04-07 10:01:42,827 DEBUG Start [main] User logged in into the application
+2016-04-07 10:01:42,827 INFO Start [main] Waiting for new client connections
+2016-04-07 10:01:42,827 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,027 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,028 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:43,028 INFO Start [main] deployed new plugin
+2016-04-07 10:01:43,028 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:43,028 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:43,028 DEBUG Start [main] Reading data from cache
+2016-04-07 10:01:43,028 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:43,028 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:43,029 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,029 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:43,029 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,029 INFO Start [main] Reading new events from database
+2016-04-07 10:01:43,124 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:43,124 INFO Start [main] new client registered
+2016-04-07 10:01:43,124 INFO Start [main] Reading new events from database
+2016-04-07 10:01:43,125 INFO Start [main] Writing data into cache
+2016-04-07 10:01:43,125 ERROR Start [main] Closed client connection
+2016-04-07 10:01:43,125 ERROR Start [main] Reading data from cache
+2016-04-07 10:01:43,125 INFO Start [main] Closed client connection
+2016-04-07 10:01:43,461 ERROR Start [main] new client registered
+2016-04-07 10:01:43,461 DEBUG Start [main] deployed new plugin
+2016-04-07 10:01:43,461 ERROR Start [main] Closed client connection
+2016-04-07 10:01:43,462 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,462 INFO Start [main] Reading data from cache
+2016-04-07 10:01:43,462 ERROR Start [main] Reading new events from database
+2016-04-07 10:01:43,462 INFO Start [main] new client registered
+2016-04-07 10:01:43,462 ERROR Start [main] new client registered
+2016-04-07 10:01:43,462 INFO Start [main] new client registered
+2016-04-07 10:01:43,462 ERROR Start [main] new client registered
+2016-04-07 10:01:43,462 ERROR Start [main] new client registered
+2016-04-07 10:01:43,462 ERROR Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,462 ERROR Start [main] Waiting for new client connections
+2016-04-07 10:01:43,462 INFO Start [main] Reading new events from database
+2016-04-07 10:01:43,463 INFO Start [main] Pushing new events to database
+2016-04-07 10:01:43,805 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,805 INFO Start [main] enabled rest interface on port 1422
+2016-04-07 10:01:43,805 INFO Start [main] Reading new events from database
+2016-04-07 10:01:43,805 INFO Start [main] Closed client connection
+2016-04-07 10:01:43,805 ERROR Start [main] User logged in into the application
+2016-04-07 10:01:43,805 DEBUG Start [main] Reading new events from database
+2016-04-07 10:01:43,891 INFO Start [main] deployed new plugin
+2016-04-07 10:01:43,891 DEBUG Start [main] Closed client connection
+2016-04-07 10:01:43,892 ERROR Start [main] enabled rest interface on port 1422
