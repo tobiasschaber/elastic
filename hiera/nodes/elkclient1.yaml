@@ -13,9 +13,3 @@ elastic_cluster::facets::kibana_node::enablehttps: false
 elastic_cluster::facets::kibana_node::plugins:
   elasticsearch/marvel/latest:
     source: package
-  kibana/timelion:
-    source: package
-  elasticsearch/graph/latest:
-    source: package
-#  lmenezes/elasticsearch-kopf/latest:
-#    source: package

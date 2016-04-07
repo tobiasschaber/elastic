@@ -7,4 +7,10 @@ elasticsearch::instances:
       network.publish_host: 10.0.3.101
       node.data: false
       node.master: true
-      http.enabled: false
+      http.enabled: true
+elastic_cluster::install_kibana: true
+elastic_cluster::facets::kibana_node::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.5.0-linux-x64.tar.gz
+elastic_cluster::facets::kibana_node::enablehttps: false
+elastic_cluster::facets::kibana_node::plugins:
+  elasticsearch/marvel/latest:
+    source: package
