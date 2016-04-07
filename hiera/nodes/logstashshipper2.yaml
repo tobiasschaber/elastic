@@ -1,3 +1,0 @@
----
-elastic_cluster::mode: logstash
-elastic_cluster::facets::logstash_node::logstash_role: shipper

@@ -1,9 +1,0 @@
----
-elasticsearch::instances:
-  es-01:
-    config:
-      network.bind_host: 0.0.0.0
-      network.publish_host: 10.0.3.112
-      node.data: true
-      node.master: false
-      http.enabled: false
