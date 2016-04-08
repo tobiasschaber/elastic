@@ -1787,3 +1787,1154 @@
 2016-04-07 10:01:43,891 INFO Start [main] deployed new plugin
 2016-04-07 10:01:43,891 DEBUG Start [main] Closed client connection
 2016-04-07 10:01:43,892 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:39,429 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:39,431 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:39,431 ERROR Start [main] Closed client connection
+2016-04-08 08:19:39,431 ERROR Start [main] new client registered
+2016-04-08 08:19:39,431 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:39,913 DEBUG Start [main] incoming order
+2016-04-08 08:19:39,913 INFO Start [main] incoming order
+2016-04-08 08:19:39,914 ERROR Start [main] Writing data into cache
+2016-04-08 08:19:40,181 DEBUG Start [main] order processing successful
+2016-04-08 08:19:40,181 ERROR Start [main] Reading data from cache
+2016-04-08 08:19:40,182 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:40,182 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:40,182 DEBUG Start [main] incoming order
+2016-04-08 08:19:40,350 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:40,350 INFO Start [main] order processing failed
+2016-04-08 08:19:40,806 INFO Start [main] new client registered
+2016-04-08 08:19:40,807 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:19:40,807 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:40,807 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:40,808 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:40,808 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:40,808 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:40,808 INFO Start [main] order processing failed
+2016-04-08 08:19:40,808 INFO Start [main] Waiting for new client connections
+2016-04-08 08:19:40,808 ERROR Start [main] Writing data into cache
+2016-04-08 08:19:40,808 ERROR Start [main] incoming order
+2016-04-08 08:19:40,808 ERROR Start [main] Writing data into cache
+2016-04-08 08:19:40,808 INFO Start [main] Reading new events from database
+2016-04-08 08:19:40,809 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:40,809 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:19:41,175 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:41,176 DEBUG Start [main] order processing successful
+2016-04-08 08:19:41,176 INFO Start [main] order processing failed
+2016-04-08 08:19:41,176 ERROR Start [main] order processing successful
+2016-04-08 08:19:41,177 INFO Start [main] order processing successful
+2016-04-08 08:19:41,177 ERROR Start [main] new client registered
+2016-04-08 08:19:41,177 INFO Start [main] order processing failed
+2016-04-08 08:19:41,177 ERROR Start [main] incoming order
+2016-04-08 08:19:41,223 ERROR Start [main] order processing successful
+2016-04-08 08:19:41,224 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:41,224 INFO Start [main] Writing data into cache
+2016-04-08 08:19:41,384 INFO Start [main] new client registered
+2016-04-08 08:19:41,385 INFO Start [main] Reading new events from database
+2016-04-08 08:19:41,385 INFO Start [main] User logged in into the application
+2016-04-08 08:19:41,385 INFO Start [main] order processing successful
+2016-04-08 08:19:41,386 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:41,386 DEBUG Start [main] incoming order
+2016-04-08 08:19:41,784 DEBUG Start [main] Reading new events from database
+2016-04-08 08:19:41,784 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:41,785 ERROR Start [main] order waiting for payment
+2016-04-08 08:19:41,823 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:41,823 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:41,824 INFO Start [main] Writing data into cache
+2016-04-08 08:19:41,824 INFO Start [main] deployed new plugin
+2016-04-08 08:19:41,824 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:19:41,825 ERROR Start [main] new client registered
+2016-04-08 08:19:41,825 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:19:41,825 INFO Start [main] incoming order
+2016-04-08 08:19:41,826 DEBUG Start [main] User logged in into the application
+2016-04-08 08:19:42,244 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:42,245 ERROR Start [main] incoming order
+2016-04-08 08:19:42,245 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:42,245 DEBUG Start [main] incoming order
+2016-04-08 08:19:42,246 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:42,246 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:42,247 INFO Start [main] Reading data from cache
+2016-04-08 08:19:42,247 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:19:42,247 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:19:42,247 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:42,247 INFO Start [main] User logged in into the application
+2016-04-08 08:19:42,247 INFO Start [main] new client registered
+2016-04-08 08:19:42,248 INFO Start [main] Writing data into cache
+2016-04-08 08:19:42,248 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:42,327 INFO Start [main] Writing data into cache
+2016-04-08 08:19:42,327 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:42,328 INFO Start [main] Reading data from cache
+2016-04-08 08:19:42,328 ERROR Start [main] Closed client connection
+2016-04-08 08:19:42,329 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:42,329 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:42,329 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:19:42,329 ERROR Start [main] Writing data into cache
+2016-04-08 08:19:42,330 INFO Start [main] Pushing new events to database
+2016-04-08 08:19:42,330 DEBUG Start [main] Reading new events from database
+2016-04-08 08:19:42,330 ERROR Start [main] Writing data into cache
+2016-04-08 08:19:42,331 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:42,331 ERROR Start [main] User logged in into the application
+2016-04-08 08:19:42,331 INFO Start [main] Waiting for new client connections
+2016-04-08 08:19:42,332 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:42,332 INFO Start [main] incoming order
+2016-04-08 08:19:42,370 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:19:42,371 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:42,371 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:42,371 INFO Start [main] Writing data into cache
+2016-04-08 08:19:42,372 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:42,372 INFO Start [main] Closed client connection
+2016-04-08 08:19:42,372 DEBUG Start [main] deployed new plugin
+2016-04-08 08:19:42,373 DEBUG Start [main] order processing failed
+2016-04-08 08:19:42,373 ERROR Start [main] Closed client connection
+2016-04-08 08:19:42,373 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:42,373 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:42,374 ERROR Start [main] incoming order
+2016-04-08 08:19:42,374 INFO Start [main] incoming order
+2016-04-08 08:19:42,795 INFO Start [main] order processing failed
+2016-04-08 08:19:42,795 ERROR Start [main] order waiting for payment
+2016-04-08 08:19:42,796 INFO Start [main] order waiting for payment
+2016-04-08 08:19:42,796 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:42,796 INFO Start [main] deployed new plugin
+2016-04-08 08:19:42,797 INFO Start [main] Pushing new events to database
+2016-04-08 08:19:42,797 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:42,797 INFO Start [main] order processing failed
+2016-04-08 08:19:43,100 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:43,397 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:43,398 INFO Start [main] Reading new events from database
+2016-04-08 08:19:43,399 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:43,423 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:43,424 INFO Start [main] Closed client connection
+2016-04-08 08:19:43,425 INFO Start [main] new client registered
+2016-04-08 08:19:43,425 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:43,425 DEBUG Start [main] deployed new plugin
+2016-04-08 08:19:43,426 INFO Start [main] new client registered
+2016-04-08 08:19:43,426 DEBUG Start [main] Writing data into cache
+2016-04-08 08:19:43,426 DEBUG Start [main] order processing failed
+2016-04-08 08:19:43,426 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:43,427 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:43,781 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:43,782 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:19:43,782 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:19:43,783 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:43,783 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:43,783 ERROR Start [main] order waiting for payment
+2016-04-08 08:19:43,784 INFO Start [main] Closed client connection
+2016-04-08 08:19:43,784 DEBUG Start [main] order processing failed
+2016-04-08 08:19:43,784 INFO Start [main] order processing successful
+2016-04-08 08:19:43,785 INFO Start [main] Reading data from cache
+2016-04-08 08:19:43,991 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:43,992 DEBUG Start [main] new client registered
+2016-04-08 08:19:43,993 INFO Start [main] incoming order
+2016-04-08 08:19:43,993 INFO Start [main] order waiting for payment
+2016-04-08 08:19:43,993 ERROR Start [main] order processing successful
+2016-04-08 08:19:43,993 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:43,994 INFO Start [main] order processing failed
+2016-04-08 08:19:43,994 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:43,994 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:44,099 ERROR Start [main] incoming order
+2016-04-08 08:19:44,100 INFO Start [main] Reading data from cache
+2016-04-08 08:19:44,100 ERROR Start [main] order processing failed
+2016-04-08 08:19:44,101 ERROR Start [main] order processing failed
+2016-04-08 08:19:44,393 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:44,394 DEBUG Start [main] order processing successful
+2016-04-08 08:19:44,394 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:44,538 ERROR Start [main] Reading data from cache
+2016-04-08 08:19:44,539 ERROR Start [main] order processing failed
+2016-04-08 08:19:44,540 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:44,540 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:44,540 INFO Start [main] Pushing new events to database
+2016-04-08 08:19:44,541 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:44,541 INFO Start [main] order processing successful
+2016-04-08 08:19:44,541 INFO Start [main] order processing failed
+2016-04-08 08:19:44,542 INFO Start [main] Writing data into cache
+2016-04-08 08:19:44,542 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:44,560 INFO Start [main] deployed new plugin
+2016-04-08 08:19:44,560 INFO Start [main] Pushing new events to database
+2016-04-08 08:19:44,561 INFO Start [main] deployed new plugin
+2016-04-08 08:19:44,561 DEBUG Start [main] order processing failed
+2016-04-08 08:19:44,852 DEBUG Start [main] User logged in into the application
+2016-04-08 08:19:44,852 INFO Start [main] Reading data from cache
+2016-04-08 08:19:44,853 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:44,853 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:44,853 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:44,854 DEBUG Start [main] order processing failed
+2016-04-08 08:19:44,854 ERROR Start [main] new client registered
+2016-04-08 08:19:44,854 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:45,270 DEBUG Start [main] new client registered
+2016-04-08 08:19:45,270 ERROR Start [main] new client registered
+2016-04-08 08:19:45,271 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:19:45,271 DEBUG Start [main] new client registered
+2016-04-08 08:19:45,272 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:45,272 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:45,272 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:19:45,446 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:45,446 DEBUG Start [main] incoming order
+2016-04-08 08:19:45,447 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:45,447 INFO Start [main] incoming order
+2016-04-08 08:19:45,447 DEBUG Start [main] incoming order
+2016-04-08 08:19:45,448 INFO Start [main] Closed client connection
+2016-04-08 08:19:45,829 DEBUG Start [main] User logged in into the application
+2016-04-08 08:19:45,830 ERROR Start [main] order processing successful
+2016-04-08 08:19:45,830 INFO Start [main] order processing failed
+2016-04-08 08:19:45,831 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:45,831 INFO Start [main] Reading new events from database
+2016-04-08 08:19:45,831 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:19:45,832 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:45,847 INFO Start [main] Closed client connection
+2016-04-08 08:19:45,848 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:45,848 ERROR Start [main] order processing failed
+2016-04-08 08:19:46,042 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:46,042 INFO Start [main] order waiting for payment
+2016-04-08 08:19:46,043 INFO Start [main] User logged in into the application
+2016-04-08 08:19:46,043 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:19:46,044 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:46,044 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:46,044 ERROR Start [main] Reading data from cache
+2016-04-08 08:19:46,044 DEBUG Start [main] Reading new events from database
+2016-04-08 08:19:46,045 ERROR Start [main] User logged in into the application
+2016-04-08 08:19:46,045 ERROR Start [main] User logged in into the application
+2016-04-08 08:19:46,045 INFO Start [main] new client registered
+2016-04-08 08:19:46,114 ERROR Start [main] order waiting for payment
+2016-04-08 08:19:46,114 INFO Start [main] Reading data from cache
+2016-04-08 08:19:46,115 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:46,115 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:19:46,115 INFO Start [main] incoming order
+2016-04-08 08:19:46,280 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:46,280 DEBUG Start [main] order processing successful
+2016-04-08 08:19:46,543 INFO Start [main] order processing successful
+2016-04-08 08:19:46,544 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:19:46,544 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:46,544 INFO Start [main] order processing successful
+2016-04-08 08:19:46,545 INFO Start [main] incoming order
+2016-04-08 08:19:46,545 ERROR Start [main] order processing successful
+2016-04-08 08:19:46,567 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:46,567 INFO Start [main] deployed new plugin
+2016-04-08 08:19:46,567 INFO Start [main] User logged in into the application
+2016-04-08 08:19:46,568 DEBUG Start [main] User logged in into the application
+2016-04-08 08:19:46,568 INFO Start [main] order processing failed
+2016-04-08 08:19:46,568 DEBUG Start [main] Writing data into cache
+2016-04-08 08:19:46,683 ERROR Start [main] User logged in into the application
+2016-04-08 08:19:46,683 ERROR Start [main] order processing successful
+2016-04-08 08:19:46,919 ERROR Start [main] order waiting for payment
+2016-04-08 08:19:46,920 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:46,920 INFO Start [main] order processing successful
+2016-04-08 08:19:46,920 INFO Start [main] User logged in into the application
+2016-04-08 08:19:46,921 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:46,921 DEBUG Start [main] User logged in into the application
+2016-04-08 08:19:46,921 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:47,265 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:47,479 DEBUG Start [main] order processing failed
+2016-04-08 08:19:48,126 INFO Start [main] order processing successful
+2016-04-08 08:19:48,127 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:19:48,127 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:48,127 INFO Start [main] Writing data into cache
+2016-04-08 08:19:48,128 ERROR Start [main] incoming order
+2016-04-08 08:19:48,128 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:48,128 INFO Start [main] Closed client connection
+2016-04-08 08:19:48,129 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:48,129 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:48,129 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:48,130 INFO Start [main] Waiting for new client connections
+2016-04-08 08:19:48,130 DEBUG Start [main] deployed new plugin
+2016-04-08 08:19:48,130 INFO Start [main] incoming order
+2016-04-08 08:19:48,130 INFO Start [main] Pushing new events to database
+2016-04-08 08:19:48,131 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:48,395 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:19:48,396 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:48,396 ERROR Start [main] Writing data into cache
+2016-04-08 08:19:48,396 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:48,460 INFO Start [main] order processing failed
+2016-04-08 08:19:48,460 ERROR Start [main] new client registered
+2016-04-08 08:19:48,460 DEBUG Start [main] Writing data into cache
+2016-04-08 08:19:48,461 DEBUG Start [main] Reading new events from database
+2016-04-08 08:19:48,461 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:48,461 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:19:48,461 INFO Start [main] incoming order
+2016-04-08 08:19:48,461 INFO Start [main] incoming order
+2016-04-08 08:19:49,160 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:19:49,160 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:49,160 DEBUG Start [main] order processing failed
+2016-04-08 08:19:49,161 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:49,161 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:19:49,161 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:49,170 INFO Start [main] Reading new events from database
+2016-04-08 08:19:49,171 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:49,171 ERROR Start [main] User logged in into the application
+2016-04-08 08:19:49,171 DEBUG Start [main] order processing successful
+2016-04-08 08:19:49,171 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:49,171 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:49,171 INFO Start [main] Reading data from cache
+2016-04-08 08:19:49,631 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:49,631 DEBUG Start [main] incoming order
+2016-04-08 08:19:49,631 INFO Start [main] Writing data into cache
+2016-04-08 08:19:49,632 ERROR Start [main] new client registered
+2016-04-08 08:19:49,632 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:49,632 INFO Start [main] incoming order
+2016-04-08 08:19:49,632 ERROR Start [main] order processing successful
+2016-04-08 08:19:49,632 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:49,632 ERROR Start [main] Closed client connection
+2016-04-08 08:19:49,632 INFO Start [main] new client registered
+2016-04-08 08:19:49,632 INFO Start [main] User logged in into the application
+2016-04-08 08:19:49,633 ERROR Start [main] order processing successful
+2016-04-08 08:19:49,633 INFO Start [main] order processing successful
+2016-04-08 08:19:50,138 INFO Start [main] order waiting for payment
+2016-04-08 08:19:50,138 DEBUG Start [main] Reading new events from database
+2016-04-08 08:19:50,139 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:50,139 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:19:50,139 INFO Start [main] Closed client connection
+2016-04-08 08:19:50,139 INFO Start [main] Writing data into cache
+2016-04-08 08:19:50,615 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:19:50,616 ERROR Start [main] Reading data from cache
+2016-04-08 08:19:50,744 ERROR Start [main] order waiting for payment
+2016-04-08 08:19:50,745 ERROR Start [main] incoming order
+2016-04-08 08:19:50,745 INFO Start [main] Waiting for new client connections
+2016-04-08 08:19:50,746 ERROR Start [main] incoming order
+2016-04-08 08:19:50,746 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:50,746 INFO Start [main] deployed new plugin
+2016-04-08 08:19:50,747 INFO Start [main] Reading data from cache
+2016-04-08 08:19:50,747 INFO Start [main] Waiting for new client connections
+2016-04-08 08:19:50,748 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:50,748 INFO Start [main] Writing data into cache
+2016-04-08 08:19:51,193 ERROR Start [main] order processing failed
+2016-04-08 08:19:51,193 INFO Start [main] Reading data from cache
+2016-04-08 08:19:51,492 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:51,492 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:51,492 ERROR Start [main] Pushing new events to database
+2016-04-08 08:19:51,492 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:51,492 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:51,493 INFO Start [main] order processing failed
+2016-04-08 08:19:51,493 INFO Start [main] Writing data into cache
+2016-04-08 08:19:51,493 INFO Start [main] Writing data into cache
+2016-04-08 08:19:51,493 ERROR Start [main] new client registered
+2016-04-08 08:19:51,493 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:19:51,494 DEBUG Start [main] Writing data into cache
+2016-04-08 08:19:51,494 DEBUG Start [main] Closed client connection
+2016-04-08 08:19:51,987 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:51,987 DEBUG Start [main] new client registered
+2016-04-08 08:19:51,988 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:51,988 INFO Start [main] new client registered
+2016-04-08 08:19:51,988 INFO Start [main] new client registered
+2016-04-08 08:19:51,988 INFO Start [main] Pushing new events to database
+2016-04-08 08:19:51,989 INFO Start [main] Reading new events from database
+2016-04-08 08:19:51,989 INFO Start [main] incoming order
+2016-04-08 08:19:51,989 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:19:51,990 DEBUG Start [main] Reading new events from database
+2016-04-08 08:19:51,990 DEBUG Start [main] order waiting for payment
+2016-04-08 08:19:51,991 INFO Start [main] order processing successful
+2016-04-08 08:19:52,656 ERROR Start [main] new client registered
+2016-04-08 08:19:52,657 DEBUG Start [main] Writing data into cache
+2016-04-08 08:19:52,657 ERROR Start [main] order processing failed
+2016-04-08 08:19:52,658 INFO Start [main] Reading data from cache
+2016-04-08 08:19:52,658 INFO Start [main] order processing successful
+2016-04-08 08:19:52,755 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:52,756 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:52,756 INFO Start [main] Pushing new events to database
+2016-04-08 08:19:52,757 ERROR Start [main] deployed new plugin
+2016-04-08 08:19:52,757 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:52,757 INFO Start [main] Reading new events from database
+2016-04-08 08:19:52,758 ERROR Start [main] Closed client connection
+2016-04-08 08:19:59,805 INFO Start [main] incoming order
+2016-04-08 08:19:59,806 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:59,806 DEBUG Start [main] deployed new plugin
+2016-04-08 08:19:59,806 INFO Start [main] Reading new events from database
+2016-04-08 08:19:59,806 ERROR Start [main] Reading new events from database
+2016-04-08 08:19:59,807 INFO Start [main] Waiting for new client connections
+2016-04-08 08:19:59,807 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:19:59,807 ERROR Start [main] order processing failed
+2016-04-08 08:19:59,807 DEBUG Start [main] Reading data from cache
+2016-04-08 08:19:59,807 ERROR Start [main] order waiting for payment
+2016-04-08 08:19:59,807 INFO Start [main] Writing data into cache
+2016-04-08 08:19:59,807 DEBUG Start [main] incoming order
+2016-04-08 08:19:59,807 INFO Start [main] Reading new events from database
+2016-04-08 08:19:59,914 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:19:59,915 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:19:59,915 ERROR Start [main] new client registered
+2016-04-08 08:19:59,915 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:00,103 ERROR Start [main] Closed client connection
+2016-04-08 08:20:00,103 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:00,103 DEBUG Start [main] new client registered
+2016-04-08 08:20:00,103 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:00,103 ERROR Start [main] new client registered
+2016-04-08 08:20:00,104 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:00,104 ERROR Start [main] Closed client connection
+2016-04-08 08:20:00,104 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:00,104 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:00,104 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:00,104 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:00,104 INFO Start [main] Reading new events from database
+2016-04-08 08:20:00,104 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:00,104 INFO Start [main] new client registered
+2016-04-08 08:20:00,548 DEBUG Start [main] incoming order
+2016-04-08 08:20:00,549 INFO Start [main] incoming order
+2016-04-08 08:20:00,549 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:00,549 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:00,549 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:00,550 ERROR Start [main] new client registered
+2016-04-08 08:20:00,550 INFO Start [main] order waiting for payment
+2016-04-08 08:20:00,774 INFO Start [main] new client registered
+2016-04-08 08:20:01,253 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:01,253 INFO Start [main] Reading new events from database
+2016-04-08 08:20:01,254 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:01,254 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:01,254 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:01,255 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:01,341 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:01,342 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:01,342 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:01,343 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:01,343 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:01,344 ERROR Start [main] order processing failed
+2016-04-08 08:20:01,344 INFO Start [main] order processing successful
+2016-04-08 08:20:01,344 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:01,345 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:01,345 ERROR Start [main] incoming order
+2016-04-08 08:20:01,345 DEBUG Start [main] incoming order
+2016-04-08 08:20:01,346 ERROR Start [main] Closed client connection
+2016-04-08 08:20:01,346 ERROR Start [main] order processing successful
+2016-04-08 08:20:01,346 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:01,454 INFO Start [main] incoming order
+2016-04-08 08:20:01,454 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:01,772 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:01,947 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:01,948 INFO Start [main] Reading new events from database
+2016-04-08 08:20:01,949 INFO Start [main] Writing data into cache
+2016-04-08 08:20:02,273 INFO Start [main] Closed client connection
+2016-04-08 08:20:02,274 INFO Start [main] new client registered
+2016-04-08 08:20:02,274 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:02,275 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:02,275 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:02,275 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:02,276 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:02,276 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:02,276 INFO Start [main] Reading new events from database
+2016-04-08 08:20:02,276 INFO Start [main] Writing data into cache
+2016-04-08 08:20:02,277 INFO Start [main] incoming order
+2016-04-08 08:20:02,755 INFO Start [main] incoming order
+2016-04-08 08:20:02,756 DEBUG Start [main] order processing failed
+2016-04-08 08:20:02,757 DEBUG Start [main] order processing failed
+2016-04-08 08:20:02,757 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:02,757 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:02,758 DEBUG Start [main] order waiting for payment
+2016-04-08 08:20:02,758 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:03,096 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:03,097 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:03,098 ERROR Start [main] order processing successful
+2016-04-08 08:20:03,099 DEBUG Start [main] order processing failed
+2016-04-08 08:20:03,099 INFO Start [main] new client registered
+2016-04-08 08:20:03,099 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:03,464 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:03,464 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:03,464 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:03,464 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:03,464 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:03,464 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:03,913 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:03,913 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:03,914 ERROR Start [main] Closed client connection
+2016-04-08 08:20:03,915 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:04,140 DEBUG Start [main] incoming order
+2016-04-08 08:20:04,141 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:04,141 ERROR Start [main] order processing successful
+2016-04-08 08:20:04,142 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:04,142 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:04,143 INFO Start [main] Writing data into cache
+2016-04-08 08:20:04,143 ERROR Start [main] new client registered
+2016-04-08 08:20:04,565 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:04,566 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:04,567 ERROR Start [main] User logged in into the application
+2016-04-08 08:20:04,567 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:04,568 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:05,271 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:05,272 ERROR Start [main] new client registered
+2016-04-08 08:20:05,273 INFO Start [main] incoming order
+2016-04-08 08:20:05,273 INFO Start [main] new client registered
+2016-04-08 08:20:05,274 ERROR Start [main] order processing failed
+2016-04-08 08:20:05,274 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:05,274 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:05,275 INFO Start [main] order processing successful
+2016-04-08 08:20:05,514 ERROR Start [main] order processing successful
+2016-04-08 08:20:05,514 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:05,515 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:05,515 INFO Start [main] new client registered
+2016-04-08 08:20:05,983 ERROR Start [main] new client registered
+2016-04-08 08:20:05,984 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:05,984 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:05,985 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:05,985 INFO Start [main] order processing successful
+2016-04-08 08:20:05,985 DEBUG Start [main] order processing failed
+2016-04-08 08:20:05,986 ERROR Start [main] Closed client connection
+2016-04-08 08:20:05,986 INFO Start [main] order processing successful
+2016-04-08 08:20:05,986 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:05,987 INFO Start [main] Writing data into cache
+2016-04-08 08:20:05,987 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:05,987 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:05,987 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:06,047 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:06,048 INFO Start [main] order processing failed
+2016-04-08 08:20:06,048 INFO Start [main] order processing failed
+2016-04-08 08:20:06,048 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:06,049 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:06,049 ERROR Start [main] order waiting for payment
+2016-04-08 08:20:06,049 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:06,050 ERROR Start [main] order processing failed
+2016-04-08 08:20:06,050 INFO Start [main] Writing data into cache
+2016-04-08 08:20:06,050 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:06,051 INFO Start [main] Writing data into cache
+2016-04-08 08:20:06,051 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:06,051 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:06,477 INFO Start [main] order processing successful
+2016-04-08 08:20:06,930 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:06,931 ERROR Start [main] Closed client connection
+2016-04-08 08:20:06,931 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:06,932 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:06,932 INFO Start [main] new client registered
+2016-04-08 08:20:06,932 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:07,445 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:07,446 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:07,446 DEBUG Start [main] new client registered
+2016-04-08 08:20:07,447 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:07,447 INFO Start [main] Reading new events from database
+2016-04-08 08:20:07,447 INFO Start [main] Reading new events from database
+2016-04-08 08:20:07,447 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:07,447 DEBUG Start [main] order waiting for payment
+2016-04-08 08:20:07,448 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:07,448 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:07,448 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:07,448 ERROR Start [main] order processing failed
+2016-04-08 08:20:07,627 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:07,627 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:07,628 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:07,628 INFO Start [main] Reading new events from database
+2016-04-08 08:20:07,628 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:07,629 ERROR Start [main] new client registered
+2016-04-08 08:20:07,629 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:07,629 INFO Start [main] order processing failed
+2016-04-08 08:20:07,630 INFO Start [main] Reading data from cache
+2016-04-08 08:20:07,630 INFO Start [main] order processing successful
+2016-04-08 08:20:07,630 ERROR Start [main] order processing failed
+2016-04-08 08:20:07,631 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:07,631 INFO Start [main] order processing successful
+2016-04-08 08:20:07,631 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:07,830 ERROR Start [main] order processing failed
+2016-04-08 08:20:07,830 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:07,831 ERROR Start [main] incoming order
+2016-04-08 08:20:07,831 ERROR Start [main] new client registered
+2016-04-08 08:20:07,832 INFO Start [main] new client registered
+2016-04-08 08:20:07,832 INFO Start [main] order processing failed
+2016-04-08 08:20:07,832 INFO Start [main] Closed client connection
+2016-04-08 08:20:07,833 INFO Start [main] User logged in into the application
+2016-04-08 08:20:07,833 ERROR Start [main] incoming order
+2016-04-08 08:20:07,833 INFO Start [main] incoming order
+2016-04-08 08:20:07,833 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:07,834 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:07,959 INFO Start [main] incoming order
+2016-04-08 08:20:07,960 INFO Start [main] order processing successful
+2016-04-08 08:20:07,961 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:07,961 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:08,348 ERROR Start [main] order processing successful
+2016-04-08 08:20:08,349 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:08,350 INFO Start [main] new client registered
+2016-04-08 08:20:08,532 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:08,532 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:08,533 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:08,533 ERROR Start [main] order processing successful
+2016-04-08 08:20:08,904 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:08,904 DEBUG Start [main] order waiting for payment
+2016-04-08 08:20:08,905 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:08,906 ERROR Start [main] incoming order
+2016-04-08 08:20:09,109 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:09,110 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:09,111 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:09,111 INFO Start [main] Reading data from cache
+2016-04-08 08:20:09,111 DEBUG Start [main] order processing failed
+2016-04-08 08:20:09,112 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:09,112 DEBUG Start [main] incoming order
+2016-04-08 08:20:09,113 INFO Start [main] new client registered
+2016-04-08 08:20:09,113 DEBUG Start [main] new client registered
+2016-04-08 08:20:09,113 INFO Start [main] order processing successful
+2016-04-08 08:20:09,113 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:09,114 DEBUG Start [main] order processing successful
+2016-04-08 08:20:09,114 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:09,114 DEBUG Start [main] order processing failed
+2016-04-08 08:20:09,570 ERROR Start [main] Closed client connection
+2016-04-08 08:20:09,570 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:09,571 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:09,571 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:09,572 ERROR Start [main] order processing successful
+2016-04-08 08:20:09,572 DEBUG Start [main] order processing successful
+2016-04-08 08:20:09,572 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:09,573 DEBUG Start [main] order processing successful
+2016-04-08 08:20:09,573 INFO Start [main] order processing successful
+2016-04-08 08:20:09,573 ERROR Start [main] order processing failed
+2016-04-08 08:20:09,574 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:09,574 INFO Start [main] Writing data into cache
+2016-04-08 08:20:09,890 DEBUG Start [main] order processing successful
+2016-04-08 08:20:09,891 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:09,892 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:09,892 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:09,893 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:09,893 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:09,917 DEBUG Start [main] incoming order
+2016-04-08 08:20:10,234 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:10,235 INFO Start [main] Reading new events from database
+2016-04-08 08:20:10,236 INFO Start [main] new client registered
+2016-04-08 08:20:10,236 INFO Start [main] deployed new plugin
+2016-04-08 08:20:10,237 ERROR Start [main] Closed client connection
+2016-04-08 08:20:10,237 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:10,237 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:10,382 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:10,382 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:10,383 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:10,383 INFO Start [main] Closed client connection
+2016-04-08 08:20:10,384 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:10,384 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:10,385 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:10,452 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:10,453 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:10,453 INFO Start [main] incoming order
+2016-04-08 08:20:10,454 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:10,454 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:10,455 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:10,467 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:10,467 INFO Start [main] Closed client connection
+2016-04-08 08:20:10,468 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:11,111 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:11,112 ERROR Start [main] incoming order
+2016-04-08 08:20:11,113 INFO Start [main] new client registered
+2016-04-08 08:20:11,113 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:11,114 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:11,114 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:11,406 DEBUG Start [main] new client registered
+2016-04-08 08:20:11,407 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:11,408 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:11,408 INFO Start [main] incoming order
+2016-04-08 08:20:11,408 ERROR Start [main] new client registered
+2016-04-08 08:20:11,409 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:11,409 INFO Start [main] Reading data from cache
+2016-04-08 08:20:11,528 INFO Start [main] Closed client connection
+2016-04-08 08:20:11,529 INFO Start [main] order processing failed
+2016-04-08 08:20:11,530 DEBUG Start [main] new client registered
+2016-04-08 08:20:11,530 INFO Start [main] User logged in into the application
+2016-04-08 08:20:11,530 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:11,531 ERROR Start [main] order processing successful
+2016-04-08 08:20:11,531 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:11,531 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:11,532 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:11,652 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:11,653 INFO Start [main] Writing data into cache
+2016-04-08 08:20:11,653 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:11,653 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:11,653 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:11,654 INFO Start [main] Reading data from cache
+2016-04-08 08:20:11,654 DEBUG Start [main] order waiting for payment
+2016-04-08 08:20:11,654 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:11,654 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:11,654 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:11,655 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:11,655 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:11,655 ERROR Start [main] order processing successful
+2016-04-08 08:20:11,968 INFO Start [main] order waiting for payment
+2016-04-08 08:20:11,968 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:11,968 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:11,968 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:11,978 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:11,978 INFO Start [main] Reading new events from database
+2016-04-08 08:20:11,978 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:11,978 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:11,979 DEBUG Start [main] order processing successful
+2016-04-08 08:20:11,979 INFO Start [main] incoming order
+2016-04-08 08:20:11,979 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:11,979 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:12,147 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:12,148 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:12,148 INFO Start [main] Closed client connection
+2016-04-08 08:20:12,149 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:12,149 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:12,149 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:12,150 INFO Start [main] order waiting for payment
+2016-04-08 08:20:12,150 INFO Start [main] Reading data from cache
+2016-04-08 08:20:12,150 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:12,151 INFO Start [main] new client registered
+2016-04-08 08:20:12,353 ERROR Start [main] incoming order
+2016-04-08 08:20:12,366 DEBUG Start [main] order processing successful
+2016-04-08 08:20:12,367 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:12,367 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:12,368 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:12,368 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:12,368 ERROR Start [main] order waiting for payment
+2016-04-08 08:20:12,369 ERROR Start [main] new client registered
+2016-04-08 08:20:12,369 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:12,475 INFO Start [main] order processing successful
+2016-04-08 08:20:12,476 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:12,476 INFO Start [main] incoming order
+2016-04-08 08:20:12,476 INFO Start [main] Closed client connection
+2016-04-08 08:20:12,477 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:12,477 DEBUG Start [main] incoming order
+2016-04-08 08:20:12,477 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:12,477 INFO Start [main] Writing data into cache
+2016-04-08 08:20:12,477 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:12,477 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:12,477 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:12,477 ERROR Start [main] incoming order
+2016-04-08 08:20:12,882 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:12,882 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:12,883 DEBUG Start [main] order processing successful
+2016-04-08 08:20:12,883 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:12,883 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:12,884 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:13,001 INFO Start [main] order processing successful
+2016-04-08 08:20:13,001 INFO Start [main] order processing successful
+2016-04-08 08:20:13,002 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:13,002 INFO Start [main] incoming order
+2016-04-08 08:20:13,002 DEBUG Start [main] order processing failed
+2016-04-08 08:20:13,002 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,002 ERROR Start [main] new client registered
+2016-04-08 08:20:13,002 INFO Start [main] Reading data from cache
+2016-04-08 08:20:13,002 INFO Start [main] order processing successful
+2016-04-08 08:20:13,003 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:13,003 DEBUG Start [main] order processing successful
+2016-04-08 08:20:13,003 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:13,003 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:13,003 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:13,003 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:13,029 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:13,030 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:13,030 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,030 ERROR Start [main] User logged in into the application
+2016-04-08 08:20:13,030 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:13,030 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,030 ERROR Start [main] new client registered
+2016-04-08 08:20:13,030 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:13,031 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,031 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,148 INFO Start [main] Writing data into cache
+2016-04-08 08:20:13,148 INFO Start [main] order processing successful
+2016-04-08 08:20:13,149 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:13,150 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:13,150 INFO Start [main] Reading new events from database
+2016-04-08 08:20:13,150 DEBUG Start [main] order processing failed
+2016-04-08 08:20:13,151 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:13,151 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:13,151 INFO Start [main] Writing data into cache
+2016-04-08 08:20:13,151 DEBUG Start [main] new client registered
+2016-04-08 08:20:13,421 ERROR Start [main] Closed client connection
+2016-04-08 08:20:13,421 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:13,421 INFO Start [main] Reading data from cache
+2016-04-08 08:20:13,421 INFO Start [main] incoming order
+2016-04-08 08:20:13,421 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:13,421 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:13,422 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:13,422 ERROR Start [main] new client registered
+2016-04-08 08:20:13,422 ERROR Start [main] incoming order
+2016-04-08 08:20:13,437 INFO Start [main] Reading new events from database
+2016-04-08 08:20:13,437 DEBUG Start [main] order processing successful
+2016-04-08 08:20:13,437 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,437 INFO Start [main] Reading data from cache
+2016-04-08 08:20:13,437 INFO Start [main] Reading new events from database
+2016-04-08 08:20:13,437 INFO Start [main] order processing failed
+2016-04-08 08:20:13,438 INFO Start [main] Closed client connection
+2016-04-08 08:20:13,438 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:13,438 ERROR Start [main] incoming order
+2016-04-08 08:20:13,438 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:13,438 ERROR Start [main] order processing failed
+2016-04-08 08:20:13,438 INFO Start [main] Writing data into cache
+2016-04-08 08:20:13,438 INFO Start [main] order processing failed
+2016-04-08 08:20:13,438 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:13,438 ERROR Start [main] order waiting for payment
+2016-04-08 08:20:13,753 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,754 INFO Start [main] Closed client connection
+2016-04-08 08:20:13,755 INFO Start [main] Writing data into cache
+2016-04-08 08:20:13,755 DEBUG Start [main] order processing successful
+2016-04-08 08:20:13,755 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:13,756 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:13,756 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:13,757 INFO Start [main] incoming order
+2016-04-08 08:20:13,757 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:13,757 INFO Start [main] User logged in into the application
+2016-04-08 08:20:13,758 INFO Start [main] incoming order
+2016-04-08 08:20:13,758 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:13,758 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:14,245 INFO Start [main] Reading data from cache
+2016-04-08 08:20:14,245 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:14,246 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:14,246 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:14,246 INFO Start [main] new client registered
+2016-04-08 08:20:14,247 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:14,247 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:14,247 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:14,247 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:14,538 ERROR Start [main] order processing failed
+2016-04-08 08:20:14,538 INFO Start [main] order processing successful
+2016-04-08 08:20:14,539 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:14,539 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:14,539 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:14,540 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:14,540 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:14,540 ERROR Start [main] order processing successful
+2016-04-08 08:20:14,541 DEBUG Start [main] order processing failed
+2016-04-08 08:20:14,541 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:14,541 INFO Start [main] Reading new events from database
+2016-04-08 08:20:14,591 DEBUG Start [main] order processing failed
+2016-04-08 08:20:14,591 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:14,591 ERROR Start [main] Closed client connection
+2016-04-08 08:20:14,592 DEBUG Start [main] incoming order
+2016-04-08 08:20:14,592 ERROR Start [main] Closed client connection
+2016-04-08 08:20:14,592 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:14,593 INFO Start [main] incoming order
+2016-04-08 08:20:15,058 ERROR Start [main] incoming order
+2016-04-08 08:20:15,058 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:15,058 INFO Start [main] new client registered
+2016-04-08 08:20:15,059 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:15,059 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:15,059 INFO Start [main] deployed new plugin
+2016-04-08 08:20:15,060 DEBUG Start [main] incoming order
+2016-04-08 08:20:15,060 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:15,060 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:15,112 ERROR Start [main] incoming order
+2016-04-08 08:20:15,112 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:15,112 DEBUG Start [main] order waiting for payment
+2016-04-08 08:20:15,113 DEBUG Start [main] new client registered
+2016-04-08 08:20:15,113 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:15,113 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:15,114 ERROR Start [main] order processing successful
+2016-04-08 08:20:15,114 INFO Start [main] deployed new plugin
+2016-04-08 08:20:15,114 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:15,114 ERROR Start [main] new client registered
+2016-04-08 08:20:15,115 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:15,115 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:15,115 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:15,116 INFO Start [main] Writing data into cache
+2016-04-08 08:20:15,116 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:15,207 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:15,208 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:15,208 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:15,208 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:15,208 ERROR Start [main] order processing failed
+2016-04-08 08:20:15,209 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:15,209 INFO Start [main] Closed client connection
+2016-04-08 08:20:15,209 DEBUG Start [main] order processing failed
+2016-04-08 08:20:15,501 DEBUG Start [main] order processing successful
+2016-04-08 08:20:15,501 INFO Start [main] order processing failed
+2016-04-08 08:20:15,742 ERROR Start [main] order processing failed
+2016-04-08 08:20:15,742 DEBUG Start [main] order processing failed
+2016-04-08 08:20:15,743 INFO Start [main] User logged in into the application
+2016-04-08 08:20:15,743 INFO Start [main] new client registered
+2016-04-08 08:20:15,743 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:15,743 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:15,743 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:15,743 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:15,751 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:15,752 INFO Start [main] new client registered
+2016-04-08 08:20:15,752 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:15,752 INFO Start [main] incoming order
+2016-04-08 08:20:15,752 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:15,752 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:15,753 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:15,753 INFO Start [main] incoming order
+2016-04-08 08:20:15,753 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:15,753 INFO Start [main] order processing failed
+2016-04-08 08:20:15,753 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:15,754 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:15,754 INFO Start [main] Writing data into cache
+2016-04-08 08:20:16,100 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:16,100 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:16,368 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:16,456 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:16,456 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:16,456 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:16,456 INFO Start [main] Reading new events from database
+2016-04-08 08:20:16,457 INFO Start [main] Writing data into cache
+2016-04-08 08:20:16,457 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:16,457 INFO Start [main] order processing failed
+2016-04-08 08:20:16,457 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:16,457 INFO Start [main] deployed new plugin
+2016-04-08 08:20:16,499 INFO Start [main] deployed new plugin
+2016-04-08 08:20:16,499 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:16,499 INFO Start [main] Reading data from cache
+2016-04-08 08:20:16,499 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:16,499 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:16,876 DEBUG Start [main] order processing successful
+2016-04-08 08:20:16,876 INFO Start [main] order processing failed
+2016-04-08 08:20:16,876 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:16,876 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:16,876 INFO Start [main] deployed new plugin
+2016-04-08 08:20:16,876 ERROR Start [main] order waiting for payment
+2016-04-08 08:20:16,876 ERROR Start [main] Closed client connection
+2016-04-08 08:20:16,876 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:16,877 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:16,877 DEBUG Start [main] new client registered
+2016-04-08 08:20:16,931 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:16,931 INFO Start [main] User logged in into the application
+2016-04-08 08:20:16,931 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:16,931 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:16,931 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:16,931 ERROR Start [main] order processing successful
+2016-04-08 08:20:16,931 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:16,931 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:16,931 INFO Start [main] Writing data into cache
+2016-04-08 08:20:16,931 ERROR Start [main] order processing failed
+2016-04-08 08:20:16,932 DEBUG Start [main] order processing successful
+2016-04-08 08:20:16,932 INFO Start [main] deployed new plugin
+2016-04-08 08:20:16,932 ERROR Start [main] incoming order
+2016-04-08 08:20:17,294 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:17,294 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:17,294 INFO Start [main] Closed client connection
+2016-04-08 08:20:17,294 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:17,294 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:17,295 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:17,295 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:17,295 INFO Start [main] Reading data from cache
+2016-04-08 08:20:17,295 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:17,295 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:17,302 DEBUG Start [main] order processing failed
+2016-04-08 08:20:17,303 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:17,303 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:17,499 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:17,499 INFO Start [main] Reading data from cache
+2016-04-08 08:20:17,500 ERROR Start [main] new client registered
+2016-04-08 08:20:17,500 DEBUG Start [main] order waiting for payment
+2016-04-08 08:20:17,500 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:17,500 DEBUG Start [main] new client registered
+2016-04-08 08:20:17,501 INFO Start [main] order processing failed
+2016-04-08 08:20:17,501 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:17,501 INFO Start [main] Reading new events from database
+2016-04-08 08:20:17,502 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:17,965 INFO Start [main] order processing failed
+2016-04-08 08:20:17,966 DEBUG Start [main] new client registered
+2016-04-08 08:20:17,966 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:17,966 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:17,967 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:17,967 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:17,967 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:17,968 DEBUG Start [main] order processing failed
+2016-04-08 08:20:17,968 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:17,968 DEBUG Start [main] order processing successful
+2016-04-08 08:20:17,968 ERROR Start [main] new client registered
+2016-04-08 08:20:17,969 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:17,969 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:18,202 ERROR Start [main] order processing failed
+2016-04-08 08:20:18,203 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:18,203 INFO Start [main] new client registered
+2016-04-08 08:20:18,655 INFO Start [main] deployed new plugin
+2016-04-08 08:20:18,655 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:18,656 DEBUG Start [main] incoming order
+2016-04-08 08:20:18,656 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:18,656 INFO Start [main] deployed new plugin
+2016-04-08 08:20:18,656 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:18,986 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:18,986 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:18,987 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:18,987 ERROR Start [main] order processing successful
+2016-04-08 08:20:18,987 DEBUG Start [main] new client registered
+2016-04-08 08:20:18,988 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:18,988 INFO Start [main] new client registered
+2016-04-08 08:20:18,988 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:18,989 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:18,989 ERROR Start [main] order waiting for payment
+2016-04-08 08:20:19,069 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:19,070 DEBUG Start [main] new client registered
+2016-04-08 08:20:19,070 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:19,070 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:19,070 INFO Start [main] incoming order
+2016-04-08 08:20:19,071 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:19,071 INFO Start [main] deployed new plugin
+2016-04-08 08:20:19,071 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:19,071 INFO Start [main] order processing failed
+2016-04-08 08:20:19,071 ERROR Start [main] order processing failed
+2016-04-08 08:20:19,071 DEBUG Start [main] order processing successful
+2016-04-08 08:20:19,072 DEBUG Start [main] order rejected due to fraud system
+2016-04-08 08:20:19,072 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:19,212 DEBUG Start [main] order processing successful
+2016-04-08 08:20:19,213 INFO Start [main] order processing failed
+2016-04-08 08:20:19,213 INFO Start [main] deployed new plugin
+2016-04-08 08:20:19,213 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:19,214 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:19,214 DEBUG Start [main] order waiting for payment
+2016-04-08 08:20:19,214 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:19,214 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:19,215 INFO Start [main] Writing data into cache
+2016-04-08 08:20:19,558 DEBUG Start [main] new client registered
+2016-04-08 08:20:19,559 ERROR Start [main] order waiting for payment
+2016-04-08 08:20:19,559 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:19,559 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:19,560 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:19,560 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:19,560 DEBUG Start [main] order processing failed
+2016-04-08 08:20:19,561 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:19,561 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:19,561 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:19,562 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:19,562 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:19,562 INFO Start [main] order processing successful
+2016-04-08 08:20:19,628 INFO Start [main] new client registered
+2016-04-08 08:20:19,628 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:19,629 ERROR Start [main] Closed client connection
+2016-04-08 08:20:19,629 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:19,629 ERROR Start [main] new client registered
+2016-04-08 08:20:19,629 INFO Start [main] deployed new plugin
+2016-04-08 08:20:19,629 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:19,630 DEBUG Start [main] new client registered
+2016-04-08 08:20:19,630 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:19,630 INFO Start [main] order waiting for payment
+2016-04-08 08:20:19,630 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:19,631 DEBUG Start [main] order processing successful
+2016-04-08 08:20:19,631 DEBUG Start [main] order processing failed
+2016-04-08 08:20:19,917 DEBUG Start [main] Reading data from cache
+2016-04-08 08:20:19,918 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:19,918 INFO Start [main] incoming order
+2016-04-08 08:20:19,919 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:19,919 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:19,919 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:19,920 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:19,920 DEBUG Start [main] new client registered
+2016-04-08 08:20:20,013 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:20,014 INFO Start [main] incoming order
+2016-04-08 08:20:20,014 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:20,014 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:20,015 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:20,015 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:20,016 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:20,016 ERROR Start [main] new client registered
+2016-04-08 08:20:20,016 DEBUG Start [main] new client registered
+2016-04-08 08:20:20,016 INFO Start [main] deployed new plugin
+2016-04-08 08:20:20,017 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:20,017 INFO Start [main] Pushing new events to database
+2016-04-08 08:20:20,017 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:20,371 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:20,372 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:20,372 INFO Start [main] Reading new events from database
+2016-04-08 08:20:20,372 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:20,372 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:20,372 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:20,372 ERROR Start [main] order processing successful
+2016-04-08 08:20:20,372 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:20,372 INFO Start [main] deployed new plugin
+2016-04-08 08:20:20,372 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:20,372 INFO Start [main] Writing data into cache
+2016-04-08 08:20:20,373 INFO Start [main] order processing failed
+2016-04-08 08:20:20,373 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:20,373 INFO Start [main] deployed new plugin
+2016-04-08 08:20:20,373 DEBUG Start [main] new client registered
+2016-04-08 08:20:20,841 INFO Start [main] order processing successful
+2016-04-08 08:20:20,842 INFO Start [main] order processing failed
+2016-04-08 08:20:20,842 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:20,842 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:20,843 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:20,843 INFO Start [main] Reading data from cache
+2016-04-08 08:20:20,843 ERROR Start [main] new client registered
+2016-04-08 08:20:20,843 DEBUG Start [main] order processing successful
+2016-04-08 08:20:20,843 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:20,844 INFO Start [main] new client registered
+2016-04-08 08:20:20,844 INFO Start [main] order waiting for payment
+2016-04-08 08:20:20,844 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:20,844 ERROR Start [main] order processing successful
+2016-04-08 08:20:20,844 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:21,233 INFO Start [main] deployed new plugin
+2016-04-08 08:20:21,234 ERROR Start [main] order processing failed
+2016-04-08 08:20:21,234 ERROR Start [main] order processing failed
+2016-04-08 08:20:21,305 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:21,306 INFO Start [main] order processing failed
+2016-04-08 08:20:21,306 INFO Start [main] Reading data from cache
+2016-04-08 08:20:21,306 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:21,306 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:21,307 ERROR Start [main] order waiting for payment
+2016-04-08 08:20:21,307 INFO Start [main] Reading data from cache
+2016-04-08 08:20:21,397 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:21,398 DEBUG Start [main] order processing successful
+2016-04-08 08:20:21,398 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:21,608 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:21,608 INFO Start [main] order processing successful
+2016-04-08 08:20:21,608 INFO Start [main] deployed new plugin
+2016-04-08 08:20:21,609 INFO Start [main] Reading data from cache
+2016-04-08 08:20:21,609 INFO Start [main] User logged in into the application
+2016-04-08 08:20:21,701 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:21,701 ERROR Start [main] incoming order
+2016-04-08 08:20:21,702 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:21,702 INFO Start [main] order processing failed
+2016-04-08 08:20:21,702 DEBUG Start [main] deployed new plugin
+2016-04-08 08:20:21,702 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:21,959 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:21,959 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:21,960 DEBUG Start [main] incoming order
+2016-04-08 08:20:21,960 ERROR Start [main] order processing failed
+2016-04-08 08:20:21,960 ERROR Start [main] order processing successful
+2016-04-08 08:20:21,960 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:21,960 DEBUG Start [main] new client registered
+2016-04-08 08:20:21,960 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:21,960 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:21,960 DEBUG Start [main] Closed client connection
+2016-04-08 08:20:21,960 ERROR Start [main] order processing failed
+2016-04-08 08:20:21,960 INFO Start [main] new client registered
+2016-04-08 08:20:22,366 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:22,366 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:22,367 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:22,367 INFO Start [main] Reading new events from database
+2016-04-08 08:20:22,368 INFO Start [main] order processing failed
+2016-04-08 08:20:22,368 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:22,368 INFO Start [main] Writing data into cache
+2016-04-08 08:20:22,711 INFO Start [main] User logged in into the application
+2016-04-08 08:20:22,711 DEBUG Start [main] Waiting for new client connections
+2016-04-08 08:20:22,712 DEBUG Start [main] order processing failed
+2016-04-08 08:20:22,712 INFO Start [main] Closed client connection
+2016-04-08 08:20:22,713 ERROR Start [main] Waiting for new client connections
+2016-04-08 08:20:22,713 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:22,874 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:22,875 ERROR Start [main] order processing failed
+2016-04-08 08:20:22,875 DEBUG Start [main] new client registered
+2016-04-08 08:20:22,875 ERROR Start [main] deployed new plugin
+2016-04-08 08:20:22,875 INFO Start [main] Writing data into cache
+2016-04-08 08:20:22,876 ERROR Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:22,876 INFO Start [main] incoming order
+2016-04-08 08:20:22,876 INFO Start [main] incoming order
+2016-04-08 08:20:22,876 DEBUG Start [main] incoming order
+2016-04-08 08:20:22,876 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:22,876 INFO Start [main] incoming order
+2016-04-08 08:20:22,876 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:22,876 ERROR Start [main] order processing failed
+2016-04-08 08:20:22,876 ERROR Start [main] Writing data into cache
+2016-04-08 08:20:23,062 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:23,062 INFO Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:23,063 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:23,561 ERROR Start [main] order processing successful
+2016-04-08 08:20:23,562 DEBUG Start [main] enabled rest interface on port 1422
+2016-04-08 08:20:23,562 INFO Start [main] order rejected due to fraud system
+2016-04-08 08:20:23,563 INFO Start [main] User logged in into the application
+2016-04-08 08:20:23,563 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:23,563 INFO Start [main] Closed client connection
+2016-04-08 08:20:24,387 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:24,388 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:24,388 INFO Start [main] deployed new plugin
+2016-04-08 08:20:24,388 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:24,389 DEBUG Start [main] order processing successful
+2016-04-08 08:20:24,389 ERROR Start [main] incoming order
+2016-04-08 08:20:24,389 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:24,389 ERROR Start [main] Reading data from cache
+2016-04-08 08:20:24,390 INFO Start [main] order processing successful
+2016-04-08 08:20:24,390 DEBUG Start [main] order processing successful
+2016-04-08 08:20:24,390 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:24,391 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:24,846 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:24,847 INFO Start [main] order processing failed
+2016-04-08 08:20:24,848 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:24,848 INFO Start [main] User logged in into the application
+2016-04-08 08:20:24,848 INFO Start [main] Waiting for new client connections
+2016-04-08 08:20:25,200 DEBUG Start [main] Writing data into cache
+2016-04-08 08:20:25,200 INFO Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:25,266 ERROR Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:25,267 ERROR Start [main] incoming order
+2016-04-08 08:20:25,267 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:25,424 INFO Start [main] Reading new events from database
+2016-04-08 08:20:25,424 DEBUG Start [main] Reading new events from database
+2016-04-08 08:20:25,424 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:25,425 ERROR Start [main] Closed client connection
+2016-04-08 08:20:25,525 DEBUG Start [main] disabled rest interface due to heavy load
+2016-04-08 08:20:25,526 ERROR Start [main] order rejected due to fraud system
+2016-04-08 08:20:25,526 DEBUG Start [main] User logged in into the application
+2016-04-08 08:20:25,527 ERROR Start [main] order processing failed
+2016-04-08 08:20:25,527 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:25,528 DEBUG Start [main] order processing successful
+2016-04-08 08:20:25,528 INFO Start [main] order processing failed
+2016-04-08 08:20:25,528 DEBUG Start [main] Pushing new events to database
+2016-04-08 08:20:25,529 ERROR Start [main] Reading new events from database
+2016-04-08 08:20:25,529 ERROR Start [main] Closed client connection
+2016-04-08 08:20:26,015 ERROR Start [main] Pushing new events to database
+2016-04-08 08:20:26,016 INFO Start [main] enabled rest interface on port 1422

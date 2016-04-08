@@ -25,4 +25,7 @@ echo "uploading..."
 # will upload the module to puppet forge
 # this requires the auth cookie, which was exported with the firefox "export cookies" plugin (https://addons.mozilla.org/en-US/firefox/addon/export-cookies/)
 # and stored under /home/tobias/work/cookies.txt
-curl --cookie /home/tobias/work/cookies.txt --form authenticity_token=fd5bbe2409cc5242b2bfeabfd66ec202 --form "utf-8=&#x2713;" --form tarball=@pkg/tschaber-elastic_cluster-$version_new.tar.gz https://forge.puppetlabs.com/upload
+curl --cookie /home/tobias/work/cookies.txt --form authenticity_token=5dc5e94f123c50227d21814a45f8af12 --form "utf-8=&#x2713;" --form tarball=@pkg/tschaber-elastic_cluster-$version_new.tar.gz https://forge.puppetlabs.com/upload
+
+echo "LATEST VERSION ONLINE:"
+curl -s https://forgeapi.puppetlabs.com/v3/modules/tschaber-elastic_cluster | grep "\"version\":" -m 1

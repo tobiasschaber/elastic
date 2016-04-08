@@ -116,7 +116,7 @@ fi
 
 
 echo "---------------------------------------------------------"
-echo "Finished! The ELK cluster should now be online!"
+echo "Finished! The ELK cluster should now be online: http://10.0.3.101:5601"
 
 
 

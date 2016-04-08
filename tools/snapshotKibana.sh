@@ -15,7 +15,7 @@ echo "saving snapshot under $1"
 
 
 # create the snapshot repository in elk
-curl -XPUT -s "http://10.0.3.131:9200/_snapshot/elk_backup" -d '{
+curl -XPUT -s "http://10.0.3.101:9200/_snapshot/elk_backup" -d '{
       "type": "fs",
       "settings": {
           "location": "/tmp/elkinstalldir/snapshots/"
@@ -24,6 +24,6 @@ curl -XPUT -s "http://10.0.3.131:9200/_snapshot/elk_backup" -d '{
 
 
 # create the snapshot
-curl -XPUT -s "http://10.0.3.131:9200/_snapshot/elk_backup/$1?wait_for_completion=true" -d '{
+curl -XPUT -s "http://10.0.3.101:9200/_snapshot/elk_backup/$1?wait_for_completion=true" -d '{
       "indices": ".kibana"
     }'

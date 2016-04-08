@@ -11,6 +11,12 @@ input {
         path => "/etc/demo/logging.log"
         type => "log4j"
     }
+
+    file {
+        path => "/etc/demo/logs/access_log-20141019"
+        type => "access"
+        start_position => "beginning"
+    }
 }
 
 filter {
@@ -20,7 +26,10 @@ filter {
         grok {
           match => [ "message", "%{TIMESTAMP_ISO8601} %{LOGLEVEL} %{GREEDYDATA}" ]
         }
-
+    } else if [type] == "access" {
+        grok {
+          match => [ "message", "%{COMBINEDAPACHELOG}" ]
+        }
     }
 }
 
@@ -30,7 +39,7 @@ output {
     elasticsearch {
         <% @mastnodes = scope.function_hiera(['elastic_cluster::clientnodes']) -%>
         hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
-        index => "%{target}-%{+YYYY.MM.dd}"
+        index => "%{type}-%{+YYYY.MM.dd}"
     }
 }
 
