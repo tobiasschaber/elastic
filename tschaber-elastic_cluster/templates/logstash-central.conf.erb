@@ -24,11 +24,11 @@ filter {
 
     } else if [type] == "log4j" {
         grok {
-          match => [ "message", "%{TIMESTAMP_ISO8601} %{LOGLEVEL} %{GREEDYDATA}" ]
+          match => {"message" => '%{TIMESTAMP_ISO8601:timer} %{LOGLEVEL:level} %{WORD:class} \[%{WORD:thread}\] %{GREEDYDATA:log_message}' }
         }
     } else if [type] == "access" {
         grok {
-          match => [ "message", "%{COMBINEDAPACHELOG}" ]
+          match => {"message" => '%{COMBINEDAPACHELOG}' }
         }
     }
 }
