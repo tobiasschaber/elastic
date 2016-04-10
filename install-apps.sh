@@ -10,9 +10,17 @@ fi
 
 if [ ! -d "/etc/demo/logs" ]; then
     sudo mkdir /etc/demo/logs
+else
+    sudo rm /etc/demo/logs/access_log*
 fi
 
-sudo tar -xvzf /tmp/elkinstalldir/demo/access_logs.tar.gz -C /etc/demo/logs
+sudo touch /etc/demo/logs/access_log-20141019
+
+
+
+sudo tar -xvzf /tmp/elkinstalldir/demo/access_logs.tar.gz -C /tmp
+
+sudo less /tmp/access_log-20141019 >> /etc/demo/logs/access_log-20141019
 
 sudo chmod 777 /etc/demo/logs/access*
 

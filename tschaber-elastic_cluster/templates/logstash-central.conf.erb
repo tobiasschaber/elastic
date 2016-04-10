@@ -30,6 +30,9 @@ filter {
         grok {
           match => {"message" => '%{COMBINEDAPACHELOG}' }
         }
+        date {
+            match => [ "time", "YYYY-MM-dd HH:mm:ss,SSS"]
+        }
     }
 }
 
