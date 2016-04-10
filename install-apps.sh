@@ -16,7 +16,13 @@ fi
 
 sudo touch /etc/demo/logs/access_log-20141019
 
+if [ ! -f "/etc/logstash/GeoLiteCity.dat" ]; then
+    sudo cp /tmp/elkinstalldir/demo/GeoLiteCity.dat.gz /tmp/elkinstalldir/demo/GeoLiteCity.dat.gz
+    sudo gunzip GeoLiteCity.dat.gz
+fi
 
+
+sudo cp /tmp/elkinstalldir/demo/GeoLiteCity.dat /etc/logstash/GeoLiteCity.dat
 
 sudo tar -xvzf /tmp/elkinstalldir/demo/access_logs.tar.gz -C /tmp
 

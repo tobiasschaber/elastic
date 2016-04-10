@@ -33,6 +33,16 @@ filter {
         date {
             match => [ "time", "YYYY-MM-dd HH:mm:ss,SSS"]
         }
+        geoip {
+            source => "clientip"
+            target => "geoip"
+            database => "/etc/logstash/GeoLiteCity.dat"
+            add_field => [ "[geoip][coordinates]", "%{[geoip][longitude]}" ]
+            add_field => [ "[geoip][coordinates]", "%{[geoip][latitude]}" ]
+        }
+        mutate {
+            convert => [ "[geoip][coordinates]", "float"]
+        }
     }
 }
 
