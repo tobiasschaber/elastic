@@ -14,7 +14,7 @@ input {
 
     file {
         path => "/etc/demo/logs/access_log-20141019"
-        type => "access"
+        type => "logstash"
         start_position => "beginning"
     }
 }
@@ -26,12 +26,20 @@ filter {
         grok {
           match => {"message" => '%{TIMESTAMP_ISO8601:timer} %{LOGLEVEL:level} %{WORD:class} \[%{WORD:thread}\] %{GREEDYDATA:log_message}' }
         }
-    } else if [type] == "access" {
+        date {
+            match => ["timer", "ISO8601"]
+        }
+    } else if [type] == "logstash" {
         grok {
           match => {"message" => '%{COMBINEDAPACHELOG}' }
         }
+        useragent {
+            source => "agent"
+            target => "useragent"
+            remove_field => "agent"
+        }
         date {
-            match => [ "time", "YYYY-MM-dd HH:mm:ss,SSS"]
+            match => [ "timestamp", "ISO8601"]
         }
         geoip {
             source => "clientip"
