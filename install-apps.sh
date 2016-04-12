@@ -18,7 +18,7 @@ sudo touch /etc/demo/logs/access_log-20141019
 
 if [ ! -f "/tmp/elkinstalldir/demo/GeoLiteCity.dat" ]; then
     cd /tmp/elkinstalldir/demo
-    sudo gunzip -k GeoLiteCity.dat.gz
+    sudo gunzip GeoLiteCity.dat.gz
 
 fi
 

@@ -55,7 +55,15 @@ public class Start {
             }
 
             if (roundmod == 3) {
-                logger.error(msg);
+                double randx = Math.random() * 100;
+                int roundxi = (int) randx;
+
+                /* make errors more seldom */
+                if(roundxi % 5 == 0) {
+                    logger.error(msg);
+                } else {
+                    logger.debug(msg);
+                }
             }
 
             if (roundmod == 4) {

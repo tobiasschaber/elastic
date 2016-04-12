@@ -96,10 +96,28 @@ class elastic_cluster::facets::elastic_node(
             valuespercentage => true,
         }
 
+        class { 'collectd::plugin::disk':
+            disks          => ['/^dm/'],
+            ignoreselected => true,
+            udevnameattr   => 'DM_NAME',
+        }
+
         # add the collect.d network interface plugin
         class { 'collectd::plugin::interface':
             interfaces     => $collectd_plugin_ignore,
             ignoreselected => true,
+        }
+
+        class { 'collectd::plugin::uptime':
+        }
+
+        class { 'collectd::plugin::netlink':
+            interfaces        => ['enp0s3'],
+            verboseinterfaces => ['enp0s3'],
+            qdiscs            => ['"enp0s3" "pfifo_fast-1:0"'],
+            classes           => ['"enp0s3" "htb-1:10"'],
+            filters           => ['"enp0s3" "u32-1:0"'],
+            ignoreselected    => false,
         }
 
         # add the collect.d network plugin and configure it to send to logstash

@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkdata1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkdata1.vm.provision :shell, :path => "install-elknode.sh"
         elkdata1.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 1200
             v.cpus = 2
         end
     end
