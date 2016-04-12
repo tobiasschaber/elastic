@@ -5,4 +5,4 @@ installation/tmp/**
 .idea*
 *.iml
 tschaber-elastic_cluster/pkg/*
-demo/GeoLiteCity.dat
+demo/GeoLiteCity.dat*
