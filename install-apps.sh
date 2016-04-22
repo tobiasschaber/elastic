@@ -32,6 +32,9 @@ sudo cp /tmp/elkinstalldir/demo/GeoLiteCity.dat /etc/logstash/GeoLiteCity.dat
 
 sudo tar -xvzf /tmp/elkinstalldir/demo/access_logs.tar.gz -C /tmp
 
+sudo sed -i 's/12\/Apr/30\/Apr/g' /tmp/access_log-20141019
+
+
 sudo less /tmp/access_log-20141019 >> /etc/demo/logs/access_log-20141019
 
 sudo chmod 777 /etc/demo/logs/access*

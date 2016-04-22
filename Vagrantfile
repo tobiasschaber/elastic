@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         prov.add_host '10.0.3.111', ['elkdata1']
         prov.add_host '10.0.3.121', ['logstash1']
         prov.add_host '10.0.3.131', ['elkclient1']
+        prov.add_host '10.0.3.102', ['elkmaster2']
     end
 
     # configure the operating system for all nodes
@@ -37,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkdata1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkdata1.vm.provision :shell, :path => "install-elknode.sh"
         elkdata1.vm.provider "virtualbox" do |v|
-            v.memory = 1200
+            v.memory = 1400
             v.cpus = 2
         end
     end
@@ -52,6 +53,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkmaster1.vm.provision :shell, :path => "install-elknode.sh"
         elkmaster1.vm.provision :shell, :path => "start-kibana.sh"
         elkmaster1.vm.provider "virtualbox" do |v|
+             v.memory = 1200
+             v.cpus = 2
+        end
+    end
+
+    # elk master server 2
+    config.vm.define "elkmaster2" do |elkmaster2|
+
+        elkmaster2.vm.hostname = "elkmaster2"
+        elkmaster2.vm.network "public_network", ip: "10.0.3.102", :bridge => "lxcbr0"
+        elkmaster2.vm.network "private_network", type: "dhcp"
+        elkmaster2.vm.provision :shell, :path => "installation/prepare-install.sh"
+        elkmaster2.vm.provision :shell, :path => "install-elknode.sh"
+        elkmaster2.vm.provider "virtualbox" do |v|
              v.memory = 1200
              v.cpus = 2
         end

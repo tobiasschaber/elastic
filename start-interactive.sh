@@ -106,6 +106,10 @@ echo "setup kibana from snapshot?: $setup_kibana"
 echo "Snapshot name:               $snapshot_name"
 echo "---------------------------------------------------------"
 
+# start elkmaster2 and suspend it before starting the cluster
+vagrant up elkmaster2
+vagrant suspend elkmaster2
+
 vagrant up $vagrant_machine_list
 
 if [ $setup_kibana == "yes" ]
