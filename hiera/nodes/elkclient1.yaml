@@ -1,4 +1,6 @@
 ---
+elastic_cluster::mode: elknode
+elastic_cluster::install_kibana: true
 elasticsearch::instances:
   es-01:
     config:
@@ -6,4 +8,14 @@ elasticsearch::instances:
       network.publish_host: 10.0.3.131
       node.data: false
       node.master: false
-
+elastic_cluster::facets::kibana_node::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.5.0-linux-x64.tar.gz
+elastic_cluster::facets::kibana_node::enablehttps: false
+elastic_cluster::facets::kibana_node::plugins:
+  elasticsearch/marvel/latest:
+    source: package
+  kibana/timelion:
+    source: package
+  elasticsearch/graph/latest:
+    source: package
+#  lmenezes/elasticsearch-kopf/latest:
+#    source: package

@@ -4,13 +4,22 @@
 #
 # author: Tobias Schaber (codecentric AG)
 #
-class installlogstash(
+class elastic_cluster::facets::logstash_node(
 
-        # true if redis should use stunnel as ssl tunnel provider
-        $redis_ssl = false,
+    # true if redis should use stunnel as ssl tunnel provider
+    $redis_ssl = false,
 
-        # the role ("default", "shipper" or "indexer") for the logstash instance
-        $logstash_role = "default",
+    # the role ("default", "shipper" or "indexer") for the logstash instance
+    $logstash_role = "default",
+
+    # the stunnel configuration
+    $stunnel_config = undef,
+
+    # the collectd configuration
+    $collectd_config = undef,
+
+    # we need the elk cluster authentication information
+    $elk_authentication = undef,
 ) {
 
         # check role parameter
@@ -28,7 +37,7 @@ class installlogstash(
         $elk_config       = hiera('elasticsearch::config')
         $logstash_elkuser = hiera('installelknode::configureshield::defaultadminname', undef)
         $logstash_elkpass = hiera('installelknode::configureshield::defaultadminpass', undef)
-        $redis_nodes      = hiera('redis::nodes', undef)
+        $redis_nodes      = hiera('elastic_cluster::redisnodes', undef)
 
         if($elk_config['shield']) {
                 $truststore_pass  = $elk_config['shield']['ssl']['truststore.password']
@@ -44,18 +53,20 @@ class installlogstash(
 
         # want to use redis?
         if($use_redis == true) {
-                $redis_password = hiera('redis::masterauth', undef)
+            $redis_password = hiera('redis::masterauth', undef)
+            $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
-                # redis with ssl?
-                if($redis_ssl == true) {
-                        class { 'installlogstash::configstunnel':
-                                role => $logstash_role,
-                        }
+            # redis with ssl?
+            if($redis_ssl == true) {
+                    class { 'elastic_cluster::facets::logstash_node::configstunnel':
+                        role => $logstash_role,
+                        bindings => $stunnel_config['bindings'],
+                    }
 
-                } else {
+            } else {
 
-                }
         }
+    }
 
 
 
@@ -67,19 +78,17 @@ class installlogstash(
 	}
 
         # create the logstash config file
-	class { 'installlogstash::prepareconfigfile' :
-                role => $logstash_role,
-                redis_ssl => $redis_ssl,
+	class { 'elastic_cluster::facets::logstash_node::prepareconfigfile' :
+        role => $logstash_role,
+        redis_ssl => $redis_ssl,
+        collectd_config => $collectd_config,
+        elk_authentication => $elk_authentication,
 
-        }
-        
-        ->
+    } ->
 
 	# perform the configuration steps
-	class { 'installlogstash::configlogstash' :
+	class { 'elastic_cluster::facets::logstash_node::configlogstash' :
                 enablessl => $enableelkssl,
-                logstash_user => hiera('logstash::logstash_user'),
-                logstash_group => hiera('logstash::logstash_group'),
 	}
 } 
 
@@ -87,7 +96,7 @@ class installlogstash(
 
 
 
-class installlogstash::configstunnel(
+class elastic_cluster::facets::logstash_node::configstunnel(
 
         # the logstash role (shipper, indexer)
         $role = undef,
@@ -143,33 +152,38 @@ class installlogstash::configstunnel(
 
 
 
-class installlogstash::prepareconfigfile(
+class elastic_cluster::facets::logstash_node::prepareconfigfile(
 	$role = 'default',
-        $redis_ssl = false,
+    $redis_ssl = false,
+    $collectd_config = undef,
+    $elk_authentication = undef,
 ) {
 
-        $inst_cld = hiera('installelknode::collectd::install', false)
+    $enable_elk_auth = $elk_authentication['enable_authentication']
+    $elk_username = $elk_authentication['username']
+    $elk_password = $elk_authentication['password']
 
-        # if collect.d should be installed, search hiera for the correct hostname and port
-        # and adjust the target index (which will then be "collectd-*" instead of "default-*"
-        if($inst_cld == true and $role in ['default', 'shipper']) {
-                $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
-                $collectd_config     = hiera('installelknode::collectd::servers')
-                $collectd_port       = $collectd_config[$ownhost]['port']
-                $targetindex = 'collectd-%{+YYYY.MM.dd}'
-        } else {
-                $targetindex = 'default-%{+YYYY.MM.dd}'
-        }
+    $inst_cld = $collectd_config['collectd_install']
+
+    # if collect.d should be installed, search hiera for the correct hostname and port
+    # and adjust the target index (which will then be "collectd-*" instead of "default-*"
+    if($inst_cld == true and $role in ['default', 'shipper']) {
+        $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
+        $collectd_port       = $collectd_config['collectd_servers'][$ownhost]['port']
+        $targetindex = 'collectd-%{+YYYY.MM.dd}'
+    } else {
+        $targetindex = 'default-%{+YYYY.MM.dd}'
+    }
 
 	# copy a config file based on a template
 	# attention! the path to this file depends on the git clone target directory and may be adjusted!
 	logstash::configfile { 'central' :
-		content => template("/tmp/elkinstalldir/puppet/templates/logstash-central.conf.erb"),
+		content => template("elastic_cluster/logstash-central.conf.erb"),
 		order => 10
 	}
 }
 
-class installlogstash::configlogstash(
+class elastic_cluster::facets::logstash_node::configlogstash(
 
         $enablessl = true,
         $logstash_user = 'logstash',
@@ -191,8 +205,3 @@ class installlogstash::configlogstash(
                 ensure => $ensuressl,
         }
 }
-
-# trigger puppet execution
-include installlogstash
-
-

@@ -1,6 +1,2 @@
 ---
-installredis::redis_ssl: false
-installredis::bindings:
-  server:
-    accept: 10.0.3.141:6379
-    connect: 127.0.0.1:6379
+elastic_cluster::mode: redis

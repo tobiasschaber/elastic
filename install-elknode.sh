@@ -21,13 +21,8 @@ fi
 echo "SSL SETUP CHECK: CHECK FINISHED. NO PROBLEMS DETECTED"
 ## SSL CHECK END --------------------------------------------------------------------------------
 
-
-# install the required puppet modules and dependencies
-sudo puppet module install elasticsearch-elasticsearch --version 0.10.3
-sudo puppet module install puppet/collectd
-
 # install elasticsearch node via puppet
-sudo puppet apply --debug /tmp/elkinstalldir/puppet/manifests/install-elknode.pp  --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml
+sudo puppet apply --debug --modulepath=/etc/puppet/modules --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml -e "include elastic_cluster"
 
 # run cleanup and finalization script
 source /tmp/elkinstalldir/installation/finish-install-elknode.sh

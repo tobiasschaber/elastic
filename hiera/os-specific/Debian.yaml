@@ -1,5 +1,16 @@
 ---
 elasticsearch::java_package: openjdk-7-jre-headless
-elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.2.0/elasticsearch-2.2.0.deb
+elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.0/elasticsearch-2.3.0.deb
 logstash::java_package: openjdk-7-jre-headless
 logstash::package_url: https://download.elastic.co/logstash/logstash/packages/debian/logstash_2.2.2-1_all.deb
+elastic_cluster::collectd_config:
+    collectd_version: 5.5.0
+    collectd_install: true
+    collectd_port: 25826
+    collectd_servers:
+      logstash1:
+        port: 25826
+    collectd_plugins:
+      interface:
+        ignore:
+          - enp0s9

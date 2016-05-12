@@ -25,10 +25,6 @@ then
 fi
 ## SSL CHECK END --------------------------------------------------------------------------------
 
-# install the required puppet modules and dependencies
-sudo puppet module install elasticsearch-logstash
-sudo puppet module install arusso-stunnel
-
 # install logstash via puppet
 # parser=future is required to make use of each{} function
-sudo puppet apply --debug /tmp/elkinstalldir/puppet/manifests/install-logstash.pp --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml
+sudo puppet apply --debug --modulepath=/etc/puppet/modules --hiera_config=/tmp/elkinstalldir/hiera/hiera.yaml -e "include elastic_cluster"

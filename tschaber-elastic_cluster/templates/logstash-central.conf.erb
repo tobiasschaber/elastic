@@ -4,11 +4,11 @@ input {
         <% if @role == "indexer" %>
                 <%# for redis over ssl, use the stunnel bindings %>
                 <% if @redis_ssl == true %>
-                        <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
+                        <% @bindings = scope.function_hiera(['elastic_cluster::stunnel_config'])['bindings'] -%>
                         <% @redisnodes = @bindings.map{ |rnode| "#{rnode[1]['accept']}"} %>
                 <%# otherwise, use the redis bindings %>
                 <% else %>
-                        <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                        <% @redisnodes = scope.function_hiera(['elastic_cluster::redisnodes']) -%>
                 <% end %>
 
                 <%# for each redis node, add a redis input %>
@@ -59,12 +59,14 @@ output {
         <% if @role == "indexer" or @role == "default" %>
 
                 elasticsearch {
-		        <% @mastnodes = scope.function_hiera(['elkcluster::clientnodes']) -%>
+		        <% @mastnodes = scope.function_hiera(['elastic_cluster::clientnodes']) -%>
 
 		        hosts => [<%= @mastnodes.map{ |node| "\"#{node}\"" }.join(',') %>]
 		        index => "<%= @targetindex %>"
-                        <% if @logstash_elkuser != '' %>user => "<%= @logstash_elkuser %>"<% end %>
-                        <% if @logstash_elkpass != '' %>password => "<%= @logstash_elkpass %>"<% end %>
+                    <% if @enable_elk_auth == true %>
+                        user => "<%= @elk_username %>"
+                        password => "<%= @elk_password %>"
+                    <% end %>
                     <% if @enableelkssl == true %>
                         truststore => "/etc/logstash/truststore.jks"
                         truststore_password => "<%= @truststore_pass %>"
@@ -76,10 +78,10 @@ output {
 
                 redis {
                         <% if @redis_ssl == true %>
-                                <% @bindings = scope.function_hiera(['installlogstash::configstunnel::bindings']) -%>
+                                <% @bindings = scope.function_hiera(['elastic_cluster::stunnel_config']['bindings']) -%>
                                host => [<%= @bindings.map{ |rnode| "\"#{rnode[1]['accept']}\""}.join(',') %>]
                         <% else %>
-                                <% @redisnodes = scope.function_hiera(['redis::nodes']) -%>
+                                <% @redisnodes = scope.function_hiera(['elastic_cluster::redisnodes']) -%>
                                 host => [<%= @redisnodes.map{ |rnode| "\"#{rnode}\""}.join(',') %>]
                         <% end %>
 
