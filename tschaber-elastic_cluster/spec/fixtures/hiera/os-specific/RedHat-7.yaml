@@ -1,0 +1,12 @@
+---
+elastic_cluster::collectd_config:
+    collectd_version: 5.5.1-2.el7
+    collectd_install: true
+    collectd_port: 25826
+    collectd_servers:
+      logstash1:
+        port: 25826
+    collectd_plugins:
+      interface:
+        ignore:
+          - enp0s9

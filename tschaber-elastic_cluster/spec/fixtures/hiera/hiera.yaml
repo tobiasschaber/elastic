@@ -1,0 +1,11 @@
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: spec/fixtures/hiera
+:hierarchy:
+  - "os-specific/%{::osfamily}-%{::operatingsystemmajrelease}"
+  - "os-specific/%{::osfamily}"
+  - "nodes/%{::fqdn}"
+  - "nodes/%{::hostname}"
+  - common

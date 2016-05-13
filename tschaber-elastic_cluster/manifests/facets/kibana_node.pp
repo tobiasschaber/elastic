@@ -127,16 +127,16 @@ class elastic_cluster::facets::kibana_node(
 
 class elastic_cluster::facets::kibana_node::configkibana(
 
-  $sslsourcescert    = '/tmp/elkinstalldir/ssl/kibana.crt',
+  $sslsourcescert   = '/tmp/elkinstalldir/ssl/kibana.crt',
   $sslsourceskey    = '/tmp/elkinstalldir/ssl/kibana.key',
   $sslcacert        = '/tmp/elkinstalldir/ssl/root-ca.crt',
   $kibanaelkuser    = 'esadmin',
   $kibanaelkpass    = 'esadmin',
-  $enablehttps        = false,
+  $enablehttps      = false,
   $enablessl        = false,
-  $elk_enable_auth    = false,
-  $kibana_user        = 'kibana',
-  $kibana_group        = 'kibana',
+  $elk_enable_auth  = false,
+  $kibana_user      = 'kibana',
+  $kibana_group      = 'kibana',
 ) {
 
   if($enablehttps == true) {

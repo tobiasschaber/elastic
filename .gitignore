@@ -5,3 +5,4 @@ installation/tmp/**
 .idea*
 *.iml
 tschaber-elastic_cluster/pkg/*
+tschaber-elastic_cluster/spec/fixtures/modules/*
