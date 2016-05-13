@@ -10,7 +10,7 @@ class elastic_cluster::facets::logstash_node(
     $redis_ssl = false,
 
     # the role ("default", "shipper" or "indexer") for the logstash instance
-    $logstash_role = "default",
+    $logstash_role = 'default',
 
     # the stunnel configuration
     $stunnel_config = undef,
@@ -59,7 +59,7 @@ class elastic_cluster::facets::logstash_node(
             # redis with ssl?
             if($redis_ssl == true) {
                     class { 'elastic_cluster::facets::logstash_node::configstunnel':
-                        role => $logstash_role,
+                        role     => $logstash_role,
                         bindings => $stunnel_config['bindings'],
                     }
 
@@ -69,28 +69,27 @@ class elastic_cluster::facets::logstash_node(
     }
 
 
-
-	# install logstash via the puppet module
-	class { 'logstash':
-		manage_repo => true,
-		ensure => "present",
-		status => "running",
-	}
+    # install logstash via the puppet module
+    class { 'logstash':
+        ensure      => 'present',
+        manage_repo => true,
+        status      => 'running',
+    }
 
         # create the logstash config file
-	class { 'elastic_cluster::facets::logstash_node::prepareconfigfile' :
-        role => $logstash_role,
-        redis_ssl => $redis_ssl,
-        collectd_config => $collectd_config,
+    class { 'elastic_cluster::facets::logstash_node::prepareconfigfile' :
+        role               => $logstash_role,
+        redis_ssl          => $redis_ssl,
+        collectd_config    => $collectd_config,
         elk_authentication => $elk_authentication,
 
     } ->
 
-	# perform the configuration steps
-	class { 'elastic_cluster::facets::logstash_node::configlogstash' :
+    # perform the configuration steps
+    class { 'elastic_cluster::facets::logstash_node::configlogstash' :
                 enablessl => $enableelkssl,
-	}
-} 
+    }
+}
 
 
 
@@ -105,25 +104,25 @@ class elastic_cluster::facets::logstash_node::configstunnel(
         $bindings = undef,
 ) {
 
-	# create the stunnel users group
-	group { 'create-stunnel-group':
-		name => 'stunnel',
-		ensure => 'present',
-	} ->
+    # create the stunnel users group
+    group { 'create-stunnel-group':
+        ensure => 'present',
+        name   => 'stunnel',
+    } ->
 
-	# create the stunnel user
-	user { 'create-stunnel-user':
-		name => 'stunnel',
-		groups => ['stunnel'],
-		ensure => 'present',
-	} ->
+    # create the stunnel user
+    user { 'create-stunnel-user':
+        ensure => 'present',
+        name   => 'stunnel',
+        groups => ['stunnel'],
+    } ->
 
         file { '/etc/stunnel/stunnel_full.pem':
             ensure => 'file',
             owner  => 'root',
             group  => 'root',
-            mode   => 700,
-            source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
+            mode   => '0700',
+            source => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
         }
 
         ->
@@ -132,19 +131,19 @@ class elastic_cluster::facets::logstash_node::configstunnel(
                 'shipper': {
 
                         $shipperdefaults = {
-                                cert    => '/etc/stunnel/stunnel_full.pem',
+                                cert   => '/etc/stunnel/stunnel_full.pem',
                                 client => true,
                         }
-                        create_resources("stunnel::tun", $bindings, $shipperdefaults)
+                        create_resources('stunnel::tun', $bindings, $shipperdefaults)
                 }
 
-                'indexer': {
+                default: {
 
                         $indexerdefaults = {
                                 client => true,
-                                cert    => '/etc/stunnel/stunnel_full.pem',
+                                cert   => '/etc/stunnel/stunnel_full.pem',
                         }
-                        create_resources("stunnel::tun", $bindings, $indexerdefaults)
+                        create_resources('stunnel::tun', $bindings, $indexerdefaults)
                 }
         }
 }
@@ -153,7 +152,7 @@ class elastic_cluster::facets::logstash_node::configstunnel(
 
 
 class elastic_cluster::facets::logstash_node::prepareconfigfile(
-	$role = 'default',
+    $role = 'default',
     $redis_ssl = false,
     $collectd_config = undef,
     $elk_authentication = undef,
@@ -175,12 +174,12 @@ class elastic_cluster::facets::logstash_node::prepareconfigfile(
         $targetindex = 'default-%{+YYYY.MM.dd}'
     }
 
-	# copy a config file based on a template
-	# attention! the path to this file depends on the git clone target directory and may be adjusted!
-	logstash::configfile { 'central' :
-		content => template("elastic_cluster/logstash-central.conf.erb"),
-		order => 10
-	}
+    # copy a config file based on a template
+    # attention! the path to this file depends on the git clone target directory and may be adjusted!
+    logstash::configfile { 'central' :
+        content => template('elastic_cluster/logstash-central.conf.erb'),
+        order   => 10
+    }
 }
 
 class elastic_cluster::facets::logstash_node::configlogstash(
@@ -198,10 +197,10 @@ class elastic_cluster::facets::logstash_node::configlogstash(
 
         # add jks truststore
         file { '/etc/logstash/truststore.jks' :
-                source => "/tmp/elkinstalldir/ssl/truststore.jks",
-		owner => $logstash_user,
-		group => $logstash_group,
-                mode => "0755",
-                ensure => $ensuressl,
+            ensure => $ensuressl,
+            source => '/tmp/elkinstalldir/ssl/truststore.jks',
+            owner  => $logstash_user,
+            group  => $logstash_group,
+            mode   => '0755',
         }
 }
