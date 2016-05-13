@@ -187,7 +187,7 @@ class elastic_cluster::facets::elastic_node::configureshield(
     # create an admin user
     exec { 'shield-create-esadmin':
       user    => 'root',
-      cwd     => ''/usr/share/elasticsearch/bin/shield'',
+      cwd     => '/usr/share/elasticsearch/bin/shield',
       command => "/usr/share/elasticsearch/bin/shield/esusers useradd ${defaultadmin_name} -p ${defaultadmin_pass} -r admin",
       unless  => "/usr/share/elasticsearch/bin/shield/esusers list | grep -c ${defaultadmin_name}",
       path    => ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
