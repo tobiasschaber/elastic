@@ -48,9 +48,9 @@ fi
 
 
 snapshotRepoCmd="curl -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup\" -d '{
-      "type": "fs",
-      "settings": {
-          "location": "/tmp/elkinstalldir/snapshots/"
+      \"type\": \"fs\",
+      \"settings\": {
+          \"location\": \"/tmp/elkinstalldir/snapshots/\"
       }
   }'"
 
@@ -60,6 +60,8 @@ restoreSnapshotCmd="curl -XPOST -s $authString \"$elk_base_url/_snapshot/elk_bac
 reopenKibanaIndexCmd="curl -XPOST -s $authString \"$elk_base_url/.kibana/_open\""
 
 
+echo "creating repo..."
+eval $snapshotRepoCmd
 echo "closing kibana index..."
 eval $closeKibanaIndexCmd
 echo "restoring snapshot..."

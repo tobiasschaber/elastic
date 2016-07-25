@@ -48,15 +48,15 @@ fi
 
 
 snapshotRepoCmd="curl -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup\" -d '{
-      "type": "fs",
-      "settings": {
-          "location": "/tmp/elkinstalldir/snapshots/"
+      \"type\": \"fs\",
+      \"settings\": {
+          \"location\": \"/tmp/elkinstalldir/snapshots/\"
       }
   }'"
   
   
 snapshotCreateCmd="curl -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup/$1?wait_for_completion=true\" -d '{
-      "indices": ".kibana"
+      \"indices\": \".kibana\"
     }'"
 
 echo "creating snapshot repo...";
