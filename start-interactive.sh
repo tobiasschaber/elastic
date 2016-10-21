@@ -115,7 +115,7 @@ function check_required_software() {
 function ask_for_logstash_setup() {
 
         # ask if logstash should be used
-        read -p "Do yowant to use logstash? ([yes]/no) :" use_logstash
+        read -p "Do you want to use logstash? ([yes]/no) :" use_logstash
 
 
         # check if user pushed [enter] for default value
