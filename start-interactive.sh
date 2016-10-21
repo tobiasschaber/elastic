@@ -63,6 +63,35 @@ function check_vagrant_plugin(){
 }
 
 
+# ------------------------------------------------------------------------ CHECK IF SSL SETUP WAS EVER EXECUTED --- #
+function check_ssl_artifacts_created(){
+	
+	if grep -q -e "\s*http.ssl:\s*true" hiera/common.yaml;
+		then
+			certCount=$(ls ssl/ | wc -l)
+			
+			if [ $certCount -lt 2 ]
+				then
+					echo "No SSL artifacts found! You have to execute ./prepare-ssl.sh before starting a cluster with SSL configuration!"
+					exit
+			fi
+	fi
+	
+	
+	if grep -q -e "\s*transport.ssl:\s*true" hiera/common.yaml;
+		then
+			certCount=$(ls ssl/ | wc -l)
+			
+			if [ $certCount -lt 2 ]
+				then
+					echo "No SSL artifacts found! You have to execute ./prepare-ssl.sh before starting a cluster with SSL configuration!"
+					exit
+			fi
+	fi
+
+}
+
+
 # ------------------------------------------------------------------------ CHECK IF ALL REQUIRED SOFTWWARE IS AVAILABLE --- #
 # signature:
 # $1: required command
@@ -299,6 +328,10 @@ check_required_software virtualbox virtualbox
 check_vagrant_plugin vagrant-hosts
 echo "Done. All required software installed."
 # ------------------------------------------------------------------------ CHECK STANDARD NODES --- #
+echo "Checking SSL setup..."
+check_ssl_artifacts_created
+echo "Done. SSL setup seems to be OK."
+
 ask_for_machine_count "master" "elkmaster" 2
 ask_for_machine_count "data" "elkdata" 3
 ask_for_machine_count "client" "elkclient" 2
