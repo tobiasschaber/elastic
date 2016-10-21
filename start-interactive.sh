@@ -271,6 +271,7 @@ function restore_kibana_snapshot(){
         elk_username=$(less hiera/common.yaml | grep -e "\ſ*[^\._]username" | cut -d : -f2 | tr -d ' ')
         elk_password=$(less hiera/common.yaml | grep -e "\ſ*[^\._]password" | cut -d : -f2 | tr -d ' ')
 
+		echo "creating snapshot repository..."
         # create the snapshot repository in elk
         curl -XPUT -k -u $elk_username:$elk_password -s "$elk_base_url/_snapshot/elk_backup" -d '{
               "type": "fs",
@@ -279,9 +280,13 @@ function restore_kibana_snapshot(){
               }
           }'
 
+
         # close the kibana index, restore it from snapshot, and reopen it
+        echo "closing .kibana index..."
         curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/.kibana/_close"
+        echo "restoring snapshot..."
         curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
+        echo "reopening .kibana index..."
         curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/.kibana/_open"
 
     else
@@ -294,8 +299,11 @@ function restore_kibana_snapshot(){
           }'
 
         # close the kibana index, restore it from snapshot, and reopen it
+        echo "closing .kibana index..."
         curl -XPOST -k -s "$elk_base_url/.kibana/_close"
+        echo "restoring snapshot..."
         curl -XPOST -k -s "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
+        echo "reopening .kibana index..."
         curl -XPOST -k -s "$elk_base_url/.kibana/_open"
 
     fi

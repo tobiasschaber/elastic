@@ -20,7 +20,7 @@ if [ -z "$hostname" ]
 		hostname="10.0.3.131"
 fi
 
-echo "saving snapshot under $1"
+echo "restoring snapshot from $1"
 
 
 
