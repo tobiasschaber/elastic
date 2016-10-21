@@ -43,21 +43,21 @@ class elastic_cluster::facets::kibana_node(
 
     # create the kibana users group
     group { 'create-kibana-group':
+        ensure => 'present',
         name   => $kibana_group,
-        ensure => "present",
     }
 
     # create the kibana user
     user { 'create-kibana-user':
+        ensure => 'present',
         name   => $kibana_user,
         groups => [$kibana_group],
-        ensure => "present",
     } ->
 
         # download the kibana installer via a wget and save it unter /tmp/...
     wget::fetch { 'download_kibana4':
         source      => $kibanaurl,
-        destination => "/tmp/kibana.tar.gz",
+        destination => '/tmp/kibana.tar.gz',
         timeout     => 0,
         verbose     => false,
         execuser    => $kibana_user,
@@ -65,16 +65,16 @@ class elastic_cluster::facets::kibana_node(
     } ->
 
         # ensure that the kibana4 installation directory exists
-    file { "/opt/kibana4":
-        ensure => "directory",
+    file { '/opt/kibana4':
+        ensure => 'directory',
         owner  => $kibana_user,
         group  => $kibana_group,
     } ->
 
         # extract the kibana4 archive into the target installation directory
-    exec { "untar-kibana4":
-        command => "tar -xvf /tmp/kibana.tar.gz -C /opt/kibana4 --strip-components=1",
-        path    => "/bin",
+    exec { 'untar-kibana4':
+        command => 'tar -xvf /tmp/kibana.tar.gz -C /opt/kibana4 --strip-components=1',
+        path    => '/bin',
         user    => $kibana_user,
     } ->
 
@@ -85,42 +85,42 @@ class elastic_cluster::facets::kibana_node(
 
         # ensure that the kibana ssl directory exists and has correct rights
     file { '/opt/kibana4/ssl' :
-        ensure => "directory",
+        ensure => 'directory',
         owner  => $kibana_user,
         group  => $kibana_group,
-        mode   => "0600",
+        mode   => '0600',
     } ->
 
 
         # create the kibana init script. copy it from the checked out git repository
     file { '/etc/init.d/kibana' :
         source => 'puppet:///modules/elastic_cluster/kibanainit',
-        owner  => "root",
-        group  => "root",
-        mode   => "0755",
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0755',
     } ->
 
         # create the kibana default script. copy it from the checked out git repository
     file { '/etc/default/kibana' :
-        content => template("elastic_cluster/kibanadefault.erb"),
-        owner   => "root",
-        group   => "root",
-        mode    => "0755",
+        content => template('elastic_cluster/kibanadefault.erb'),
+        owner   => 'root',
+        group   => 'root',
+        mode    => '0755',
     } ->
 
         # make sure that the kibana service is stopped because it should be started at the end
     service { 'start-kibana' :
-        name   => "kibana",
-        ensure => "stopped",
+        ensure => 'stopped',
+        name   => 'kibana',
     } ->
 
         # perform the configuration steps
     class { 'elastic_cluster::facets::kibana_node::configkibana' :
-        enablehttps        => $enablehttps,
-        enablessl          => $enableelkssl,
-        elk_enable_auth    => $elk_authentication['enable_authentication'],
-        kibanaelkuser      => $elk_authentication['username'],
-        kibanaelkpass      => $elk_authentication['password'],
+        enablehttps     => $enablehttps,
+        enablessl       => $enableelkssl,
+        elk_enable_auth => $elk_authentication['enable_authentication'],
+        kibanaelkuser   => $elk_authentication['username'],
+        kibanaelkpass   => $elk_authentication['password'],
     }
 
 #    if($operatingsystem in ['RedHat', 'CentOS']) {
@@ -133,80 +133,80 @@ class elastic_cluster::facets::kibana_node(
 
 class elastic_cluster::facets::kibana_node::configkibana(
 
-    $sslsourcescert    = '/tmp/elkinstalldir/ssl/kibana.crt',
+    $sslsourcescert   = '/tmp/elkinstalldir/ssl/kibana.crt',
     $sslsourceskey    = '/tmp/elkinstalldir/ssl/kibana.key',
     $sslcacert        = '/tmp/elkinstalldir/ssl/root-ca.crt',
     $kibanaelkuser    = 'esadmin',
     $kibanaelkpass    = 'esadmin',
-    $enablehttps        = false,
+    $enablehttps      = false,
     $enablessl        = false,
-    $elk_enable_auth    = false,
-    $kibana_user        = 'kibana',
-    $kibana_group        = 'kibana',
+    $elk_enable_auth  = false,
+    $kibana_user      = 'kibana',
+    $kibana_group     = 'kibana',
 ) {
 
     if($enablehttps == true) {
         $ensurehttps = present
-        $server_sslcert_line    = "server.ssl.cert: /opt/kibana4/ssl/elkcluster.crt"
-        $server_sslkey_line     = "server.ssl.key: /opt/kibana4/ssl/elkcluster.key"
+        $server_sslcert_line    = 'server.ssl.cert: /opt/kibana4/ssl/elkcluster.crt'
+        $server_sslkey_line     = 'server.ssl.key: /opt/kibana4/ssl/elkcluster.key'
     } else {
         $ensurehttps = absent
-        $server_sslcert_line    = "#server.ssl.cert: "
-        $server_sslkey_line     = "#server.ssl.key: "
+        $server_sslcert_line    = '#server.ssl.cert: '
+        $server_sslkey_line     = '#server.ssl.key: '
     }
 
     if($enablessl == true) {
         $ensuressl = present
         $urlprotocol = 'https'
-        $elk_sslca_line = "elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt"
+        $elk_sslca_line = 'elasticsearch.ssl.ca: /opt/kibana4/ssl/root-ca.crt'
     } else {
         $ensuressl = absent
         $urlprotocol = 'http'
-        $elk_sslca_line = "#elasticsearch.ssl.ca: "
+        $elk_sslca_line = '#elasticsearch.ssl.ca: '
     }
 
     $ownhost = inline_template("<%= scope.lookupvar('::hostname') -%>")
 
     # copy the https ssl key into kibana
     file { '/opt/kibana4/ssl/elkcluster.key' :
+        ensure => $ensurehttps,
         source => $sslsourceskey,
         owner  => $kibana_user,
         group  => $kibana_group,
-        mode   => "0600",
-        ensure => $ensurehttps,
+        mode   => '0600',
     } ->
 
         # copy the ssl root-ca into kibana
     file { '/opt/kibana4/ssl/root-ca.crt' :
+        ensure => $ensuressl,
         source => $sslcacert,
         owner  => $kibana_user,
         group  => $kibana_group,
-        mode   => "0755",
-        ensure => $ensuressl,
+        mode   => '0755',
     } ->
 
         # copy the https ssl cert into kibana
     file { '/opt/kibana4/ssl/elkcluster.crt' :
+        ensure => $ensurehttps,
         source => $sslsourcescert,
         owner  => $kibana_user,
         group  => $kibana_group,
-        ensure => $ensurehttps,
     } ->
 
         # adjust the kibana configuration by setting the correct elasticsearch url.
         # kibana will connect to elasticsearch on its own localhost
     file_line { 'Add es to config.yml':
         path  => '/opt/kibana4/config/kibana.yml',
-        line  => "elasticsearch.url: \"$urlprotocol://${ownhost}:9200\"",
+        line  => "elasticsearch.url: \"${urlprotocol}://${ownhost}:9200\"",
         match => 'elasticsearch.url:*',
     } ->
 
         # adjust the kibana configuration by setting the ssl cert path
         # to enable https
     file_line { 'Add https crt to server':
-        path     => '/opt/kibana4/config/kibana.yml',
-        line     => $server_sslcert_line,
-        match    => '#?server.ssl.cert:*',
+        path  => '/opt/kibana4/config/kibana.yml',
+        line  => $server_sslcert_line,
+        match => '#?server.ssl.cert:*',
     } ->
 
         # adjust the kibana configuration by setting the ssl key path
@@ -220,24 +220,24 @@ class elastic_cluster::facets::kibana_node::configkibana(
         # adjust the kibana configuration by setting the ssl cert path
         # to enable ssl between kibana and elk
     file_line { 'Add root ca for ssl to server':
-        path   => '/opt/kibana4/config/kibana.yml',
-        line   => $elk_sslca_line,
-        match  => '#?elasticsearch.ssl.ca:*',
+        path  => '/opt/kibana4/config/kibana.yml',
+        line  => $elk_sslca_line,
+        match => '#?elasticsearch.ssl.ca:*',
     }
 
     if($elk_enable_auth == true) {
         # add elasticsearch user to config
         file_line { 'Add elk user to config':
-            path     => '/opt/kibana4/config/kibana.yml',
-            line     => "elasticsearch.username: $kibanaelkuser",
-            match    => '#?elasticsearch.username:*',
+            path  => '/opt/kibana4/config/kibana.yml',
+            line  => "elasticsearch.username: ${kibanaelkuser}",
+            match => '#?elasticsearch.username:*',
         } ->
 
             # add elasticsearch pass to config
         file_line { 'Add elk pass to config':
-            path     => '/opt/kibana4/config/kibana.yml',
-            line     => "elasticsearch.password: $kibanaelkpass",
-            match    => '#?elasticsearch.password:*',
+            path  => '/opt/kibana4/config/kibana.yml',
+            line  => "elasticsearch.password: ${kibanaelkpass}",
+            match => '#?elasticsearch.password:*',
         }
     }
 }
@@ -248,16 +248,16 @@ define elastic_cluster::facets::kibana_node::installplugins($source) {
 
     # calculate the "short form" of the plugin name,
     # for example "marvel" in "elasticsearch/marvel/latest".
-    $shortArray = split($name, '/')
-    $shortname = $shortArray[1]
+    $shortarray = split($name, '/')
+    $shortname = $shortarray[1]
 
     # itearte over all kibana plugins and install them
     exec { $name:
-        path    => ["/usr/local/bin", "/bin", "/usr/bin", "/usr/local/sbin"],
-        command => "/opt/kibana4/bin/kibana plugin --install $name",
-        creates => "/opt/kibana4/installedPlugins/$shortname",
-        user    => "root",
-        cwd     => "/opt/kibana4/",
+        path    => ['/usr/local/bin', '/bin', '/usr/bin', '/usr/local/sbin'],
+        command => "/opt/kibana4/bin/kibana plugin --install ${name}",
+        creates => "/opt/kibana4/installedPlugins/${shortname}",
+        user    => 'root',
+        cwd     => '/opt/kibana4/',
         require => Class['elastic_cluster::facets::kibana_node::configkibana']
     }
 }

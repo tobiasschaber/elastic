@@ -21,24 +21,24 @@ class elastic_cluster::facets::redis_node(
 
         # create the stunnel users group
         group { 'create-stunnel-group':
-            name   => 'stunnel',
             ensure => 'present',
+            name   => 'stunnel',
         } ->
 
             # create the stunnel user
         user { 'create-stunnel-user':
+            ensure => 'present',
             name   => 'stunnel',
             groups => ['stunnel'],
-            ensure => 'present',
         } ->
 
         file { '/etc/stunnel/stunnel_full.pem':
-            ensure  => 'file',
-            owner   => 'root',
-            group   => 'root',
-            mode    => 700,
-            source  => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
-            before  => Class['stunnel'],
+            ensure => 'file',
+            owner  => 'root',
+            group  => 'root',
+            mode   => '0700',
+            source => '/tmp/elkinstalldir/ssl/stunnel_full.pem',
+            before => Class['stunnel'],
         } ->
 
         stunnel::tun { 'redis-server':

@@ -28,8 +28,8 @@ class elastic_cluster(
 
     #### validate params
 
-    if ! ($mode in ["elknode", "logstash", "redis", "logstashforwarder"]) {
-        fail("\"$mode\" is not a valid [mode] parameter.")
+    if ! ($mode in ['elknode', 'logstash', 'redis', 'logstashforwarder']) {
+        fail("\"${mode}\" is not a valid [mode] parameter.")
     }
 
 
@@ -38,9 +38,9 @@ class elastic_cluster(
     case $mode {
         'logstash': {
             class { 'elastic_cluster::facets::logstash_node':
-                redis_ssl       => $redis_ssl,
-                stunnel_config  => $stunnel_config,
-                collectd_config => $collectd_config,
+                redis_ssl          => $redis_ssl,
+                stunnel_config     => $stunnel_config,
+                collectd_config    => $collectd_config,
                 elk_authentication => $elk_authentication,
             }
         }
@@ -62,6 +62,10 @@ class elastic_cluster(
 
         'logstashforwarder': {
             class { 'elastic_cluster::facets::logstash_forwarder_node': }
+        }
+
+        default: {
+            fail("\"${mode}\" is not a valid [mode] parameter.")
         }
     }
 
