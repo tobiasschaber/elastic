@@ -69,4 +69,4 @@ elasticsearch::plugins:
 redis::masterauth: cctestpass
 redis::requirepass: cctestpass
 logstash::java_install: true
-logstash::repo_version: '2.2'
+logstash::repo_version: '2.4'
