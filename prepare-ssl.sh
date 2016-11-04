@@ -2,7 +2,7 @@
 
 
 # set the home of the installer directory
-export ELKINSTALLDIR="/home/tobias/work/elastic";
+export ELKINSTALLDIR="/usr/elastic";
 
 # set the private password for the Root CA key
 rootca_keypass="codecentric"
@@ -267,6 +267,25 @@ done
 	
 	# reduce permissions which is needed for ssh-keygen
         cat stunnel.key stunnel.crt >> stunnel_full.pem
+
+
+# ---------------------------------------------------------------------
+# create logstash forwarder artifacts
+# ---------------------------------------------------------------------
+
+	# create a pem encoded ssl certificate and a private key
+	openssl req \
+		-config ca/conf/forwarder.conf \
+		-nodes \
+		-new \
+		-x509 \
+		-sha256 \
+		-keyout forwarder.key \
+		-out forwarder.crt \
+		-batch
+	
+	# reduce permissions which is needed for ssh-keygen
+        cat forwarder.key forwarder.crt >> forwarder_full.pem
 
 
 
