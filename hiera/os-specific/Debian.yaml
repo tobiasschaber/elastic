@@ -1,6 +1,6 @@
 ---
 elasticsearch::java_package: openjdk-7-jre-headless
-elasticsearch::package_url: https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.1/elasticsearch-2.4.1.deb
+elasticsearch::package_url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.0.1.deb 
 logstash::java_package: openjdk-7-jre-headless
 logstash::package_url: https://download.elastic.co/logstash/logstash/packages/debian/logstash-2.4.0_all.deb
 elastic_cluster::collectd_config:

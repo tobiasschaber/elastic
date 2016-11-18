@@ -1,5 +1,5 @@
 ---
 elasticsearch::java_package: jdk1.8.0_65.x86_64
-elasticsearch::package_url: http://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/rpm/elasticsearch/2.4.1/elasticsearch-2.4.1.rpm
+elasticsearch::package_url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.0.1.rpm
 logstash::java_package: jdk1.8.0_65.x86_64
 logstash::package_url: https://download.elastic.co/logstash/logstash/packages/centos/logstash-2.4.0.noarch.rpm
