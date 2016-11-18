@@ -18,12 +18,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         prov.add_host '10.0.3.132', ['elkclient2']
         prov.add_host '10.0.3.141', ['redis1']
         prov.add_host '10.0.3.142', ['redis2']
+		prov.add_host '10.0.3.151', ['forwarder1']	
     end
 
     # configure the operating system for all nodes
-    #config.vm.box = "bento/centos-6.7"
+    config.vm.box = "bento/centos-6.7"
     #config.vm.box = "bento/centos-7.1"
-    config.vm.box = "ubuntu/trusty64"
+    #config.vm.box = "ubuntu/trusty64"
 
 
     # snapshot shared NFS folder
@@ -47,7 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkdata1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkdata1.vm.provision :shell, :path => "install-elknode.sh"
         elkdata1.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -61,7 +62,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkmaster1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkmaster1.vm.provision :shell, :path => "install-elknode.sh"
         elkmaster1.vm.provider "virtualbox" do |v|
-             v.memory = 768
+             v.memory = 2048
              v.cpus = 2
         end
     end
@@ -75,7 +76,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkmaster2.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkmaster2.vm.provision :shell, :path => "install-elknode.sh"
         elkmaster2.vm.provider "virtualbox" do |v|
-             v.memory = 768
+             v.memory = 2048
              v.cpus = 2
         end
     end
@@ -89,7 +90,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkdata2.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkdata2.vm.provision :shell, :path => "install-elknode.sh"
         elkdata2.vm.provider "virtualbox" do |v|
-             v.memory = 768
+             v.memory = 2048
              v.cpus = 2
         end
     end
@@ -103,7 +104,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	    elkdata3.vm.provision :shell, :path => "installation/prepare-install.sh"
 	    elkdata3.vm.provision :shell, :path => "install-elknode.sh"
         elkdata3.vm.provider "virtualbox" do |v|
-             v.memory = 768
+             v.memory = 2048
              v.cpus = 2
         end
     end
@@ -119,7 +120,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkclient1.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkclient1.vm.provision :shell, :path => "install-elknode.sh"
         elkclient1.vm.provider "virtualbox" do |v|
-            v.memory = 1024
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -135,7 +136,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         elkclient2.vm.provision :shell, :path => "installation/prepare-install.sh"
         elkclient2.vm.provision :shell, :path => "install-elknode.sh"
         elkclient2.vm.provider "virtualbox" do |v|
-             v.memory = 768
+             v.memory = 2048
              v.cpus = 2
         end
     end
@@ -149,7 +150,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         logstash1.vm.provision :shell, :path => "installation/prepare-install.sh"
         logstash1.vm.provision :shell, :path => "install-logstash.sh"
         logstash1.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -165,7 +166,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         logstashindexer1.vm.provision :shell, :path => "installation/prepare-install.sh"
         logstashindexer1.vm.provision :shell, :path => "install-logstash.sh"
         logstashindexer1.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -179,7 +180,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         logstashindexer2.vm.provision :shell, :path => "installation/prepare-install.sh"
         logstashindexer2.vm.provision :shell, :path => "install-logstash.sh"
         logstashindexer2.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -194,7 +195,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         logstashshipper1.vm.provision :shell, :path => "installation/prepare-install.sh"
         logstashshipper1.vm.provision :shell, :path => "install-logstash.sh"
         logstashshipper1.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -208,7 +209,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         logstashshipper2.vm.provision :shell, :path => "installation/prepare-install.sh"
         logstashshipper2.vm.provision :shell, :path => "install-logstash.sh"
         logstashshipper2.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -222,7 +223,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         redis1.vm.provision :shell, :path => "installation/prepare-install.sh"
         redis1.vm.provision :shell, :path => "install-redis.sh"
         redis1.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
             v.cpus = 2
         end
     end
@@ -236,7 +237,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         redis2.vm.provision :shell, :path => "installation/prepare-install.sh"
         redis2.vm.provision :shell, :path => "install-redis.sh"
         redis2.vm.provider "virtualbox" do |v|
-            v.memory = 768
+            v.memory = 2048
+            v.cpus = 2
+        end
+    end
+
+
+    # logstashforwarder
+    config.vm.define "forwarder1", autostart: false do |forwarder1|
+
+        forwarder1.vm.hostname = "forwarder1"
+        forwarder1.vm.network "public_network", ip: "10.0.3.151", :bridge => "lxcbr0"
+        forwarder1.vm.network "private_network", type: "dhcp"
+        forwarder1.vm.provision :shell, :path => "installation/prepare-install.sh"
+        forwarder1.vm.provision :shell, :path => "install-logstash-forwarder.sh"
+        forwarder1.vm.provider "virtualbox" do |v|
+            v.memory = 2048
             v.cpus = 2
         end
     end
