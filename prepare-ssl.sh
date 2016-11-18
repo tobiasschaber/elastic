@@ -50,6 +50,8 @@ echo -e " - signing-ca.crt \t| the Signin certificate"
 echo -e " - kibana.crt 	\t| the ssl certificate for kibanas https"
 echo -e " - kibana.key 	\t| the private key for kibanas https"
 echo -e " - kibana.pub 	\t| the public key for kibanas https"
+echo -e " - forwarder.key \t| the private key for logstash forwarder"
+echo -e " - forwarder.crt \t| the ssl certificate for logstash forwarder"
 echo -e " "
 echo -e "--------------------------------------------------------"
 echo -e "If you want to provide your own certificates instead of"
@@ -275,17 +277,17 @@ done
 
 	# create a pem encoded ssl certificate and a private key
 	openssl req \
-		-config ca/conf/forwarder.conf \
+		-config ca/conf/logstash1.conf \
 		-nodes \
 		-new \
 		-x509 \
 		-sha256 \
-		-keyout forwarder.key \
-		-out forwarder.crt \
+		-keyout logstash1.key \
+		-out logstash1.crt \
 		-batch
 	
 	# reduce permissions which is needed for ssh-keygen
-        cat forwarder.key forwarder.crt >> forwarder_full.pem
+        cat logstash1.key logstash1.crt >> logstash1_full.pem
 
 
 
