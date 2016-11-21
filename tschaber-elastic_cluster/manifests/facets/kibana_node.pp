@@ -29,8 +29,8 @@ class elastic_cluster::facets::kibana_node(
     $elk_config = hiera('elasticsearch::config')
 
     # enable ssl between kibana and elasticsearch?
-    if($elk_config['shield']) {
-        $enableelkssl   = $elk_config['shield']['http.ssl']
+    if($elk_config['xpack']) {
+        $enableelkssl   = $elk_config['xpack']['security']['http.ssl.enabled']
     } else {
         $enableelkssl = false
     }
@@ -238,6 +238,14 @@ class elastic_cluster::facets::kibana_node::configkibana(
             path  => '/opt/kibana4/config/kibana.yml',
             line  => "elasticsearch.password: ${kibanaelkpass}",
             match => '#?elasticsearch.password:*',
+        } ->
+
+        # TODO: replace 0.0.0.0 with hiera variable
+            # set network bind to 0.0.0.0
+        file_line { 'set network bind':
+            path  => '/opt/kibana4/config/kibana.yml',
+            line  => "server.host: 0.0.0.0",
+            match => '#?server.host:*',
         }
     }
 }

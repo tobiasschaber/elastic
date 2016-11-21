@@ -39,11 +39,11 @@ class elastic_cluster::facets::logstash_node(
         $logstash_elkpass = hiera('installelknode::configureshield::defaultadminpass', undef)
         $redis_nodes      = hiera('elastic_cluster::redisnodes', undef)
 
-        if($elk_config['shield']) {
-                $truststore_pass  = $elk_config['shield']['ssl']['truststore.password']
+        if($elk_config['xpack']) {
+                $truststore_pass  = $elk_config['xpack']['ssl']['truststore.password']
 
                 # enable ssl between kibana and elasticsearch?
-                $enableelkssl   = $elk_config['shield']['http.ssl']
+                $enableelkssl   = $elk_config['xpack']['security']['http.ssl.enabled']
 
         } else {
                 $enableelkssl   = false
