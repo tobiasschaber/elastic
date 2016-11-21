@@ -7,7 +7,7 @@
 # for debian systems, there is a file under /etc/debian_version
 if [ -f /etc/debian_version ]
     then
-    sudo apt-get install puppet
+    sudo apt-get -y install puppet
 fi
 
 
