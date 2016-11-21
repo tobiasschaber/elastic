@@ -66,7 +66,7 @@ function check_vagrant_plugin(){
 # ------------------------------------------------------------------------ CHECK IF SSL SETUP WAS EVER EXECUTED --- #
 function check_ssl_artifacts_created(){
 	
-	if grep -q -e "\s*http.ssl:\s*true" hiera/common.yaml;
+	if grep -q -e "\s*http.ssl.enabled:\s*true" hiera/common.yaml;
 		then
 			certCount=$(ls ssl/ | wc -l)
 			
@@ -78,7 +78,7 @@ function check_ssl_artifacts_created(){
 	fi
 	
 	
-	if grep -q -e "\s*transport.ssl:\s*true" hiera/common.yaml;
+	if grep -q -e "\s*transport.ssl.enabled:\s*true" hiera/common.yaml;
 		then
 			certCount=$(ls ssl/ | wc -l)
 			
@@ -257,11 +257,13 @@ function restore_kibana_snapshot(){
     echo "restoring kibana from snapshot $snapshot_name..."
 
     # check if SSL is enabled
-    if grep -q -e "\s*http.ssl:\s*true" hiera/common.yaml;
+    if grep -q -e "\s*http.ssl.enabled:\s*true" hiera/common.yaml;
     then
         elk_base_url="https://10.0.3.131:9200"
+        unsecureFlag=" --insecure ";
     else
         elk_base_url="http://10.0.3.131:9200"
+        unsecureFlag=" ";
     fi
 
     # check if authentication is enabled
@@ -273,7 +275,7 @@ function restore_kibana_snapshot(){
 
 		echo "creating snapshot repository..."
         # create the snapshot repository in elk
-        curl -XPUT -k -u $elk_username:$elk_password -s "$elk_base_url/_snapshot/elk_backup" -d '{
+        curl -XPUT -s -k -u $elk_username:$elk_password "$elk_base_url/_snapshot/elk_backup" -d '{
               "type": "fs",
               "settings": {
                   "location": "/tmp/elkinstalldir/snapshots/"
@@ -283,15 +285,15 @@ function restore_kibana_snapshot(){
 
         # close the kibana index, restore it from snapshot, and reopen it
         echo "closing .kibana index..."
-        curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/.kibana/_close"
+        curl -XPOST -s $unsecureFlag -k -u $elk_username:$elk_password  "$elk_base_url/.kibana/_close"
         echo "restoring snapshot..."
-        curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
+        curl -XPOST -s $unsecureFlag -k -u $elk_username:$elk_password  "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
         echo "reopening .kibana index..."
-        curl -XPOST -k -u $elk_username:$elk_password -s "$elk_base_url/.kibana/_open"
+        curl -XPOST -s $unsecureFlag -k -u $elk_username:$elk_password  "$elk_base_url/.kibana/_open"
 
     else
         # create the snapshot repository in elk
-        curl -XPUT -k -s "$elk_base_url/_snapshot/elk_backup" -d '{
+        curl -XPUT -s -k  "$elk_base_url/_snapshot/elk_backup" -d '{
               "type": "fs",
               "settings": {
                   "location": "/tmp/elkinstalldir/snapshots/"
@@ -300,11 +302,11 @@ function restore_kibana_snapshot(){
 
         # close the kibana index, restore it from snapshot, and reopen it
         echo "closing .kibana index..."
-        curl -XPOST -k -s "$elk_base_url/.kibana/_close"
+        curl $unsecureFlag -s -XPOST -k  "$elk_base_url/.kibana/_close"
         echo "restoring snapshot..."
-        curl -XPOST -k -s "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
+        curl $unsecureFlag -s -XPOST -k  "$elk_base_url/_snapshot/elk_backup/$snapshot_name/_restore"
         echo "reopening .kibana index..."
-        curl -XPOST -k -s "$elk_base_url/.kibana/_open"
+        curl $unsecureFlag -s -XPOST -k  "$elk_base_url/.kibana/_open"
 
     fi
 

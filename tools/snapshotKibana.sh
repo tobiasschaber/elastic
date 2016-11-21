@@ -27,11 +27,13 @@ echo "saving snapshot under $1"
 
 
 # check if SSL is enabled
-if grep -q -e "\s*http.ssl:\s*true" hiera/common.yaml;
+if grep -q -e "\s*http.ssl.enabled:\s*true" hiera/common.yaml;
 then
 	elk_base_url="https://$hostname:9200"
+	unsecureFlag=" --insecure ";
 else
 	elk_base_url="http://$hostname:9200"
+	unsecureFlag=" ";
 fi
 
 
@@ -47,7 +49,7 @@ fi
 
 
 
-snapshotRepoCmd="curl -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup\" -d '{
+snapshotRepoCmd="curl $unsecureFlag -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup\" -d '{
       \"type\": \"fs\",
       \"settings\": {
           \"location\": \"/tmp/elkinstalldir/snapshots/\"
@@ -55,7 +57,7 @@ snapshotRepoCmd="curl -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup\
   }'"
   
   
-snapshotCreateCmd="curl -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup/$1?wait_for_completion=true\" -d '{
+snapshotCreateCmd="curl $unsecureFlag -XPUT -s $authString \"$elk_base_url/_snapshot/elk_backup/$1?wait_for_completion=true\" -d '{
       \"indices\": \".kibana\"
     }'"
 
