@@ -31,10 +31,12 @@ class elastic_cluster::facets::elastic_node(
     }
 
 
+    # adjust global nproc limits on RHEL, only if the 90-nproc file exist
     exec { 'increase-global-nproc-on-RHEL':
         user    => 'root',
         command => "sed -i \"s/1024/4096/g\" /etc/security/limits.d/90-nproc.conf",
         path    => ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
+        onlyif  => 'ls /etc/security/limits.d/90-nproc.conf',
     } ->
 
     # start the installation of elasticsearch
@@ -189,17 +191,19 @@ class elastic_cluster::facets::elastic_node::createadminuser(
     $enable_elk_auth = false,
 ) {
 
+
     if($enable_elk_auth == true) {
 
+        # TODO: SEEMS NOT TO WORK AS SERVICE IS NOT YET AVAILABLE!
         # create an admin user
-        exec { 'xpack-create-esadmin':
-            user    => 'root',
-            command => "curl --insecure -XPUT -u elastic:changeme 'https://localhost:9200/_xpack/security/user/${defaultadmin_name}' -d '{ \"password\" : \"${defaultadmin_pass}\", \"roles\" : [\"superuser\"]}'",
-            onlyif  => 'curl --insecure -u elastic:changeme https://localhost:9200/_xpack',
+#        exec { 'xpack-create-esadmin':
+#            user    => 'root',
+#            command => "curl --insecure -XPUT -u elastic:changeme 'https://localhost:9200/_xpack/security/user/${defaultadmin_name}' -d '{ \"password\" : \"${defaultadmin_pass}\", \"roles\" : [\"superuser\"]}'",
+#            onlyif  => 'curl --insecure -u elastic:changeme https://localhost:9200/_xpack',
 #           command => "/usr/share/elasticsearch/bin/shield/esusers useradd ${defaultadmin_name} -p ${defaultadmin_pass} -r admin",
 #            unless  => "/usr/share/elasticsearch/bin/shield/esusers list | grep -c ${defaultadmin_name}",
-            path    => ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
-        }
+#            path    => ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
+#        }
 
 #        ->
 #            # workarround: copy esuser files into elasticsearch config directory to be found
