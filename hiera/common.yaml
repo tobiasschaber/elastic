@@ -8,8 +8,8 @@ elastic_cluster::redisnodes:
 elastic_cluster::redis_ssl: true
 elastic_cluster::elk_authentication:
     enable_authentication: true
-    username: esadmin
-    password: esadmin
+    username: kibana
+    password: changeme
 elastic_cluster::stunnel_config:
     bindings:
       redis1:
@@ -31,41 +31,37 @@ elasticsearch::config:
   cluster:
     name: elkcluster
   discovery:
-    zen.ping.multicast.enabled: false
     zen.ping.unicast.hosts:
      - 10.0.3.101
-  shield:
-    authc.realms:
-      esusers_default:
-        type: esusers
-        order: 0
-        files.users: /etc/elasticsearch/es-01/shield/users
-        files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
+  xpack:
+#        files.users: /etc/elasticsearch/es-01/shield/users
+#        files.users_roles: /etc/elasticsearch/es-01/shield/users_roles
     ssl:
       keystore.path: /etc/elasticsearch/es-01/shield/es01-keystore.jks
       keystore.password: codecentric
       keystore.key_password: codecentric
-      hostname_verification: false
+      verification_mode: none
       truststore.path: /etc/elasticsearch/es-01/shield/es01-truststore.jks
       truststore.password: codecentric
-    transport.ssl: true
-    http.ssl: true
+    security:
+      transport.ssl.enabled: true
+      http.ssl.enabled: true
+#      authc:
+#        realms:
+#          esusers_default:
+#            type: file
+#            order: 0
   path.repo: 
     /tmp/elkinstalldir/snapshots
 elasticsearch::plugins:
-  elasticsearch/license/latest:
+  x-pack:
     instances:
       - es-01
-  marvel-agent:
-    instances:
-      - es-01
-  elasticsearch/watcher/latest:
-    instances:
-      - es-01
-  elasticsearch/shield/latest:
-    instances:
-      - es-01
-
+#elasticsearch::shield::user:
+#  esadmin:
+#    password: esadmin
+#    roles:
+#      - admin
 redis::masterauth: cctestpass
 redis::requirepass: cctestpass
 logstash::java_install: true
