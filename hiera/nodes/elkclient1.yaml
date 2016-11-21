@@ -8,14 +8,14 @@ elasticsearch::instances:
       network.publish_host: 10.0.3.131
       node.data: false
       node.master: false
-elastic_cluster::facets::kibana_node::kibanaurl: https://download.elastic.co/kibana/kibana/kibana-4.6.1-linux-x86_64.tar.gz
+elastic_cluster::facets::kibana_node::kibanaurl: https://artifacts.elastic.co/downloads/kibana/kibana-5.0.1-linux-x86_64.tar.gz
 elastic_cluster::facets::kibana_node::enablehttps: false
 elastic_cluster::facets::kibana_node::plugins:
-  elasticsearch/marvel/2.4.0:
-    source: package
-  kibana/timelion:
-    source: package
-  elasticsearch/graph/latest:
-    source: package
+#  elasticsearch/marvel/2.4.0:
+#    source: package
+#  kibana/timelion:
+#    source: package
+#  elasticsearch/graph/latest:
+#    source: package
 #  lmenezes/elasticsearch-kopf/latest:
 #    source: package
