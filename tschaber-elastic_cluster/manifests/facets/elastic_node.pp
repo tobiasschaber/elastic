@@ -25,7 +25,7 @@ class elastic_cluster::facets::elastic_node(
         $enablessl      = $elk_config['xpack']['security']['transport.ssl.enabled']
         $enablehttps    = $elk_config['xpack']['http.ssl']
     } else {
-        # if there is no shield part, disable ssl and https
+        # if there is no xpack part, disable ssl and https
         $enablessl      = false
         $enablehttps    = false
     }
@@ -44,7 +44,7 @@ class elastic_cluster::facets::elastic_node(
     } ->
 
         # add the default admin user
-    class { 'elastic_cluster::facets::elastic_node::configureshield' :
+    class { 'elastic_cluster::facets::elastic_node::createadminuser' :
         enable_elk_auth   => $elk_authentication['enable_authentication'],
         defaultadmin_name => $elk_authentication['username'],
         defaultadmin_pass => $elk_authentication['password'],
@@ -183,7 +183,7 @@ class elastic_cluster::facets::elastic_node::addkeystores(
 
 
 # addition class to add the default admin user to the es configuration
-class elastic_cluster::facets::elastic_node::configureshield(
+class elastic_cluster::facets::elastic_node::createadminuser(
     $defaultadmin_name = 'esadmin',
     $defaultadmin_pass = 'esadmin',
     $enable_elk_auth = false,
@@ -191,14 +191,16 @@ class elastic_cluster::facets::elastic_node::configureshield(
 
     if($enable_elk_auth == true) {
 
-#        # create an admin user
-#        exec { 'shield-create-esadmin':
-#            user    => 'root',
-#            cwd     => '/usr/share/elasticsearch/bin/shield',
-#            command => "/usr/share/elasticsearch/bin/shield/esusers useradd ${defaultadmin_name} -p ${defaultadmin_pass} -r admin",
+        # create an admin user
+        exec { 'xpack-create-esadmin':
+            user    => 'root',
+            command => "curl --insecure -XPUT -u elastic:changeme 'https://localhost:9200/_xpack/security/user/${defaultadmin_name}' -d '{ \"password\" : \"${defaultadmin_pass}\", \"roles\" : [\"superuser\"]}'",
+            onlyif  => 'curl --insecure -u elastic:changeme https://localhost:9200/_xpack',
+#           command => "/usr/share/elasticsearch/bin/shield/esusers useradd ${defaultadmin_name} -p ${defaultadmin_pass} -r admin",
 #            unless  => "/usr/share/elasticsearch/bin/shield/esusers list | grep -c ${defaultadmin_name}",
-#            path    => ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
-#        }
+            path    => ['/usr/sbin/', '/bin/', '/sbin/', '/usr/bin'],
+        }
+
 #        ->
 #            # workarround: copy esuser files into elasticsearch config directory to be found
 #        exec { 'copy-esuser-files-into-elk-config-dir':
