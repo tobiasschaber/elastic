@@ -10,7 +10,7 @@ elasticsearch::instances:
       node.master: false
 elastic_cluster::facets::kibana_node::kibanaurl: https://artifacts.elastic.co/downloads/kibana/kibana-5.0.1-linux-x86_64.tar.gz
 elastic_cluster::facets::kibana_node::enablehttps: false
-elastic_cluster::facets::kibana_node::kibana_bind_host: 0.0.0.1
+elastic_cluster::facets::kibana_node::kibana_bind_host: 0.0.0.0
 elastic_cluster::facets::kibana_node::plugins:
 #  elasticsearch/marvel/2.4.0:
 #    source: package
