@@ -23,6 +23,9 @@ class elastic_cluster::facets::kibana_node(
 
     # ELK authentication configuration
     $elk_authentication = undef,
+
+    # Kibana host to bind network to (0.0.0.0 if undef)
+    $kibana_bind_host = undef,
 ){
 
     # read the ELK configuration from hiera
@@ -116,11 +119,12 @@ class elastic_cluster::facets::kibana_node(
 
         # perform the configuration steps
     class { 'elastic_cluster::facets::kibana_node::configkibana' :
-        enablehttps     => $enablehttps,
-        enablessl       => $enableelkssl,
-        elk_enable_auth => $elk_authentication['enable_authentication'],
-        kibanaelkuser   => $elk_authentication['username'],
-        kibanaelkpass   => $elk_authentication['password'],
+        enablehttps       => $enablehttps,
+        enablessl         => $enableelkssl,
+        elk_enable_auth   => $elk_authentication['enable_authentication'],
+        kibanaelkuser     => $elk_authentication['username'],
+        kibanaelkpass     => $elk_authentication['password'],
+        kibanaelkbindhost => $kibana_bind_host,
     }
 
 #    if($operatingsystem in ['RedHat', 'CentOS']) {
@@ -133,16 +137,17 @@ class elastic_cluster::facets::kibana_node(
 
 class elastic_cluster::facets::kibana_node::configkibana(
 
-    $sslsourcescert   = '/tmp/elkinstalldir/ssl/kibana.crt',
-    $sslsourceskey    = '/tmp/elkinstalldir/ssl/kibana.key',
-    $sslcacert        = '/tmp/elkinstalldir/ssl/root-ca.crt',
-    $kibanaelkuser    = 'esadmin',
-    $kibanaelkpass    = 'esadmin',
-    $enablehttps      = false,
-    $enablessl        = false,
-    $elk_enable_auth  = false,
-    $kibana_user      = 'kibana',
-    $kibana_group     = 'kibana',
+    $sslsourcescert    = '/tmp/elkinstalldir/ssl/kibana.crt',
+    $sslsourceskey     = '/tmp/elkinstalldir/ssl/kibana.key',
+    $sslcacert         = '/tmp/elkinstalldir/ssl/root-ca.crt',
+    $kibanaelkuser     = 'esadmin',
+    $kibanaelkpass     = 'esadmin',
+    $enablehttps       = false,
+    $enablessl         = false,
+    $elk_enable_auth   = false,
+    $kibana_user       = 'kibana',
+    $kibana_group      = 'kibana',
+    $kibanaelkbindhost = '0.0.0.0',
 ) {
 
     if($enablehttps == true) {
@@ -240,12 +245,11 @@ class elastic_cluster::facets::kibana_node::configkibana(
             match => '#?elasticsearch.password:*',
         } ->
 
-        # TODO: replace 0.0.0.0 with hiera variable
-            # set network bind to 0.0.0.0
+            # set network bind host
         file_line { 'set network bind':
             path  => '/opt/kibana4/config/kibana.yml',
-            line  => "server.host: 0.0.0.0",
-            match => '#?server.host:*',
+            line  => "server.host: ${kibanaelkbindhost}",
+            match => '^#?server.host:*',
         }
     }
 }
