@@ -406,5 +406,6 @@ then
     fi
 fi
 
+echo "If Kibana is not available, please log into the client (vagrant ssh elkclient) and start the service kibana"
 echo "---------------------------------------------------------"
 echo "Finished! The ELK cluster should now be online!"
